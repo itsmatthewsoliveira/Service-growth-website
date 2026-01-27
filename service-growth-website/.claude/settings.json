@@ -1,0 +1,12 @@
+{
+  "skills": {
+    "color-picker": {
+      "path": "skills/color-picker.md",
+      "description": "Extract exact colors from images - use /color-picker with an image"
+    },
+    "design-to-code": {
+      "path": "skills/design-to-code.md",
+      "description": "Convert design images into exact code - use /design-to-code with an image"
+    }
+  }
+}

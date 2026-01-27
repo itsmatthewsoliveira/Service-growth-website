@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "brand_name": "Flint",
+    "description": "Core design tokens for Flint - The Autonomous Website Platform."
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#DFFF00",
+      "hover": "#E6FF40",
+      "foreground": "#000000"
+    },
+    "secondary": {
+      "DEFAULT": "#000000",
+      "foreground": "#FFFFFF"
+    },
+    "background": "#FFFFFF",
+    "foreground": "#000000",
+    "muted": "#F3F4F6",
+    "accent": "#2DD4BF",
+    "destructive": "#EF4444",
+    "success": "#10B981"
+  },
+  "typography": {
+    "font_family_headings": [
+      "Instrument Serif",
+      "Times New Roman",
+      "serif"
+    ],
+    "font_family_body": [
+      "Inter",
+      "sans-serif"
+    ],
+    "font_weight_bold": "600",
+    "font_weight_normal": "400"
+  },
+  "ui": {
+    "border_radius_default": "4px",
+    "border_radius_button": "9999px",
+    "border_radius_small": "2px",
+    "spacing_base_unit": "4px"
+  }
+}
