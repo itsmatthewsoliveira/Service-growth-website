@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Home Services - HVAC, Plumbing, Roofing | Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
+            <span class="text-2xl">🏠</span>
+            For HVAC, Plumbing, Roofing, Landscaping & Cleaning
+        </div>
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-8">
+            Stop Losing Jobs<br>
+            <span class="italic text-white/50">to Voicemail.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed font-sans mb-10">
+            You're on a job. Phone rings. You can't answer. They call your competitor. Sound familiar? Our AI answers every call, books appointments, and follows up automatically—24/7.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors text-center">
+                See How Many Leads You're Losing
+            </a>
+            <a href="pricing.html" class="px-8 py-4 bg-muted text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors text-center">
+                View Pricing
+            </a>
+        </div>
+    </header>
+
+    <!-- Pain Points -->
+    <section class="bg-secondary py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12">We Know Your Pain Points</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="text-4xl">📵</div>
+                    <h3 class="text-xl text-white">Leads Call After Hours</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        You're on a job, can't answer. They call the next guy in Google. By the time you call back, they've already hired someone else.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-4xl">⏰</div>
+                    <h3 class="text-xl text-white">No Time for Follow-Up</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        You send quotes and forget. Meanwhile, the competitor who followed up 3 times wins the job. You're too busy working to do the sales work.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-4xl">👷</div>
+                    <h3 class="text-xl text-white">Can't Hire Fast Enough</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        You need help but can't find good techs. You're turning down work because you can't handle the volume. Growth feels impossible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How AI Solves Each -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-4">How We Fix It</h2>
+            <p class="text-white/60 mb-12 text-lg">AI that works 24/7 so you can focus on the actual work.</p>
+
+            <div class="space-y-8">
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="text-primary text-sm font-medium mb-2">PAIN: Leads call after hours</div>
+                        <h3 class="text-2xl text-white mb-4">Missed Call Text-Back + Voice Bot</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            Every call answered or texted instantly, 24/7. Appointments booked while you're on the roof. AI handles qualification so only serious leads make it to you.
+                        </p>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-[4px]">
+                        <div class="text-white/50 text-sm mb-2">Result:</div>
+                        <div class="text-3xl text-primary font-bold">47 extra jobs</div>
+                        <div class="text-white/50 text-sm">booked in first month (avg. client)</div>
+                    </div>
+                </div>
+
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="text-primary text-sm font-medium mb-2">PAIN: No time for follow-up</div>
+                        <h3 class="text-2xl text-white mb-4">Email/SMS Automation</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            Automatic follow-up sequences that nurture every quote until they say yes or no. Day 2 check-in, Day 5 value add, Day 7 urgency. Never forget a follow-up again.
+                        </p>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-[4px]">
+                        <div class="text-white/50 text-sm mb-2">Result:</div>
+                        <div class="text-3xl text-primary font-bold">25% → 41%</div>
+                        <div class="text-white/50 text-sm">close rate improvement (avg. client)</div>
+                    </div>
+                </div>
+
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="text-primary text-sm font-medium mb-2">PAIN: Can't hire fast enough</div>
+                        <h3 class="text-2xl text-white mb-4">AI Lead Qualification</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            Let AI handle the front-end—answering calls, qualifying leads, booking appointments. Your team focuses on closing and doing the work, not playing phone tag.
+                        </p>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-[4px]">
+                        <div class="text-white/50 text-sm mb-2">Result:</div>
+                        <div class="text-3xl text-primary font-bold">10+ hours</div>
+                        <div class="text-white/50 text-sm">saved per week on phone/admin work</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-neutral-900 py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">What Home Service Businesses Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-muted rounded-[4px] p-6 border border-white/5">
+                    <div class="text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"We were losing 30+ calls a week to voicemail. First month with the AI system, we booked 47 extra jobs without hiring anyone."</p>
+                    <div>
+                        <strong class="text-white block">Mike R.</strong>
+                        <span class="text-white/50 text-sm">HVAC Company Owner</span>
+                    </div>
+                </div>
+                <div class="bg-muted rounded-[4px] p-6 border border-white/5">
+                    <div class="text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"I used to forget to follow up on quotes. Now it happens automatically. Our close rate went from 25% to 41%."</p>
+                    <div>
+                        <strong class="text-white block">James T.</strong>
+                        <span class="text-white/50 text-sm">Plumbing Business Owner</span>
+                    </div>
+                </div>
+                <div class="bg-muted rounded-[4px] p-6 border border-white/5">
+                    <div class="text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"I spent 2 hours a day on the phone scheduling. Now I spend 20 minutes reviewing what the AI already booked."</p>
+                    <div>
+                        <strong class="text-white block">Carlos M.</strong>
+                        <span class="text-white/50 text-sm">Roofing Contractor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">What You Get</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📱</div>
+                    <h3 class="text-lg text-white mb-2">Missed Call Text-Back</h3>
+                    <p class="text-white/50 text-sm">Instant text when you can't answer. 90% of people prefer texting over voicemail.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🤖</div>
+                    <h3 class="text-lg text-white mb-2">AI Voice Bot</h3>
+                    <p class="text-white/50 text-sm">Answers calls 24/7, handles FAQs, books appointments. Sounds natural.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📧</div>
+                    <h3 class="text-lg text-white mb-2">Email/SMS Automation</h3>
+                    <p class="text-white/50 text-sm">Automatic follow-up on every quote. Never forget again.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">⭐</div>
+                    <h3 class="text-lg text-white mb-2">Review Automation</h3>
+                    <p class="text-white/50 text-sm">Automatically request reviews at the perfect moment. Build your reputation.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📊</div>
+                    <h3 class="text-lg text-white mb-2">CRM Integration</h3>
+                    <p class="text-white/50 text-sm">Works with Jobber, ServiceTitan, Housecall Pro, and more.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🌐</div>
+                    <h3 class="text-lg text-white mb-2">Website (Growth Plan)</h3>
+                    <p class="text-white/50 text-sm">Professional site built to convert, integrated with your automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-muted">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to Stop Losing Jobs to Voicemail?</h2>
+            <p class="text-white/60 text-lg mb-8">
+                Book a free 15-minute audit. We'll show you exactly how many leads you're losing—and how to fix it.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                    Get Your Free Audit
+                </a>
+                <a href="pricing.html" class="px-8 py-4 bg-secondary border border-white/20 text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors">
+                    See Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

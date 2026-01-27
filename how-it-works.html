@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="text-primary">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-20 px-6 max-w-5xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-6">
+            From Signed to Live<br>
+            <span class="italic text-primary">in 14 Days.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed font-sans">
+            We handle everything. You fill out a questionnaire, we build your systems, and you're live in two weeks. Total time investment from you: about 2 hours.
+        </p>
+    </header>
+
+    <!-- Timeline -->
+    <section class="px-6 max-w-5xl mx-auto pb-24">
+        <div class="relative">
+            <!-- Vertical Line -->
+            <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
+
+            <!-- Step 1 -->
+            <div class="relative grid md:grid-cols-2 gap-8 mb-16">
+                <div class="md:text-right md:pr-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-xs font-medium mb-4 text-primary">
+                        30 minutes
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 1: Discovery Call</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        We learn about your business, goals, and current setup. We identify where you're losing leads. We show you exactly what we'd build. If it's a fit, we move forward. If not, no hard feelings.
+                    </p>
+                </div>
+                <div class="hidden md:flex items-center justify-start">
+                    <div class="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold -ml-8">
+                        1
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative grid md:grid-cols-2 gap-8 mb-16">
+                <div class="hidden md:flex items-center justify-end">
+                    <div class="w-16 h-16 rounded-full bg-muted border border-white/20 text-white flex items-center justify-center text-2xl font-bold -mr-8">
+                        2
+                    </div>
+                </div>
+                <div class="md:pl-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-4 text-white/60">
+                        Day 1-3
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 2: Onboarding</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        You fill out a simple questionnaire (30 minutes). We get access to your systems (CRM, phone, website). We map out your customer journey and automation flows.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative grid md:grid-cols-2 gap-8 mb-16">
+                <div class="md:text-right md:pr-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-4 text-white/60">
+                        Day 4-10
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 3: Build & Configure</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        We build your AI systems. We write your follow-up sequences. We configure your voice bot. We integrate everything with your existing tools. You don't have to do anything.
+                    </p>
+                </div>
+                <div class="hidden md:flex items-center justify-start">
+                    <div class="w-16 h-16 rounded-full bg-muted border border-white/20 text-white flex items-center justify-center text-2xl font-bold -ml-8">
+                        3
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative grid md:grid-cols-2 gap-8 mb-16">
+                <div class="hidden md:flex items-center justify-end">
+                    <div class="w-16 h-16 rounded-full bg-muted border border-white/20 text-white flex items-center justify-center text-2xl font-bold -mr-8">
+                        4
+                    </div>
+                </div>
+                <div class="md:pl-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-4 text-white/60">
+                        Day 11-13
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 4: Test & Train</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        We test every flow end-to-end. We train your team (if needed). We make adjustments based on your feedback. Everything is dialed in before we flip the switch.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="relative grid md:grid-cols-2 gap-8 mb-16">
+                <div class="md:text-right md:pr-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-xs font-medium mb-4 text-primary">
+                        Day 14
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 5: Go Live</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        We flip the switch. Your AI starts working 24/7. You start booking more jobs. Leads get instant responses. Follow-ups happen automatically. Your phone stops being a liability.
+                    </p>
+                </div>
+                <div class="hidden md:flex items-center justify-start">
+                    <div class="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold -ml-8">
+                        5
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="relative grid md:grid-cols-2 gap-8">
+                <div class="hidden md:flex items-center justify-end">
+                    <div class="w-16 h-16 rounded-full bg-muted border border-white/20 text-white flex items-center justify-center text-2xl font-bold -mr-8">
+                        6
+                    </div>
+                </div>
+                <div class="md:pl-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-4 text-white/60">
+                        Ongoing
+                    </div>
+                    <h3 class="text-2xl md:text-3xl text-white mb-4">Step 6: Optimize & Scale</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        We monitor performance weekly. We optimize based on data. We add new automations as you grow. Strategy calls keep you on track. You focus on the work—we handle the systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="bg-secondary py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">What Gets Built For You</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-[4px] p-6">
+                    <div class="text-3xl mb-4">24/7</div>
+                    <h3 class="text-lg text-white mb-2">Lead Response System</h3>
+                    <p class="text-white/50 text-sm">AI captures, qualifies, and follows up with every lead—even at 2am on a Sunday.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-[4px] p-6">
+                    <div class="text-3xl mb-4">&lt;60s</div>
+                    <h3 class="text-lg text-white mb-2">Response Time</h3>
+                    <p class="text-white/50 text-sm">Every lead gets a response in under 60 seconds. Faster than any human could do it.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-[4px] p-6">
+                    <div class="text-3xl mb-4">0</div>
+                    <h3 class="text-lg text-white mb-2">Missed Calls</h3>
+                    <p class="text-white/50 text-sm">Voice bot answers every call. Missed call text-back catches the rest. Nothing falls through.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Time Investment -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">Your Time Investment</h2>
+            <div class="bg-muted border border-white/10 rounded-[4px] overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 border-b md:border-b-0 md:border-r border-white/10">
+                        <h3 class="text-xl text-white mb-6">What You Do</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-white/70">
+                                <span class="text-primary font-mono text-sm">30 min</span>
+                                <span>Discovery call</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <span class="text-primary font-mono text-sm">30 min</span>
+                                <span>Fill out onboarding questionnaire</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <span class="text-primary font-mono text-sm">30 min</span>
+                                <span>Review & approve the build</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <span class="text-primary font-mono text-sm">30 min</span>
+                                <span>Team training (optional)</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <div class="text-white/50 text-sm">Total time from you</div>
+                            <div class="text-3xl text-primary font-bold">~2 hours</div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl text-white mb-6">What We Do</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Map your customer journey</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Build AI lead capture & qualification</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Configure voice bot & call handling</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Write email/SMS sequences</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Set up review automation</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Integrate with your CRM</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Test everything end-to-end</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/70">
+                                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Ongoing optimization & support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 text-center bg-muted">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to Get Started?</h2>
+            <p class="text-white/60 text-lg mb-8">
+                Book your free 30-minute discovery call. We'll map out exactly what we'd build for you—and you can decide if it makes sense.
+            </p>
+            <a href="contact.html" class="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                Book Your Discovery Call
+            </a>
+            <p class="text-white/40 text-sm mt-4">No commitment. No hard sell. Just clarity.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

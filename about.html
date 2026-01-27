@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="text-primary">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Our Story
+        </div>
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-8">
+            We Built This<br>
+            <span class="italic text-white/50">For Ourselves First.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed font-sans">
+            We're not AI consultants who watched a YouTube course. We're operators who scaled our own service business from $0 to $100k/month in 90 days using these exact systems.
+        </p>
+    </header>
+
+    <!-- Origin Story -->
+    <section class="px-6 max-w-5xl mx-auto pb-24">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="text-3xl md:text-4xl text-white mb-6">The Origin Story</h2>
+                <div class="space-y-6 text-white/70 leading-relaxed">
+                    <p>
+                        We started running a service business. Same problems you have: missed calls, no time to follow up, leads slipping through the cracks.
+                    </p>
+                    <p>
+                        Every weekend, we'd come back Monday to find out we'd lost a dozen jobs because nobody could answer the phone. We were working harder, not smarter.
+                    </p>
+                    <p>
+                        So we built our own solution. AI that answers calls. Automation that follows up. Systems that book appointments while we sleep.
+                    </p>
+                    <p>
+                        <strong class="text-white">The result? $0 to $100k/month in 90 days.</strong>
+                    </p>
+                    <p>
+                        Then other business owners started asking: "How are you doing this?" That's when we realized we weren't just building tools for ourselves—we were building the future of service businesses.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-8">
+                <div class="text-6xl md:text-8xl font-serif text-primary mb-4">$0</div>
+                <div class="text-white/50 text-sm mb-2">to</div>
+                <div class="text-6xl md:text-8xl font-serif text-white mb-4">$100k</div>
+                <div class="text-white/50 text-sm mb-6">per month in</div>
+                <div class="text-6xl md:text-8xl font-serif text-primary">90</div>
+                <div class="text-white/50 text-sm">days</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Different -->
+    <section class="bg-secondary py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12">Why We're Different</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-2xl">
+                        <span class="text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl text-white">We're Not AI Grifters</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        The market is flooded with "experts" who took a 2-hour course and resell generic tools. We actually built and used these systems to scale our own business. Big difference.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-2xl">
+                        <span class="text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl text-white">We Know Your World</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        We've been on the roof when the phone rings. We know what it's like to lose a job because you couldn't call back fast enough. We built this from lived experience.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-2xl">
+                        <span class="text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl text-white">Proven Before Sold</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        We don't offer anything we haven't tested on ourselves first. Every system, every automation, every workflow—battle-tested in our own business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Philosophy -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12">Our Philosophy</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-muted border border-white/5 rounded-[4px] p-8">
+                    <h3 class="text-xl text-white mb-4">Technology Should Make Life Easier</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Not more complicated. If you need a PhD to use it, we failed. Every system we build is designed for busy operators who don't have time to learn new software.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-8">
+                    <h3 class="text-xl text-white mb-4">If It Doesn't Book Jobs, It Doesn't Matter</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        We don't care about vanity metrics. We care about one thing: did you book more jobs this month than last month? Everything we do ties back to revenue.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-8">
+                    <h3 class="text-xl text-white mb-4">Educate First, Sell Second</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        We'll tell you exactly where you're losing leads before you ever pay us a dime. If we can't help, we'll say so. No hard sell, no BS.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-8">
+                    <h3 class="text-xl text-white mb-4">We Win When You Win</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        That's why we guarantee results. If you don't see more booked jobs in 60 days, we work for free until you do. Our success is tied to yours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For / Not For -->
+    <section class="bg-neutral-900 py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl text-white mb-8">This Is For You If...</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">You're doing $30k+/month and ready to scale</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">You're losing leads to missed calls and slow follow-up</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">You want to grow without hiring more people</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">You're in Home Services, Medical, or Construction</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">You value results over promises</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-3xl text-white mb-8">This Is NOT For You If...</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-white/80">You're just getting started and need leads first</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-white/80">You're looking for a magic button (this takes work)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-white/80">You're not willing to invest in growth</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-white/80">You want the cheapest option (you get what you pay for)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-white/80">You're not ready to change how you operate</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to See If We're a Fit?</h2>
+            <p class="text-white/60 text-lg mb-8">
+                15-minute call. No pitch. We'll tell you exactly where you're losing leads—whether you hire us or not.
+            </p>
+            <a href="contact.html" class="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                Book a Call
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

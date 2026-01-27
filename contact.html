@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call - Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="pt-16 pb-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+
+                <!-- Left Column: Info -->
+                <div>
+                    <h1 class="text-4xl md:text-5xl leading-[0.95] text-white mb-6">
+                        Let's See If<br>
+                        <span class="italic text-white/50">We Can Help.</span>
+                    </h1>
+                    <p class="text-lg text-white/60 mb-8 leading-relaxed">
+                        15-minute call. No pitch. We'll tell you exactly where you're losing leads—whether you hire us or not.
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="space-y-4 mb-12">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/70">No long-term contracts</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/70">Live in 14 days</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/70">Results guaranteed or your money back</span>
+                        </div>
+                    </div>
+
+                    <!-- What to Expect -->
+                    <div class="bg-muted border border-white/10 rounded-[4px] p-6">
+                        <h3 class="text-lg text-white mb-4">What to Expect on the Call</h3>
+                        <ol class="space-y-3 text-sm text-white/60">
+                            <li class="flex items-start gap-3">
+                                <span class="bg-primary/20 text-primary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
+                                <span>We'll learn about your business and current challenges</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-primary/20 text-primary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
+                                <span>We'll identify exactly where you're losing leads</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-primary/20 text-primary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
+                                <span>We'll show you what we'd build to fix it</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-primary/20 text-primary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">4</span>
+                                <span>You decide if it makes sense—no pressure</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="bg-secondary border border-white/10 rounded-[4px] p-8">
+                    <h2 class="text-2xl text-white mb-6">Book Your Free Audit</h2>
+
+                    <form action="#" method="POST" class="space-y-6">
+
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm text-white/70 mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors"
+                                placeholder="John Smith">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm text-white/70 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors"
+                                placeholder="john@company.com">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm text-white/70 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors"
+                                placeholder="(555) 123-4567">
+                        </div>
+
+                        <!-- Industry -->
+                        <div>
+                            <label for="industry" class="block text-sm text-white/70 mb-2">What industry are you in? *</label>
+                            <select id="industry" name="industry" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer">
+                                <option value="" class="bg-muted">Select your industry</option>
+                                <option value="hvac" class="bg-muted">HVAC</option>
+                                <option value="plumbing" class="bg-muted">Plumbing</option>
+                                <option value="roofing" class="bg-muted">Roofing</option>
+                                <option value="landscaping" class="bg-muted">Landscaping</option>
+                                <option value="cleaning" class="bg-muted">Cleaning</option>
+                                <option value="dental" class="bg-muted">Dental</option>
+                                <option value="chiropractic" class="bg-muted">Chiropractic</option>
+                                <option value="medspa" class="bg-muted">Med Spa</option>
+                                <option value="construction" class="bg-muted">Construction / Contractor</option>
+                                <option value="remodeling" class="bg-muted">Remodeling</option>
+                                <option value="other" class="bg-muted">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Revenue -->
+                        <div>
+                            <label for="revenue" class="block text-sm text-white/70 mb-2">Current monthly revenue *</label>
+                            <select id="revenue" name="revenue" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer">
+                                <option value="" class="bg-muted">Select a range</option>
+                                <option value="under30k" class="bg-muted">Under $30k/month</option>
+                                <option value="30-75k" class="bg-muted">$30k - $75k/month</option>
+                                <option value="75-150k" class="bg-muted">$75k - $150k/month</option>
+                                <option value="150-250k" class="bg-muted">$150k - $250k/month</option>
+                                <option value="250k+" class="bg-muted">$250k+/month</option>
+                            </select>
+                        </div>
+
+                        <!-- Biggest Challenge -->
+                        <div>
+                            <label for="challenge" class="block text-sm text-white/70 mb-2">What's your biggest challenge right now? *</label>
+                            <select id="challenge" name="challenge" required
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer">
+                                <option value="" class="bg-muted">Select your challenge</option>
+                                <option value="missed-calls" class="bg-muted">Missed calls / slow response</option>
+                                <option value="follow-up" class="bg-muted">No time for follow-up</option>
+                                <option value="no-shows" class="bg-muted">Too many no-shows</option>
+                                <option value="scaling" class="bg-muted">Can't scale without hiring</option>
+                                <option value="reviews" class="bg-muted">Need more reviews</option>
+                                <option value="website" class="bg-muted">Website isn't converting</option>
+                                <option value="other" class="bg-muted">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div>
+                            <label for="message" class="block text-sm text-white/70 mb-2">Anything else we should know?</label>
+                            <textarea id="message" name="message" rows="3"
+                                class="w-full px-4 py-3 bg-muted border border-white/10 rounded-[4px] text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors resize-none"
+                                placeholder="Optional: Tell us more about your situation..."></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                            class="w-full py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                            Book My Free Audit
+                        </button>
+
+                        <p class="text-xs text-white/40 text-center">
+                            By submitting, you agree to receive communication from Service Growth AI. We respect your privacy.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact -->
+    <section class="px-6 max-w-4xl mx-auto pb-24">
+        <div class="text-center">
+            <p class="text-white/50 mb-4">Prefer to reach out directly?</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:hello@servicegrowth.ai" class="text-primary hover:underline">hello@servicegrowth.ai</a>
+                <span class="hidden sm:inline text-white/20">|</span>
+                <a href="tel:+1234567890" class="text-primary hover:underline">(123) 456-7890</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

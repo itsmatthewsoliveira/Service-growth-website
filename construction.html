@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Construction - Contractors, Remodelers, Builders | Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
+            <span class="text-2xl">🏗️</span>
+            For Contractors, Remodelers, Builders & Architects
+        </div>
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-8">
+            Close Bigger Jobs.<br>
+            <span class="italic text-white/50">Win Premium Clients.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed font-sans mb-10">
+            Your work is incredible. Your marketing doesn't show it. 3D renders that sell the vision. Photo transformation that turns job sites into portfolios. AI that responds to leads while you're on site.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors text-center">
+                See Your Project in 3D
+            </a>
+            <a href="pricing.html" class="px-8 py-4 bg-muted text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors text-center">
+                View Pricing
+            </a>
+        </div>
+    </header>
+
+    <!-- The Visual Problem -->
+    <section class="bg-secondary py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12">The Problem with Construction Marketing</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="text-xl text-white">Ugly Job Site Photos</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            Your best work looks terrible in iPhone photos. Dark, cluttered, dusty shots don't show craftsmanship. Competitors with professional photos look better—even if their work is worse.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl text-white">"I Can't Visualize It"</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            Clients struggle to understand blueprints. They can't picture the finished product. So they delay, go with the "safer" choice, or pick the cheaper guy because they can't see the difference.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl text-white">Slow Lead Response</h3>
+                        <p class="text-white/60 leading-relaxed">
+                            You're on site all day. By the time you call leads back, they've already talked to three other contractors. Speed wins in construction—but you can't be on your phone while working.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8 text-center">
+                    <div class="text-6xl mb-4">📸</div>
+                    <p class="text-white/70 italic mb-4">"Our portfolio is costing us premium jobs."</p>
+                    <p class="text-white/50 text-sm">— Every contractor with iPhone photos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Rendering Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="text-primary text-sm font-medium mb-2">CLOSE BIGGER DEALS</div>
+                    <h2 class="text-3xl md:text-4xl text-white mb-6">3D Rendering That Sells the Vision</h2>
+                    <p class="text-white/60 leading-relaxed mb-6">
+                        Show clients exactly what their project will look like—photorealistic 3D renders that eliminate "I can't visualize it" objections and close deals faster at higher prices.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Close 40% more high-ticket projects</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Eliminate "that's not what I expected" change orders</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Justify premium pricing with premium presentation</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+                        Get a Sample Render <span>→</span>
+                    </a>
+                </div>
+                <div class="bg-gradient-to-br from-primary/20 to-blue-500/20 border border-white/10 rounded-[4px] p-8 aspect-square flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🏡</div>
+                        <p class="text-white/50 text-sm">Photorealistic 3D Renders</p>
+                        <p class="text-white/30 text-xs mt-2">Patios • Kitchens • Additions • Full Builds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Transformation Section -->
+    <section class="bg-muted py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-secondary border border-white/10 rounded-[4px] p-8">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square bg-neutral-800 rounded-[4px] flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-3xl mb-2">📷</div>
+                                <p class="text-white/30 text-xs">Before</p>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-gradient-to-br from-primary/30 to-primary/10 rounded-[4px] flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-3xl mb-2">✨</div>
+                                <p class="text-primary text-xs">After</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-primary text-sm font-medium mb-2">LOOK BETTER THAN THE COMPETITION</div>
+                    <h2 class="text-3xl md:text-4xl text-white mb-6">Photo Transformation</h2>
+                    <p class="text-white/60 leading-relaxed mb-6">
+                        Turn job site photos into portfolio-ready images. AI enhancement removes clutter, fixes lighting, and makes your work look as good as it actually is.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Stand out on Google, Yelp, and social media</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Build a portfolio that attracts premium clients</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-white/80">Stop losing high-end jobs to better-marketed competitors</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+                        See Photo Transformation Demo <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Lead Response -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="text-primary text-sm font-medium mb-2">RESPOND FASTER THAN THE COMPETITION</div>
+                <h2 class="text-3xl md:text-4xl text-white mb-4">AI Lead Response</h2>
+                <p class="text-white/60 text-lg max-w-2xl mx-auto">
+                    While other contractors take 3 days to call back, you respond in 60 seconds. AI captures, qualifies, and books estimates—even while you're on the job site.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-secondary border border-white/10 rounded-[4px] p-6 text-center">
+                    <div class="text-4xl text-primary font-bold mb-2">60s</div>
+                    <div class="text-white mb-2">Response Time</div>
+                    <p class="text-white/50 text-sm">vs. 3 days industry average</p>
+                </div>
+                <div class="bg-secondary border border-white/10 rounded-[4px] p-6 text-center">
+                    <div class="text-4xl text-primary font-bold mb-2">24/7</div>
+                    <div class="text-white mb-2">Coverage</div>
+                    <p class="text-white/50 text-sm">Nights, weekends, holidays</p>
+                </div>
+                <div class="bg-secondary border border-white/10 rounded-[4px] p-6 text-center">
+                    <div class="text-4xl text-primary font-bold mb-2">0</div>
+                    <div class="text-white mb-2">Missed Leads</div>
+                    <p class="text-white/50 text-sm">Every inquiry gets handled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="bg-neutral-900 py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-muted border border-white/10 rounded-[4px] p-8 md:p-12 relative">
+                <div class="absolute -top-4 -right-4 bg-primary text-black font-bold px-4 py-2 rounded-full text-sm">
+                    Real Result
+                </div>
+                <div class="text-primary text-3xl mb-6">★★★★★</div>
+                <p class="text-white text-xl md:text-2xl italic mb-8 leading-relaxed">
+                    "The 3D renders helped us close a $150k backyard remodel. The client couldn't visualize it until we showed them the walkthrough. Game changer for high-end projects."
+                </p>
+                <div>
+                    <strong class="text-white text-lg block">Sarah Jenkins</strong>
+                    <span class="text-white/50">Lead Designer, Luxury Scapes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">Full Visual + Automation Stack</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🏗️</div>
+                    <h3 class="text-lg text-white mb-2">3D Rendering</h3>
+                    <p class="text-white/50 text-sm">Photorealistic renders for patios, kitchens, additions, full builds.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">✨</div>
+                    <h3 class="text-lg text-white mb-2">Photo Transformation</h3>
+                    <p class="text-white/50 text-sm">Turn job site photos into portfolio-quality images.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🎬</div>
+                    <h3 class="text-lg text-white mb-2">Image Animation</h3>
+                    <p class="text-white/50 text-sm">Make static portfolios come alive for social media.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🤖</div>
+                    <h3 class="text-lg text-white mb-2">AI Lead Response</h3>
+                    <p class="text-white/50 text-sm">60-second response time, 24/7. Never miss a lead.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📧</div>
+                    <h3 class="text-lg text-white mb-2">Quote Follow-Up</h3>
+                    <p class="text-white/50 text-sm">Automatic follow-up sequences on every estimate.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🌐</div>
+                    <h3 class="text-lg text-white mb-2">Professional Website</h3>
+                    <p class="text-white/50 text-sm">Look as established as the big guys. Because you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-muted">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to Win Premium Projects?</h2>
+            <p class="text-white/60 text-lg mb-8">
+                Book a free strategy call. We'll show you how 3D renders and better visuals can help you close bigger deals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                    Get a Sample 3D Render
+                </a>
+                <a href="pricing.html" class="px-8 py-4 bg-secondary border border-white/20 text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors">
+                    See Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

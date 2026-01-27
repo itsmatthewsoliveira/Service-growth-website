@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Growth AI - The Autonomous Growth Platform</title>
+
+    <!-- Fonts: Instrument Serif and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN for simple HTML page as requested) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config to match Brand Identity Skill -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00', // Neon Yellow
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111', // Dark Gray for cards
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626', // Lighter gray for backgrounds
+                        background: '#050505', // Nearly black
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom utilities if needed */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <header class="pt-24 pb-32 px-6 max-w-5xl mx-auto text-center">
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
+            <span class="w-2 h-2 rounded-full bg-primary/100 animate-pulse bg-green-500"></span>
+            Accepting early access
+        </div>
+
+        <h1 class="text-6xl md:text-8xl leading-[0.9] text-white mb-8">
+            Scale your service.<br>
+            <span class="italic text-white/50">Automatically.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-sans">
+            The trusted AI partner for Home Services, Medical, and Construction.
+            From $0 to $100k/mo in 90 days - we implemented this exact system. Now we build it for you.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="contact.html"
+                class="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                Start Scaling
+            </a>
+            <a href="how-it-works.html"
+                class="w-full sm:w-auto px-8 py-4 bg-muted text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors">
+                See How It Works
+            </a>
+        </div>
+    </header>
+
+    <!-- Mockup / Visual Interest -->
+    <section class="px-4 max-w-7xl mx-auto mb-32 md:max-w-full md:px-0">
+        <div
+            class="relative bg-black rounded-[4px] md:rounded-none p-2 md:p-4 shadow-2xl overflow-hidden aspect-[16/9] md:aspect-[21/9] flex items-center justify-center">
+            <!-- decorative abstract UI placeholder -->
+            <div class="absolute inset-0 bg-neutral-900">
+                <div
+                    class="absolute top-[20%] left-[20%] w-[60%] h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
+                </div>
+                <div
+                    class="absolute top-[50%] left-[10%] w-[80%] h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30">
+                </div>
+            </div>
+            <div class="relative text-center">
+                <p class="text-white/50 font-serif text-2xl md:text-4xl italic">Autonomous Intelligence Engine</p>
+                <div class="mt-4 flex gap-2 justify-center">
+                    <div class="h-2 w-32 bg-primary/20 rounded-full overflow-hidden">
+                        <div class="h-full w-2/3 bg-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Service Stack) -->
+    <section class="bg-secondary text-secondary-foreground py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-6 text-primary">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Complete Service Stack
+                </div>
+                <h2 class="text-4xl md:text-6xl mb-6">More than just "AI".<br><span class="text-white/50 italic">Full
+                        infrastructure.</span></h2>
+                <p class="text-white/60 text-xl max-w-xl">
+                    Unlike vendors who offer one piece of the puzzle, we provide the full technology stack service
+                    businesses need to dominate.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white/5 border border-white/10 p-8 rounded-[4px] hover:bg-white/10 transition-colors group">
+                    <div class="w-12 h-12 bg-primary rounded-[2px] flex items-center justify-center mb-6 text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">AI Lead Automation.</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Auto-capture, qualify, and follow-up with leads 24/7. Includes missed call text-back and instant
+                        booking.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white/5 border border-white/10 p-8 rounded-[4px] hover:bg-white/10 transition-colors group">
+                    <div class="w-12 h-12 bg-white text-black rounded-[2px] flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="9" y1="21" x2="9" y2="9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Web Design & Dev.</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Mobile-optimized, fast-loading sites built to convert traffic into paying customers.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white/5 border border-white/10 p-8 rounded-[4px] hover:bg-white/10 transition-colors group">
+                    <div class="w-12 h-12 bg-primary rounded-[2px] flex items-center justify-center mb-6 text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                            <circle cx="12" cy="13" r="4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Photo Transformation.</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Turn ugly job site photos into stunning, portfolio-ready images using AI enhancement.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white/5 border border-white/10 p-8 rounded-[4px] hover:bg-white/10 transition-colors group">
+                    <div class="w-12 h-12 bg-white text-black rounded-[2px] flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h5" />
+                            <path d="M17 12h5" />
+                            <path d="M7 12a5 5 0 0 1 5-5" />
+                            <path d="M12 7a5 5 0 0 1 5 5" />
+                            <path d="M12 17a5 5 0 0 0 5-5" />
+                            <path d="M7 12a5 5 0 0 0 5 5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">3D Design & Render.</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Photorealistic 3D renders for construction projects. Sell the vision before breaking ground.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Why Us Section -->
+    <section class="py-24 px-6 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl mb-6">The AI "Gold Rush" is a Minefield.</h2>
+                <p class="text-white/60 text-lg mb-8 leading-relaxed">
+                    The market is flooded with "experts" who took a 2-hour course. They resell generic tools, promise
+                    the world, and disappear.
+                    <br><br>
+                    <strong>We are different.</strong> We are technologists who actually built these systems to scale
+                    our own service business to $100k/mo. We rely on proof, not hype.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🛡️</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Protect Your Reputation</h4>
+                            <p class="text-sm text-white/50">We educate you on what's real vs. what's impossible.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🚀</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Proven to Scale</h4>
+                            <p class="text-sm text-white/50">Used by us to generate $200k in 3 months.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-8 border border-white/10 rounded-[4px] relative">
+                <div
+                    class="absolute -top-4 -right-4 bg-primary text-black font-bold px-4 py-2 rounded-full transform rotate-3 shadow-xl">
+                    Real Results
+                </div>
+                <h3 class="font-serif text-3xl mb-6">Why Partners Trust Us</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-white/80">
+                        <svg class="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        We build custom, not cookie-cutter.
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80">
+                        <svg class="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Full-stack: AI, Design, & Dev under one roof.
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80">
+                        <svg class="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        Risk-Reversal Guarantee: Growth or we work free.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve (Areas) -->
+    <section class="py-24 px-6 bg-background border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl mb-6 text-white">Industries We Dominate.</h2>
+                <p class="text-white/60 text-xl max-w-2xl mx-auto">
+                    Specialized infrastructure for sectors where trust and response time are everything.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Industry 1 -->
+                <a href="home-services.html"
+                    class="group block border border-white/10 p-8 rounded-[4px] bg-secondary hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5">
+                    <div class="mb-6 opacity-50 group-hover:opacity-100 transition-opacity text-4xl">🏠</div>
+                    <h3 class="font-serif text-3xl mb-3 text-white group-hover:text-primary transition-colors">Home
+                        Services</h3>
+                    <p class="text-white/60 mb-4">HVAC, Plumbing, Roofing, Landscaping, Cleaning.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• AI Lead Booking 24/7</li>
+                        <li>• Missed Call Text-Back</li>
+                        <li>• Review Automation</li>
+                    </ul>
+                    <div class="mt-6 text-primary font-bold flex items-center gap-2 text-sm">
+                        Explore Solutions <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
+
+                <!-- Industry 2 -->
+                <a href="medical.html"
+                    class="group block border border-white/10 p-8 rounded-[4px] bg-secondary hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5">
+                    <div class="mb-6 opacity-50 group-hover:opacity-100 transition-opacity text-4xl">🩺</div>
+                    <h3 class="font-serif text-3xl mb-3 text-white group-hover:text-primary transition-colors">Medical &
+                        Service</h3>
+                    <p class="text-white/60 mb-4">Dentists, Chiropractors, Med Spas, Clinics.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Appointment Scheduling</li>
+                        <li>• Patient Reactivation</li>
+                        <li>• Text Reminders</li>
+                    </ul>
+                    <div class="mt-6 text-primary font-bold flex items-center gap-2 text-sm">
+                        Explore Solutions <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
+
+                <!-- Industry 3 -->
+                <a href="construction.html"
+                    class="group block border border-white/10 p-8 rounded-[4px] bg-secondary hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5">
+                    <div class="mb-6 opacity-50 group-hover:opacity-100 transition-opacity text-4xl">🏗️</div>
+                    <h3 class="font-serif text-3xl mb-3 text-white group-hover:text-primary transition-colors">
+                        Construction</h3>
+                    <p class="text-white/60 mb-4">Contractors, Remodelers, Builders, Architects.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Photorealistic 3D Renders</li>
+                        <li>• Site Photo Enhancement</li>
+                        <li>• Project Portfolio Mgmt</li>
+                    </ul>
+                    <div class="mt-6 text-primary font-bold flex items-center gap-2 text-sm">
+                        Explore Solutions <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Capabilities -->
+    <section class="py-24 px-6 bg-muted border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-start justify-between mb-16">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl md:text-5xl mb-6 text-white">Powerful Capabilities.</h2>
+                    <p class="text-white/60 text-lg">
+                        We don't just "do AI". We implement specific, high-leverage tools that replace manual grunt
+                        work.
+                    </p>
+                </div>
+                <a href="pricing.html"
+                    class="px-8 py-4 bg-primary text-black rounded-button hover:bg-primary-hover hover:opacity-90 font-medium">View
+                    Pricing</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div
+                    class="bg-secondary border border-white/10 p-6 rounded-[4px] hover:border-primary/50 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-4 text-xl">
+                        🎙️
+                    </div>
+                    <h4 class="font-bold mb-2 text-white">Voice Chat Bots</h4>
+                    <p class="text-xs text-white/50">Handle inbound calls, FAQs, and booking over the phone, 24/7.</p>
+                </div>
+                <div
+                    class="bg-secondary border border-white/10 p-6 rounded-[4px] hover:border-primary/50 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center mb-4 text-xl">
+                        📧
+                    </div>
+                    <h4 class="font-bold mb-2 text-white">Email Automation</h4>
+                    <p class="text-xs text-white/50">Nurture leads and maximize lifetime value with smart sequences.</p>
+                </div>
+                <div
+                    class="bg-secondary border border-white/10 p-6 rounded-[4px] hover:border-primary/50 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mb-4 text-xl">
+                        💬
+                    </div>
+                    <h4 class="font-bold mb-2 text-white">Text Automation</h4>
+                    <p class="text-xs text-white/50">Instant SMS response. 98% open rates for immediate engagement.</p>
+                </div>
+                <div
+                    class="bg-secondary border border-white/10 p-6 rounded-[4px] hover:border-primary/50 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-full flex items-center justify-center mb-4 text-xl">
+                        🧊
+                    </div>
+                    <h4 class="font-bold mb-2 text-white">3D Rendering</h4>
+                    <p class="text-xs text-white/50">Visualize patios, homes, and renovations before construction.</p>
+                </div>
+                <div
+                    class="bg-secondary border border-white/10 p-6 rounded-[4px] hover:border-primary/50 transition-colors">
+                    <div
+                        class="w-10 h-10 bg-orange-500/20 text-orange-400 rounded-full flex items-center justify-center mb-4 text-xl">
+                        ✨
+                    </div>
+                    <h4 class="font-bold mb-2 text-white">Image Animation</h4>
+                    <p class="text-xs text-white/50">Make static portfolios come alive with AI motion effects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews / Success Stories -->
+    <section class="py-24 px-6 bg-background border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl text-center mb-16 text-white">Results Speak Louder.</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="p-8 bg-muted rounded-[4px] border border-white/5">
+                    <div class="flex text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"We were losing so many calls after hours. Service Growth AI
+                        installed the text-back system and we booked 3 extra jobs the first week. It paid for itself
+                        immediately."</p>
+                    <div>
+                        <strong class="block text-white">Mike R.</strong>
+                        <span class="text-sm text-white/50">Owner, Apex Roofing</span>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="p-8 bg-muted rounded-[4px] border border-white/5">
+                    <div class="flex text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"The 3D renders helped us close a $150k backyard remodel. The
+                        client couldn't visualize it until we showed them the Walkthrough. Game changer."</p>
+                    <div>
+                        <strong class="block text-white">Sarah Jenkins</strong>
+                        <span class="text-sm text-white/50">Lead Designer, Luxury Scapes</span>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="p-8 bg-muted rounded-[4px] border border-white/5">
+                    <div class="flex text-primary mb-4">★★★★★</div>
+                    <p class="text-white/80 italic mb-6">"Finally an AI company that understands construction. They
+                        didn't just give us a chatbot, they built a whole lead handling system."</p>
+                    <div>
+                        <strong class="block text-white">David Chen</strong>
+                        <span class="text-sm text-white/50">General Contractor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-24 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-3xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

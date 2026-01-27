@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Medical Practices - Dentists, Chiropractors, Med Spas | Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
+            <span class="text-2xl">🩺</span>
+            For Dentists, Chiropractors, Med Spas & Clinics
+        </div>
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-8">
+            Fill Empty Chairs.<br>
+            <span class="italic text-white/50">Automatically.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed font-sans mb-10">
+            No-shows cost you $200-500+ per hour. Patients ghost after inquiring. Your front desk is overwhelmed. Our AI reduces no-shows, captures every new patient inquiry, and keeps your schedule full.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors text-center">
+                Reduce No-Shows by 40%
+            </a>
+            <a href="pricing.html" class="px-8 py-4 bg-muted text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors text-center">
+                View Pricing
+            </a>
+        </div>
+    </header>
+
+    <!-- HIPAA Badge -->
+    <section class="px-6 max-w-5xl mx-auto pb-12">
+        <div class="bg-green-500/10 border border-green-500/30 rounded-[4px] p-4 flex items-center gap-4">
+            <div class="text-3xl">🔒</div>
+            <div>
+                <div class="text-green-400 font-medium">HIPAA Compliant</div>
+                <div class="text-white/50 text-sm">All systems are HIPAA-compliant. We sign BAAs. Your patient data is protected.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Challenges -->
+    <section class="bg-secondary py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12">We Understand Medical Practices</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="text-4xl">🔐</div>
+                    <h3 class="text-xl text-white">HIPAA Compliance</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        You can't just use any software. It needs to be secure, compliant, and trustworthy. We get it—that's why we only use HIPAA-compliant systems and sign BAAs.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-4xl">🤝</div>
+                    <h3 class="text-xl text-white">Patient Trust</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Medical feels personal. Automation can feel cold. Our AI is conversational and warm—patients appreciate the instant response more than they notice the automation.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-4xl">🪑</div>
+                    <h3 class="text-xl text-white">No-Shows Kill Revenue</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Empty chairs cost you $200-500+ per hour. Automated reminders via text and email reduce no-shows by 30-50%, keeping your schedule full and revenue flowing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Services for Medical -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-4">What Matters Most for Your Practice</h2>
+            <p class="text-white/60 mb-12 text-lg">The services that move the needle for medical practices.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8">
+                    <div class="text-primary text-sm font-medium mb-2">REDUCE NO-SHOWS</div>
+                    <h3 class="text-2xl text-white mb-4">Appointment Reminders (SMS/Email)</h3>
+                    <p class="text-white/60 leading-relaxed mb-4">
+                        Automated text and email reminders sent at optimal times. Confirmation requests. Easy rescheduling links. Reduce no-shows by 30-50%.
+                    </p>
+                    <div class="text-primary font-bold text-lg">30-50% reduction in no-shows</div>
+                </div>
+
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8">
+                    <div class="text-primary text-sm font-medium mb-2">CAPTURE NEW PATIENTS</div>
+                    <h3 class="text-2xl text-white mb-4">AI Lead Capture</h3>
+                    <p class="text-white/60 leading-relaxed mb-4">
+                        Respond to new patient inquiries instantly—even after hours. AI qualifies, answers questions, and books the first appointment before they move on.
+                    </p>
+                    <div class="text-primary font-bold text-lg">60-second response time, 24/7</div>
+                </div>
+
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8">
+                    <div class="text-primary text-sm font-medium mb-2">BUILD REPUTATION</div>
+                    <h3 class="text-2xl text-white mb-4">Review Automation</h3>
+                    <p class="text-white/60 leading-relaxed mb-4">
+                        Automatically request reviews at the perfect moment—right after a positive appointment. Build the 5-star reputation that drives referrals.
+                    </p>
+                    <div class="text-primary font-bold text-lg">More 5-star reviews, more referrals</div>
+                </div>
+
+                <div class="bg-muted border border-white/10 rounded-[4px] p-8">
+                    <div class="text-primary text-sm font-medium mb-2">AFTER HOURS COVERAGE</div>
+                    <h3 class="text-2xl text-white mb-4">Voice Bot (After Hours)</h3>
+                    <p class="text-white/60 leading-relaxed mb-4">
+                        "Our office is closed, but I can help you schedule..." AI handles after-hours calls, answers common questions, and books appointments for the next day.
+                    </p>
+                    <div class="text-primary font-bold text-lg">Never miss a new patient call</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objection Handling -->
+    <section class="bg-neutral-900 py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">Common Questions from Medical Practices</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-muted border border-white/5 rounded-[4px] p-6">
+                    <h3 class="text-lg text-white mb-3">"Is this HIPAA compliant?"</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Yes. We use HIPAA-compliant systems and sign Business Associate Agreements (BAAs). Your patient data is protected. We understand the unique requirements of medical practices and build accordingly.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-6">
+                    <h3 class="text-lg text-white mb-3">"Will patients feel like they're talking to a robot?"</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Our AI is conversational and warm. Patients appreciate the instant response more than they notice the automation. And here's the truth: patients prefer a quick text response over waiting on hold for 10 minutes.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-6">
+                    <h3 class="text-lg text-white mb-3">"We already have a front desk person."</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        Great—now they can focus on patients in the office instead of playing phone tag all day. The AI handles the repetitive stuff (reminders, follow-ups, after-hours calls) so your team can provide better in-person care.
+                    </p>
+                </div>
+                <div class="bg-muted border border-white/5 rounded-[4px] p-6">
+                    <h3 class="text-lg text-white mb-3">"What about patient privacy?"</h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        We take privacy seriously. All data is encrypted, stored securely, and accessed only as needed. We follow strict security protocols and can provide documentation of our compliance measures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl text-white mb-12 text-center">What's Included</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📱</div>
+                    <h3 class="text-lg text-white mb-2">SMS Appointment Reminders</h3>
+                    <p class="text-white/50 text-sm">Automated text reminders that reduce no-shows dramatically.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🤖</div>
+                    <h3 class="text-lg text-white mb-2">AI Lead Capture</h3>
+                    <p class="text-white/50 text-sm">Respond to new patient inquiries in under 60 seconds, 24/7.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">⭐</div>
+                    <h3 class="text-lg text-white mb-2">Review Generation</h3>
+                    <p class="text-white/50 text-sm">Automated review requests timed perfectly after positive visits.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">📞</div>
+                    <h3 class="text-lg text-white mb-2">After-Hours Voice Bot</h3>
+                    <p class="text-white/50 text-sm">AI handles calls when your office is closed. Never miss a new patient.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🔄</div>
+                    <h3 class="text-lg text-white mb-2">Patient Reactivation</h3>
+                    <p class="text-white/50 text-sm">Automated outreach to dormant patients. Fill gaps in your schedule.</p>
+                </div>
+                <div class="bg-secondary border border-white/10 p-6 rounded-[4px]">
+                    <div class="text-2xl mb-4">🔒</div>
+                    <h3 class="text-lg text-white mb-2">HIPAA Compliance</h3>
+                    <p class="text-white/50 text-sm">All systems HIPAA-compliant. BAAs signed. Data protected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-muted">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to Fill Your Schedule?</h2>
+            <p class="text-white/60 text-lg mb-8">
+                Book a free 15-minute audit. We'll show you how much empty chair time is costing you—and how to fix it.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+                    Get Your Free Audit
+                </a>
+                <a href="pricing.html" class="px-8 py-4 bg-secondary border border-white/20 text-white rounded-button font-medium text-lg hover:bg-white/10 transition-colors">
+                    See Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

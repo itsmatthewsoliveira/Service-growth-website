@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Service Growth AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#DFFF00',
+                            hover: '#E6FF40',
+                            foreground: '#000000'
+                        },
+                        secondary: {
+                            DEFAULT: '#111111',
+                            foreground: '#FFFFFF'
+                        },
+                        muted: '#262626',
+                        background: '#050505',
+                        foreground: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '4px',
+                        'button': '9999px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            background-color: #050505;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+        <a href="service-growth-ai.html" class="font-sans font-bold text-xl tracking-tight">Service Growth AI</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="about.html" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="how-it-works.html" class="hover:opacity-70 transition-opacity">How It Works</a>
+            <a href="pricing.html" class="text-primary">Pricing</a>
+            <a href="faq.html" class="hover:opacity-70 transition-opacity">FAQ</a>
+        </div>
+        <a href="contact.html"
+            class="px-5 py-2.5 bg-primary text-primary-foreground rounded-button text-sm font-medium hover:bg-primary-hover transition-colors">
+            Book a Call
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-16 pb-12 px-6 max-w-5xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl leading-[0.9] text-white mb-6">
+            Simple Pricing.<br>
+            <span class="italic text-white/50">Real Results.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
+            No long-term contracts. No hidden fees. Cancel anytime.<br>
+            If you don't see results in 60 days, we work for free until you do.
+        </p>
+    </header>
+
+    <!-- Pricing Cards -->
+    <section class="px-6 max-w-7xl mx-auto pb-24">
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Tier 1: Launchpad -->
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-8 flex flex-col">
+                <div class="mb-6">
+                    <h3 class="text-2xl text-white mb-2">Launchpad</h3>
+                    <p class="text-white/50 text-sm">For businesses ready to stop losing leads</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-5xl font-bold text-white">$1,497</span>
+                    <span class="text-white/50">/month</span>
+                </div>
+                <p class="text-white/60 text-sm mb-6">Best for solo operators or small teams doing $30k-$75k/mo who need the basics working.</p>
+
+                <ul class="space-y-3 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Missed Call Text-Back
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Basic Email/SMS Automation (5 sequences)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Lead Capture Forms
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        CRM Setup & Integration
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Monthly Performance Report
+                    </li>
+                </ul>
+
+                <a href="contact.html" class="w-full py-4 bg-muted text-white rounded-button font-medium text-center hover:bg-white/10 transition-colors">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Tier 2: Growth Engine (Featured) -->
+            <div class="bg-secondary border-2 border-primary rounded-[4px] p-8 flex flex-col relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-xs font-bold px-4 py-1 rounded-full">
+                    MOST POPULAR
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-2xl text-white mb-2">Growth Engine</h3>
+                    <p class="text-white/50 text-sm">For businesses ready to scale without hiring</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-5xl font-bold text-primary">$2,997</span>
+                    <span class="text-white/50">/month</span>
+                </div>
+                <p class="text-white/60 text-sm mb-6">Best for businesses doing $75k-$250k/mo ready to grow 30-50% without hiring.</p>
+
+                <ul class="space-y-3 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Everything in Launchpad
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <strong>AI Lead Automation</strong> (24/7 capture, qualify, follow-up)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <strong>Voice Chat Bot</strong> (AI answers calls 24/7)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Unlimited Email/SMS Sequences
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Review Automation
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Website Included (or Optimization)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Bi-weekly Strategy Calls
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Priority Support
+                    </li>
+                </ul>
+
+                <a href="contact.html" class="w-full py-4 bg-primary text-primary-foreground rounded-button font-medium text-center hover:bg-primary-hover transition-colors">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Tier 3: Market Dominator -->
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-8 flex flex-col">
+                <div class="mb-6">
+                    <h3 class="text-2xl text-white mb-2">Market Dominator</h3>
+                    <p class="text-white/50 text-sm">For businesses ready to own their market</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-5xl font-bold text-white">$5,997</span>
+                    <span class="text-white/50">/month</span>
+                </div>
+                <p class="text-white/60 text-sm mb-6">Best for businesses doing $250k+/mo competing for premium jobs.</p>
+
+                <ul class="space-y-3 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Everything in Growth Engine
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <strong>Photo Transformation</strong> (unlimited)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <strong>3D Rendering</strong> (2 per month)
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Image Animation for Social
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Custom AI Workflows
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Dedicated Account Manager
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Weekly Strategy Calls
+                    </li>
+                    <li class="flex items-start gap-3 text-white/80 text-sm">
+                        <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Competitor Intelligence Reports
+                    </li>
+                </ul>
+
+                <a href="contact.html" class="w-full py-4 bg-muted text-white rounded-button font-medium text-center hover:bg-white/10 transition-colors">
+                    Get Started
+                </a>
+            </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="mt-12 bg-muted rounded-[4px] p-8">
+            <h3 class="text-2xl text-white mb-6">One-Time Add-Ons</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="flex justify-between items-center">
+                    <span class="text-white/80">Website Build</span>
+                    <span class="text-white font-medium">$3,997 - $7,997</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-white/80">Additional 3D Renders</span>
+                    <span class="text-white font-medium">$497 each</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-white/80">Custom Voice Bot Training</span>
+                    <span class="text-white font-medium">$997</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="px-6 max-w-7xl mx-auto pb-24">
+        <h2 class="text-3xl md:text-4xl text-white text-center mb-12">Compare Plans</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="border-b border-white/10">
+                        <th class="py-4 px-4 text-white/50 font-medium">Feature</th>
+                        <th class="py-4 px-4 text-white font-medium">Launchpad</th>
+                        <th class="py-4 px-4 text-primary font-medium">Growth Engine</th>
+                        <th class="py-4 px-4 text-white font-medium">Market Dominator</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Price</td>
+                        <td class="py-4 px-4 text-white">$1,497/mo</td>
+                        <td class="py-4 px-4 text-primary font-medium">$2,997/mo</td>
+                        <td class="py-4 px-4 text-white">$5,997/mo</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Missed Call Text-Back</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Email/SMS Automation</td>
+                        <td class="py-4 px-4 text-white">5 sequences</td>
+                        <td class="py-4 px-4 text-primary">Unlimited</td>
+                        <td class="py-4 px-4 text-primary">Unlimited</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">AI Lead Capture & Qualify</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Voice Chat Bot (24/7)</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Review Automation</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Website</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">Included</td>
+                        <td class="py-4 px-4 text-primary">Included</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Photo Transformation</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">Unlimited</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">3D Rendering</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-white">2/month</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Strategy Calls</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-white">Bi-weekly</td>
+                        <td class="py-4 px-4 text-white">Weekly</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                        <td class="py-4 px-4 text-white/60">Dedicated Account Manager</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-white/30">&#8212;</td>
+                        <td class="py-4 px-4 text-primary">&#10003;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="px-6 max-w-4xl mx-auto pb-24">
+        <div class="bg-primary/10 border border-primary/30 rounded-[4px] p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl text-white mb-6">The "More Booked Jobs" Guarantee</h2>
+            <p class="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
+                We're so confident this works that we guarantee results: <strong class="text-white">If you don't see at least 15% more booked jobs within 60 days of going live, we'll work for free until you do</strong>—or refund your entire setup fee. No questions asked.
+            </p>
+            <p class="text-white/50 text-sm">
+                Why can we offer this? Because we used these exact systems to grow our own service business. We know what works.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="px-6 max-w-4xl mx-auto pb-24">
+        <h2 class="text-3xl md:text-4xl text-white text-center mb-12">Pricing FAQ</h2>
+        <div class="space-y-6">
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-6">
+                <h3 class="text-lg text-white mb-3">Why is this more expensive than other AI agencies?</h3>
+                <p class="text-white/60 text-sm">Because we're not other AI agencies. We're not kids who watched a YouTube course—we actually scaled our own service business to $100k/month using these exact systems. You're paying for proven expertise, not experiments.</p>
+            </div>
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-6">
+                <h3 class="text-lg text-white mb-3">What if it doesn't work for my business?</h3>
+                <p class="text-white/60 text-sm">If you don't see at least 15% more booked jobs within 60 days of going live, we'll work for free until you do—or refund your setup fee. We only win when you win.</p>
+            </div>
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-6">
+                <h3 class="text-lg text-white mb-3">Can I start small and upgrade later?</h3>
+                <p class="text-white/60 text-sm">Absolutely. Most clients start with Launchpad to stop losing leads, then upgrade to Growth Engine once they see results. No long-term contracts—upgrade or cancel anytime.</p>
+            </div>
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-6">
+                <h3 class="text-lg text-white mb-3">What's the setup process?</h3>
+                <p class="text-white/60 text-sm">We handle everything. You fill out a short questionnaire, we build and configure your systems, and you're live within 14 days. Total time investment from you: about 2 hours.</p>
+            </div>
+            <div class="bg-secondary border border-white/10 rounded-[4px] p-6">
+                <h3 class="text-lg text-white mb-3">Do I need to hire someone to manage this?</h3>
+                <p class="text-white/60 text-sm">No. That's the point. The AI handles the work, we handle the strategy. You just focus on doing what you do best.</p>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="faq.html" class="text-primary hover:underline">View all FAQs &rarr;</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="px-6 max-w-4xl mx-auto pb-24 text-center">
+        <h2 class="text-3xl md:text-4xl text-white mb-6">Ready to Stop Losing Leads?</h2>
+        <p class="text-white/60 text-lg mb-8">Book a free 15-minute audit. We'll show you exactly where you're losing leads—whether you hire us or not.</p>
+        <a href="contact.html" class="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-button font-medium text-lg hover:bg-primary-hover transition-colors">
+            Book Your Free Audit
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Service Growth AI</h3>
+                <p class="text-white/50 max-w-xs text-sm">
+                    The autonomous platform for the next generation of service businesses.
+                </p>
+            </div>
+            <div class="flex gap-12 text-sm text-white/60">
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Pages</strong>
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a>
+                    <a href="pricing.html" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Industries</strong>
+                    <a href="home-services.html" class="hover:text-white transition-colors">Home Services</a>
+                    <a href="medical.html" class="hover:text-white transition-colors">Medical</a>
+                    <a href="construction.html" class="hover:text-white transition-colors">Construction</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <strong class="text-white font-medium">Support</strong>
+                    <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
