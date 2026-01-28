@@ -15,28 +15,24 @@ const services = [
     icon: Globe,
     title: "Website Services",
     description: "Sites that convert, not just exist.",
-    color: "lime",
   },
   {
     href: "/services/ads",
     icon: Megaphone,
     title: "Ads Management",
     description: "Get in front of buyers ready to hire.",
-    color: "purple",
   },
   {
     href: "/services/content",
     icon: Image,
     title: "Content & Visual",
     description: "Look as good as your work actually is.",
-    color: "lime",
   },
   {
     href: "/services/automation",
     icon: Zap,
     title: "Automation",
     description: "Stop losing leads to slow follow-up.",
-    color: "purple",
   },
 ];
 
@@ -65,12 +61,12 @@ const industries = [
 ];
 
 const features = [
-  { icon: Phone, title: "Missed Call Text-Back", description: "Every missed call gets an instant text within 60 seconds.", color: "lime" },
-  { icon: MessageSquare, title: "AI Lead Qualification", description: "Automatically qualify leads 24/7 without lifting a finger.", color: "purple" },
-  { icon: Bot, title: "Voice Bot", description: "AI answers every call, books appointments, never misses.", color: "lime" },
-  { icon: Star, title: "Review Automation", description: "Turn happy customers into 5-star reviews automatically.", color: "purple" },
-  { icon: Camera, title: "Photo Transformation", description: "Make your project photos look professionally shot.", color: "lime" },
-  { icon: Box, title: "3D Rendering", description: "Show clients their dream before you build it.", color: "purple" },
+  { icon: Phone, title: "Missed Call Text-Back", description: "Every missed call gets an instant text within 60 seconds." },
+  { icon: MessageSquare, title: "AI Lead Qualification", description: "Automatically qualify leads 24/7 without lifting a finger." },
+  { icon: Bot, title: "Voice Bot", description: "AI answers every call, books appointments, never misses." },
+  { icon: Star, title: "Review Automation", description: "Turn happy customers into 5-star reviews automatically." },
+  { icon: Camera, title: "Photo Transformation", description: "Make your project photos look professionally shot." },
+  { icon: Box, title: "3D Rendering", description: "Show clients their dream before you build it." },
 ];
 
 const trustBadges = [
@@ -111,10 +107,10 @@ export default function HomePage() {
                   href={service.href}
                   className="block card-embossed p-6 h-full group"
                 >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-colors ${service.color === 'purple' ? 'bg-accent-secondary/10 group-hover:bg-accent-secondary/20' : 'bg-accent/10 group-hover:bg-accent/20'}`}>
-                    <service.icon className={`w-6 h-6 ${service.color === 'purple' ? 'text-accent-secondary' : 'text-accent'}`} />
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <service.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className={`text-lg font-medium text-text-headline mb-2 transition-colors ${service.color === 'purple' ? 'group-hover:text-accent-secondary' : 'group-hover:text-accent'}`}>
+                  <h3 className="text-lg font-medium text-text-headline mb-2 group-hover:text-accent transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-sm text-text-muted">{service.description}</p>
@@ -266,8 +262,8 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="card-embossed p-6"
               >
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4 ${feature.color === 'purple' ? 'bg-accent-secondary/10' : 'bg-accent/10'}`}>
-                  <feature.icon className={`w-5 h-5 ${feature.color === 'purple' ? 'text-accent-secondary' : 'text-accent'}`} />
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <feature.icon className="w-5 h-5 text-accent" />
                 </div>
                 <h3 className="text-lg font-medium text-text-headline mb-2">{feature.title}</h3>
                 <p className="text-sm text-text-muted">{feature.description}</p>
@@ -348,8 +344,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-serif text-text-headline mb-8">
             Ready to stop <br />
-            <span className="italic text-accent">losing </span>
-            <span className="italic text-purple">leads?</span>
+            <span className="italic text-accent">losing leads?</span>
           </h2>
           <p className="text-text-body text-xl mb-12 max-w-2xl mx-auto">
             Book a free 15-minute audit. We&apos;ll show you exactly where you&apos;re bleeding money—whether you hire us or not.
