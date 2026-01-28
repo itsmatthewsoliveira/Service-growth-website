@@ -5,7 +5,6 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import SectionWrapper from "@/components/SectionWrapper";
 import IndustryCard from "@/components/IndustryCard";
-import ReviewSlider from "@/components/ReviewSlider";
 import BentoCard from "@/components/BentoCard";
 import { Hero } from "@/components/ui/animated-hero";
 import { Globe, Megaphone, Image, Zap, Phone, MessageSquare, Bot, Star, Camera, Box } from "lucide-react";
@@ -85,13 +84,6 @@ export default function HomePage() {
         <Hero />
       </section>
 
-      {/* Hero Interactive Asset (Review Slider Preview) */}
-      <div className="relative z-10 -mt-20 mb-20 max-w-7xl mx-auto px-6">
-        <div className="relative">
-          <div className="absolute inset-x-0 -top-40 h-40 bg-gradient-to-b from-transparent to-bg-primary z-20 pointer-events-none" />
-          <ReviewSlider />
-        </div>
-      </div>
 
       {/* Services Section */}
       <SectionWrapper className="py-24 px-6 border-t border-white/5">
