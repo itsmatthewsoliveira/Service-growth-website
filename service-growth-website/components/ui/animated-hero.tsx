@@ -27,6 +27,16 @@ function Hero() {
 
   return (
     <div className="w-full relative overflow-hidden">
+      {/* Dark Veil Background Image */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-80"
+        style={{
+          backgroundImage: "url('/dark-veil.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
       {/* Light Pillar Background Effect */}
       <div className="absolute inset-0 pointer-events-none">
         <LightPillar
