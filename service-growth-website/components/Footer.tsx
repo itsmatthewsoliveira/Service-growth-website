@@ -34,9 +34,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Service Growth AI"
-                width={160}
-                height={36}
-                className="h-7 w-auto"
+                width={200}
+                height={45}
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-text-muted text-sm max-w-xs">

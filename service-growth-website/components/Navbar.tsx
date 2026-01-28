@@ -76,9 +76,9 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Service Growth AI"
-              width={180}
-              height={40}
-              className="h-8 w-auto"
+              width={220}
+              height={50}
+              className="h-12 w-auto"
               priority
             />
           </Link>

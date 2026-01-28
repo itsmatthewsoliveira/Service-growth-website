@@ -244,8 +244,26 @@ h6 {
 
 .gradient-hero {
   background:
-    radial-gradient(ellipse at top center, rgba(200, 255, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at top right, rgba(200, 255, 0, 0.12) 0%, transparent 40%),
     var(--color-bg-primary);
+}
+
+/* Purple accent utilities */
+.text-purple {
+  color: var(--color-accent-secondary);
+}
+
+.glow-purple {
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
+}
+
+.gradient-purple-lime {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(200, 255, 0, 0.1) 100%);
+}
+
+.border-gradient {
+  border-image: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent)) 1;
 }
 
 /* Dark Embossed Icon Card Style */
