@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GrainOverlay from "@/components/GrainOverlay";
 
+// Inter for body, subheadlines, buttons
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
 
-// Elegant serif for headers - similar to Monologue
-const cormorant = Cormorant_Garamond({
+// Instrument Serif for big headlines - adds personality and warmth
+const instrumentSerif = Instrument_Serif({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${cormorant.variable} antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
       >
         <GrainOverlay />
         <Navbar />

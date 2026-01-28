@@ -1,169 +1,183 @@
-import { Metadata } from "next";
-import Timeline from "@/components/sections/Timeline";
-import Button from "@/components/ui/Button";
+"use client";
 
-export const metadata: Metadata = {
-  title: "How It Works - Service Growth AI",
-  description:
-    "From signed to live in 14 days. We handle everything—total time investment from you: about 2 hours.",
-};
+import { motion } from "framer-motion";
+import Button from "@/components/Button";
+import SectionWrapper from "@/components/SectionWrapper";
 
-const timelineSteps = [
+const steps = [
   {
+    step: "1",
     badge: "30 minutes",
-    badgeVariant: "primary" as const,
-    title: "Step 1: Discovery Call",
-    description:
-      "We learn about your business, goals, and current setup. We identify where you're losing leads. We show you exactly what we'd build. If it's a fit, we move forward. If not, no hard feelings.",
+    title: "Discovery Call",
+    description: "We learn your business and identify where you're losing leads",
   },
   {
+    step: "2",
     badge: "Day 1-3",
-    badgeVariant: "default" as const,
-    title: "Step 2: Onboarding",
-    description:
-      "You fill out a simple questionnaire (30 minutes). We get access to your systems (CRM, phone, website). We map out your customer journey and automation flows.",
+    title: "Custom Plan",
+    description: "We map out exactly what to build for you",
   },
   {
+    step: "3",
     badge: "Day 4-10",
-    badgeVariant: "default" as const,
-    title: "Step 3: Build & Configure",
-    description:
-      "We build your AI systems. We write your follow-up sequences. We configure your voice bot. We integrate everything with your existing tools. You don't have to do anything.",
+    title: "Build & Configure",
+    description: "We build your AI systems (you do almost nothing)",
   },
   {
+    step: "4",
     badge: "Day 11-13",
-    badgeVariant: "default" as const,
-    title: "Step 4: Test & Train",
-    description:
-      "We test every flow end-to-end. We train your team (if needed). We make adjustments based on your feedback. Everything is dialed in before we flip the switch.",
+    title: "Test & Train",
+    description: "We test everything and train your team if needed",
   },
   {
+    step: "5",
     badge: "Day 14",
-    badgeVariant: "primary" as const,
-    title: "Step 5: Go Live",
-    description:
-      "We flip the switch. Your AI starts working 24/7. You start booking more jobs. Leads get instant responses. Follow-ups happen automatically. Your phone stops being a liability.",
+    title: "Go Live",
+    description: "Your system launches in 14 days or less",
   },
   {
+    step: "6",
     badge: "Ongoing",
-    badgeVariant: "default" as const,
-    title: "Step 6: Optimize & Scale",
-    description:
-      "We monitor performance weekly. We optimize based on data. We add new automations as you grow. Strategy calls keep you on track. You focus on the work—we handle the systems.",
+    title: "Optimize",
+    description: "We monitor, tweak, and improve based on real data",
   },
 ];
 
 const whatYouGet = [
-  { stat: "24/7", title: "Lead Response System", description: "AI captures, qualifies, and follows up with every lead—even at 2am on a Sunday." },
-  { stat: "<60s", title: "Response Time", description: "Every lead gets a response in under 60 seconds. Faster than any human could do it." },
-  { stat: "0", title: "Missed Calls", description: "Voice bot answers every call. Missed call text-back catches the rest. Nothing falls through." },
+  { stat: "24/7", title: "Lead Response", description: "AI captures and qualifies every lead—even at 2am on a Sunday." },
+  { stat: "<60s", title: "Response Time", description: "Every lead gets a response in under 60 seconds." },
+  { stat: "0", title: "Missed Calls", description: "Voice bot + missed call text-back. Nothing falls through." },
 ];
 
-const yourTasks = [
+const yourTime = [
   { time: "30 min", task: "Discovery call" },
   { time: "30 min", task: "Fill out onboarding questionnaire" },
   { time: "30 min", task: "Review & approve the build" },
   { time: "30 min", task: "Team training (optional)" },
 ];
 
-const ourTasks = [
-  "Map your customer journey",
-  "Build AI lead capture & qualification",
-  "Configure voice bot & call handling",
-  "Write email/SMS sequences",
-  "Set up review automation",
-  "Integrate with your CRM",
-  "Test everything end-to-end",
-  "Ongoing optimization & support",
-];
-
 export default function HowItWorksPage() {
   return (
     <>
       {/* Hero */}
-      <header className="pt-16 pb-20 px-6 max-w-5xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl leading-[0.9] text-white mb-6 font-serif">
-          From Signed to Live
-          <br />
-          <span className="italic text-primary">in 14 Days.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed font-sans">
-          We handle everything. You fill out a questionnaire, we build your
-          systems, and you&apos;re live in two weeks. Total time investment from
-          you: about 2 hours.
-        </p>
-      </header>
+      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Timeline */}
-      <section className="px-6 max-w-5xl mx-auto pb-24">
-        <Timeline steps={timelineSteps} />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-7xl font-serif text-text-headline mb-6"
+          >
+            From Signed to Live
+            <br />
+            <span className="italic text-accent">in 14 Days.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-text-body max-w-2xl mx-auto"
+          >
+            We handle everything. You fill out a questionnaire, we build your systems,
+            and you&apos;re live in two weeks. Total time investment from you: about 2 hours.
+          </motion.p>
+        </div>
       </section>
 
+      {/* Steps */}
+      <SectionWrapper className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-6">
+            {steps.map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-semibold text-lg">{item.step}</span>
+                </div>
+                <div className="card-embossed p-6 flex-1">
+                  <div className="text-xs text-accent mb-2">{item.badge}</div>
+                  <h3 className="text-lg font-medium text-text-headline mb-2">{item.title}</h3>
+                  <p className="text-text-muted">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* What Gets Built */}
-      <section className="bg-secondary py-24 px-6">
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-12 text-center font-serif">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-12 text-center">
             What Gets Built For You
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {whatYouGet.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white/5 border border-white/10 rounded-[4px] p-6"
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="card-embossed p-6 text-center"
               >
-                <div className="text-3xl mb-4">{item.stat}</div>
-                <h3 className="text-lg text-white mb-2">{item.title}</h3>
-                <p className="text-white/50 text-sm">{item.description}</p>
-              </div>
+                <div className="text-4xl font-semibold text-accent mb-4">{item.stat}</div>
+                <h3 className="text-lg font-medium text-text-headline mb-2">{item.title}</h3>
+                <p className="text-sm text-text-muted">{item.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Time Investment */}
-      <section className="py-24 px-6">
+      <SectionWrapper className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-12 text-center font-serif">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-12 text-center">
             Your Time Investment
           </h2>
-          <div className="bg-muted border border-white/10 rounded-[4px] overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              <div className="p-8 border-b md:border-b-0 md:border-r border-white/10">
-                <h3 className="text-xl text-white mb-6">What You Do</h3>
+          <div className="card-embossed p-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl text-text-headline mb-6">What You Do</h3>
                 <ul className="space-y-4">
-                  {yourTasks.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white/70">
-                      <span className="text-primary font-mono text-sm">
-                        {item.time}
-                      </span>
+                  {yourTime.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-text-body">
+                      <span className="text-accent font-mono text-sm">{item.time}</span>
                       <span>{item.task}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="text-white/50 text-sm">
-                    Total time from you
-                  </div>
-                  <div className="text-3xl text-primary font-bold">~2 hours</div>
+                  <div className="text-text-muted text-sm">Total time from you</div>
+                  <div className="text-3xl text-accent font-bold">~2 hours</div>
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-xl text-white mb-6">What We Do</h3>
-                <ul className="space-y-4">
-                  {ourTasks.map((task, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white/70">
-                      <svg
-                        className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
+              <div>
+                <h3 className="text-xl text-text-headline mb-6">What We Do</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Map your customer journey",
+                    "Build AI lead capture & qualification",
+                    "Configure voice bot & call handling",
+                    "Write email/SMS sequences",
+                    "Set up review automation",
+                    "Integrate with your CRM",
+                    "Test everything end-to-end",
+                    "Ongoing optimization & support",
+                  ].map((task, i) => (
+                    <li key={i} className="flex items-start gap-3 text-text-body">
+                      <svg className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{task}</span>
                     </li>
@@ -173,26 +187,26 @@ export default function HowItWorksPage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA */}
-      <section className="py-24 px-6 text-center bg-muted">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-6 font-serif">
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-white/60 text-lg mb-8">
-            Book your free 30-minute discovery call. We&apos;ll map out exactly
-            what we&apos;d build for you—and you can decide if it makes sense.
+          <p className="text-text-body text-lg mb-8">
+            Book your free 30-minute discovery call. We&apos;ll map out exactly what
+            we&apos;d build for you—and you can decide if it makes sense.
           </p>
           <Button href="/contact" variant="primary" size="lg">
             Book Your Discovery Call
           </Button>
-          <p className="text-white/40 text-sm mt-4">
+          <p className="text-text-muted text-sm mt-4">
             No commitment. No hard sell. Just clarity.
           </p>
         </div>
-      </section>
+      </SectionWrapper>
     </>
   );
 }

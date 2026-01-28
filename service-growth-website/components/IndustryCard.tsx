@@ -35,7 +35,7 @@ export default function IndustryCard({
         <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">
           {icon}
         </div>
-        <h3 className="text-2xl font-bold text-text-headline mb-2 group-hover:text-accent transition-colors">
+        <h3 className="text-2xl font-serif text-text-headline mb-2 group-hover:text-accent transition-colors">
           {title}
         </h3>
         <p className="text-text-muted text-sm mb-4">{subtitle}</p>

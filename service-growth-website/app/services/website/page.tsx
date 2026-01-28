@@ -3,80 +3,66 @@
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
 import SectionWrapper from "@/components/SectionWrapper";
+import { Zap, Smartphone, Target, Search, Globe, Gauge, Link2, BarChart3 } from "lucide-react";
 
-const pricingTiers = [
-  {
-    name: "Starter Site",
-    price: "$3,997",
-    description: "Perfect for businesses that need a professional online presence fast.",
-    features: [
-      "5-page custom website",
-      "Mobile responsive design",
-      "Contact form with lead capture",
-      "Basic SEO setup",
-      "Google Analytics integration",
-      "2 rounds of revisions",
-      "14-day delivery",
-    ],
-    featured: false,
-  },
-  {
-    name: "Growth Site",
-    price: "$5,997",
-    description: "For businesses ready to turn their website into a lead generation machine.",
-    features: [
-      "10-page custom website",
-      "Conversion-optimized design",
-      "Advanced lead capture forms",
-      "Full SEO optimization",
-      "Speed optimization",
-      "CRM integration",
-      "Live chat setup",
-      "3 rounds of revisions",
-      "21-day delivery",
-    ],
-    featured: true,
-    badge: "Most Popular",
-  },
-  {
-    name: "Custom Build",
-    price: "$7,997+",
-    description: "Enterprise-level websites with custom functionality and integrations.",
-    features: [
-      "Unlimited pages",
-      "Custom functionality",
-      "E-commerce capabilities",
-      "Advanced integrations",
-      "Custom animations",
-      "Priority support",
-      "Unlimited revisions",
-      "Dedicated project manager",
-    ],
-    featured: false,
-  },
+const problems = [
+  "Your current site looks dated and doesn't reflect the quality of your work",
+  "Pages load slowly, causing visitors to bounce before they even see what you offer",
+  "No clear calls-to-action means visitors leave without contacting you",
+  "Your site isn't mobile-friendly, and 70% of your traffic is on mobile",
 ];
 
 const features = [
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Lightning Fast",
     description: "Sub-2 second load times. Speed matters for conversions and SEO.",
   },
   {
-    icon: "📱",
+    icon: Smartphone,
     title: "Mobile First",
     description: "70% of your visitors are on mobile. We design for them first.",
   },
   {
-    icon: "🎯",
+    icon: Target,
     title: "Conversion Focused",
     description: "Every element designed to turn visitors into leads.",
   },
   {
-    icon: "🔍",
+    icon: Search,
     title: "SEO Ready",
     description: "Built with search engines in mind from day one.",
   },
+];
+
+const process = [
+  {
+    step: "1",
+    title: "Discovery",
+    description: "We learn about your business, goals, and what makes you different.",
+  },
+  {
+    step: "2",
+    title: "Design",
+    description: "We create a custom design that reflects your brand and converts visitors.",
+  },
+  {
+    step: "3",
+    title: "Build",
+    description: "We develop your site with speed, SEO, and integrations in mind.",
+  },
+  {
+    step: "4",
+    title: "Launch",
+    description: "Your new site goes live and starts working for you 24/7.",
+  },
+];
+
+const results = [
+  { stat: "2x", label: "More leads on average" },
+  { stat: "<2s", label: "Page load time" },
+  { stat: "14 days", label: "From start to launch" },
+  { stat: "100%", label: "Mobile optimized" },
 ];
 
 export default function WebsiteServicePage() {
@@ -100,11 +86,11 @@ export default function WebsiteServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl text-text-headline mb-6"
+            className="text-5xl md:text-7xl font-serif text-text-headline mb-6"
           >
-            Sites That Convert,
+            Websites That Work
             <br />
-            <span className="text-accent italic">Not Just Exist</span>
+            <span className="text-accent italic">As Hard As You Do</span>
           </motion.h1>
 
           <motion.p
@@ -123,27 +109,64 @@ export default function WebsiteServicePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Button href="/contact" variant="primary" size="lg">
-              Get a Free Quote
+              Book a Call
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Features */}
-      <SectionWrapper className="py-20 px-6 bg-bg-card">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            {features.map((feature, i) => (
+      {/* Problem Section */}
+      <SectionWrapper className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            Sound Familiar?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {problems.map((problem, i) => (
               <motion.div
                 key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-start gap-4 card-embossed p-6"
+              >
+                <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-400 text-sm">✗</span>
+                </div>
+                <p className="text-text-body">{problem}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Solution Section */}
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-4">
+              What We Build For You
+            </h2>
+            <p className="text-text-body max-w-2xl mx-auto">
+              Custom-built, mobile-optimized sites integrated with your CRM and automation systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center"
+                className="card-embossed p-6 text-center"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg text-text-headline mb-2">{feature.title}</h3>
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 mx-auto">
+                  <feature.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-medium text-text-headline mb-2">{feature.title}</h3>
                 <p className="text-text-muted text-sm">{feature.description}</p>
               </motion.div>
             ))}
@@ -151,74 +174,55 @@ export default function WebsiteServicePage() {
         </div>
       </SectionWrapper>
 
-      {/* Pricing */}
+      {/* How It Works */}
       <SectionWrapper className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-text-headline text-center mb-4">
-            Website Pricing
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            How It Works
           </h2>
-          <p className="text-text-body text-center mb-12 max-w-2xl mx-auto">
-            One-time investment. No monthly fees. Your site, fully owned.
-          </p>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            {pricingTiers.map((tier, i) => (
+          <div className="space-y-6">
+            {process.map((step, i) => (
               <motion.div
-                key={tier.name}
-                initial={{ opacity: 0, y: 30 }}
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-2xl p-8 ${
-                  tier.featured
-                    ? "bg-accent/5 border-2 border-accent/30"
-                    : "bg-bg-card border border-border"
-                }`}
-                style={tier.featured ? {
-                  boxShadow: "0 0 60px rgba(40, 232, 253, 0.15)"
-                } : {}}
+                className="flex gap-6 items-start"
               >
-                {tier.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-bg-primary text-xs font-semibold px-4 py-1 rounded-full">
-                    {tier.badge}
-                  </div>
-                )}
-
-                <h3 className="text-2xl text-text-headline mb-2">{tier.name}</h3>
-                <div className="mb-4">
-                  <span className="text-4xl text-text-headline">{tier.price}</span>
-                  <span className="text-text-muted"> one-time</span>
+                <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-semibold text-lg">{step.step}</span>
                 </div>
-                <p className="text-text-body text-sm mb-6">{tier.description}</p>
+                <div className="card-embossed p-6 flex-1">
+                  <h3 className="text-lg font-medium text-text-headline mb-2">{step.title}</h3>
+                  <p className="text-text-muted">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm">
-                      <svg
-                        className="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-text-body">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Results */}
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            Results You Can Expect
+          </h2>
 
-                <Button
-                  href="/contact"
-                  variant={tier.featured ? "primary" : "glass"}
-                  fullWidth
-                >
-                  Get Started
-                </Button>
+          <div className="grid md:grid-cols-4 gap-6">
+            {results.map((result, i) => (
+              <motion.div
+                key={result.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-semibold text-accent mb-2">{result.stat}</div>
+                <p className="text-text-muted text-sm">{result.label}</p>
               </motion.div>
             ))}
           </div>
@@ -226,17 +230,17 @@ export default function WebsiteServicePage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper className="py-20 px-6 bg-bg-card">
+      <SectionWrapper className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-text-headline mb-4">
-            Ready for a Site That Works?
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-4">
+            Ready to Get Started?
           </h2>
           <p className="text-text-body text-lg mb-8">
-            Book a free call. We'll review your current site and show you exactly what's
+            Book a free call. We&apos;ll review your current site and show you exactly what&apos;s
             costing you leads.
           </p>
           <Button href="/contact" variant="primary" size="lg">
-            Book Free Consultation
+            Book a Call
           </Button>
         </div>
       </SectionWrapper>

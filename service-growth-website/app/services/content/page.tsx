@@ -3,96 +3,66 @@
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
 import SectionWrapper from "@/components/SectionWrapper";
+import { Camera, Box, Video, Share2 } from "lucide-react";
 
-const services = [
+const problems = [
+  "Your iPhone photos don't show how good your work really is",
+  "Competitors with worse work look better because of their photos",
+  "You don't have time to create content for social media",
+  "Clients can't visualize what their finished project will look like",
+];
+
+const features = [
   {
-    name: "Photo Transformation",
-    price: "$97",
-    unit: "per image",
-    description: "Turn job site photos into stunning portfolio pieces.",
-    features: [
-      "Sky replacement",
-      "Color correction",
-      "Object removal",
-      "Enhancement & cleanup",
-      "48-hour turnaround",
-    ],
-    popular: false,
+    icon: Camera,
+    title: "Photo Transformation",
+    description: "Turn your job site photos into professional-looking images.",
   },
   {
-    name: "3D Rendering",
-    price: "$497",
-    unit: "per render",
-    description: "Help clients visualize their project before it's built.",
-    features: [
-      "Photorealistic quality",
-      "Interior or exterior",
-      "Multiple angles",
-      "Day/night versions",
-      "7-day turnaround",
-    ],
-    popular: true,
+    icon: Box,
+    title: "3D Rendering",
+    description: "Show clients their dream project before you build it.",
   },
   {
-    name: "Video Animation",
-    price: "$297",
-    unit: "per video",
-    description: "Bring your renders and photos to life with motion.",
-    features: [
-      "Walkthrough animations",
-      "Before/after reveals",
-      "Social media ready",
-      "Music & sound",
-      "5-day turnaround",
-    ],
-    popular: false,
+    icon: Video,
+    title: "Video & Animation",
+    description: "Engaging video content that stops the scroll.",
+  },
+  {
+    icon: Share2,
+    title: "Social Content",
+    description: "Consistent, professional posts that build your brand.",
   },
 ];
 
-const packages = [
+const process = [
   {
-    name: "Content Starter",
-    price: "$497",
-    period: "/month",
-    description: "For businesses building their visual portfolio.",
-    features: [
-      "5 photo transformations",
-      "1 video animation",
-      "Social media sizing",
-      "Brand consistency",
-    ],
-    featured: false,
+    step: "1",
+    title: "Send Photos",
+    description: "Send us your job site photos or project details.",
   },
   {
-    name: "Content Pro",
-    price: "$997",
-    period: "/month",
-    description: "For businesses serious about standing out visually.",
-    features: [
-      "15 photo transformations",
-      "1 3D render",
-      "2 video animations",
-      "Social media calendar",
-      "Priority turnaround",
-    ],
-    featured: true,
-    badge: "Best Value",
+    step: "2",
+    title: "We Transform",
+    description: "Our AI enhances your photos or creates stunning 3D renders.",
   },
   {
-    name: "Content Unlimited",
-    price: "$1,997",
-    period: "/month",
-    description: "For businesses that need constant visual content.",
-    features: [
-      "Unlimited photo transforms",
-      "2 3D renders",
-      "4 video animations",
-      "Dedicated designer",
-      "24-hour turnaround",
-      "Social posting included",
-    ],
-    featured: false,
+    step: "3",
+    title: "Review & Approve",
+    description: "You review the results and request any adjustments.",
   },
+  {
+    step: "4",
+    title: "Use Everywhere",
+    description: "Use your new content on your website, social media, and proposals.",
+  },
+];
+
+const results = [
+  { stat: "10x", label: "Better-looking photos" },
+  { stat: "48hrs", label: "Turnaround time" },
+  { stat: "3x", label: "More engagement" },
+  { stat: "∞", label: "Uses per image" },
 ];
 
 export default function ContentServicePage() {
@@ -116,11 +86,11 @@ export default function ContentServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl text-text-headline mb-6"
+            className="text-5xl md:text-7xl font-serif text-text-headline mb-6"
           >
             Look As Good As
             <br />
-            <span className="text-accent italic">Your Work Is</span>
+            <span className="text-accent italic">Your Work Actually Is</span>
           </motion.h1>
 
           <motion.p
@@ -129,8 +99,8 @@ export default function ContentServicePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-text-body max-w-2xl mx-auto mb-8"
           >
-            Your work is incredible. Your photos should match. Transform job site shots
-            into portfolio pieces that win premium clients.
+            AI-powered photo transformation, 3D renders, and social content that makes
+            your work stand out.
           </motion.p>
 
           <motion.div
@@ -139,131 +109,120 @@ export default function ContentServicePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Button href="/contact" variant="primary" size="lg">
-              See Examples
+              Book a Call
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Individual Services */}
+      {/* Problem Section */}
       <SectionWrapper className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-text-headline text-center mb-4">
-            À La Carte Services
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            Sound Familiar?
           </h2>
-          <p className="text-text-body text-center mb-12 max-w-2xl mx-auto">
-            Need just one thing? No problem. Pay per piece.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {problems.map((problem, i) => (
               <motion.div
-                key={service.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-2xl p-8 ${
-                  service.popular
-                    ? "bg-accent/5 border-2 border-accent/30"
-                    : "bg-bg-card border border-border"
-                }`}
+                className="flex items-start gap-4 card-embossed p-6"
               >
-                {service.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-bg-primary text-xs font-semibold px-4 py-1 rounded-full">
-                    Most Popular
-                  </div>
-                )}
-
-                <h3 className="text-xl text-text-headline mb-2">{service.name}</h3>
-                <div className="mb-4">
-                  <span className="text-3xl text-text-headline">{service.price}</span>
-                  <span className="text-text-muted text-sm"> {service.unit}</span>
+                <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-400 text-sm">✗</span>
                 </div>
-                <p className="text-text-body text-sm mb-6">{service.description}</p>
-
-                <ul className="space-y-2">
-                  {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-text-muted">
-                      <span className="text-accent">•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-text-body">{problem}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </SectionWrapper>
 
-      {/* Monthly Packages */}
-      <SectionWrapper className="py-20 px-6 bg-bg-card">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-text-headline text-center mb-4">
-            Monthly Content Packages
-          </h2>
-          <p className="text-text-body text-center mb-12 max-w-2xl mx-auto">
-            Save up to 40% with a monthly package. Cancel anytime.
-          </p>
+      {/* Solution Section */}
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-4">
+              What We Create For You
+            </h2>
+            <p className="text-text-body max-w-2xl mx-auto">
+              Professional visual content that showcases your work and wins more jobs.
+            </p>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            {packages.map((pkg, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, i) => (
               <motion.div
-                key={pkg.name}
-                initial={{ opacity: 0, y: 30 }}
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-2xl p-8 ${
-                  pkg.featured
-                    ? "bg-accent/5 border-2 border-accent/30"
-                    : "bg-bg-primary border border-border"
-                }`}
-                style={pkg.featured ? {
-                  boxShadow: "0 0 60px rgba(40, 232, 253, 0.15)"
-                } : {}}
+                className="card-embossed p-6 text-center"
               >
-                {pkg.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-bg-primary text-xs font-semibold px-4 py-1 rounded-full">
-                    {pkg.badge}
-                  </div>
-                )}
-
-                <h3 className="text-2xl text-text-headline mb-2">{pkg.name}</h3>
-                <div className="mb-4">
-                  <span className="text-4xl text-text-headline">{pkg.price}</span>
-                  <span className="text-text-muted">{pkg.period}</span>
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 mx-auto">
+                  <feature.icon className="w-6 h-6 text-accent" />
                 </div>
-                <p className="text-text-body text-sm mb-6">{pkg.description}</p>
+                <h3 className="text-lg font-medium text-text-headline mb-2">{feature.title}</h3>
+                <p className="text-text-muted text-sm">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm">
-                      <svg
-                        className="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-text-body">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* How It Works */}
+      <SectionWrapper className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            How It Works
+          </h2>
 
-                <Button
-                  href="/contact"
-                  variant={pkg.featured ? "primary" : "glass"}
-                  fullWidth
-                >
-                  Get Started
-                </Button>
+          <div className="space-y-6">
+            {process.map((step, i) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-semibold text-lg">{step.step}</span>
+                </div>
+                <div className="card-embossed p-6 flex-1">
+                  <h3 className="text-lg font-medium text-text-headline mb-2">{step.title}</h3>
+                  <p className="text-text-muted">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Results */}
+      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline text-center mb-12">
+            Results You Can Expect
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {results.map((result, i) => (
+              <motion.div
+                key={result.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-semibold text-accent mb-2">{result.stat}</div>
+                <p className="text-text-muted text-sm">{result.label}</p>
               </motion.div>
             ))}
           </div>
@@ -273,15 +232,14 @@ export default function ContentServicePage() {
       {/* CTA */}
       <SectionWrapper className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-text-headline mb-4">
-            Ready to Upgrade Your Visuals?
+          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-4">
+            Ready to Get Started?
           </h2>
           <p className="text-text-body text-lg mb-8">
-            Send us your worst job site photo. We'll transform it for free so you can see
-            the difference.
+            Book a free call. We&apos;ll show you examples of what we can do with your photos.
           </p>
           <Button href="/contact" variant="primary" size="lg">
-            Get Free Sample
+            Book a Call
           </Button>
         </div>
       </SectionWrapper>

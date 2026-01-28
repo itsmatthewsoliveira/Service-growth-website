@@ -21,12 +21,10 @@ const industriesDropdown = [
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services", dropdown: servicesDropdown },
-  { href: "/packages", label: "Packages" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/industries", label: "Industries", dropdown: industriesDropdown },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/faq", label: "FAQ" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function DropdownMenu({

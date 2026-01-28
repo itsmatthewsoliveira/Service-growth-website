@@ -3,9 +3,11 @@ import Link from "next/link";
 const footerLinks = {
   pages: [
     { href: "/", label: "Home" },
-    { href: "/packages", label: "Packages" },
+    { href: "/how-it-works", label: "How It Works" },
     { href: "/about", label: "About" },
+    { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
+    { href: "/community", label: "The Growth Lab" },
   ],
   services: [
     { href: "/services/website", label: "Website Services" },
@@ -27,7 +29,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-text-headline mb-4">
+            <h3 className="text-2xl font-serif text-text-headline mb-4">
               ServiceGrowth.ai
             </h3>
             <p className="text-text-muted text-sm max-w-xs">
