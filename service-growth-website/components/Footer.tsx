@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   pages: [
@@ -29,9 +30,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-serif text-text-headline mb-4">
-              ServiceGrowth.ai
-            </h3>
+            <Link href="/" className="inline-block mb-4 logo-glow">
+              <Image
+                src="/logo.png"
+                alt="Service Growth AI"
+                width={160}
+                height={36}
+                className="h-7 w-auto"
+              />
+            </Link>
             <p className="text-text-muted text-sm max-w-xs">
               AI that actually works for service businesses. Built by operators,
               for operators.

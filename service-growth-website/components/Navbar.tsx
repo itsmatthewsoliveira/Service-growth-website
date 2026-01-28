@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
@@ -70,9 +71,16 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-text-headline tracking-tight"
+            className="relative flex items-center logo-glow"
           >
-            ServiceGrowth.ai
+            <Image
+              src="/logo.png"
+              alt="Service Growth AI"
+              width={180}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
