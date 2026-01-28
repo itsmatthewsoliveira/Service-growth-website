@@ -6,6 +6,7 @@ import { MoveRight, PhoneCall, MessageSquare, Calendar, CheckCircle } from "luci
 import { Button } from "@/components/ui/shadcn-button";
 import Link from "next/link";
 import LightPillar from "@/components/LightPillar";
+import DarkVeil from "@/components/DarkVeil";
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -27,6 +28,19 @@ function Hero() {
 
   return (
     <div className="w-full relative overflow-hidden">
+      {/* Dark Veil Background Effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <DarkVeil
+          hueShift={40}
+          noiseIntensity={0.2}
+          scanlineIntensity={0}
+          speed={0.5}
+          scanlineFrequency={35}
+          warpAmount={0.6}
+          resolutionScale={1}
+        />
+      </div>
+
       {/* Light Pillar Background Effect */}
       <div className="absolute inset-0 pointer-events-none">
         <LightPillar
