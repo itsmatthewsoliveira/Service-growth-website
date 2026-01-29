@@ -76,7 +76,7 @@ export default function Navbar() {
               src="/logo-header-transparent.png"
               srcSet="/logo-header-transparent.png 1x, /logo-header-transparent@2x.png 2x"
               alt="Service Growth AI"
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
