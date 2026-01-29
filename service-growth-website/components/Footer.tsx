@@ -32,11 +32,11 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4 logo-glow">
               <Image
-                src="/logo.png"
+                src="/logo-header@2x.png"
                 alt="Service Growth AI"
                 width={200}
                 height={45}
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </Link>
             <p className="text-text-muted text-sm max-w-xs">

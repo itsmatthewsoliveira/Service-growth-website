@@ -1,28 +1,25 @@
-import { Metadata } from "next";
-import Button from "@/components/ui/Button";
+"use client";
 
-export const metadata: Metadata = {
-  title:
-    "AI for Medical Practices - Dentists, Chiropractors, Med Spas | Service Growth AI",
-  description:
-    "Fill empty chairs automatically. Reduce no-shows by 30-50%, capture every new patient inquiry, and keep your schedule full.",
-};
+import { motion } from "framer-motion";
+import Button from "@/components/Button";
+import SectionWrapper from "@/components/SectionWrapper";
+import { Shield, Heart, Calendar, Phone, Bot, Star, RefreshCw, Lock, MessageSquare } from "lucide-react";
 
 const challenges = [
   {
-    icon: "🔐",
+    icon: Lock,
     title: "HIPAA Compliance",
     description:
       "You can't just use any software. It needs to be secure, compliant, and trustworthy. We get it—that's why we only use HIPAA-compliant systems and sign BAAs.",
   },
   {
-    icon: "🤝",
+    icon: Heart,
     title: "Patient Trust",
     description:
       "Medical feels personal. Automation can feel cold. Our AI is conversational and warm—patients appreciate the instant response more than they notice the automation.",
   },
   {
-    icon: "🪑",
+    icon: Calendar,
     title: "No-Shows Kill Revenue",
     description:
       "Empty chairs cost you $200-500+ per hour. Automated reminders via text and email reduce no-shows by 30-50%, keeping your schedule full and revenue flowing.",
@@ -85,35 +82,35 @@ const objections = [
 
 const features = [
   {
-    icon: "📱",
+    icon: MessageSquare,
     title: "SMS Appointment Reminders",
     description: "Automated text reminders that reduce no-shows dramatically.",
   },
   {
-    icon: "🤖",
+    icon: Bot,
     title: "AI Lead Capture",
     description: "Respond to new patient inquiries in under 60 seconds, 24/7.",
   },
   {
-    icon: "⭐",
+    icon: Star,
     title: "Review Generation",
     description:
       "Automated review requests timed perfectly after positive visits.",
   },
   {
-    icon: "📞",
+    icon: Phone,
     title: "After-Hours Voice Bot",
     description:
       "AI handles calls when your office is closed. Never miss a new patient.",
   },
   {
-    icon: "🔄",
+    icon: RefreshCw,
     title: "Patient Reactivation",
     description:
       "Automated outreach to dormant patients. Fill gaps in your schedule.",
   },
   {
-    icon: "🔒",
+    icon: Shield,
     title: "HIPAA Compliance",
     description: "All systems HIPAA-compliant. BAAs signed. Data protected.",
   },
@@ -123,147 +120,200 @@ export default function MedicalPage() {
   return (
     <>
       {/* Hero */}
-      <header className="pt-16 pb-20 px-6 max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-xs font-medium mb-8 text-white/80">
-          <span className="text-2xl">🩺</span>
-          For Dentists, Chiropractors, Med Spas & Clinics
-        </div>
-        <h1 className="text-5xl md:text-7xl leading-[0.9] text-white mb-8 font-serif">
-          Fill Empty Chairs.
-          <br />
-          <span className="italic text-white/50">Automatically.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-white/60 max-w-3xl leading-relaxed font-sans mb-10">
-          No-shows cost you $200-500+ per hour. Patients ghost after inquiring.
-          Your front desk is overwhelmed. Our AI reduces no-shows, captures
-          every new patient inquiry, and keeps your schedule full.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button href="/contact" variant="primary" size="lg">
-            Reduce No-Shows by 40%
-          </Button>
-          <Button href="/pricing" variant="secondary" size="lg">
-            View Pricing
-          </Button>
-        </div>
-      </header>
-
-      {/* HIPAA Badge */}
-      <section className="px-6 max-w-5xl mx-auto pb-12">
-        <div className="bg-green-500/10 border border-green-500/30 rounded-[4px] p-4 flex items-center gap-4">
-          <div className="text-3xl">🔒</div>
-          <div>
-            <div className="text-green-400 font-medium">HIPAA Compliant</div>
-            <div className="text-white/50 text-sm">
-              All systems are HIPAA-compliant. We sign BAAs. Your patient data
-              is protected.
+      <section className="gradient-hero pt-20 pb-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/20 bg-accent/5 text-sm text-text-body mb-8">
+              <span className="text-2xl">🩺</span>
+              For Dentists, Chiropractors, Med Spas & Clinics
             </div>
-          </div>
+          </motion.div>
+
+          <motion.h1
+            className="text-5xl md:text-7xl leading-[0.9] text-text-headline mb-8 font-serif"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Fill Empty Chairs.
+            <br />
+            <span className="italic text-accent">Automatically.</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-lg md:text-xl text-text-body max-w-3xl leading-relaxed mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            No-shows cost you $200-500+ per hour. Patients ghost after inquiring.
+            Your front desk is overwhelmed. Our AI reduces no-shows, captures
+            every new patient inquiry, and keeps your schedule full.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Button href="/contact" variant="primary" size="lg">
+              Reduce No-Shows by 40%
+            </Button>
+            <Button href="/pricing" variant="glass" size="lg">
+              View Pricing
+            </Button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Challenges */}
-      <section className="bg-secondary py-24 px-6">
+      {/* HIPAA Badge */}
+      <SectionWrapper className="px-6 pb-12">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-12 font-serif">
+          <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center">
+              <Shield className="w-6 h-6 text-green-400" />
+            </div>
+            <div>
+              <div className="text-green-400 font-medium">HIPAA Compliant</div>
+              <div className="text-text-muted text-sm">
+                All systems are HIPAA-compliant. We sign BAAs. Your patient data
+                is protected.
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Challenges */}
+      <SectionWrapper className="py-24 px-6 bg-bg-secondary">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl text-text-headline mb-12 font-serif">
             We Understand Medical Practices
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {challenges.map((item, i) => (
-              <div key={i} className="space-y-4">
-                <div className="text-4xl">{item.icon}</div>
-                <h3 className="text-xl text-white">{item.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+              <motion.div
+                key={i}
+                className="card-embossed p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-xl text-text-headline mb-2">{item.title}</h3>
+                <p className="text-text-muted text-sm leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Key Services */}
-      <section className="py-24 px-6">
+      <SectionWrapper className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-4 font-serif">
+          <h2 className="text-3xl md:text-4xl text-text-headline mb-4 font-serif">
             What Matters Most for Your Practice
           </h2>
-          <p className="text-white/60 mb-12 text-lg">
+          <p className="text-text-body mb-12 text-lg">
             The services that move the needle for medical practices.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-muted border border-white/10 rounded-[4px] p-8"
+                className="card-embossed p-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-primary text-sm font-medium mb-2">
+                <div className="text-accent text-sm font-medium mb-2">
                   {service.category}
                 </div>
-                <h3 className="text-2xl text-white mb-4 font-serif">{service.title}</h3>
-                <p className="text-white/60 leading-relaxed mb-4">
+                <h3 className="text-2xl text-text-headline mb-4 font-serif">{service.title}</h3>
+                <p className="text-text-body leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <div className="text-primary font-bold text-lg">
+                <div className="text-accent font-bold text-lg">
                   {service.result}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Objection Handling */}
-      <section className="bg-neutral-900 py-24 px-6">
+      <SectionWrapper className="py-24 px-6 bg-bg-secondary">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-12 text-center font-serif">
+          <h2 className="text-3xl md:text-4xl text-text-headline mb-12 text-center font-serif">
             Common Questions from Medical Practices
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {objections.map((item, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-muted border border-white/5 rounded-[4px] p-6"
+                className="card-embossed p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <h3 className="text-lg text-white mb-3">{item.question}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <h3 className="text-lg text-accent mb-3">{item.question}</h3>
+                <p className="text-text-body text-sm leading-relaxed">
                   {item.answer}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* What's Included */}
-      <section className="py-24 px-6">
+      <SectionWrapper className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-white mb-12 text-center font-serif">
+          <h2 className="text-3xl md:text-4xl text-text-headline mb-12 text-center font-serif">
             What&apos;s Included
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-secondary border border-white/10 p-6 rounded-[4px]"
+                className="card-embossed p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
               >
-                <div className="text-2xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg text-white mb-2">{feature.title}</h3>
-                <p className="text-white/50 text-sm">{feature.description}</p>
-              </div>
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <feature.icon className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="text-lg text-text-headline mb-2">{feature.title}</h3>
+                <p className="text-text-muted text-sm">{feature.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-muted">
+      <SectionWrapper className="py-24 px-6 bg-bg-card border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl text-white mb-6 font-serif">
-            Ready to Fill Your Schedule?
+          <h2 className="text-4xl md:text-5xl text-text-headline mb-6 font-serif">
+            Ready to Fill <span className="italic text-accent">Your Schedule?</span>
           </h2>
-          <p className="text-white/60 text-lg mb-8">
+          <p className="text-text-body text-lg mb-8">
             Book a free 15-minute audit. We&apos;ll show you how much empty
             chair time is costing you—and how to fix it.
           </p>
@@ -271,12 +321,12 @@ export default function MedicalPage() {
             <Button href="/contact" variant="primary" size="lg">
               Get Your Free Audit
             </Button>
-            <Button href="/pricing" variant="outline" size="lg">
+            <Button href="/pricing" variant="glass" size="lg">
               See Pricing
             </Button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </>
   );
 }
