@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const footerLinks = {
   pages: [
@@ -31,11 +30,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4 logo-glow">
-              <Image
-                src="/logo-header@2x.png"
+              <img
+                src="/logo-header.png"
+                srcSet="/logo-header.png 1x, /logo-header@2x.png 2x"
                 alt="Service Growth AI"
-                width={200}
-                height={45}
                 className="h-8 w-auto"
               />
             </Link>

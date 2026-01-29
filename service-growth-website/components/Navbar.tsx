@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
@@ -73,13 +72,11 @@ export default function Navbar() {
             href="/"
             className="relative flex items-center logo-glow"
           >
-            <Image
-              src="/logo-header@2x.png"
+            <img
+              src="/logo-header.png"
+              srcSet="/logo-header.png 1x, /logo-header@2x.png 2x"
               alt="Service Growth AI"
-              width={220}
-              height={50}
               className="h-10 w-auto"
-              priority
             />
           </Link>
 
