@@ -73,9 +73,10 @@ export default function Navbar() {
             className="relative flex items-center logo-glow"
           >
             <img
-              src="/logo-transparent.png"
+              src="/logo-header-transparent.png"
+              srcSet="/logo-header-transparent.png 1x, /logo-header-transparent@2x.png 2x"
               alt="Service Growth AI"
-              className="h-14 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 

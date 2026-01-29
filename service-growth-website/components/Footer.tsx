@@ -31,9 +31,10 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4 logo-glow">
               <img
-                src="/logo-transparent.png"
+                src="/logo-header-transparent.png"
+                srcSet="/logo-header-transparent.png 1x, /logo-header-transparent@2x.png 2x"
                 alt="Service Growth AI"
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="text-text-muted text-sm max-w-xs">
