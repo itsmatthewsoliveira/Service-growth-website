@@ -258,7 +258,7 @@ export default function AboutPage() {
             Ready to See If We&apos;re a Fit?
           </h2>
           <p className="text-text-body text-lg mb-8">
-            15-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re losing
+            25-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re losing
             leads—whether you hire us or not.
           </p>
           <Button href="/contact" variant="primary" size="lg">

@@ -52,7 +52,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-text-body max-w-2xl mx-auto"
           >
-            15-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re
+            25-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re
             losing leads—whether you hire us or not.
           </motion.p>
         </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {[
                   { stat: "500+", label: "Calls Booked" },
-                  { stat: "15min", label: "Avg Call Time" },
+                  { stat: "25min", label: "Avg Call Time" },
                   { stat: "100%", label: "Free" },
                 ].map((item, i) => (
                   <motion.div
@@ -215,13 +215,13 @@ export default function ContactPage() {
               </a>
               <span className="hidden sm:inline text-white/20">|</span>
               <a
-                href="tel:+1234567890"
+                href="tel:+19044542240"
                 className="inline-flex items-center gap-2 text-accent hover:underline"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                (123) 456-7890
+                (904) 454-2240
               </a>
             </div>
           </div>

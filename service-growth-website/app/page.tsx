@@ -347,7 +347,7 @@ export default function HomePage() {
             <span className="italic text-accent">losing leads?</span>
           </h2>
           <p className="text-text-body text-xl mb-12 max-w-2xl mx-auto">
-            Book a free 15-minute audit. We&apos;ll show you exactly where you&apos;re bleeding money—whether you hire us or not.
+            Book a free 25-minute audit. We&apos;ll show you exactly where you&apos;re bleeding money—whether you hire us or not.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button href="/contact" variant="primary" size="lg">Book Your Free Audit</Button>

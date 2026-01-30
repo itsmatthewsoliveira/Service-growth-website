@@ -24,11 +24,35 @@ export const metadata: Metadata = {
   title: "ServiceGrowth.ai - AI That Actually Works for Service Businesses",
   description:
     "We scaled our own service business from $0 to $100K/month in 90 days. Now we build these systems for you. Home Services, Medical, Construction.",
+  metadataBase: new URL("https://servicegrowth.ai"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "ServiceGrowth.ai - AI That Actually Works for Service Businesses",
     description:
       "We scaled our own service business from $0 to $100K/month in 90 days. Now we build these systems for you.",
     type: "website",
+    url: "https://servicegrowth.ai",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ServiceGrowth.ai - AI for Service Businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ServiceGrowth.ai - AI That Actually Works for Service Businesses",
+    description:
+      "We scaled our own service business from $0 to $100K/month in 90 days. Now we build these systems for you.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -7,7 +7,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 const steps = [
   {
     step: "1",
-    badge: "30 minutes",
+    badge: "25 minutes",
     title: "Discovery Call",
     description: "We learn your business and identify where you're losing leads",
   },
@@ -50,7 +50,7 @@ const whatYouGet = [
 ];
 
 const yourTime = [
-  { time: "30 min", task: "Discovery call" },
+  { time: "25 min", task: "Discovery call" },
   { time: "30 min", task: "Fill out onboarding questionnaire" },
   { time: "30 min", task: "Review & approve the build" },
   { time: "30 min", task: "Team training (optional)" },
@@ -196,7 +196,7 @@ export default function HowItWorksPage() {
             Ready to Get Started?
           </h2>
           <p className="text-text-body text-lg mb-8">
-            Book your free 30-minute discovery call. We&apos;ll map out exactly what
+            Book your free 25-minute discovery call. We&apos;ll map out exactly what
             we&apos;d build for you—and you can decide if it makes sense.
           </p>
           <Button href="/contact" variant="primary" size="lg">
