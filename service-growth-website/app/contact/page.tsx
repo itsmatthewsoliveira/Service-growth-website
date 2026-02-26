@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Clock, Shield, Zap, Calendar } from "lucide-react";
@@ -146,42 +147,16 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Calendly Embed Placeholder */}
-              <div className="bg-[#0a0a0a]">
-                {/* Replace this div with actual Calendly embed */}
-                {/*
-                  To add Calendly, replace the placeholder below with:
-                  <iframe
-                    src="https://calendly.com/YOUR-LINK"
-                    width="100%"
-                    height="700"
-                    frameBorder="0"
-                  />
-                */}
-                <div className="h-[600px] flex flex-col items-center justify-center p-8 text-center">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mb-6">
-                    <Calendar className="w-8 h-8 text-accent" />
-                  </div>
-                  <h3 className="text-xl text-text-headline mb-3">
-                    Calendar Loading...
-                  </h3>
-                  <p className="text-text-muted text-sm max-w-xs mb-6">
-                    If the calendar doesn&apos;t load, you can book directly at our
-                    scheduling page.
-                  </p>
-                  <a
-                    href="https://calendly.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-black font-semibold rounded-full hover:bg-accent/90 transition-colors"
-                  >
-                    Open Calendar
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              {/* Calendly Inline Widget */}
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=28e8fd"
+                style={{ minWidth: "320px", height: "700px" }}
+              />
+              <Script
+                src="https://assets.calendly.com/assets/external/widget.js"
+                strategy="lazyOnload"
+              />
             </motion.div>
           </div>
         </div>
