@@ -45,10 +45,6 @@ interface FormData {
   primaryGoal: string;
   idealClient: string;
   problemSolved: string;
-  fatherCompanyName: string;
-  fatherRole: string;
-  fatherCompanyDetails: string;
-  fatherProjects: string;
   additionalNotes: string;
 }
 
@@ -79,10 +75,6 @@ const initialFormData: FormData = {
   primaryGoal: "",
   idealClient: "",
   problemSolved: "",
-  fatherCompanyName: "",
-  fatherRole: "",
-  fatherCompanyDetails: "",
-  fatherProjects: "",
   additionalNotes: "",
 };
 
@@ -96,21 +88,21 @@ const SECTIONS = [
 ];
 
 const SERVICE_OPTIONS = [
-  "Residential Construction",
-  "Commercial Construction",
-  "Remodeling / Renovations",
-  "Structural Engineering",
-  "Landscaping / Outdoor",
-  "Interior Design",
-  "Project Management",
-  "Industrial / Infrastructure",
+  "Website Design / Redesign",
+  "SEO & Search Rankings",
+  "Paid Ads (Google / Meta)",
+  "Social Media Management",
+  "Branding / Logo Design",
+  "Content Creation",
+  "Lead Generation",
+  "Business Automation",
 ];
 
 const BRAND_PERSONALITY_OPTIONS = [
   "Premium / Luxury",
   "Modern / Minimalist",
-  "Trustworthy / Family",
-  "Industrial / Bold",
+  "Trustworthy / Friendly",
+  "Bold / Confident",
   "Innovative / Tech-forward",
   "Traditional / Classic",
 ];
@@ -128,11 +120,11 @@ const PHOTOS_OPTIONS = [
 ];
 
 const GOAL_OPTIONS = [
-  { value: "Generate new client leads", label: "Generate new client leads" },
-  { value: "Build credibility / show portfolio", label: "Build credibility / show portfolio" },
-  { value: "Attract large commercial clients", label: "Attract large commercial clients" },
+  { value: "Generate more leads / customers", label: "Generate more leads / customers" },
+  { value: "Build credibility & trust online", label: "Build credibility & trust online" },
+  { value: "Attract higher-value clients", label: "Attract higher-value clients" },
   { value: "Replace word-of-mouth with online presence", label: "Replace word-of-mouth with online presence" },
-  { value: "Expand to new cities/regions", label: "Expand to new cities/regions" },
+  { value: "Expand to new areas / markets", label: "Expand to new areas / markets" },
   { value: "All of the above", label: "All of the above" },
 ];
 
@@ -302,7 +294,7 @@ export default function OnboardingForm() {
       <SectionHeader
         number="01"
         title="About Your Business"
-        subtitle="Tell us the fundamentals of your construction company."
+        subtitle="Tell us the fundamentals of your business."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <FormField label="Your Full Name">
@@ -310,7 +302,7 @@ export default function OnboardingForm() {
             type="text"
             value={formData.fullName}
             onChange={(e) => updateField("fullName", e.target.value)}
-            placeholder="e.g. Mateo Garcia"
+            placeholder="e.g. John Smith"
             className={inputClasses}
           />
         </FormField>
@@ -329,7 +321,7 @@ export default function OnboardingForm() {
           type="text"
           value={formData.companyName}
           onChange={(e) => updateField("companyName", e.target.value)}
-          placeholder="e.g. Garcia Construcciones S.A."
+          placeholder="e.g. Smith Plumbing LLC"
           className={inputClasses}
         />
       </FormField>
@@ -348,7 +340,7 @@ export default function OnboardingForm() {
             type="text"
             value={formData.city}
             onChange={(e) => updateField("city", e.target.value)}
-            placeholder="e.g. Mendoza, Argentina"
+            placeholder="e.g. Jacksonville, FL"
             className={inputClasses}
           />
         </FormField>
@@ -358,7 +350,7 @@ export default function OnboardingForm() {
           type="tel"
           value={formData.phone}
           onChange={(e) => updateField("phone", e.target.value)}
-          placeholder="+54 261 ..."
+          placeholder="(555) 123-4567"
           className={inputClasses}
         />
       </FormField>
@@ -396,7 +388,7 @@ export default function OnboardingForm() {
       <SectionHeader
         number="02"
         title="Services & Projects"
-        subtitle="Help us understand what you build and who you build it for."
+        subtitle="Help us understand what you offer and who you serve."
       />
       <FormField label="Primary Services Offered" hint="check all that apply">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -425,7 +417,7 @@ export default function OnboardingForm() {
           type="text"
           value={formData.otherServices}
           onChange={(e) => updateField("otherServices", e.target.value)}
-          placeholder="e.g. Pools, solar, smart homes..."
+          placeholder="Anything not listed above..."
           className={inputClasses}
         />
       </FormField>
@@ -441,7 +433,7 @@ export default function OnboardingForm() {
             type="text"
             value={formData.avgProjectSize}
             onChange={(e) => updateField("avgProjectSize", e.target.value)}
-            placeholder="e.g. $50,000 – $300,000 USD"
+            placeholder="e.g. $1,000 – $10,000"
             className={inputClasses}
           />
         </FormField>
@@ -450,16 +442,16 @@ export default function OnboardingForm() {
             type="text"
             value={formData.projectDuration}
             onChange={(e) => updateField("projectDuration", e.target.value)}
-            placeholder="e.g. 3–6 months"
+            placeholder="e.g. 1–4 weeks"
             className={inputClasses}
           />
         </FormField>
       </div>
-      <FormField label="Most Notable Project">
+      <FormField label="Biggest Win / Best Result">
         <textarea
           value={formData.notableProject}
           onChange={(e) => updateField("notableProject", e.target.value)}
-          placeholder="Describe a project you're most proud of..."
+          placeholder="A client success story, big project, or result you're proud of..."
           className={textareaClasses}
           rows={3}
         />
@@ -486,7 +478,7 @@ export default function OnboardingForm() {
           type="text"
           value={formData.serviceArea}
           onChange={(e) => updateField("serviceArea", e.target.value)}
-          placeholder="e.g. Mendoza Province, Gran Mendoza..."
+          placeholder="e.g. Northeast Florida, nationwide, etc."
           className={inputClasses}
         />
       </FormField>
@@ -615,7 +607,7 @@ export default function OnboardingForm() {
         <textarea
           value={formData.idealClient}
           onChange={(e) => updateField("idealClient", e.target.value)}
-          placeholder="Homeowners, developers, government, companies... age, budget, location..."
+          placeholder="e.g. Homeowners aged 35-55, local businesses, property managers..."
           className={textareaClasses}
           rows={3}
         />
@@ -625,53 +617,6 @@ export default function OnboardingForm() {
           value={formData.problemSolved}
           onChange={(e) => updateField("problemSolved", e.target.value)}
           placeholder="What pain points do clients come to you with?"
-          className={textareaClasses}
-          rows={3}
-        />
-      </FormField>
-
-      <hr className="border-accent/15" />
-      <span className="block text-xs tracking-[0.15em] uppercase text-accent/60 pb-2 border-b border-accent/10">
-        Father&apos;s Company{" "}
-        <span className="text-text-muted text-[10px] normal-case tracking-normal">
-          (complete if applicable)
-        </span>
-      </span>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <FormField label="Father's Company Name">
-          <input
-            type="text"
-            value={formData.fatherCompanyName}
-            onChange={(e) => updateField("fatherCompanyName", e.target.value)}
-            placeholder="Official business name"
-            className={inputClasses}
-          />
-        </FormField>
-        <FormField label="Father's Role / Title">
-          <input
-            type="text"
-            value={formData.fatherRole}
-            onChange={(e) => updateField("fatherRole", e.target.value)}
-            placeholder="e.g. Founder, Owner"
-            className={inputClasses}
-          />
-        </FormField>
-      </div>
-      <FormField label="Father's Company — Years & Specialty">
-        <textarea
-          value={formData.fatherCompanyDetails}
-          onChange={(e) => updateField("fatherCompanyDetails", e.target.value)}
-          placeholder="How long operating? What does his company specialize in?"
-          className={textareaClasses}
-          rows={3}
-        />
-      </FormField>
-      <FormField label="Father's Most Impressive Projects">
-        <textarea
-          value={formData.fatherProjects}
-          onChange={(e) => updateField("fatherProjects", e.target.value)}
-          placeholder="Landmark buildings, major contracts, notable clients..."
           className={textareaClasses}
           rows={3}
         />

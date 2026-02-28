@@ -36,10 +36,6 @@ interface OnboardingFormData {
   primaryGoal: string;
   idealClient: string;
   problemSolved: string;
-  fatherCompanyName: string;
-  fatherRole: string;
-  fatherCompanyDetails: string;
-  fatherProjects: string;
   additionalNotes: string;
 }
 
@@ -239,10 +235,6 @@ export async function POST(req: NextRequest) {
     primaryGoal,
     idealClient,
     problemSolved,
-    fatherCompanyName,
-    fatherRole,
-    fatherCompanyDetails,
-    fatherProjects,
     additionalNotes,
   } = body;
 
@@ -338,12 +330,6 @@ export async function POST(req: NextRequest) {
           headingBlock("heading_3", "04 — Goals"),
           richBlock("Ideal Client", idealClient),
           richBlock("Problem Solved", problemSolved),
-
-          headingBlock("heading_3", "Father's Company"),
-          richBlock("Company Name", fatherCompanyName),
-          richBlock("Role", fatherRole),
-          richBlock("Details", fatherCompanyDetails),
-          richBlock("Notable Projects", fatherProjects),
 
           headingBlock("heading_3", "Additional Notes"),
           richBlock("Notes", additionalNotes || "None provided"),
