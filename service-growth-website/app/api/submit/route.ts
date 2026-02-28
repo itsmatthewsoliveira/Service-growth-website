@@ -283,7 +283,7 @@ export async function POST(req: NextRequest) {
             number: yearsInBusiness ? parseInt(yearsInBusiness) : null,
           },
           "Project Status": {
-            status: { name: "Onboarding" },
+            status: { name: "Not started" },
           },
           "Primary Goal": {
             rich_text: [{ text: { content: primaryGoal || "" } }],
