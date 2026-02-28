@@ -7,6 +7,7 @@ interface OnboardingFormData {
   fullName: string;
   role: string;
   companyName: string;
+  industry: string;
   yearsInBusiness: string;
   city: string;
   phone: string;
@@ -104,6 +105,7 @@ async function sendEmailAlert(data: OnboardingFormData) {
           <p><strong>Email:</strong> ${data.email}</p>
           <p><strong>Phone:</strong> ${data.phone}</p>
           <p><strong>City:</strong> ${data.city}</p>
+          <p><strong>Industry:</strong> ${data.industry}</p>
           <p><strong>Primary Goal:</strong> ${data.primaryGoal}</p>
           <p><strong>Services:</strong> ${Array.isArray(data.services) ? data.services.join(", ") : data.services}</p>
           <hr>
@@ -182,8 +184,8 @@ async function sendSlackNotification(data: OnboardingFormData) {
               { type: "mrkdwn", text: `*Company:*\n${data.companyName}` },
               { type: "mrkdwn", text: `*Email:*\n${data.email}` },
               { type: "mrkdwn", text: `*Phone:*\n${data.phone}` },
+              { type: "mrkdwn", text: `*Industry:*\n${data.industry}` },
               { type: "mrkdwn", text: `*City:*\n${data.city}` },
-              { type: "mrkdwn", text: `*Goal:*\n${data.primaryGoal}` },
             ],
           },
           {
@@ -212,6 +214,7 @@ export async function POST(req: NextRequest) {
     fullName,
     role,
     companyName,
+    industry,
     yearsInBusiness,
     city,
     phone,
@@ -299,6 +302,7 @@ export async function POST(req: NextRequest) {
           headingBlock("heading_2", "Full Onboarding Responses"),
 
           headingBlock("heading_3", "01 — Business Basics"),
+          richBlock("Industry", industry),
           richBlock("Role", role),
           richBlock("Existing Website", existingWebsite),
           richBlock("Service Area", serviceArea),

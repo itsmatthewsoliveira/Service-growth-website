@@ -19,6 +19,7 @@ interface FormData {
   fullName: string;
   role: string;
   companyName: string;
+  industry: string;
   yearsInBusiness: string;
   city: string;
   phone: string;
@@ -52,6 +53,7 @@ const initialFormData: FormData = {
   fullName: "",
   role: "",
   companyName: "",
+  industry: "",
   yearsInBusiness: "",
   city: "",
   phone: "",
@@ -87,16 +89,110 @@ const SECTIONS = [
   { label: "Goals", number: "04" },
 ];
 
-const SERVICE_OPTIONS = [
-  "Website Design / Redesign",
-  "SEO & Search Rankings",
-  "Paid Ads (Google / Meta)",
-  "Social Media Management",
-  "Branding / Logo Design",
-  "Content Creation",
-  "Lead Generation",
-  "Business Automation",
+const INDUSTRY_OPTIONS = [
+  { value: "home-services", label: "Home Services" },
+  { value: "medical", label: "Medical / Healthcare" },
+  { value: "construction", label: "Construction / Contracting" },
+  { value: "legal", label: "Legal" },
+  { value: "real-estate", label: "Real Estate" },
+  { value: "automotive", label: "Automotive" },
+  { value: "restaurant", label: "Restaurant / Food Service" },
+  { value: "fitness", label: "Fitness / Wellness" },
+  { value: "other", label: "Other" },
 ];
+
+const SERVICES_BY_INDUSTRY: Record<string, string[]> = {
+  "home-services": [
+    "Plumbing",
+    "HVAC / Air Conditioning",
+    "Electrical",
+    "Roofing",
+    "Landscaping / Lawn Care",
+    "Cleaning Services",
+    "Pest Control",
+    "Painting",
+  ],
+  medical: [
+    "General Practice / Family Medicine",
+    "Dental",
+    "Chiropractic",
+    "Dermatology",
+    "Mental Health / Therapy",
+    "Physical Therapy",
+    "Urgent Care",
+    "Veterinary",
+  ],
+  construction: [
+    "Residential Construction",
+    "Commercial Construction",
+    "Remodeling / Renovations",
+    "Concrete / Masonry",
+    "Flooring / Tile",
+    "Framing / Structural",
+    "Demolition",
+    "Project Management",
+  ],
+  legal: [
+    "Personal Injury",
+    "Family Law / Divorce",
+    "Criminal Defense",
+    "Estate Planning",
+    "Business / Corporate Law",
+    "Immigration",
+    "Real Estate Law",
+    "Employment Law",
+  ],
+  "real-estate": [
+    "Residential Sales",
+    "Commercial Sales",
+    "Property Management",
+    "Real Estate Investment",
+    "Luxury / High-End",
+    "New Construction Sales",
+    "Rentals / Leasing",
+    "Land Development",
+  ],
+  automotive: [
+    "Auto Repair / Mechanic",
+    "Body Shop / Collision",
+    "Auto Detailing",
+    "Tire & Wheel Services",
+    "Oil Change / Quick Lube",
+    "Towing",
+    "Auto Sales (Used)",
+    "Auto Sales (New)",
+  ],
+  restaurant: [
+    "Dine-In Restaurant",
+    "Fast Casual",
+    "Catering",
+    "Food Truck",
+    "Bakery / Desserts",
+    "Coffee / Café",
+    "Bar / Nightlife",
+    "Meal Prep / Delivery",
+  ],
+  fitness: [
+    "Personal Training",
+    "Gym / Fitness Center",
+    "Yoga / Pilates",
+    "Martial Arts",
+    "CrossFit / Boot Camp",
+    "Nutrition / Coaching",
+    "Spa / Massage",
+    "Physical Rehabilitation",
+  ],
+  other: [
+    "Consulting",
+    "IT / Technology Services",
+    "Accounting / Tax",
+    "Marketing / Advertising",
+    "Photography / Videography",
+    "Education / Tutoring",
+    "Event Planning",
+    "Retail / E-commerce",
+  ],
+};
 
 const BRAND_PERSONALITY_OPTIONS = [
   "Premium / Luxury",
@@ -325,6 +421,27 @@ export default function OnboardingForm() {
           className={inputClasses}
         />
       </FormField>
+      <FormField label="Industry">
+        <select
+          value={formData.industry}
+          onChange={(e) => {
+            updateField("industry", e.target.value);
+            // Clear selected services when industry changes
+            setFormData((prev) => ({ ...prev, industry: e.target.value, services: [] }));
+          }}
+          className={selectClasses}
+          style={selectStyle}
+        >
+          <option value="" className="bg-bg-card">
+            Select your industry...
+          </option>
+          {INDUSTRY_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value} className="bg-bg-card">
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </FormField>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <FormField label="Years in Business">
           <input
@@ -391,26 +508,32 @@ export default function OnboardingForm() {
         subtitle="Help us understand what you offer and who you serve."
       />
       <FormField label="Primary Services Offered" hint="check all that apply">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {SERVICE_OPTIONS.map((service) => (
-            <label
-              key={service}
-              className={`flex items-center gap-3 px-4 py-3 border cursor-pointer transition-all duration-300 select-none ${
-                formData.services.includes(service)
-                  ? "border-accent/50 bg-accent/[0.06]"
-                  : "border-accent/15 hover:border-accent/30 hover:bg-accent/[0.02]"
-              }`}
-            >
-              <input
-                type="checkbox"
-                checked={formData.services.includes(service)}
-                onChange={() => toggleCheckbox("services", service)}
-                className="w-3.5 h-3.5 accent-accent flex-shrink-0"
-              />
-              <span className="text-sm text-white tracking-wide">{service}</span>
-            </label>
-          ))}
-        </div>
+        {formData.industry ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {(SERVICES_BY_INDUSTRY[formData.industry] || []).map((service) => (
+              <label
+                key={service}
+                className={`flex items-center gap-3 px-4 py-3 border cursor-pointer transition-all duration-300 select-none ${
+                  formData.services.includes(service)
+                    ? "border-accent/50 bg-accent/[0.06]"
+                    : "border-accent/15 hover:border-accent/30 hover:bg-accent/[0.02]"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={formData.services.includes(service)}
+                  onChange={() => toggleCheckbox("services", service)}
+                  className="w-3.5 h-3.5 accent-accent flex-shrink-0"
+                />
+                <span className="text-sm text-white tracking-wide">{service}</span>
+              </label>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-text-muted italic py-4 border border-dashed border-accent/15 text-center">
+            Please select your industry in Step 1 to see relevant services.
+          </p>
+        )}
       </FormField>
       <FormField label="Other Services">
         <input
