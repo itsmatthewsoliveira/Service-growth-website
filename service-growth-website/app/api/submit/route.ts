@@ -279,6 +279,9 @@ export async function POST(req: NextRequest) {
           City: {
             rich_text: [{ text: { content: city || "" } }],
           },
+          Industry: {
+            rich_text: [{ text: { content: industry || "" } }],
+          },
           "Years in Business": {
             number: yearsInBusiness ? parseInt(yearsInBusiness) : null,
           },
@@ -287,6 +290,9 @@ export async function POST(req: NextRequest) {
           },
           "Primary Goal": {
             rich_text: [{ text: { content: primaryGoal || "" } }],
+          },
+          Services: {
+            rich_text: [{ text: { content: Array.isArray(services) ? services.join(", ") : (services || "") } }],
           },
           "Has Logo": {
             select: { name: hasLogo || "Unknown" },
@@ -302,10 +308,15 @@ export async function POST(req: NextRequest) {
           headingBlock("heading_2", "Full Onboarding Responses"),
 
           headingBlock("heading_3", "01 — Business Basics"),
-          richBlock("Industry", industry),
+          richBlock("Full Name", fullName),
           richBlock("Role", role),
+          richBlock("Company", companyName),
+          richBlock("Industry", industry),
+          richBlock("Years in Business", yearsInBusiness),
+          richBlock("City", city),
+          richBlock("Phone", phone),
+          richBlock("Email", email),
           richBlock("Existing Website", existingWebsite),
-          richBlock("Service Area", serviceArea),
           richBlock("Company Description", companyDescription),
 
           headingBlock("heading_3", "02 — Services & Projects"),
@@ -317,6 +328,8 @@ export async function POST(req: NextRequest) {
           richBlock("Avg Project Size", avgProjectSize),
           richBlock("Project Duration", projectDuration),
           richBlock("Notable Project", notableProject),
+          richBlock("Photos Available", photosAvailable),
+          richBlock("Service Area", serviceArea),
 
           headingBlock("heading_3", "03 — Brand & Identity"),
           richBlock(
@@ -325,6 +338,7 @@ export async function POST(req: NextRequest) {
               ? brandPersonality.join(", ")
               : brandPersonality
           ),
+          richBlock("Has Logo", hasLogo),
           richBlock("Brand Colors", brandColors),
           richBlock("Fonts", fonts),
           richBlock("Competitor Websites", competitorWebsites),
@@ -332,6 +346,7 @@ export async function POST(req: NextRequest) {
           richBlock("Website Feeling", websiteFeeling),
 
           headingBlock("heading_3", "04 — Goals"),
+          richBlock("Primary Goal", primaryGoal),
           richBlock("Ideal Client", idealClient),
           richBlock("Problem Solved", problemSolved),
 
