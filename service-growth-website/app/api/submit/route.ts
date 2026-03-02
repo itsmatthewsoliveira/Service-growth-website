@@ -279,9 +279,6 @@ export async function POST(req: NextRequest) {
           City: {
             rich_text: [{ text: { content: city || "" } }],
           },
-          Industry: {
-            rich_text: [{ text: { content: industry || "" } }],
-          },
           "Years in Business": {
             number: yearsInBusiness ? parseInt(yearsInBusiness) : null,
           },
@@ -290,9 +287,6 @@ export async function POST(req: NextRequest) {
           },
           "Primary Goal": {
             rich_text: [{ text: { content: primaryGoal || "" } }],
-          },
-          Services: {
-            rich_text: [{ text: { content: Array.isArray(services) ? services.join(", ") : (services || "") } }],
           },
           "Has Logo": {
             select: { name: hasLogo || "Unknown" },
