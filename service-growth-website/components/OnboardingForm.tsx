@@ -8,9 +8,9 @@ import {
   Check,
   Loader2,
   Calendar,
-  Mail,
-  Clock,
+  Globe,
 } from "lucide-react";
+import { type Lang, LANG_LABELS, ts, ta, tMap } from "@/lib/onboarding-translations";
 
 // ─── Form Data ────────────────────────────────────────────────────────────────
 
@@ -80,25 +80,18 @@ const initialFormData: FormData = {
   additionalNotes: "",
 };
 
-// ─── Constants ────────────────────────────────────────────────────────────────
+// ─── Constants (services data — language-independent values) ──────────────────
 
-const SECTIONS = [
-  { label: "Business", number: "01" },
-  { label: "Services", number: "02" },
-  { label: "Brand", number: "03" },
-  { label: "Goals", number: "04" },
-];
-
-const INDUSTRY_OPTIONS = [
-  { value: "home-services", label: "Home Services" },
-  { value: "medical", label: "Medical / Healthcare" },
-  { value: "construction", label: "Construction / Contracting" },
-  { value: "legal", label: "Legal" },
-  { value: "real-estate", label: "Real Estate" },
-  { value: "automotive", label: "Automotive" },
-  { value: "restaurant", label: "Restaurant / Food Service" },
-  { value: "fitness", label: "Fitness / Wellness" },
-  { value: "other", label: "Other" },
+const INDUSTRY_KEYS = [
+  "home-services",
+  "medical",
+  "construction",
+  "legal",
+  "real-estate",
+  "automotive",
+  "restaurant",
+  "fitness",
+  "other",
 ];
 
 const SERVICES_BY_INDUSTRY: Record<string, string[]> = {
@@ -194,36 +187,6 @@ const SERVICES_BY_INDUSTRY: Record<string, string[]> = {
   ],
 };
 
-const BRAND_PERSONALITY_OPTIONS = [
-  "Premium / Luxury",
-  "Modern / Minimalist",
-  "Trustworthy / Friendly",
-  "Bold / Confident",
-  "Innovative / Tech-forward",
-  "Traditional / Classic",
-];
-
-const LOGO_OPTIONS = [
-  { value: "Yes — approved logo with files", label: "Yes — approved logo with files" },
-  { value: "Yes — but needs redesign", label: "Yes — but needs redesign" },
-  { value: "No — we need a logo", label: "No — we need a logo" },
-];
-
-const PHOTOS_OPTIONS = [
-  { value: "Yes — high resolution photos available", label: "Yes — high resolution photos available" },
-  { value: "Yes — but photos need to be taken/found", label: "Yes — but photos need to be taken/found" },
-  { value: "No — we'll need to discuss alternatives", label: "No — we'll need to discuss alternatives" },
-];
-
-const GOAL_OPTIONS = [
-  { value: "Generate more leads / customers", label: "Generate more leads / customers" },
-  { value: "Build credibility & trust online", label: "Build credibility & trust online" },
-  { value: "Attract higher-value clients", label: "Attract higher-value clients" },
-  { value: "Replace word-of-mouth with online presence", label: "Replace word-of-mouth with online presence" },
-  { value: "Expand to new areas / markets", label: "Expand to new areas / markets" },
-  { value: "All of the above", label: "All of the above" },
-];
-
 const CALENDLY_URL =
   "https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=28e8fd";
 
@@ -267,14 +230,56 @@ const selectStyle = {
   backgroundSize: "1.5em 1.5em",
 };
 
+// ─── Language Switcher ────────────────────────────────────────────────────────
+
+function LanguageSwitcher({
+  lang,
+  setLang,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+}) {
+  const langs: Lang[] = ["en", "es", "pt"];
+
+  return (
+    <div className="flex items-center gap-2 mb-10 justify-end">
+      <Globe className="w-3.5 h-3.5 text-accent/60" />
+      <div className="flex border border-accent/20 overflow-hidden">
+        {langs.map((l) => (
+          <button
+            key={l}
+            type="button"
+            onClick={() => setLang(l)}
+            className={`px-3 py-1.5 text-[10px] tracking-[0.15em] uppercase font-medium transition-all duration-300 ${
+              lang === l
+                ? "bg-accent text-black"
+                : "text-text-muted hover:text-white hover:bg-white/5"
+            }`}
+          >
+            {LANG_LABELS[l]}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function OnboardingForm() {
+export default function OnboardingForm({
+  lang,
+  setLang,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+}) {
   const [current, setCurrent] = useState(0);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  const sectionLabels = ta("sections", lang);
 
   function updateField(field: keyof FormData, value: string) {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -313,7 +318,7 @@ export default function OnboardingForm() {
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
-      setError("Something went wrong. Please try again or email us directly.");
+      setError(ts("errorMessage", lang));
       setSubmitting(false);
     }
   }
@@ -333,24 +338,18 @@ export default function OnboardingForm() {
         </div>
 
         <h2 className="text-4xl md:text-5xl font-serif text-text-headline mb-4">
-          Thank You.
+          {ts("thankYou", lang)}
         </h2>
         <p className="text-sm text-text-muted max-w-md mx-auto leading-relaxed tracking-wide">
-          Your onboarding questionnaire has been submitted. We review every
-          response carefully before beginning work.
+          {ts("submittedMessage", lang)}
         </p>
 
         <div className="mt-10 border border-accent/20 text-left max-w-md mx-auto p-6">
           <span className="text-xs tracking-[0.15em] uppercase text-accent block mb-4">
-            What Happens Next
+            {ts("whatsNext", lang)}
           </span>
           <ul className="space-y-3">
-            {[
-              "You'll receive a confirmation email within 1 hour",
-              "We'll review your answers within 24 hours",
-              "A project strategy call will be scheduled",
-              "Website design begins within 3–5 business days",
-            ].map((step, i) => (
+            {ta("nextSteps", lang).map((step, i) => (
               <li
                 key={i}
                 className="flex items-start gap-3 text-sm text-white/70 tracking-wide"
@@ -371,16 +370,24 @@ export default function OnboardingForm() {
             className="group flex items-center justify-center gap-3 w-full px-8 py-4 bg-accent text-black text-sm font-medium tracking-wide uppercase transition-all duration-300 hover:bg-accent-hover hover:-translate-y-0.5"
           >
             <Calendar className="w-4 h-4" />
-            Book Your Strategy Call Now
+            {ts("bookCall", lang)}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
           <p className="text-text-muted text-xs mt-3">
-            Skip the wait — book a time directly on our calendar.
+            {ts("skipWait", lang)}
           </p>
         </div>
       </motion.div>
     );
   }
+
+  // ─── Translated option arrays ──────────────────────────────────────────────
+
+  const industryMap = tMap("industryOptions", lang);
+  const brandTraits = ta("brandPersonalityOptions", lang);
+  const logoOpts = ta("logoOptions", lang);
+  const photoOpts = ta("photosOptions", lang);
+  const goalOpts = ta("goalOptions", lang);
 
   // ─── Form Sections ────────────────────────────────────────────────────────
 
@@ -389,111 +396,111 @@ export default function OnboardingForm() {
     <div key="s1" className="space-y-8">
       <SectionHeader
         number="01"
-        title="About Your Business"
-        subtitle="Tell us the fundamentals of your business."
+        total="04"
+        title={ts("s1Title", lang)}
+        subtitle={ts("s1Subtitle", lang)}
+        sectionWord={ts("sectionLabel", lang)}
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <FormField label="Your Full Name">
+        <FormField label={ts("fullName", lang)}>
           <input
             type="text"
             value={formData.fullName}
             onChange={(e) => updateField("fullName", e.target.value)}
-            placeholder="e.g. John Smith"
+            placeholder={ts("fullNamePh", lang)}
             className={inputClasses}
           />
         </FormField>
-        <FormField label="Your Role / Title">
+        <FormField label={ts("role", lang)}>
           <input
             type="text"
             value={formData.role}
             onChange={(e) => updateField("role", e.target.value)}
-            placeholder="e.g. Owner, Director"
+            placeholder={ts("rolePh", lang)}
             className={inputClasses}
           />
         </FormField>
       </div>
-      <FormField label="Company Name" hint="official / legal name">
+      <FormField label={ts("companyName", lang)} hint={ts("companyNameHint", lang)}>
         <input
           type="text"
           value={formData.companyName}
           onChange={(e) => updateField("companyName", e.target.value)}
-          placeholder="e.g. Smith Plumbing LLC"
+          placeholder={ts("companyNamePh", lang)}
           className={inputClasses}
         />
       </FormField>
-      <FormField label="Industry">
+      <FormField label={ts("industry", lang)}>
         <select
           value={formData.industry}
           onChange={(e) => {
-            updateField("industry", e.target.value);
-            // Clear selected services when industry changes
             setFormData((prev) => ({ ...prev, industry: e.target.value, services: [] }));
           }}
           className={selectClasses}
           style={selectStyle}
         >
           <option value="" className="bg-bg-card">
-            Select your industry...
+            {ts("industryPh", lang)}
           </option>
-          {INDUSTRY_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value} className="bg-bg-card">
-              {opt.label}
+          {INDUSTRY_KEYS.map((key) => (
+            <option key={key} value={key} className="bg-bg-card">
+              {industryMap[key]}
             </option>
           ))}
         </select>
       </FormField>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <FormField label="Years in Business">
+        <FormField label={ts("yearsInBusiness", lang)}>
           <input
             type="number"
             value={formData.yearsInBusiness}
             onChange={(e) => updateField("yearsInBusiness", e.target.value)}
-            placeholder="e.g. 12"
+            placeholder={ts("yearsInBusinessPh", lang)}
             className={inputClasses}
           />
         </FormField>
-        <FormField label="City / Province">
+        <FormField label={ts("city", lang)}>
           <input
             type="text"
             value={formData.city}
             onChange={(e) => updateField("city", e.target.value)}
-            placeholder="e.g. Jacksonville, FL"
+            placeholder={ts("cityPh", lang)}
             className={inputClasses}
           />
         </FormField>
       </div>
-      <FormField label="Phone Number">
+      <FormField label={ts("phone", lang)}>
         <input
           type="tel"
           value={formData.phone}
           onChange={(e) => updateField("phone", e.target.value)}
-          placeholder="(555) 123-4567"
+          placeholder={ts("phonePh", lang)}
           className={inputClasses}
         />
       </FormField>
-      <FormField label="Email Address">
+      <FormField label={ts("email", lang)}>
         <input
           type="email"
           value={formData.email}
           onChange={(e) => updateField("email", e.target.value)}
-          placeholder="contact@yourcompany.com"
+          placeholder={ts("emailPh", lang)}
           className={inputClasses}
         />
       </FormField>
-      <FormField label="Existing Website" hint="if any">
+      <FormField label={ts("existingWebsite", lang)} hint={ts("existingWebsiteHint", lang)}>
         <input
           type="url"
           value={formData.existingWebsite}
           onChange={(e) => updateField("existingWebsite", e.target.value)}
-          placeholder="https://yoursite.com  — or leave blank"
+          placeholder={ts("existingWebsitePh", lang)}
           className={inputClasses}
         />
       </FormField>
-      <FormField label="Brief Company Description">
+      <FormField label={ts("companyDescription", lang)}>
         <textarea
           value={formData.companyDescription}
           onChange={(e) => updateField("companyDescription", e.target.value)}
-          placeholder="Tell us what you do, who you serve, and what makes you different..."
+          placeholder={ts("companyDescriptionPh", lang)}
           className={textareaClasses}
           rows={4}
         />
@@ -504,10 +511,12 @@ export default function OnboardingForm() {
     <div key="s2" className="space-y-8">
       <SectionHeader
         number="02"
-        title="Services & Projects"
-        subtitle="Help us understand what you offer and who you serve."
+        total="04"
+        title={ts("s2Title", lang)}
+        subtitle={ts("s2Subtitle", lang)}
+        sectionWord={ts("sectionLabel", lang)}
       />
-      <FormField label="Primary Services Offered" hint="check all that apply">
+      <FormField label={ts("primaryServices", lang)} hint={ts("primaryServicesHint", lang)}>
         {formData.industry ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {(SERVICES_BY_INDUSTRY[formData.industry] || []).map((service) => (
@@ -531,55 +540,55 @@ export default function OnboardingForm() {
           </div>
         ) : (
           <p className="text-sm text-text-muted italic py-4 border border-dashed border-accent/15 text-center">
-            Please select your industry in Step 1 to see relevant services.
+            {ts("selectIndustryFirst", lang)}
           </p>
         )}
       </FormField>
-      <FormField label="Other Services">
+      <FormField label={ts("otherServices", lang)}>
         <input
           type="text"
           value={formData.otherServices}
           onChange={(e) => updateField("otherServices", e.target.value)}
-          placeholder="Anything not listed above..."
+          placeholder={ts("otherServicesPh", lang)}
           className={inputClasses}
         />
       </FormField>
 
       <hr className="border-accent/15" />
       <span className="block text-xs tracking-[0.15em] uppercase text-accent/60 pb-2 border-b border-accent/10">
-        Project History
+        {ts("projectHistory", lang)}
       </span>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <FormField label="Average Project Size">
+        <FormField label={ts("avgProjectSize", lang)}>
           <input
             type="text"
             value={formData.avgProjectSize}
             onChange={(e) => updateField("avgProjectSize", e.target.value)}
-            placeholder="e.g. $1,000 – $10,000"
+            placeholder={ts("avgProjectSizePh", lang)}
             className={inputClasses}
           />
         </FormField>
-        <FormField label="Typical Project Duration">
+        <FormField label={ts("projectDuration", lang)}>
           <input
             type="text"
             value={formData.projectDuration}
             onChange={(e) => updateField("projectDuration", e.target.value)}
-            placeholder="e.g. 1–4 weeks"
+            placeholder={ts("projectDurationPh", lang)}
             className={inputClasses}
           />
         </FormField>
       </div>
-      <FormField label="Biggest Win / Best Result">
+      <FormField label={ts("notableProject", lang)}>
         <textarea
           value={formData.notableProject}
           onChange={(e) => updateField("notableProject", e.target.value)}
-          placeholder="A client success story, big project, or result you're proud of..."
+          placeholder={ts("notableProjectPh", lang)}
           className={textareaClasses}
           rows={3}
         />
       </FormField>
-      <FormField label="Project Photos Available?">
+      <FormField label={ts("photosAvailable", lang)}>
         <select
           value={formData.photosAvailable}
           onChange={(e) => updateField("photosAvailable", e.target.value)}
@@ -587,21 +596,21 @@ export default function OnboardingForm() {
           style={selectStyle}
         >
           <option value="" className="bg-bg-card">
-            Select...
+            {ts("select", lang)}
           </option>
-          {PHOTOS_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value} className="bg-bg-card">
-              {opt.label}
+          {photoOpts.map((opt) => (
+            <option key={opt} value={opt} className="bg-bg-card">
+              {opt}
             </option>
           ))}
         </select>
       </FormField>
-      <FormField label="Geographic Service Area">
+      <FormField label={ts("serviceArea", lang)}>
         <input
           type="text"
           value={formData.serviceArea}
           onChange={(e) => updateField("serviceArea", e.target.value)}
-          placeholder="e.g. Northeast Florida, nationwide, etc."
+          placeholder={ts("serviceAreaPh", lang)}
           className={inputClasses}
         />
       </FormField>
@@ -611,12 +620,14 @@ export default function OnboardingForm() {
     <div key="s3" className="space-y-8">
       <SectionHeader
         number="03"
-        title="Brand & Identity"
-        subtitle="We need to understand how you want to be perceived in the market."
+        total="04"
+        title={ts("s3Title", lang)}
+        subtitle={ts("s3Subtitle", lang)}
+        sectionWord={ts("sectionLabel", lang)}
       />
-      <FormField label="Brand Personality" hint="check up to 3">
+      <FormField label={ts("brandPersonality", lang)} hint={ts("brandPersonalityHint", lang)}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {BRAND_PERSONALITY_OPTIONS.map((trait) => (
+          {brandTraits.map((trait) => (
             <label
               key={trait}
               className={`flex items-center gap-3 px-4 py-3 border cursor-pointer transition-all duration-300 select-none ${
@@ -636,7 +647,7 @@ export default function OnboardingForm() {
           ))}
         </div>
       </FormField>
-      <FormField label="Do You Have a Logo?">
+      <FormField label={ts("hasLogo", lang)}>
         <select
           value={formData.hasLogo}
           onChange={(e) => updateField("hasLogo", e.target.value)}
@@ -644,58 +655,58 @@ export default function OnboardingForm() {
           style={selectStyle}
         >
           <option value="" className="bg-bg-card">
-            Select...
+            {ts("select", lang)}
           </option>
-          {LOGO_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value} className="bg-bg-card">
-              {opt.label}
+          {logoOpts.map((opt) => (
+            <option key={opt} value={opt} className="bg-bg-card">
+              {opt}
             </option>
           ))}
         </select>
       </FormField>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <FormField label="Brand Colors">
+        <FormField label={ts("brandColors", lang)}>
           <input
             type="text"
             value={formData.brandColors}
             onChange={(e) => updateField("brandColors", e.target.value)}
-            placeholder="e.g. Dark navy, gold, white"
+            placeholder={ts("brandColorsPh", lang)}
             className={inputClasses}
           />
         </FormField>
-        <FormField label="Preferred Fonts">
+        <FormField label={ts("fonts", lang)}>
           <input
             type="text"
             value={formData.fonts}
             onChange={(e) => updateField("fonts", e.target.value)}
-            placeholder="e.g. Clean modern sans-serif"
+            placeholder={ts("fontsPh", lang)}
             className={inputClasses}
           />
         </FormField>
       </div>
-      <FormField label="Competitor Websites You Respect">
+      <FormField label={ts("competitorWebsites", lang)}>
         <textarea
           value={formData.competitorWebsites}
           onChange={(e) => updateField("competitorWebsites", e.target.value)}
-          placeholder="URLs or names + what you like about them..."
+          placeholder={ts("competitorWebsitesPh", lang)}
           className={textareaClasses}
           rows={3}
         />
       </FormField>
-      <FormField label="Websites You Love (Any Industry)">
+      <FormField label={ts("inspiredWebsites", lang)}>
         <textarea
           value={formData.inspiredWebsites}
           onChange={(e) => updateField("inspiredWebsites", e.target.value)}
-          placeholder="Any industry — architecture, luxury brands, tech..."
+          placeholder={ts("inspiredWebsitesPh", lang)}
           className={textareaClasses}
           rows={3}
         />
       </FormField>
-      <FormField label="How Should Visitors Feel?">
+      <FormField label={ts("websiteFeeling", lang)}>
         <textarea
           value={formData.websiteFeeling}
           onChange={(e) => updateField("websiteFeeling", e.target.value)}
-          placeholder="e.g. Confident, impressed, ready to call you..."
+          placeholder={ts("websiteFeelingPh", lang)}
           className={textareaClasses}
           rows={3}
         />
@@ -706,10 +717,12 @@ export default function OnboardingForm() {
     <div key="s4" className="space-y-8">
       <SectionHeader
         number="04"
-        title="Goals & Expectations"
-        subtitle="Help us understand what success looks like for you."
+        total="04"
+        title={ts("s4Title", lang)}
+        subtitle={ts("s4Subtitle", lang)}
+        sectionWord={ts("sectionLabel", lang)}
       />
-      <FormField label="Primary Goal for the Website">
+      <FormField label={ts("primaryGoal", lang)}>
         <select
           value={formData.primaryGoal}
           onChange={(e) => updateField("primaryGoal", e.target.value)}
@@ -717,29 +730,29 @@ export default function OnboardingForm() {
           style={selectStyle}
         >
           <option value="" className="bg-bg-card">
-            Select...
+            {ts("select", lang)}
           </option>
-          {GOAL_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value} className="bg-bg-card">
-              {opt.label}
+          {goalOpts.map((opt) => (
+            <option key={opt} value={opt} className="bg-bg-card">
+              {opt}
             </option>
           ))}
         </select>
       </FormField>
-      <FormField label="Who Is Your Ideal Client?">
+      <FormField label={ts("idealClient", lang)}>
         <textarea
           value={formData.idealClient}
           onChange={(e) => updateField("idealClient", e.target.value)}
-          placeholder="e.g. Homeowners aged 35-55, local businesses, property managers..."
+          placeholder={ts("idealClientPh", lang)}
           className={textareaClasses}
           rows={3}
         />
       </FormField>
-      <FormField label="What Problem Do You Solve?">
+      <FormField label={ts("problemSolved", lang)}>
         <textarea
           value={formData.problemSolved}
           onChange={(e) => updateField("problemSolved", e.target.value)}
-          placeholder="What pain points do clients come to you with?"
+          placeholder={ts("problemSolvedPh", lang)}
           className={textareaClasses}
           rows={3}
         />
@@ -747,11 +760,11 @@ export default function OnboardingForm() {
 
       <hr className="border-accent/15" />
 
-      <FormField label="Anything Else We Should Know?">
+      <FormField label={ts("additionalNotes", lang)}>
         <textarea
           value={formData.additionalNotes}
           onChange={(e) => updateField("additionalNotes", e.target.value)}
-          placeholder="Timeline, languages, certifications, awards..."
+          placeholder={ts("additionalNotesPh", lang)}
           className={textareaClasses}
           rows={3}
         />
@@ -769,9 +782,12 @@ export default function OnboardingForm() {
 
   return (
     <div>
+      {/* Language Switcher */}
+      <LanguageSwitcher lang={lang} setLang={setLang} />
+
       {/* Progress Bar */}
       <div className="flex gap-1 mb-12">
-        {SECTIONS.map((section, i) => (
+        {sectionLabels.map((label, i) => (
           <div key={i} className="flex-1">
             <div
               className={`h-0.5 transition-colors duration-400 ${
@@ -783,7 +799,7 @@ export default function OnboardingForm() {
               }`}
             />
             <p className="text-[9px] tracking-[0.15em] uppercase text-text-muted text-center mt-2">
-              {section.label}
+              {label}
             </p>
           </div>
         ))}
@@ -811,23 +827,23 @@ export default function OnboardingForm() {
             className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-text-muted hover:text-white transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            Back
+            {ts("back", lang)}
           </button>
         ) : (
           <span />
         )}
 
         <span className="text-xs text-text-muted tracking-wide">
-          {current + 1} of {SECTIONS.length}
+          {current + 1} {ts("of", lang)} {sectionLabels.length}
         </span>
 
-        {current < SECTIONS.length - 1 ? (
+        {current < sectionLabels.length - 1 ? (
           <button
             type="button"
             onClick={() => goTo(current + 1)}
             className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-black bg-accent px-8 py-4 hover:bg-accent-hover hover:-translate-y-px transition-all duration-300"
           >
-            Continue
+            {ts("continue", lang)}
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         ) : (
@@ -840,11 +856,11 @@ export default function OnboardingForm() {
             {submitting ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                Submitting...
+                {ts("submitting", lang)}
               </>
             ) : (
               <>
-                Submit
+                {ts("submit", lang)}
                 <ArrowRight className="w-3.5 h-3.5" />
               </>
             )}
@@ -859,17 +875,21 @@ export default function OnboardingForm() {
 
 function SectionHeader({
   number,
+  total,
   title,
   subtitle,
+  sectionWord,
 }: {
   number: string;
+  total: string;
   title: string;
   subtitle: string;
+  sectionWord: string;
 }) {
   return (
     <div className="mb-10">
       <span className="text-[10px] tracking-[0.2em] text-accent uppercase block mb-2">
-        Section {number} / 04
+        {sectionWord} {number} / {total}
       </span>
       <h2 className="text-3xl font-serif text-text-headline">{title}</h2>
       <p className="text-sm text-text-muted mt-2 tracking-wide">{subtitle}</p>

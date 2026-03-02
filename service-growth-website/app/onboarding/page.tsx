@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import OnboardingForm from "@/components/OnboardingForm";
+import { type Lang, ts } from "@/lib/onboarding-translations";
 
 export default function OnboardingPage() {
+  const [lang, setLang] = useState<Lang>("en");
+
   return (
     <>
       {/* Hero */}
@@ -18,7 +22,7 @@ export default function OnboardingPage() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-text-body mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Client Onboarding
+            {ts("heroBadge", lang)}
           </motion.div>
 
           <motion.h1
@@ -27,10 +31,10 @@ export default function OnboardingPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl font-serif text-text-headline mb-6"
           >
-            Website{" "}
-            <span className="italic text-accent">Discovery</span>
+            {ts("heroTitle1", lang)}{" "}
+            <span className="italic text-accent">{ts("heroTitle2", lang)}</span>
             <br />
-            Questionnaire
+            {ts("heroTitle3", lang)}
           </motion.h1>
 
           <motion.p
@@ -39,8 +43,7 @@ export default function OnboardingPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-text-body max-w-lg mx-auto"
           >
-            Please complete this form so we can build a website that truly
-            represents your company. This typically takes 15–20 minutes.
+            {ts("heroSubtitle", lang)}
           </motion.p>
         </div>
       </section>
@@ -48,7 +51,7 @@ export default function OnboardingPage() {
       {/* Form */}
       <section className="py-20 px-6">
         <div className="max-w-[760px] mx-auto">
-          <OnboardingForm />
+          <OnboardingForm lang={lang} setLang={setLang} />
         </div>
       </section>
     </>
