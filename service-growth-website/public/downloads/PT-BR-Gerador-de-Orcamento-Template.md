@@ -112,9 +112,11 @@ LAYOUT DO CARD (nesta ordem exata):
 
 ABAIXO DO CARD: "Nosso Processo" — grid 3 colunas de cards com fundo #111111, borda #1E1E1E — número do passo (28px weight 300), título (bold), descrição (muted).
 
-PRINT CSS:
-- @media print deve PRESERVAR o tema escuro (fundo escuro, texto claro)
-- Usar -webkit-print-color-adjust: exact e print-color-adjust: exact
+PRINT CSS (MUITO IMPORTANTE):
+- @media print deve PRESERVAR o tema escolhido (escuro ou claro)
+- Aplicar em TODOS os elementos: *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+- Também aplicar background no html { background: [cor do fundo] !important; } — sem isso o fundo fica branco na impressão
+- Aplicar background !important explícito no body, .invoice-card, .meta-band, .footer, .process-card
 - Remover box-shadow do card
 - NÃO converter para fundo branco
 

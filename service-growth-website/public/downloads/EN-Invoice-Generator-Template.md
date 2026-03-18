@@ -92,9 +92,11 @@ BELOW CARD: "Our Process" — 3-column grid of cards with background #111111, bo
 
 NO TOOLBAR. No edit button, no theme toggle, no logo upload button. The HTML is a static invoice only. If the user wants changes, they ask you (Claude) in the conversation and you generate a new file.
 
-PRINT CSS:
-- @media print must PRESERVE the dark theme (dark background, light text)
-- Use -webkit-print-color-adjust: exact and print-color-adjust: exact
+PRINT CSS (VERY IMPORTANT):
+- @media print must PRESERVE the chosen theme (dark or light)
+- Apply to ALL elements: *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+- Also apply background on html { background: [bg color] !important; } — without this the background prints white
+- Apply explicit background !important on body, .invoice-card, .meta-band, .footer, .process-card
 - Remove box-shadow from card
 - Do NOT convert to white background
 
