@@ -5,8 +5,8 @@ import { useState, FormEvent } from "react";
 const FEATURES = [
   {
     icon: "✨",
-    title: "Glassmorphism",
-    desc: "Design premium com efeito de vidro fosco que impressiona seus clientes.",
+    title: "Design Limpo",
+    desc: "Layout profissional e moderno que transmite credibilidade ao seu cliente.",
   },
   {
     icon: "✏️",
