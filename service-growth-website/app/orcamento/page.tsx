@@ -369,14 +369,14 @@ export default function OrcamentoPage() {
                     download
                     className="btn-glass-dark block text-center no-underline text-sm py-3.5 px-6 rounded-xl"
                   >
-                    Baixar Template PT-BR (.md)
+                    Baixar Template PT-BR (.zip)
                   </a>
                   <a
                     href={downloads?.template_en}
                     download
                     className="btn-glass-dark block text-center no-underline text-sm py-3.5 px-6 rounded-xl"
                   >
-                    Baixar Template EN (.md)
+                    Baixar Template EN (.zip)
                   </a>
                 </div>
 

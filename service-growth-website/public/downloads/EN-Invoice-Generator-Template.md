@@ -111,4 +111,7 @@ JAVASCRIPT (minimal):
 - formatUSD() to format dollar values
 </design_spec>
 
-Generate the complete HTML file with the invoice already filled in with the information collected from the user. The file must work perfectly when opened in a browser and be saved as PDF via Ctrl+P / Cmd+P preserving the dark theme.
+HTML REFERENCE:
+The user uploaded a sample HTML file along with this prompt (sample-invoice.html). Use that file as the EXACT REFERENCE for the design, layout, CSS and JavaScript. Copy the structure, styles and functionality from it, but replace all company data with the information collected from the user.
+
+Generate the complete HTML file with the invoice already filled in with the information collected from the user. The file must work perfectly when opened in a browser and be saved as PDF via Ctrl+P / Cmd+P preserving the chosen theme.

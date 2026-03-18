@@ -59,8 +59,11 @@ export async function POST(req: NextRequest) {
                   <a href="${baseUrl}/downloads/Guia-Orcamento-Profissional.pdf" style="display:block;background:#28E8FD;color:#000;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">
                     Baixar Guia PDF
                   </a>
-                  <a href="${baseUrl}/downloads/PT-BR-Gerador-de-Orcamento-Template.md" style="display:block;background:#1E1E1E;color:#E8E5DF;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;border:1px solid #2A2A2A;">
-                    Baixar Template .md
+                  <a href="${baseUrl}/downloads/Gerador-de-Orcamento-PT.zip" style="display:block;background:#1E1E1E;color:#E8E5DF;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;border:1px solid #2A2A2A;">
+                    Baixar Template PT-BR (.zip)
+                  </a>
+                  <a href="${baseUrl}/downloads/Invoice-Generator-EN.zip" style="display:block;background:#1E1E1E;color:#E8E5DF;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;border:1px solid #2A2A2A;margin-top:8px;">
+                    Download EN Template (.zip)
                   </a>
                 </div>
                 <div style="background:#161616;border:1px solid #2A2A2A;border-radius:8px;padding:20px;margin-bottom:24px;">
@@ -90,8 +93,8 @@ export async function POST(req: NextRequest) {
       success: true,
       downloads: {
         pdf: "/downloads/Guia-Orcamento-Profissional.pdf",
-        template_pt: "/downloads/PT-BR-Gerador-de-Orcamento-Template.md",
-        template_en: "/downloads/EN-Invoice-Generator-Template.md",
+        template_pt: "/downloads/Gerador-de-Orcamento-PT.zip",
+        template_en: "/downloads/Invoice-Generator-EN.zip",
       },
     });
   } catch (err) {

@@ -131,4 +131,7 @@ JAVASCRIPT (mínimo):
 - formatBRL() para formatar valores em R$
 </especificacao_design>
 
-Gere o arquivo HTML completo com o orçamento já preenchido com as informações coletadas do usuário. O arquivo deve funcionar perfeitamente abrindo no navegador e ser salvo como PDF via Ctrl+P / Cmd+P preservando o tema escuro.
+REFERÊNCIA HTML:
+O usuário enviou junto com este prompt um arquivo HTML de exemplo (sample-orcamento.html). Use esse arquivo como REFERÊNCIA EXATA do design, layout, CSS e JavaScript. Copie a estrutura, estilos e funcionalidades dele, mas substitua todos os dados da empresa com as informações coletadas do usuário.
+
+Gere o arquivo HTML completo com o orçamento já preenchido com as informações coletadas do usuário. O arquivo deve funcionar perfeitamente abrindo no navegador e ser salvo como PDF via Ctrl+P / Cmd+P preservando o tema escolhido.
