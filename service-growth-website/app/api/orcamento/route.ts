@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
                 </div>
                 <div style="border-top:1px solid #2A2A2A;padding-top:20px;text-align:center;">
                   <p style="font-size:13px;color:#8A8780;margin:0 0 8px;">Quer mais ferramentas de IA?</p>
-                  <a href="https://instagram.com/matthews.ai" style="color:#28E8FD;font-weight:600;font-size:14px;text-decoration:none;">Siga @matthews.ai no Instagram</a>
+                  <a href="https://instagram.com/mateus.ai" style="color:#28E8FD;font-weight:600;font-size:14px;text-decoration:none;">Siga @mateus.ai no Instagram</a>
                 </div>
               </div>
             `,
