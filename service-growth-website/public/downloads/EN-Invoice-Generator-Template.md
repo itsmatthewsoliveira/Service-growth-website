@@ -61,50 +61,35 @@ FONT: 'Nunito Sans' for everything. No serif.
 - Body text: 12-13px
 - Table header: 9px, weight 800, letter-spacing 1.8px, uppercase
 
-SIMPLE TOOLBAR: Fixed bar above invoice with background #0F0F0F, border-bottom #1E1E1E. Contains:
-- "Upload Logo" button (hidden file input)
-- "Edit" / "Done" toggle
-- Dark/light theme toggle (sun/moon)
-- "Print / PDF" button (calls window.print())
-- All buttons: background #1A1A1A, border #2A2A2A, color #E8E5DF, border-radius 8px
-
-LIGHT MODE (.cream class on body):
-- Background: #F5F3ED
-- Card: #FFFFFF, border #E0DDD5
-- Primary text: #1A1916
-- Secondary text: #7A776F
-- Borders: #E0DDD5
-- Toolbar: background #F0EDE5, border #E0DDD5
-- Buttons: background #E8E5DF, border #D5D0C6, color #1A1916
-
 CARD LAYOUT (this exact order):
-1. HEADER: Logo (hidden until upload, 56x56, rounded border) + company name (48px 900wt) + subtitle. "INVOICE" label right side.
+1. HEADER: Company name (48px 900wt) + subtitle. "INVOICE" label right side.
 2. COMPANY INFO: Address left, contact right, small text.
-3. META BAND: 4-column grid — Due Amount, Due Date, Invoice #, Invoice Date. Labels 9.5px uppercase. Slightly different background (#0F0F0F dark / #F0EDE5 light), top/bottom borders.
+3. META BAND: 4-column grid — Due Amount, Due Date, Invoice #, Invoice Date. Labels 9.5px uppercase. Background #0F0F0F, top/bottom borders.
 4. CLIENT: "Invoice To" left, "Shipped To" right.
-5. TABLE: Columns #, Desc, Qty, Rate ($), Discount, Tax, Total ($). 2px header border, 1px row borders, subtle alternating stripes. Edit mode with inputs + delete/add buttons.
+5. TABLE: Columns #, Desc, Qty, Rate ($), Discount, Tax, Total ($). 2px header border, 1px row borders, subtle alternating stripes. Static — no edit inputs.
 6. PAYMENT + TOTALS: Payment method + amount in words left. Sub/Tax/Total right with 2px border on total.
 7. SIGNATURES: "Accepted By" left, "Signature" right with lines.
-8. FOOTER: Background #0F0F0F (dark) / #F0EDE5 (light). Payment info left. Company name + small logo right.
+8. FOOTER: Background #0F0F0F. Payment info left. Company name right.
 
-BELOW CARD: "Our Process" — 3-column grid of cards with background #111111 (dark) / #FFFFFF (light), border #1E1E1E / #E0DDD5 — step number (28px weight 300), title (bold), description (muted).
+BELOW CARD: "Our Process" — 3-column grid of cards with background #111111, border #1E1E1E — step number (28px weight 300), title (bold), description (muted).
 
-FUNCTIONALITY:
-- Dark/light toggle via .cream class on body + CSS custom properties
-- Logo upload to header + footer via FileReader
-- Edit mode: contenteditable on fields + inputs in table + add/remove rows
-- Auto-recalculate subtotal, tax, total, due amount
-- Number to words in English
-- Print/PDF via window.print() with @media print that uses white background, black text, hides toolbar and effects
+NO TOOLBAR. No edit button, no theme toggle, no logo upload button. The HTML is a static invoice only. If the user wants changes, they ask you (Claude) in the conversation and you generate a new file.
+
+PRINT CSS:
+- @media print must PRESERVE the dark theme (dark background, light text)
+- Use -webkit-print-color-adjust: exact and print-color-adjust: exact
+- Remove box-shadow from card
+- Do NOT convert to white background
 
 RESPONSIVE: Below 700px stack layout, 2-col meta, 1-col process cards.
 
-JAVASCRIPT:
-- Array services[] with service data at top of script
+JAVASCRIPT (minimal):
+- Array services[] with service data
 - Array steps[] with process step data
 - Constant TAX with tax rate
-- Functions: renderTable(), addRow(), removeRow(), recalc(), numberToWords(), renderProcess(), toggleEdit(), toggleTheme(), handleLogo()
+- Functions: renderTable(), recalc(), numberToWords(), renderProcess()
 - renderTable() and renderProcess() called on init
+- formatUSD() to format dollar values
 </design_spec>
 
-Generate the complete HTML file with the invoice already filled in with the information collected from the user. The file must work perfectly when opened in a browser and be easily saved as PDF via Print.
+Generate the complete HTML file with the invoice already filled in with the information collected from the user. The file must work perfectly when opened in a browser and be saved as PDF via Ctrl+P / Cmd+P preserving the dark theme.

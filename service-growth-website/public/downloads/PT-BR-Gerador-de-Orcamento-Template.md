@@ -55,17 +55,19 @@ IMPORTANTE: Todos os labels e textos visíveis do orçamento devem estar em PORT
 <especificacao_design>
 REGRAS CRÍTICAS:
 - NÃO crie um app, gerador ou formulário. Gere APENAS um arquivo HTML estático com o orçamento já preenchido.
-- NÃO inclua botões de "gerar", "criar", campos de input ou formulários interativos.
+- NÃO inclua botões de "gerar", "criar", campos de input, formulários interativos, toolbar, botão de editar, botão de tema, ou botão de upload de logo.
+- NÃO inclua nenhuma barra de ferramentas (toolbar). O HTML é apenas o orçamento estático.
 - O arquivo HTML é o orçamento em si — pronto para abrir no navegador e salvar como PDF via Ctrl+P / Cmd+P.
 - NÃO use glassmorphism, backdrop-filter, blur, orbes flutuantes, ou animações complexas.
+- Se o usuário quiser editar algo, ele pede a você (Claude) na conversa e você gera um novo arquivo.
 
 O arquivo deve ser:
 - Um único arquivo .html autossuficiente
-- Sem React, sem JSX, sem npm — HTML + CSS + JavaScript puro
+- Sem React, sem JSX, sem npm — HTML + CSS + JavaScript puro (apenas para renderizar a tabela e calcular totais)
 - Carregar Google Font 'Nunito Sans' via tag link (pesos: 300,400,500,600,700,800,900)
 - Funcionar abrindo direto no navegador
 
-DESIGN — LIMPO E PROFISSIONAL:
+DESIGN — LIMPO E PROFISSIONAL (APENAS MODO ESCURO):
 - Fundo escuro sólido: #0A0A0A
 - Texto principal claro: #E8E5DF
 - Texto secundário/muted: #8A8780
@@ -81,50 +83,33 @@ FONTE: 'Nunito Sans' para tudo. Sem serifa.
 - Texto corpo: 12-13px
 - Cabeçalho da tabela: 9px, peso 800, letter-spacing 1.8px, maiúsculas
 
-TOOLBAR SIMPLES: Barra fixa acima do orçamento com fundo #0F0F0F, borda inferior #1E1E1E. Contém:
-- Botão "Enviar Logo" (input file escondido)
-- Toggle "Editar" / "Concluído"
-- Toggle de tema escuro/claro (☀/☽)
-- Botão "Imprimir / PDF" (chama window.print())
-- Todos os botões com fundo #1A1A1A, borda #2A2A2A, cor #E8E5DF, border-radius 8px
-
-MODO CLARO (classe .cream no body):
-- Fundo: #F5F3ED
-- Card: #FFFFFF, borda #E0DDD5
-- Texto principal: #1A1916
-- Texto secundário: #7A776F
-- Bordas: #E0DDD5
-- Toolbar: fundo #F0EDE5, borda #E0DDD5
-- Botões: fundo #E8E5DF, borda #D5D0C6, cor #1A1916
-
 LAYOUT DO CARD (nesta ordem exata):
-1. CABEÇALHO: Logo (escondido até upload, 56x56, borda arredondada) + nome empresa (48px 900wt) + subtítulo. Label "ORÇAMENTO" no lado direito.
+1. CABEÇALHO: Nome empresa (48px 900wt) + subtítulo. Label "ORÇAMENTO" no lado direito.
 2. INFO DA EMPRESA: Endereço esquerda, contato direita, texto pequeno.
-3. FAIXA META: Grid 4 colunas — Valor Total, Data de Vencimento, Nº do Orçamento, Data de Emissão. Labels 9.5px uppercase. Fundo levemente diferente (#0F0F0F escuro / #F0EDE5 claro), bordas top/bottom.
+3. FAIXA META: Grid 4 colunas — Valor Total, Data de Vencimento, Nº do Orçamento, Data de Emissão. Labels 9.5px uppercase. Fundo #0F0F0F, bordas top/bottom.
 4. CLIENTE: "Orçamento Para" esquerda, "Endereço do Projeto" direita.
-5. TABELA: Colunas #, Desc., Qtd., Valor (R$), Desc., Imposto, Total (R$). Borda 2px no cabeçalho, 1px nas linhas, listras alternadas sutis. Edit mode com inputs + botões deletar/adicionar.
+5. TABELA: Colunas #, Desc., Qtd., Valor (R$), Desc., Imposto, Total (R$). Borda 2px no cabeçalho, 1px nas linhas, listras alternadas sutis.
 6. PAGAMENTO + TOTAIS: Método de pagamento + valor por extenso esquerda. Subtotal/Imposto/Total direita com borda 2px no total.
 7. ASSINATURAS: "Aceito Por" esquerda, "Assinatura" direita com linhas.
-8. RODAPÉ: Fundo #0F0F0F (escuro) / #F0EDE5 (claro). Info de pagamento esquerda. Nome da empresa + logo pequeno direita.
+8. RODAPÉ: Fundo #0F0F0F. Info de pagamento esquerda. Nome da empresa direita.
 
-ABAIXO DO CARD: "Nosso Processo" — grid 3 colunas de cards com fundo #111111 (escuro) / #FFFFFF (claro), borda #1E1E1E / #E0DDD5 — número do passo (28px weight 300), título (bold), descrição (muted).
+ABAIXO DO CARD: "Nosso Processo" — grid 3 colunas de cards com fundo #111111, borda #1E1E1E — número do passo (28px weight 300), título (bold), descrição (muted).
 
-FUNCIONALIDADES:
-- Toggle escuro/claro via classe .cream no body + CSS custom properties
-- Upload de logo no header + footer via FileReader
-- Edit mode: contenteditable nos campos + inputs na tabela + add/remove rows
-- Auto-recalcular subtotal, imposto, total, valor total
-- Valor por extenso em português
-- Print/PDF via window.print() com @media print que usa fundo branco, texto preto, esconde toolbar e efeitos
+PRINT CSS:
+- @media print deve PRESERVAR o tema escuro (fundo escuro, texto claro)
+- Usar -webkit-print-color-adjust: exact e print-color-adjust: exact
+- Remover box-shadow do card
+- NÃO converter para fundo branco
 
 RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em 1 coluna.
 
-JAVASCRIPT:
-- Array services[] com os dados dos serviços no topo do script
-- Array steps[] com os dados das etapas do processo
+JAVASCRIPT (mínimo):
+- Array services[] com os dados dos serviços
+- Array steps[] com os dados das etapas
 - Constante TAX com a taxa de imposto
-- Funções: renderTable(), addRow(), removeRow(), recalc(), numberToWords() (em português), renderProcess(), toggleEdit(), toggleTheme(), handleLogo()
+- Funções: renderTable(), recalc(), numberToWords() (em português), renderProcess()
 - renderTable() e renderProcess() chamados no init
+- formatBRL() para formatar valores em R$
 </especificacao_design>
 
-Gere o arquivo HTML completo com o orçamento já preenchido com as informações coletadas do usuário. O arquivo deve funcionar perfeitamente abrindo no navegador e ser facilmente salvo como PDF via Imprimir.
+Gere o arquivo HTML completo com o orçamento já preenchido com as informações coletadas do usuário. O arquivo deve funcionar perfeitamente abrindo no navegador e ser salvo como PDF via Ctrl+P / Cmd+P preservando o tema escuro.
