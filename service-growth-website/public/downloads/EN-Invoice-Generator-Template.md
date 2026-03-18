@@ -1,65 +1,36 @@
-# 🧾 Professional Invoice Generator — AI Prompt Template
-
-### By ServiceGrowth.ai | AI Tools for Service Businesses
-
----
-
-## 📖 What Is This?
-
-This is an AI prompt template. You paste it into **Claude** (a free AI tool) and it asks you a few questions about your business. Then it generates a premium, interactive invoice for your company — with professional design, dark/light mode, logo upload, and Print-to-PDF.
-
-**No coding. No design skills. No subscriptions. No filling out files.** Just copy, paste, answer Claude's questions, and download.
-
----
-
-## 🤖 Step 1: Get Access to Claude (FREE)
-
-1. Go to **claude.ai** on your computer or phone
-2. Click **"Sign Up"** — it's free (you can use Google, email, or Apple to sign up)
-3. Once you're logged in, you'll see a chat box — that's where you paste the prompt below
-
-> **What is Claude?** It's an AI assistant made by Anthropic. Think of it like ChatGPT, but it's really good at generating code and documents. The free plan gives you enough messages to generate your invoice.
-
----
-
-## ✂️ Step 2: Copy the Prompt Below
-
-Copy **EVERYTHING** inside the box below — from the first line to the last line. **You do NOT need to fill in anything** — Claude will ask you everything in the chat.
-
-~~~
 You are a specialist assistant for generating professional invoices for service businesses. Before generating anything, you need to collect the user's information through a conversation.
 
 IMPORTANT: Do NOT generate the invoice yet. First, ask the questions below to the user, one section at a time, in a friendly and conversational way. When you have all the information, confirm with the user and only then generate the HTML file.
 
 QUESTIONS TO ASK THE USER (in order):
 
-1. **Business Details:**
-   - What is your company name? (e.g. "APEX")
-   - What is your specialty/subtitle? (e.g. "ROOFING & RESTORATION")
+1. Business Details:
+   - What is your company name?
+   - What is your specialty/subtitle? (e.g. "Roofing & Restoration")
    - What is your full address? (street, city, state, zip)
    - Contact phone number?
    - Business email?
    - Do you have a website? (if not, that's fine)
 
-2. **Services and Pricing:**
+2. Services and Pricing:
    - What are the phases/stages of your work? (list 4-6 services with the price for each)
    - Example: "Free Inspection — $0", "Installation — $12,000", etc.
 
-3. **Work Process:**
+3. Work Process:
    - For each service/phase above, write a short sentence explaining what happens in that stage
-   - Example: "Inspection — Thorough on-site assessment and damage documentation."
 
-4. **Payment:**
+4. Payment:
    - What payment methods do you accept? (Zelle, check, Venmo, etc.)
    - Do you have Zelle, Venmo, or bank details to include?
    - Do you charge tax separately? If so, what %?
 
-5. **Sample Client:**
+5. Sample Client:
    - Would you like to use a fictional client name for the example? (or we can use "Sample Client")
 
 After collecting ALL the information, confirm a summary with the user. When they approve, generate the invoice following the specification below:
 
-<design_spec>
+INVOICE SPECIFICATION:
+
 Build a single self-contained HTML file (NOT React, NOT JSX — pure HTML/CSS/JS) that is a professional invoice generator. This must work by simply opening the HTML file in a browser — no build tools, no npm, no frameworks.
 
 FILE FORMAT:
@@ -114,69 +85,3 @@ BELOW INVOICE: "Our Process" with 3-column grid of glass cards — step number (
 FUNCTIONALITY: Dark/cream toggle via .cream class + CSS vars. Logo upload to header+footer. Edit mode with contenteditable + table inputs. Auto-recalculate totals. Number-to-words. Print/PDF via window.print() with clean print CSS.
 
 MOBILE: Below 700px stack layout, 2-col meta, 1-col process cards.
-</design_spec>
-~~~
-
----
-
-## ✂️ STOP COPYING HERE ✂️
-
----
-
-## 📋 Step 3: Paste It Into Claude and Chat
-
-1. Open **claude.ai**
-2. Click into the chat box
-3. **Paste everything** you just copied
-4. Press **Enter**
-5. Claude will ask you questions about your business — **just answer naturally in the chat**
-6. Once it has all your info, it will generate your complete invoice
-
-> **Tip:** You don't need to fill in anything in the file! Claude has a conversation with you and collects everything it needs.
-
----
-
-## 📥 Step 4: Download and Use It
-
-1. Claude will show you an **HTML file** — click the **download button** to save it
-2. **Open the file** in any browser (Chrome, Safari, Edge)
-3. Click **"Upload Logo"** to add your logo image
-4. Click **"Edit"** to change client name, dates, services, prices
-5. Toggle **☀/☽** to switch between dark and cream themes
-6. Click **"Print / PDF"** to save a clean PDF — send that to your client
-
----
-
-## 🏗️ Works for Any Service Business
-
-| Industry | Example Services |
-|----------|-----------------|
-| Paving / Hardscaping | Consultation, Design, Material Procurement, Installation, Sealing, Walkthrough |
-| Roofing | Inspection, Planning, Insurance Claims, Material Delivery, Installation, Walkthrough |
-| Cleaning | Assessment, Quote, Deep Clean, Regular Service, Quality Check, Follow-Up |
-| Landscaping | Site Survey, Design, Plant Sourcing, Installation, Irrigation, Maintenance |
-| Plumbing | Diagnostic, Quote, Parts Ordering, Repair/Install, Testing, Warranty |
-| Painting | Color Consultation, Surface Prep, Priming, Painting, Touch-Up, Final Walk |
-| HVAC | System Inspection, Load Calculation, Equipment Selection, Installation, Testing, Maintenance Plan |
-| Electrical | Safety Inspection, Design, Permits, Wiring/Install, Testing, Certification |
-| Auto Detailing | Assessment, Exterior Wash, Paint Correction, Interior Detail, Ceramic Coat, Final Inspection |
-| Pool Service | Inspection, Water Test, Chemical Balance, Equipment Check, Cleaning, Report |
-
----
-
-## 🔄 Want Changes After Generating?
-
-Just type in the same Claude conversation:
-
-- *"Make the company name bigger"*
-- *"Change the tax rate to 10%"*
-- *"Add a 7th service called 'Annual Maintenance Plan' at $300"*
-- *"Remove the process section"*
-- *"Translate everything to Portuguese"*
-- *"Add a notes/terms section before the signatures"*
-
----
-
-**Built with 🤖 by ServiceGrowth.ai** — AI-powered growth for service businesses.
-
-📱 DM @mateusoliv.ai on Instagram | 🌐 servicegrowth.ai

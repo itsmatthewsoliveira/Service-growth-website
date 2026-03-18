@@ -1,68 +1,39 @@
-# 🧾 Gerador de Orçamento Profissional — Template com IA
-
-### Por ServiceGrowth.ai | Ferramentas de IA para Empresas de Serviço
-
----
-
-## 📖 O Que É Isso?
-
-Esse é um template de prompt para IA. Você cola no **Claude** (uma ferramenta de IA gratuita) e ele te faz algumas perguntas sobre sua empresa. Depois disso, ele gera instantaneamente um orçamento premium e interativo — com design profissional, modo escuro/claro, upload de logo, e exportação para PDF.
-
-**Sem programação. Sem design. Sem assinatura. Sem preencher nada no arquivo.** Só copiar, colar, responder as perguntas do Claude e baixar.
-
----
-
-## 🤖 Passo 1: Acesse o Claude (GRÁTIS)
-
-1. Acesse **claude.ai** no computador ou celular
-2. Clique em **"Sign Up"** (Cadastrar) — é grátis, pode usar Google, e-mail ou Apple
-3. Depois de logado, você verá uma caixa de chat — é ali que você cola o prompt abaixo
-
-> **O que é o Claude?** É um assistente de IA da Anthropic. Pense nele como o ChatGPT, mas muito bom em gerar código e documentos. O plano gratuito já é suficiente para gerar seu orçamento.
-
----
-
-## ✂️ Passo 2: Copie o Prompt Abaixo
-
-Copie **TUDO** dentro da caixa abaixo — da primeira até a última linha. **NÃO precisa preencher nada** — o Claude vai te perguntar tudo no chat.
-
-~~~
 Você é um assistente especializado em gerar orçamentos profissionais para empresas de serviço. Antes de gerar qualquer coisa, você precisa coletar as informações do usuário através de uma conversa.
 
 IMPORTANTE: NÃO gere o orçamento ainda. Primeiro, faça as perguntas abaixo ao usuário, uma seção por vez, de forma amigável e em português brasileiro. Quando tiver todas as informações, confirme com o usuário e só então gere o arquivo HTML.
 
 PERGUNTAS PARA FAZER AO USUÁRIO (em ordem):
 
-1. **Dados da Empresa:**
-   - Qual o nome da sua empresa? (ex: "ELITE")
-   - Qual a especialidade/subtítulo? (ex: "REFORMAS & CONSTRUÇÃO")
+1. Dados da Empresa:
+   - Qual o nome da sua empresa?
+   - Qual a especialidade/subtítulo? (ex: "Reformas & Construção")
    - Qual o endereço completo? (rua, cidade, estado, CEP)
    - Telefone de contato?
    - Email comercial?
    - Tem website? (se não tiver, tudo bem)
 
-2. **Serviços e Preços:**
+2. Serviços e Preços:
    - Quais são as fases/etapas do seu trabalho? (liste 4-6 serviços com o preço de cada)
    - Exemplo: "Visita Técnica — R$0", "Projeto — R$3.000", etc.
 
-3. **Processo de Trabalho:**
+3. Processo de Trabalho:
    - Para cada serviço/fase acima, escreva uma frase curta explicando o que acontece nessa etapa
-   - Exemplo: "Avaliação — Visita técnica no local com medições e levantamento das necessidades."
 
-4. **Pagamento:**
+4. Pagamento:
    - Quais formas de pagamento você aceita? (PIX, transferência, boleto, etc.)
    - Tem chave PIX? Dados bancários?
    - Cobra imposto separado? Se sim, qual %?
 
-5. **Cliente Exemplo:**
+5. Cliente Exemplo:
    - Quer usar um nome de cliente fictício no exemplo? (ou pode deixar "Cliente Exemplo")
 
 Depois de coletar TODAS as informações, confirme um resumo com o usuário. Quando ele aprovar, gere o orçamento seguindo a especificação abaixo:
 
-<especificacao_design>
+ESPECIFICAÇÃO DO ORÇAMENTO:
+
 Construa um único arquivo HTML autossuficiente (NÃO React, NÃO JSX — HTML/CSS/JS puro) que é um gerador de orçamento profissional. Deve funcionar simplesmente abrindo o arquivo HTML no navegador — sem ferramentas de build, sem npm, sem frameworks.
 
-IMPORTANTE: Todos os textos e labels do orçamento devem estar em PORTUGUÊS BRASILEIRO (PT-BR). Isso inclui: labels como "Valor Total", "Data de Vencimento", "Nº do Orçamento", "Data de Emissão", "Orçamento Para", "Endereço do Projeto", "Desc. dos Serviços", "Qtd.", "Valor (R$)", "Desc.", "Imposto", "Total (R$)", "Método de Pagamento", "Por Extenso", "Subtotal", "Aceito Por", "Assinatura", "Informações de Pagamento", "Nosso Processo", e todos os outros textos visíveis. Use o símbolo R$ para valores e formato brasileiro de números (1.000,00). A função de valor por extenso deve gerar em português (ex: "Dezessete Mil e Oitenta Reais").
+Todos os textos e labels do orçamento devem estar em PORTUGUÊS BRASILEIRO (PT-BR). Isso inclui: labels como "Valor Total", "Data de Vencimento", "Nº do Orçamento", "Data de Emissão", "Orçamento Para", "Endereço do Projeto", "Desc. dos Serviços", "Qtd.", "Valor (R$)", "Desc.", "Imposto", "Total (R$)", "Método de Pagamento", "Por Extenso", "Subtotal", "Aceito Por", "Assinatura", "Informações de Pagamento", "Nosso Processo", e todos os outros textos visíveis. Use o símbolo R$ para valores e formato brasileiro de números (1.000,00). A função de valor por extenso deve gerar em português (ex: "Dezessete Mil e Oitenta Reais").
 
 FORMATO DO ARQUIVO:
 - Um único arquivo .html autossuficiente
@@ -116,69 +87,3 @@ ABAIXO DO ORÇAMENTO: "Nosso Processo" com grid 3 colunas de cards glass — nú
 FUNCIONALIDADES: Toggle escuro/creme via classe .cream + CSS vars. Upload de logo no cabeçalho+rodapé. Modo edição com contenteditable + inputs na tabela. Auto-recalcular totais em R$. Valor por extenso em português. Imprimir/PDF via window.print() com CSS limpo para impressão.
 
 RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em 1 coluna.
-</especificacao_design>
-~~~
-
----
-
-## ✂️ PARE DE COPIAR AQUI ✂️
-
----
-
-## 📋 Passo 3: Cole no Claude e Converse
-
-1. Abra o **claude.ai**
-2. Clique na caixa de chat
-3. **Cole tudo** que você copiou
-4. Aperte **Enter**
-5. O Claude vai te fazer perguntas sobre sua empresa — **é só responder normalmente no chat**
-6. Quando ele tiver todas as informações, vai gerar seu orçamento completo
-
-> **Dica:** Você não precisa preencher nada no arquivo! O Claude conversa com você e coleta tudo que precisa.
-
----
-
-## 📥 Passo 4: Baixe e Use
-
-1. O Claude vai mostrar um **arquivo HTML** — clique no **botão de download** para salvar
-2. **Abra o arquivo** em qualquer navegador (Chrome, Safari, Edge)
-3. Clique em **"Enviar Logo"** para adicionar o logo da sua empresa
-4. Clique em **"Editar"** para mudar nome do cliente, datas, serviços, preços
-5. Use o botão **☀/☽** para alternar entre tema escuro e claro
-6. Clique em **"Imprimir / PDF"** para salvar um PDF limpo — envie para seu cliente
-
----
-
-## 🏗️ Funciona para Qualquer Empresa de Serviço
-
-| Área | Exemplo de Serviços |
-|------|---------------------|
-| **Pedreiro / Pavimentação** | Avaliação, Projeto, Compra de Material, Instalação, Acabamento, Entrega |
-| **Pintura** | Consulta de Cores, Preparação, Primer, Pintura, Retoques, Vistoria |
-| **Elétrica** | Inspeção, Projeto, Licenças, Instalação, Testes, Certificação |
-| **Encanamento** | Diagnóstico, Orçamento, Peças, Reparo/Instalação, Teste, Garantia |
-| **Limpeza** | Avaliação, Proposta, Limpeza Pesada, Manutenção, Qualidade, Acompanhamento |
-| **Paisagismo** | Análise do Terreno, Projeto, Plantas, Instalação, Irrigação, Manutenção |
-| **Ar-Condicionado** | Inspeção, Cálculo de Carga, Seleção, Instalação, Teste, Plano de Manutenção |
-| **Marcenaria** | Medição, Projeto, Material, Fabricação, Instalação, Acabamento |
-| **Serralheria** | Medição, Projeto, Material, Fabricação, Instalação, Pintura |
-| **Piscina** | Inspeção, Teste de Água, Tratamento, Equipamentos, Limpeza, Relatório |
-
----
-
-## 🔄 Quer Fazer Mudanças Depois?
-
-Basta digitar na mesma conversa do Claude:
-
-- *"Aumenta o nome da empresa"*
-- *"Muda a taxa de imposto para 10%"*
-- *"Adiciona um 7º serviço chamado 'Plano de Manutenção Anual' por R$500"*
-- *"Remove a seção de processo"*
-- *"Muda a cor do accent para azul #2563EB"*
-- *"Adiciona uma seção de termos e condições antes das assinaturas"*
-
----
-
-**Feito com 🤖 por ServiceGrowth.ai** — Crescimento com IA para empresas de serviço.
-
-📱 DM @mateusoliv.ai no Instagram | 🌐 servicegrowth.ai
