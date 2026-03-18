@@ -30,7 +30,10 @@ PERGUNTAS PARA FAZER AO USUÁRIO (em ordem):
    - Quer usar um nome de cliente fictício no exemplo? (ou pode deixar "Cliente Exemplo")
    - Endereço fictício para o exemplo?
 
-Depois de coletar TODAS as informações, confirme um resumo com o usuário. Quando ele aprovar, gere o arquivo HTML completo seguindo a especificação abaixo, preenchendo com os dados coletados.
+6. Estilo do Orçamento:
+   - Você prefere o tema ESCURO (fundo preto, texto claro) ou CLARO/CREME (fundo claro, texto escuro)?
+
+Depois de coletar TODAS as informações, confirme um resumo com o usuário. Quando ele aprovar, gere o arquivo HTML completo seguindo a especificação abaixo, preenchendo com os dados coletados. Use o tema que o usuário escolheu (escuro ou claro).
 
 <idioma>
 IMPORTANTE: Todos os labels e textos visíveis do orçamento devem estar em PORTUGUÊS BRASILEIRO. Isso inclui:
@@ -67,14 +70,28 @@ O arquivo deve ser:
 - Carregar Google Font 'Nunito Sans' via tag link (pesos: 300,400,500,600,700,800,900)
 - Funcionar abrindo direto no navegador
 
-DESIGN — LIMPO E PROFISSIONAL (APENAS MODO ESCURO):
+DESIGN — LIMPO E PROFISSIONAL:
+Se o usuário escolheu ESCURO:
 - Fundo escuro sólido: #0A0A0A
 - Texto principal claro: #E8E5DF
 - Texto secundário/muted: #8A8780
 - Bordas sutis: #1E1E1E e #2A2A2A
-- Card do orçamento: fundo #111111, borda 1px solid #1E1E1E, border-radius 12px, max-width 820px centralizado
-- Sem transparência, sem blur, sem efeitos de vidro
+- Card do orçamento: fundo #111111, borda 1px solid #1E1E1E
+- Faixa meta e rodapé: #0F0F0F
 - Sombra suave no card: 0 8px 32px rgba(0,0,0,0.4)
+
+Se o usuário escolheu CLARO/CREME:
+- Fundo claro: #F5F3ED
+- Texto principal escuro: #1A1916
+- Texto secundário/muted: #7A776F
+- Bordas sutis: #E0DDD5 e #D5D0C6
+- Card do orçamento: fundo #FFFFFF, borda 1px solid #E0DDD5
+- Faixa meta e rodapé: #F0EDE5
+- Sombra suave no card: 0 8px 32px rgba(0,0,0,0.08)
+
+Ambos os temas:
+- border-radius 12px, max-width 820px centralizado
+- Sem transparência, sem blur, sem efeitos de vidro
 
 FONTE: 'Nunito Sans' para tudo. Sem serifa.
 - Nome da empresa: 48px, peso 900, letter-spacing -0.5px

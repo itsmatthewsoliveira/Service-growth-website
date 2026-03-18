@@ -30,7 +30,10 @@ QUESTIONS TO ASK THE USER (in order):
    - Would you like to use a fictional client name for the example? (or we can use "Sample Client")
    - Fictional address for the example?
 
-After collecting ALL the information, confirm a summary with the user. When they approve, generate the complete HTML file following the specification below, filled in with the collected data.
+6. Invoice Style:
+   - Do you prefer the DARK theme (black background, light text) or LIGHT/CREAM theme (light background, dark text)?
+
+After collecting ALL the information, confirm a summary with the user. When they approve, generate the complete HTML file following the specification below, filled in with the collected data. Use the theme the user chose (dark or light).
 
 <design_spec>
 CRITICAL RULES:
@@ -46,13 +49,27 @@ The file must be:
 - Work by simply opening in a browser
 
 DESIGN — CLEAN AND PROFESSIONAL:
+If user chose DARK:
 - Solid dark background: #0A0A0A
 - Primary text (light): #E8E5DF
 - Secondary/muted text: #8A8780
 - Subtle borders: #1E1E1E and #2A2A2A
-- Invoice card: background #111111, border 1px solid #1E1E1E, border-radius 12px, max-width 820px centered
-- No transparency, no blur, no glass effects
+- Invoice card: background #111111, border 1px solid #1E1E1E
+- Meta band and footer: #0F0F0F
 - Subtle card shadow: 0 8px 32px rgba(0,0,0,0.4)
+
+If user chose LIGHT/CREAM:
+- Light background: #F5F3ED
+- Primary text (dark): #1A1916
+- Secondary/muted text: #7A776F
+- Subtle borders: #E0DDD5 and #D5D0C6
+- Invoice card: background #FFFFFF, border 1px solid #E0DDD5
+- Meta band and footer: #F0EDE5
+- Subtle card shadow: 0 8px 32px rgba(0,0,0,0.08)
+
+Both themes:
+- border-radius 12px, max-width 820px centered
+- No transparency, no blur, no glass effects
 
 FONT: 'Nunito Sans' for everything. No serif.
 - Company name: 48px, weight 900, letter-spacing -0.5px
