@@ -60,13 +60,15 @@ REGRAS CRÍTICAS:
 - NÃO crie um app, gerador ou formulário. Gere APENAS um arquivo HTML estático com o orçamento já preenchido.
 - NÃO inclua botões de "gerar", "criar", campos de input, formulários interativos, toolbar, botão de editar, botão de tema, ou botão de upload de logo.
 - NÃO inclua nenhuma barra de ferramentas (toolbar). O HTML é apenas o orçamento estático.
-- O arquivo HTML é o orçamento em si — pronto para abrir no navegador e salvar como PDF via Ctrl+P / Cmd+P.
+- O arquivo HTML é o orçamento em si — pronto para abrir no navegador e salvar como PDF.
 - NÃO use glassmorphism, backdrop-filter, blur, orbes flutuantes, ou animações complexas.
 - Se o usuário quiser editar algo, ele pede a você (Claude) na conversa e você gera um novo arquivo.
+- NÃO USE JAVASCRIPT. Todo o conteúdo deve estar hardcoded diretamente no HTML. Nada de renderTable(), renderProcess(), ou qualquer função JS que gere conteúdo. O exportador de PDF não executa JavaScript, então qualquer conteúdo gerado por JS fica vazio no PDF.
 
 O arquivo deve ser:
 - Um único arquivo .html autossuficiente
-- Sem React, sem JSX, sem npm — HTML + CSS + JavaScript puro (apenas para renderizar a tabela e calcular totais)
+- Sem React, sem JSX, sem npm — HTML + CSS puro, SEM JavaScript
+- Todo o conteúdo (tabela de serviços, totais, valor por extenso, cards de processo) deve estar escrito diretamente no HTML, não gerado por JS
 - Carregar Google Font 'Nunito Sans' via tag link (pesos: 300,400,500,600,700,800,900)
 - Funcionar abrindo direto no navegador
 
@@ -126,13 +128,13 @@ PRINT CSS (MUITO IMPORTANTE):
 
 RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em 1 coluna.
 
-JAVASCRIPT (mínimo):
-- Array services[] com os dados dos serviços
-- Array steps[] com os dados das etapas
-- Constante TAX com a taxa de imposto
-- Funções: renderTable(), recalc(), numberToWords() (em português), renderProcess()
-- renderTable() e renderProcess() chamados no init
-- formatBRL() para formatar valores em R$
+SEM JAVASCRIPT:
+- NÃO use JavaScript para gerar conteúdo. O exportador de PDF não executa JS.
+- A tabela de serviços deve estar escrita diretamente no HTML com <tr> e <td>
+- Os totais (subtotal, imposto, total) devem ser valores hardcoded no HTML
+- O valor por extenso deve ser texto hardcoded
+- Os cards de "Nosso Processo" devem ser HTML estático, não gerados por JS
+- Calcule todos os valores (subtotal, imposto, total, por extenso) e escreva diretamente no HTML
 </especificacao_design>
 
 REFERÊNCIA HTML:

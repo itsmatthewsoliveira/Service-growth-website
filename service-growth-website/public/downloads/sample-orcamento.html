@@ -490,7 +490,14 @@ body {
           <th>Total (R$)</th>
         </tr>
       </thead>
-      <tbody id="table-body"></tbody>
+      <tbody>
+        <tr><td>1</td><td>Visita Técnica Gratuita</td><td>1</td><td>R$ 0,00</td><td>0%</td><td>0%</td><td>R$ 0,00</td></tr>
+        <tr><td>2</td><td>Projeto &amp; Orçamento Detalhado</td><td>1</td><td>R$ 0,00</td><td>0%</td><td>0%</td><td>R$ 0,00</td></tr>
+        <tr><td>3</td><td>Compra de Materiais</td><td>1</td><td>R$ 8.500,00</td><td>0%</td><td>0%</td><td>R$ 8.500,00</td></tr>
+        <tr><td>4</td><td>Demolição &amp; Preparação</td><td>1</td><td>R$ 5.000,00</td><td>0%</td><td>0%</td><td>R$ 5.000,00</td></tr>
+        <tr><td>5</td><td>Execução da Obra</td><td>1</td><td>R$ 25.000,00</td><td>0%</td><td>0%</td><td>R$ 25.000,00</td></tr>
+        <tr><td>6</td><td>Limpeza &amp; Entrega Final</td><td>1</td><td>R$ 1.500,00</td><td>0%</td><td>0%</td><td>R$ 1.500,00</td></tr>
+      </tbody>
     </table>
   </div>
 
@@ -501,7 +508,7 @@ body {
       <div class="payment-detail"><strong>PIX:</strong> contato@elitereformas.com.br</div>
       <div class="payment-detail"><strong>Transferência:</strong> Banco do Brasil, Ag 1234, CC 56789-0</div>
       <div class="extenso-label">Por Extenso</div>
-      <div class="extenso-value" id="extenso"></div>
+      <div class="extenso-value">Quarenta Mil Reais</div>
     </div>
     <div class="totals-box">
       <div class="totals-row">
@@ -549,158 +556,41 @@ body {
 <!-- PROCESS -->
 <div class="process-section">
   <div class="process-title">Nosso Processo</div>
-  <div class="process-grid" id="process-grid"></div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <div class="process-name">Avaliação</div>
+      <div class="process-desc">Visita técnica no local com medições e análise das necessidades.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <div class="process-name">Projeto</div>
+      <div class="process-desc">Renderizações 3D, seleção de materiais e proposta detalhada.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <div class="process-name">Materiais</div>
+      <div class="process-desc">Compra de materiais premium de fornecedores confiáveis.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <div class="process-name">Preparação</div>
+      <div class="process-desc">Demolição, nivelamento e preparação do espaço.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">05</div>
+      <div class="process-name">Execução</div>
+      <div class="process-desc">Equipe especializada executa com precisão e qualidade.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">06</div>
+      <div class="process-name">Entrega</div>
+      <div class="process-desc">Vistoria final com o cliente e documentação de garantia.</div>
+    </div>
+  </div>
 </div>
 
-<script>
-// DATA
-const services = [
-  { desc: 'Visita Técnica Gratuita', qty: 1, price: 0, discount: 0 },
-  { desc: 'Projeto & Orçamento Detalhado', qty: 1, price: 0, discount: 0 },
-  { desc: 'Compra de Materiais', qty: 1, price: 8500, discount: 0 },
-  { desc: 'Demolição & Preparação', qty: 1, price: 5000, discount: 0 },
-  { desc: 'Execução da Obra', qty: 1, price: 25000, discount: 0 },
-  { desc: 'Limpeza & Entrega Final', qty: 1, price: 1500, discount: 0 }
-];
-
-const steps = [
-  { name: 'Avaliação', desc: 'Visita técnica no local com medições e análise das necessidades.' },
-  { name: 'Projeto', desc: 'Renderizações 3D, seleção de materiais e proposta detalhada.' },
-  { name: 'Materiais', desc: 'Compra de materiais premium de fornecedores confiáveis.' },
-  { name: 'Preparação', desc: 'Demolição, nivelamento e preparação do espaço.' },
-  { name: 'Execução', desc: 'Equipe especializada executa com precisão e qualidade.' },
-  { name: 'Entrega', desc: 'Vistoria final com o cliente e documentação de garantia.' }
-];
-
-const TAX = 0;
-
-// FORMAT
-function formatBRL(n) {
-  return 'R$ ' + n.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-
-// NUMBER TO WORDS (Portuguese)
-function numberToWords(n) {
-  if (n === 0) return 'Zero Reais';
-  const units = ['', 'Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove',
-    'Dez', 'Onze', 'Doze', 'Treze', 'Quatorze', 'Quinze', 'Dezesseis', 'Dezessete', 'Dezoito', 'Dezenove'];
-  const tens = ['', '', 'Vinte', 'Trinta', 'Quarenta', 'Cinquenta', 'Sessenta', 'Setenta', 'Oitenta', 'Noventa'];
-  const hundreds = ['', 'Cento', 'Duzentos', 'Trezentos', 'Quatrocentos', 'Quinhentos',
-    'Seiscentos', 'Setecentos', 'Oitocentos', 'Novecentos'];
-
-  function groupToWords(g) {
-    if (g === 0) return '';
-    if (g === 100) return 'Cem';
-    let parts = [];
-    if (g >= 100) { parts.push(hundreds[Math.floor(g / 100)]); g %= 100; }
-    if (g >= 20) {
-      parts.push(tens[Math.floor(g / 10)]);
-      if (g % 10 > 0) parts.push(units[g % 10]);
-    } else if (g > 0) {
-      parts.push(units[g]);
-    }
-    return parts.join(' e ');
-  }
-
-  const intPart = Math.floor(n);
-  const centPart = Math.round((n - intPart) * 100);
-  let result = '';
-
-  if (intPart === 0) {
-    // no integer part
-  } else if (intPart >= 1000000) {
-    const millions = Math.floor(intPart / 1000000);
-    const remainder = intPart % 1000000;
-    result = (millions === 1 ? 'Um Milhão' : groupToWords(millions) + ' Milhões');
-    if (remainder > 0) {
-      const thousands = Math.floor(remainder / 1000);
-      const ones = remainder % 1000;
-      if (thousands > 0) {
-        result += ' ' + (thousands === 1 ? 'Mil' : groupToWords(thousands) + ' Mil');
-      }
-      if (ones > 0) {
-        result += (thousands > 0 ? ' e ' : ' e ') + groupToWords(ones);
-      }
-    }
-  } else if (intPart >= 1000) {
-    const thousands = Math.floor(intPart / 1000);
-    const ones = intPart % 1000;
-    result = (thousands === 1 ? 'Mil' : groupToWords(thousands) + ' Mil');
-    if (ones > 0) result += ' e ' + groupToWords(ones);
-  } else {
-    result = groupToWords(intPart);
-  }
-
-  if (intPart > 0) {
-    result += (intPart === 1) ? ' Real' : ' Reais';
-  }
-
-  if (centPart > 0) {
-    if (intPart > 0) result += ' e ';
-    result += groupToWords(centPart) + (centPart === 1 ? ' Centavo' : ' Centavos');
-  }
-
-  if (intPart === 0 && centPart === 0) result = 'Zero Reais';
-
-  return result;
-}
-
-// RENDER TABLE
-function renderTable() {
-  const tbody = document.getElementById('table-body');
-  tbody.innerHTML = '';
-  services.forEach((s, i) => {
-    const lineTax = s.price * s.qty * (1 - s.discount / 100) * (TAX / 100);
-    const lineTotal = s.price * s.qty * (1 - s.discount / 100) + lineTax;
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${i + 1}</td>
-      <td>${s.desc}</td>
-      <td>${s.qty}</td>
-      <td>${formatBRL(s.price)}</td>
-      <td>${s.discount}%</td>
-      <td>${TAX}%</td>
-      <td>${formatBRL(lineTotal)}</td>`;
-    tbody.appendChild(tr);
-  });
-  recalc();
-}
-
-// RECALC
-function recalc() {
-  let sub = 0;
-  services.forEach(s => {
-    sub += s.price * s.qty * (1 - s.discount / 100);
-  });
-  const tax = sub * (TAX / 100);
-  const total = sub + tax;
-  document.getElementById('subtotal-val').textContent = formatBRL(sub);
-  document.getElementById('tax-val').textContent = formatBRL(tax);
-  document.getElementById('total-val').textContent = formatBRL(total);
-  document.getElementById('meta-total').textContent = formatBRL(total);
-  document.getElementById('extenso').textContent = numberToWords(total);
-}
-
-// RENDER PROCESS
-function renderProcess() {
-  const grid = document.getElementById('process-grid');
-  grid.innerHTML = '';
-  steps.forEach((s, i) => {
-    const card = document.createElement('div');
-    card.className = 'process-card';
-    card.innerHTML = `
-      <div class="process-num">${String(i + 1).padStart(2, '0')}</div>
-      <div class="process-name">${s.name}</div>
-      <div class="process-desc">${s.desc}</div>`;
-    grid.appendChild(card);
-  });
-}
-
-
-// INIT
-renderTable();
-renderProcess();
-</script>
+<!-- No JavaScript — all content is hardcoded for PDF compatibility -->
 
 </body>
 </html>
