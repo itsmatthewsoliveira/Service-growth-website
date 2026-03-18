@@ -9,9 +9,9 @@ const FEATURES = [
     desc: "Layout profissional e moderno que transmite credibilidade ao seu cliente.",
   },
   {
-    icon: "✏️",
-    title: "Editável",
-    desc: "Template .md que você personaliza com seus dados antes de gerar.",
+    icon: "💬",
+    title: "Só Conversar",
+    desc: "Cole o template no Claude e responda as perguntas — sem preencher nada.",
   },
   {
     icon: "📄",

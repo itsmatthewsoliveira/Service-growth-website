@@ -6,9 +6,9 @@
 
 ## 📖 What Is This?
 
-This is an AI prompt template. You paste it into **Claude** (a free AI tool), fill in your business details, and it instantly generates a premium, interactive invoice for your company — with glassmorphism effects, dark/light mode, logo upload, and Print-to-PDF.
+This is an AI prompt template. You paste it into **Claude** (a free AI tool) and it asks you a few questions about your business. Then it generates a premium, interactive invoice for your company — with professional design, dark/light mode, logo upload, and Print-to-PDF.
 
-**No coding. No design skills. No subscriptions.** Just copy, paste, fill in your info, and download.
+**No coding. No design skills. No subscriptions. No filling out files.** Just copy, paste, answer Claude's questions, and download.
 
 ---
 
@@ -24,65 +24,43 @@ This is an AI prompt template. You paste it into **Claude** (a free AI tool), fi
 
 ## ✂️ Step 2: Copy the Prompt Below
 
-Copy **EVERYTHING** inside the box below — from the first line to the last line.
+Copy **EVERYTHING** inside the box below — from the first line to the last line. **You do NOT need to fill in anything** — Claude will ask you everything in the chat.
 
 ~~~
-You are a senior frontend developer. Build me a single self-contained HTML file (NOT React, NOT JSX — pure HTML/CSS/JS) that is a premium glassmorphism invoice generator. This must work by simply opening the HTML file in a browser — no build tools, no npm, no frameworks.
+You are a specialist assistant for generating professional invoices for service businesses. Before generating anything, you need to collect the user's information through a conversation.
 
-<business_info>
-Company Name: [YOUR COMPANY NAME IN ALL CAPS — e.g. "APEX"]
-Company Subtitle: [YOUR SUBTITLE IN ALL CAPS — e.g. "ROOFING & RESTORATION"]
-Address Line 1: [YOUR ADDRESS — e.g. "8900 Westheimer Rd"]
-Address Line 2: [CITY, STATE, ZIP — e.g. "Houston, TX 77063"]
-Country: [e.g. "United States"]
-Phone: [YOUR PHONE — e.g. "(713) 555-0234"]
-Email: [YOUR EMAIL — e.g. "info@apexroofing.com"]
-Website: [YOUR WEBSITE — e.g. "www.apexroofing.com"]
-</business_info>
+IMPORTANT: Do NOT generate the invoice yet. First, ask the questions below to the user, one section at a time, in a friendly and conversational way. When you have all the information, confirm with the user and only then generate the HTML file.
 
-<default_services>
-These are my typical services/phases of work, in order. Each has a default price:
+QUESTIONS TO ASK THE USER (in order):
 
-1. [SERVICE — e.g. "Initial Inspection & Assessment"] — Price: [e.g. 0]
-2. [SERVICE — e.g. "Design & Material Selection"] — Price: [e.g. 1500]
-3. [SERVICE — e.g. "Material Procurement & Delivery"] — Price: [e.g. 4800]
-4. [SERVICE — e.g. "Tear-Off & Preparation"] — Price: [e.g. 3200]
-5. [SERVICE — e.g. "Installation"] — Price: [e.g. 12000]
-6. [SERVICE — e.g. "Cleanup & Final Inspection"] — Price: [e.g. 500]
+1. **Business Details:**
+   - What is your company name? (e.g. "APEX")
+   - What is your specialty/subtitle? (e.g. "ROOFING & RESTORATION")
+   - What is your full address? (street, city, state, zip)
+   - Contact phone number?
+   - Business email?
+   - Do you have a website? (if not, that's fine)
 
-(Add or remove lines as needed.)
-</default_services>
+2. **Services and Pricing:**
+   - What are the phases/stages of your work? (list 4-6 services with the price for each)
+   - Example: "Free Inspection — $0", "Installation — $12,000", etc.
 
-<process_steps>
-For the "Our Process" section below the invoice, list each phase:
+3. **Work Process:**
+   - For each service/phase above, write a short sentence explaining what happens in that stage
+   - Example: "Inspection — Thorough on-site assessment and damage documentation."
 
-1. [TITLE — e.g. "Inspection"] — [ONE SENTENCE — e.g. "Thorough on-site roof assessment and damage documentation."]
-2. [TITLE — e.g. "Planning"] — [ONE SENTENCE — e.g. "Material selection, timeline, and detailed project proposal."]
-3. [TITLE — e.g. "Procurement"] — [ONE SENTENCE — e.g. "Premium materials sourced and delivered to the job site."]
-4. [TITLE — e.g. "Tear-Off"] — [ONE SENTENCE — e.g. "Old roofing removed with full debris cleanup."]
-5. [TITLE — e.g. "Installation"] — [ONE SENTENCE — e.g. "Expert crew installs your new roof to manufacturer specs."]
-6. [TITLE — e.g. "Walkthrough"] — [ONE SENTENCE — e.g. "Final inspection with client and warranty documentation."]
-</process_steps>
+4. **Payment:**
+   - What payment methods do you accept? (Zelle, check, Venmo, etc.)
+   - Do you have Zelle, Venmo, or bank details to include?
+   - Do you charge tax separately? If so, what %?
 
-<payment_info>
-Payment methods and details:
-- [e.g. "Zelle: payments@apexroofing.com"]
-- [e.g. "Check: Payable to Apex Roofing Solutions LLC"]
-- [e.g. "Venmo: @ApexRoofing"]
+5. **Sample Client:**
+   - Would you like to use a fictional client name for the example? (or we can use "Sample Client")
 
-Tax rate: [e.g. "7.5" for 7.5%, or "0" for no tax]
-</payment_info>
-
-<sample_client>
-Default example client shown on the invoice:
-Client Name: [e.g. "Sarah Johnson"]
-Client Address Line 1: [e.g. "2200 Elm Creek Dr"]
-Client Address Line 2: [e.g. "Katy, TX 77494"]
-Client Country: [e.g. "USA"]
-</sample_client>
+After collecting ALL the information, confirm a summary with the user. When they approve, generate the invoice following the specification below:
 
 <design_spec>
-This is a STRICT design specification. Follow it exactly.
+Build a single self-contained HTML file (NOT React, NOT JSX — pure HTML/CSS/JS) that is a professional invoice generator. This must work by simply opening the HTML file in a browser — no build tools, no npm, no frameworks.
 
 FILE FORMAT:
 - Single self-contained .html file
@@ -111,7 +89,7 @@ BACKGROUND EFFECTS (behind the invoice card):
 3. GRAIN TEXTURE — SVG feTurbulence noise overlay, fixed, low opacity
 4. DIAGONAL LINES — Faint SVG lines crossing viewport
 
-INVOICE CARD — GLASSMORPHISM:
+INVOICE CARD:
 - background: var(--glass); backdrop-filter: blur(40px) saturate(1.5); border: 1px solid var(--glass-border); border-radius: 16px
 - box-shadow: 0 24px 80px rgba(0,0,0,0.4), inset 0 1px 0 var(--glass-hi) for dark; lighter for cream
 - Max-width 820px centered
@@ -145,14 +123,16 @@ MOBILE: Below 700px stack layout, 2-col meta, 1-col process cards.
 
 ---
 
-## 📋 Step 3: Paste It Into Claude
+## 📋 Step 3: Paste It Into Claude and Chat
 
 1. Open **claude.ai**
 2. Click into the chat box
 3. **Paste everything** you just copied
-4. **Replace every `[BRACKET FIELD]`** with your real info — company name, address, services, etc.
-5. Press **Enter**
-6. Wait about 30-60 seconds — Claude will generate your complete invoice
+4. Press **Enter**
+5. Claude will ask you questions about your business — **just answer naturally in the chat**
+6. Once it has all your info, it will generate your complete invoice
+
+> **Tip:** You don't need to fill in anything in the file! Claude has a conversation with you and collects everything it needs.
 
 ---
 
@@ -164,45 +144,6 @@ MOBILE: Below 700px stack layout, 2-col meta, 1-col process cards.
 4. Click **"Edit"** to change client name, dates, services, prices
 5. Toggle **☀/☽** to switch between dark and cream themes
 6. Click **"Print / PDF"** to save a clean PDF — send that to your client
-
----
-
-## 💡 Example: Filled-In Version (Roofing Company)
-
-~~~
-Company Name: APEX
-Company Subtitle: ROOFING & RESTORATION
-Address Line 1: 8900 Westheimer Rd
-Address Line 2: Houston, TX 77063
-Country: United States
-Phone: (713) 555-0234
-Email: hello@apexroofing.com
-Website: www.apexroofing.com
-
-Services:
-1. Free Roof Inspection — Price: 0
-2. Estimate & Material Selection — Price: 0
-3. Insurance Claim Assistance — Price: 500
-4. Material Delivery — Price: 3200
-5. Roof Installation — Price: 14500
-6. Final Walkthrough & Warranty — Price: 0
-
-Process Steps:
-1. Inspection — Thorough on-site roof assessment and damage documentation.
-2. Planning — Material selection, timeline, and detailed project proposal.
-3. Claims — Insurance paperwork handled and filed on your behalf.
-4. Procurement — Premium materials sourced and delivered to job site.
-5. Installation — Expert crew installs your new roof to manufacturer specs.
-6. Walkthrough — Final inspection with client and warranty documentation.
-
-Payment:
-- Zelle: payments@apexroofing.com
-- Check: Payable to Apex Roofing & Restoration LLC
-Tax rate: 8.25
-
-Sample Client:
-Sarah Johnson, 2200 Elm Creek Dr, Katy, TX 77494, USA
-~~~
 
 ---
 
@@ -238,4 +179,4 @@ Just type in the same Claude conversation:
 
 **Built with 🤖 by ServiceGrowth.ai** — AI-powered growth for service businesses.
 
-📱 DM @matthews.ai on Instagram | 🌐 servicegrowth.ai
+📱 DM @mateusoliv.ai on Instagram | 🌐 servicegrowth.ai

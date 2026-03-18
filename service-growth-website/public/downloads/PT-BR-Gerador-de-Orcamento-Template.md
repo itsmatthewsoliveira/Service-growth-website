@@ -6,9 +6,9 @@
 
 ## 📖 O Que É Isso?
 
-Esse é um template de prompt para IA. Você cola no **Claude** (uma ferramenta de IA gratuita), preenche os dados da sua empresa, e ele gera instantaneamente um orçamento premium e interativo — com efeito de vidro (glassmorphism), modo escuro/claro, upload de logo, e exportação para PDF.
+Esse é um template de prompt para IA. Você cola no **Claude** (uma ferramenta de IA gratuita) e ele te faz algumas perguntas sobre sua empresa. Depois disso, ele gera instantaneamente um orçamento premium e interativo — com design profissional, modo escuro/claro, upload de logo, e exportação para PDF.
 
-**Sem programação. Sem design. Sem assinatura.** Só copiar, colar, preencher e baixar.
+**Sem programação. Sem design. Sem assinatura. Sem preencher nada no arquivo.** Só copiar, colar, responder as perguntas do Claude e baixar.
 
 ---
 
@@ -24,68 +24,45 @@ Esse é um template de prompt para IA. Você cola no **Claude** (uma ferramenta 
 
 ## ✂️ Passo 2: Copie o Prompt Abaixo
 
-Copie **TUDO** dentro da caixa abaixo — da primeira até a última linha.
+Copie **TUDO** dentro da caixa abaixo — da primeira até a última linha. **NÃO precisa preencher nada** — o Claude vai te perguntar tudo no chat.
 
 ~~~
-Você é um desenvolvedor frontend sênior. Construa um único arquivo HTML autossuficiente (NÃO React, NÃO JSX — HTML/CSS/JS puro) que é um gerador de orçamento profissional com efeito glassmorphism. Deve funcionar simplesmente abrindo o arquivo HTML no navegador — sem ferramentas de build, sem npm, sem frameworks.
+Você é um assistente especializado em gerar orçamentos profissionais para empresas de serviço. Antes de gerar qualquer coisa, você precisa coletar as informações do usuário através de uma conversa.
 
-IMPORTANTE: Todos os textos e labels do orçamento devem estar em PORTUGUÊS BRASILEIRO (PT-BR). Isso inclui: labels como "Valor Total", "Data de Vencimento", "Nº do Orçamento", "Data de Emissão", "Orçamento Para", "Endereço do Projeto", "Desc. dos Serviços", "Qtd.", "Valor (R$)", "Desc.", "Imposto", "Total (R$)", "Método de Pagamento", "Por Extenso", "Subtotal", "Aceito Por", "Assinatura", "Informações de Pagamento", "Nosso Processo", e todos os outros textos visíveis. Use o símbolo R$ para valores e formato brasileiro de números (1.000,00). A função de valor por extenso deve gerar em português (ex: "Dezessete Mil e Oitenta Reais").
+IMPORTANTE: NÃO gere o orçamento ainda. Primeiro, faça as perguntas abaixo ao usuário, uma seção por vez, de forma amigável e em português brasileiro. Quando tiver todas as informações, confirme com o usuário e só então gere o arquivo HTML.
 
-<dados_empresa>
-Nome da Empresa: [SEU NOME EM MAIÚSCULAS — ex: "ELITE"]
-Subtítulo da Empresa: [SEU SUBTÍTULO — ex: "REFORMAS & CONSTRUÇÃO"]
-Endereço Linha 1: [SEU ENDEREÇO — ex: "Rua das Flores, 123"]
-Endereço Linha 2: [CIDADE, ESTADO, CEP — ex: "São Paulo, SP 01001-000"]
-País: [ex: "Brasil"]
-Telefone: [SEU TELEFONE — ex: "(11) 99999-0000"]
-Email: [SEU EMAIL — ex: "contato@elitereformas.com.br"]
-Website: [SEU SITE — ex: "www.elitereformas.com.br"]
-</dados_empresa>
+PERGUNTAS PARA FAZER AO USUÁRIO (em ordem):
 
-<servicos_padrao>
-Estes são meus serviços/fases típicas de trabalho, em ordem. Cada um tem um preço padrão:
+1. **Dados da Empresa:**
+   - Qual o nome da sua empresa? (ex: "ELITE")
+   - Qual a especialidade/subtítulo? (ex: "REFORMAS & CONSTRUÇÃO")
+   - Qual o endereço completo? (rua, cidade, estado, CEP)
+   - Telefone de contato?
+   - Email comercial?
+   - Tem website? (se não tiver, tudo bem)
 
-1. [SERVIÇO — ex: "Visita Técnica & Avaliação"] — Preço: [ex: 0]
-2. [SERVIÇO — ex: "Projeto & Seleção de Materiais"] — Preço: [ex: 3000]
-3. [SERVIÇO — ex: "Compra de Materiais"] — Preço: [ex: 8500]
-4. [SERVIÇO — ex: "Demolição & Preparação"] — Preço: [ex: 5000]
-5. [SERVIÇO — ex: "Instalação / Execução"] — Preço: [ex: 25000]
-6. [SERVIÇO — ex: "Limpeza & Vistoria Final"] — Preço: [ex: 1500]
+2. **Serviços e Preços:**
+   - Quais são as fases/etapas do seu trabalho? (liste 4-6 serviços com o preço de cada)
+   - Exemplo: "Visita Técnica — R$0", "Projeto — R$3.000", etc.
 
-(Adicione ou remova linhas conforme necessário.)
-</servicos_padrao>
+3. **Processo de Trabalho:**
+   - Para cada serviço/fase acima, escreva uma frase curta explicando o que acontece nessa etapa
+   - Exemplo: "Avaliação — Visita técnica no local com medições e levantamento das necessidades."
 
-<etapas_processo>
-Para a seção "Nosso Processo" abaixo do orçamento, liste cada fase:
+4. **Pagamento:**
+   - Quais formas de pagamento você aceita? (PIX, transferência, boleto, etc.)
+   - Tem chave PIX? Dados bancários?
+   - Cobra imposto separado? Se sim, qual %?
 
-1. [TÍTULO — ex: "Avaliação"] — [UMA FRASE — ex: "Visita técnica no local com medições e levantamento das necessidades."]
-2. [TÍTULO — ex: "Projeto"] — [UMA FRASE — ex: "Renderizações 3D, seleção de materiais e proposta detalhada."]
-3. [TÍTULO — ex: "Materiais"] — [UMA FRASE — ex: "Compra de materiais premium de fornecedores confiáveis."]
-4. [TÍTULO — ex: "Preparação"] — [UMA FRASE — ex: "Demolição, nivelamento e preparação do terreno."]
-5. [TÍTULO — ex: "Execução"] — [UMA FRASE — ex: "Equipe especializada executa com precisão e qualidade."]
-6. [TÍTULO — ex: "Entrega"] — [UMA FRASE — ex: "Vistoria final com o cliente e documentação de garantia."]
-</etapas_processo>
+5. **Cliente Exemplo:**
+   - Quer usar um nome de cliente fictício no exemplo? (ou pode deixar "Cliente Exemplo")
 
-<pagamento>
-Métodos de pagamento e detalhes:
-- [ex: "PIX: contato@elitereformas.com.br"]
-- [ex: "Transferência: Banco do Brasil, Ag 1234, CC 56789-0"]
-- [ex: "Boleto: Sob consulta"]
-
-Taxa de imposto: [ex: "0" se não cobra imposto separado, ou "10" para 10%]
-Moeda: BRL (Reais)
-</pagamento>
-
-<cliente_exemplo>
-Cliente exemplo padrão mostrado no orçamento:
-Nome do Cliente: [ex: "Carlos Silva"]
-Endereço Linha 1: [ex: "Av. Paulista, 1000, Apto 42"]
-Endereço Linha 2: [ex: "São Paulo, SP 01310-100"]
-País: [ex: "Brasil"]
-</cliente_exemplo>
+Depois de coletar TODAS as informações, confirme um resumo com o usuário. Quando ele aprovar, gere o orçamento seguindo a especificação abaixo:
 
 <especificacao_design>
-Esta é uma especificação RÍGIDA de design. Siga exatamente.
+Construa um único arquivo HTML autossuficiente (NÃO React, NÃO JSX — HTML/CSS/JS puro) que é um gerador de orçamento profissional. Deve funcionar simplesmente abrindo o arquivo HTML no navegador — sem ferramentas de build, sem npm, sem frameworks.
+
+IMPORTANTE: Todos os textos e labels do orçamento devem estar em PORTUGUÊS BRASILEIRO (PT-BR). Isso inclui: labels como "Valor Total", "Data de Vencimento", "Nº do Orçamento", "Data de Emissão", "Orçamento Para", "Endereço do Projeto", "Desc. dos Serviços", "Qtd.", "Valor (R$)", "Desc.", "Imposto", "Total (R$)", "Método de Pagamento", "Por Extenso", "Subtotal", "Aceito Por", "Assinatura", "Informações de Pagamento", "Nosso Processo", e todos os outros textos visíveis. Use o símbolo R$ para valores e formato brasileiro de números (1.000,00). A função de valor por extenso deve gerar em português (ex: "Dezessete Mil e Oitenta Reais").
 
 FORMATO DO ARQUIVO:
 - Um único arquivo .html autossuficiente
@@ -114,7 +91,7 @@ EFEITOS DE FUNDO (atrás do card do orçamento):
 3. TEXTURA GRANULADA — Overlay SVG feTurbulence, fixo, opacidade baixa
 4. LINHAS DIAGONAIS — Linhas SVG sutis cruzando o viewport
 
-CARD DO ORÇAMENTO — GLASSMORPHISM:
+CARD DO ORÇAMENTO:
 - background: var(--glass); backdrop-filter: blur(40px) saturate(1.5); border: 1px solid var(--glass-border); border-radius: 16px
 - box-shadow: 0 24px 80px rgba(0,0,0,0.4), inset 0 1px 0 var(--glass-hi) para escuro; mais leve para creme
 - Max-width 820px centralizado
@@ -148,14 +125,16 @@ RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em
 
 ---
 
-## 📋 Passo 3: Cole no Claude
+## 📋 Passo 3: Cole no Claude e Converse
 
 1. Abra o **claude.ai**
 2. Clique na caixa de chat
 3. **Cole tudo** que você copiou
-4. **Substitua cada campo `[ENTRE COLCHETES]`** com as informações reais da sua empresa
-5. Aperte **Enter**
-6. Espere uns 30-60 segundos — o Claude vai gerar seu orçamento completo
+4. Aperte **Enter**
+5. O Claude vai te fazer perguntas sobre sua empresa — **é só responder normalmente no chat**
+6. Quando ele tiver todas as informações, vai gerar seu orçamento completo
+
+> **Dica:** Você não precisa preencher nada no arquivo! O Claude conversa com você e coleta tudo que precisa.
 
 ---
 
@@ -167,45 +146,6 @@ RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em
 4. Clique em **"Editar"** para mudar nome do cliente, datas, serviços, preços
 5. Use o botão **☀/☽** para alternar entre tema escuro e claro
 6. Clique em **"Imprimir / PDF"** para salvar um PDF limpo — envie para seu cliente
-
----
-
-## 💡 Exemplo Preenchido (Empresa de Reforma)
-
-~~~
-Nome da Empresa: ELITE
-Subtítulo: REFORMAS & CONSTRUÇÃO
-Endereço Linha 1: Rua das Flores, 123
-Endereço Linha 2: São Paulo, SP 01001-000
-País: Brasil
-Telefone: (11) 99999-0000
-Email: contato@elitereformas.com.br
-Website: www.elitereformas.com.br
-
-Serviços:
-1. Visita Técnica Gratuita — Preço: 0
-2. Projeto & Orçamento Detalhado — Preço: 0
-3. Compra de Materiais — Preço: 8500
-4. Demolição & Preparação — Preço: 5000
-5. Execução da Obra — Preço: 25000
-6. Limpeza & Entrega Final — Preço: 1500
-
-Etapas do Processo:
-1. Avaliação — Visita técnica no local com medições e análise das necessidades.
-2. Projeto — Renderizações 3D, seleção de materiais e proposta detalhada.
-3. Materiais — Compra de materiais premium de fornecedores confiáveis.
-4. Preparação — Demolição, nivelamento e preparação do espaço.
-5. Execução — Equipe especializada executa com precisão e qualidade.
-6. Entrega — Vistoria final com o cliente e documentação de garantia.
-
-Pagamento:
-- PIX: contato@elitereformas.com.br
-- Transferência: Banco do Brasil, Ag 1234, CC 56789-0
-Taxa de imposto: 0
-
-Cliente Exemplo:
-Carlos Silva, Av. Paulista, 1000, Apto 42, São Paulo, SP 01310-100, Brasil
-~~~
 
 ---
 
@@ -239,25 +179,6 @@ Basta digitar na mesma conversa do Claude:
 
 ---
 
-## 📱 Mensagem para Instagram DM (copie e cole para seus seguidores)
-
-> Opa! 👋 Aqui está o template que te gera um orçamento profissional com IA em menos de 1 minuto.
->
-> 📄 **Como usar:**
-> 1. Acesse claude.ai (é grátis)
-> 2. Crie uma conta
-> 3. Copie o prompt do arquivo que te mandei
-> 4. Troque os campos [ENTRE COLCHETES] com os dados da sua empresa
-> 5. Cole no chat do Claude e aperte Enter
-> 6. Baixe o arquivo HTML que ele gerar
-> 7. Abra no navegador, coloque seu logo, edite os dados do cliente, e salve como PDF
->
-> Pronto! Orçamento profissional em 30 segundos. 🚀
->
-> Qualquer dúvida me chama aqui!
-
----
-
 **Feito com 🤖 por ServiceGrowth.ai** — Crescimento com IA para empresas de serviço.
 
-📱 DM @matthews.ai no Instagram | 🌐 servicegrowth.ai
+📱 DM @mateusoliv.ai no Instagram | 🌐 servicegrowth.ai
