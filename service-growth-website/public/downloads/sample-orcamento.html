@@ -369,16 +369,42 @@ body {
   .process-section { margin: 20px 10px 40px; }
 }
 
-/* PRINT — preserve dark theme */
+/* PRINT — preserve dark theme, fit invoice on 1 page, process on page 2 */
+@page { margin: 10mm; }
 @media print {
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body { background: var(--bg) !important; }
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  html { background: var(--bg) !important; }
+  body { background: var(--bg) !important; padding: 0 !important; }
   .invoice-card {
     box-shadow: none !important;
     margin: 0 auto !important;
-    break-inside: avoid;
+    border-radius: 0 !important;
   }
-  .process-section { break-inside: avoid; }
+  /* Shrink to fit invoice on one page */
+  .invoice-header { padding: 20px 20px 12px !important; }
+  .company-name { font-size: 36px !important; }
+  .company-info { padding: 0 20px 12px !important; font-size: 10px !important; }
+  .meta-strip { padding: 12px 20px !important; }
+  .meta-value { font-size: 11px !important; }
+  .meta-value.large { font-size: 16px !important; }
+  .client-section { padding: 14px 20px !important; }
+  .table-wrapper { padding: 0 20px 14px !important; }
+  .invoice-table { font-size: 10px !important; }
+  .invoice-table thead th { font-size: 7.5px !important; padding: 6px 4px !important; }
+  .invoice-table tbody td { padding: 6px 4px !important; }
+  .payment-totals { padding: 14px 20px !important; }
+  .signatures { padding: 14px 20px 20px !important; }
+  .sig-block .section-label { margin-bottom: 24px !important; }
+  .invoice-footer { padding: 12px 20px !important; }
+  /* Process on separate page */
+  .process-section {
+    page-break-before: always !important;
+    margin-top: 20px !important;
+  }
 }
 </style>
 </head>

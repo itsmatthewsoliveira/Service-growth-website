@@ -98,6 +98,10 @@ PRINT CSS (VERY IMPORTANT):
 - Also apply background on html { background: [bg color] !important; } — without this the background prints white
 - Apply explicit background !important on body, .invoice-card, .meta-band, .footer, .process-card
 - Remove box-shadow from card
+- The entire invoice (card) must fit on ONE page when printed. Use smaller font-size in @media print if needed.
+- The "Our Process" section must start on a SEPARATE SECOND page. Use page-break-before: always on the process section.
+- Add @page { margin: 10mm; } for minimal print margins
+- Inside @media print, reduce card padding to 20px, font-sizes to ~80%, and company-name to 36px to ensure everything fits on one page
 - Do NOT convert to white background
 
 RESPONSIVE: Below 700px stack layout, 2-col meta, 1-col process cards.

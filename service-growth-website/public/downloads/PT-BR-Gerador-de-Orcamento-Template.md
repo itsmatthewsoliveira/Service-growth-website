@@ -119,6 +119,10 @@ PRINT CSS (MUITO IMPORTANTE):
 - Aplicar background !important explícito no body, .invoice-card, .meta-band, .footer, .process-card
 - Remover box-shadow do card
 - NÃO converter para fundo branco
+- O orçamento inteiro (card) deve caber em UMA página quando impresso. Use font-size menor no @media print se necessário.
+- A seção "Nosso Processo" deve começar em uma SEGUNDA página separada. Use page-break-before: always na seção de processo.
+- Adicionar @page { margin: 10mm; } para margens mínimas na impressão
+- Dentro de @media print, reduzir padding do card para 20px, font-sizes em ~80%, e company-name para 36px para garantir que tudo cabe em uma página
 
 RESPONSIVO: Abaixo de 700px empilhar layout, meta em 2 colunas, process cards em 1 coluna.
 
