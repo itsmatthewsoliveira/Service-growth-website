@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { createNotionPage, headingBlock, richBlock } from "@/lib/notion";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const resendKey = process.env.RESEND_API_KEY;
 
 export async function POST(req: NextRequest) {
@@ -16,18 +14,36 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Save to Supabase
-    const supabase = createClient(supabaseUrl, supabaseKey);
-    const { error: dbError } = await supabase
-      .from("orcamento_leads")
-      .upsert(
-        { name, email, phone, business_type, source: "orcamento-landing" },
-        { onConflict: "email" }
-      );
-
-    if (dbError) {
-      console.error("Supabase error:", dbError);
-    }
+    // Save to Notion (fire-and-forget)
+    createNotionPage({
+      properties: {
+        Name: {
+          title: [{ text: { content: name } }],
+        },
+        Email: { email: email },
+        Phone: { phone_number: phone || null },
+        Company: {
+          rich_text: [{ text: { content: business_type || "" } }],
+        },
+        "Project Status": {
+          status: { name: "\uD83D\uDFE1 Onboarding" },
+        },
+        "Lead Source": {
+          select: { name: "Orcamento Form" },
+        },
+        "Submitted At": {
+          date: { start: new Date().toISOString() },
+        },
+      },
+      children: [
+        headingBlock("heading_2", "Orcamento Form Submission"),
+        richBlock("Name", name),
+        richBlock("Email", email),
+        richBlock("Phone", phone),
+        richBlock("Business Type", business_type),
+        richBlock("Source", "orcamento-landing"),
+      ],
+    }).catch((err) => console.error("Notion save failed (orcamento):", err));
 
     // Send email via Resend
     if (resendKey) {
@@ -47,8 +63,8 @@ export async function POST(req: NextRequest) {
               "Seu Gerador de Orçamento Profissional — ServiceGrowth.ai",
             html: `
               <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;background:#0C0C0C;color:#E8E5DF;padding:40px 32px;border-radius:12px;">
-                <div style="border-bottom:2px solid #28E8FD;padding-bottom:20px;margin-bottom:24px;">
-                  <h1 style="font-size:24px;font-weight:800;margin:0;">SERVICEGROWTH<span style="color:#28E8FD;">.AI</span></h1>
+                <div style="border-bottom:2px solid #C2703A;padding-bottom:20px;margin-bottom:24px;">
+                  <h1 style="font-size:24px;font-weight:800;margin:0;">SERVICEGROWTH<span style="color:#C2703A;">.AI</span></h1>
                 </div>
                 <p style="font-size:16px;margin-bottom:4px;">Opa ${name.split(" ")[0]}!</p>
                 <p style="font-size:14px;color:#B0ADA6;line-height:1.7;margin-bottom:24px;">
@@ -56,7 +72,7 @@ export async function POST(req: NextRequest) {
                 </p>
                 <div style="background:#161616;border:1px solid #2A2A2A;border-radius:8px;padding:20px;margin-bottom:16px;">
                   <p style="font-size:11px;font-weight:700;letter-spacing:2px;color:#8A8780;text-transform:uppercase;margin:0 0 12px;">SEUS ARQUIVOS</p>
-                  <a href="${baseUrl}/downloads/Guia-Orcamento-Profissional.pdf" style="display:block;background:#28E8FD;color:#000;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">
+                  <a href="${baseUrl}/downloads/Guia-Orcamento-Profissional.pdf" style="display:block;background:#C2703A;color:#000;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">
                     Baixar Guia PDF
                   </a>
                   <a href="${baseUrl}/downloads/Gerador-de-Orcamento-PT.zip" style="display:block;background:#1E1E1E;color:#E8E5DF;text-decoration:none;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:600;text-align:center;border:1px solid #2A2A2A;">
@@ -78,7 +94,7 @@ export async function POST(req: NextRequest) {
                 </div>
                 <div style="border-top:1px solid #2A2A2A;padding-top:20px;text-align:center;">
                   <p style="font-size:13px;color:#8A8780;margin:0 0 8px;">Quer mais ferramentas de IA?</p>
-                  <a href="https://instagram.com/mateusoliv.ai" style="color:#28E8FD;font-weight:600;font-size:14px;text-decoration:none;">Siga @mateusoliv.ai no Instagram</a>
+                  <a href="https://instagram.com/mateusoliv.ai" style="color:#C2703A;font-weight:600;font-size:14px;text-decoration:none;">Siga @mateusoliv.ai no Instagram</a>
                 </div>
               </div>
             `,

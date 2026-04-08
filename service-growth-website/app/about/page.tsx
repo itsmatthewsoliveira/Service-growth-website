@@ -27,7 +27,7 @@ const whyDifferent = [
     number: "3",
     title: "Proven Before Sold",
     description:
-      "We don't offer anything we haven't tested on ourselves first. Every system, every workflow—battle-tested in our own business.",
+      "We don't offer anything we haven't tested on ourselves first. Every system, every workflow — battle-tested in our own business.",
   },
 ];
 
@@ -57,18 +57,18 @@ const philosophy = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero — dark charcoal */}
+      <section className="section-dark relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#C2703A]/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-text-body mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#F5F0E8]/10 bg-[#F5F0E8]/5 text-sm text-[#B8B3AA] mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#C2703A] animate-pulse" />
             Our Story
           </motion.div>
 
@@ -76,30 +76,30 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-serif text-text-headline mb-6"
+            className="text-5xl md:text-7xl font-heading font-extrabold text-[#F5F0E8] mb-6 tracking-tight leading-none"
           >
             We Built This
             <br />
-            <span className="italic text-accent">For Ourselves First</span>
+            <span className="italic text-[#C2703A]">For Ourselves First</span>
           </motion.h1>
         </div>
       </section>
 
-      {/* Story Section */}
-      <SectionWrapper className="py-20 px-6">
+      {/* Story Section — cream (default) */}
+      <SectionWrapper className="section-cream py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-[#1A1A18] mb-6 tracking-tight">
                 The Story
               </h2>
-              <div className="space-y-6 text-text-body leading-relaxed">
+              <div className="space-y-6 text-[#4A4A45] leading-relaxed">
                 <p>
                   I&apos;m Matthews — founder of ServiceGrowth.ai.
                 </p>
                 <p>
-                  Before this, I ran service businesses. Terra Modern Designs (high-end modern construction)
-                  and Caviar Outdoor Living (luxury paving and outdoor design) in Jacksonville, Florida.
+                  Before this, I ran service businesses — a high-end construction company
+                  and a luxury outdoor design company in Jacksonville, Florida.
                 </p>
                 <p>
                   I know what it&apos;s like to be on a job site, phone buzzing, knowing I&apos;m losing
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 <p>
                   So I built systems to fix it.
                 </p>
-                <p className="text-text-headline font-medium">
+                <p className="text-[#1A1A18] font-medium">
                   The result? $100K in profit in 90 days. $30K/month revenue. $200K invoiced.
                 </p>
                 <p>
@@ -116,15 +116,15 @@ export default function AboutPage() {
                 </p>
                 <p>
                   I started ServiceGrowth.ai because I saw too many service business owners getting
-                  burned—by agencies that overpromise and underdeliver, by kids who watched a 2-hour
+                  burned — by agencies that overpromise and underdeliver, by kids who watched a 2-hour
                   YouTube course and now call themselves &quot;AI experts.&quot;
                 </p>
-                <p className="text-text-headline">
+                <p className="text-[#1A1A18] font-semibold">
                   That&apos;s not us. We only sell what we&apos;ve built and proven ourselves.
                 </p>
               </div>
             </div>
-            <div className="card-embossed p-8 text-center">
+            <div className="card-dark-on-cream p-8 text-center">
               <div className="space-y-6">
                 {proofPoints.map((point, i) => (
                   <motion.div
@@ -134,10 +134,10 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
-                    <div className="text-5xl md:text-6xl font-serif text-accent mb-2">
+                    <div className="text-5xl md:text-6xl font-heading font-extrabold text-[#C2703A] mb-2 tracking-tight">
                       {point.stat}
                     </div>
-                    <div className="text-text-muted text-sm">{point.label}</div>
+                    <div className="text-[#7A766E] text-sm">{point.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -146,10 +146,10 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Why Different */}
-      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+      {/* Why Different — dark charcoal */}
+      <SectionWrapper className="section-dark py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-[#F5F0E8] mb-12 tracking-tight">
             Why We&apos;re Different
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -162,11 +162,11 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="space-y-4"
               >
-                <div className="w-12 h-12 bg-accent/10 border border-accent/30 rounded-full flex items-center justify-center">
-                  <span className="text-accent font-semibold text-xl">{item.number}</span>
+                <div className="w-12 h-12 bg-[#C2703A]/10 border border-[#C2703A]/30 rounded-full flex items-center justify-center">
+                  <span className="text-[#C2703A] font-semibold text-xl">{item.number}</span>
                 </div>
-                <h3 className="text-xl text-text-headline">{item.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">
+                <h3 className="text-xl font-heading font-bold text-[#F5F0E8]">{item.title}</h3>
+                <p className="text-[#7A766E] text-sm leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
@@ -175,10 +175,10 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Philosophy */}
-      <SectionWrapper className="py-20 px-6">
+      {/* Philosophy — cream */}
+      <SectionWrapper className="section-cream py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-[#1A1A18] mb-12 tracking-tight">
             Our Philosophy
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -189,10 +189,10 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="card-embossed p-8"
+                className="card-glass-cream p-8"
               >
-                <h3 className="text-xl text-text-headline mb-4">{item.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">
+                <h3 className="text-xl font-heading font-bold text-[#1A1A18] mb-4">{item.title}</h3>
+                <p className="text-[#7A766E] text-sm leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
@@ -201,12 +201,12 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Who This Is For */}
-      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+      {/* Who This Is For — dark charcoal */}
+      <SectionWrapper className="section-dark py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-serif text-text-headline mb-8">
+              <h2 className="text-3xl font-heading font-extrabold text-[#F5F0E8] mb-8 tracking-tight">
                 This Is For You If...
               </h2>
               <ul className="space-y-4">
@@ -218,16 +218,16 @@ export default function AboutPage() {
                   "You value results over promises",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#C2703A] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-text-body">{item}</span>
+                    <span className="text-[#B8B3AA]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-serif text-text-headline mb-8">
+              <h2 className="text-3xl font-heading font-extrabold text-[#F5F0E8] mb-8 tracking-tight">
                 This Is NOT For You If...
               </h2>
               <ul className="space-y-4">
@@ -242,7 +242,7 @@ export default function AboutPage() {
                     <svg className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span className="text-text-body">{item}</span>
+                    <span className="text-[#B8B3AA]">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -251,15 +251,15 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* CTA */}
-      <SectionWrapper className="py-20 px-6">
+      {/* CTA — cream */}
+      <SectionWrapper className="section-cream py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-text-headline mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-[#1A1A18] mb-6 tracking-tight">
             Ready to See If We&apos;re a Fit?
           </h2>
-          <p className="text-text-body text-lg mb-8">
+          <p className="text-[#4A4A45] text-lg mb-8">
             25-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re losing
-            leads—whether you hire us or not.
+            leads — whether you hire us or not.
           </p>
           <Button href="/contact" variant="primary" size="lg">
             Book a Call

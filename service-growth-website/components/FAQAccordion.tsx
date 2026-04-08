@@ -29,19 +29,19 @@ function AccordionItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="bg-bg-card border border-border rounded-xl overflow-hidden"
+      className="bg-white border border-[#1A1A18]/8 rounded-xl overflow-hidden shadow-sm"
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-6 text-left hover:bg-bg-elevated transition-colors"
+        className="w-full flex items-center justify-between p-6 text-left hover:bg-[#F2EDE5]/60 transition-colors"
       >
-        <span className="text-text-headline font-medium pr-4">
+        <span className="text-[#1A1A18] font-medium pr-4">
           {item.question}
         </span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-accent text-2xl flex-shrink-0"
+          className="text-[#A85C30] text-2xl flex-shrink-0"
         >
           +
         </motion.span>
@@ -54,7 +54,7 @@ function AccordionItem({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-6 pb-6 text-text-body text-sm leading-relaxed">
+            <div className="px-6 pb-6 text-[#4A4A45] text-sm leading-relaxed">
               {item.answer}
             </div>
           </motion.div>

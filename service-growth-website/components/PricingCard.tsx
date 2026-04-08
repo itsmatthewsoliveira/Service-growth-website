@@ -13,10 +13,10 @@ interface PricingCardProps {
   period?: string;
   features: (string | PricingFeature)[];
   isPro?: boolean;
-  description?: string; // Added
-  tagline?: string; // Added
-  featured?: boolean; // For compatibility
-  name?: string; // For compatibility (alias to title)
+  description?: string;
+  tagline?: string;
+  featured?: boolean;
+  name?: string;
 }
 
 export default function PricingCard({
@@ -27,8 +27,8 @@ export default function PricingCard({
   isPro = false,
   description,
   tagline,
-  featured, // alias to isPro
-  name, // alias to title
+  featured,
+  name,
 }: PricingCardProps) {
   const displayTitle = title || name || "";
   const isFeatured = isPro || featured || false;
@@ -36,42 +36,42 @@ export default function PricingCard({
   return (
     <div
       className={`relative overflow-hidden rounded-3xl border p-8 transition-transform hover:-translate-y-1 duration-300 flex flex-col h-full ${isFeatured
-          ? "border-white/10 bg-gradient-to-b from-white/5 to-transparent"
-          : "border-white/5 bg-bg-card"
+          ? "border-[#C2703A]/30 bg-gradient-to-b from-[#C2703A]/5 to-white shadow-md"
+          : "border-[#1A1A18]/8 bg-white shadow-sm"
         }`}
     >
       {/* Badge for Pro */}
       {isFeatured && (
         <div className="absolute top-0 right-0 p-6">
-          <div className="w-12 h-12 rounded-full border border-dashed border-accent/50 flex items-center justify-center animate-spin-slow">
-            <span className="text-[10px] font-bold text-accent uppercase tracking-tighter">Pro</span>
+          <div className="w-12 h-12 rounded-full border border-dashed border-[#C2703A]/50 flex items-center justify-center animate-spin-slow">
+            <span className="text-[10px] font-bold text-[#A85C30] uppercase tracking-tighter">Pro</span>
           </div>
         </div>
       )}
 
       <div className="mb-8">
         {tagline && (
-          <p className="text-xs font-medium text-accent uppercase tracking-wider mb-2">
+          <p className="text-xs font-medium text-[#A85C30] uppercase tracking-wider mb-2">
             {tagline}
           </p>
         )}
         {!tagline && (
-          <p className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4">
+          <p className="text-sm font-medium text-[#7A766E] uppercase tracking-wider mb-4">
             Plan
           </p>
         )}
 
-        <h3 className="text-3xl md:text-4xl font-serif text-text-headline mb-4">{displayTitle}</h3>
+        <h3 className="text-3xl md:text-4xl font-serif text-[#1A1A18] mb-4">{displayTitle}</h3>
 
         <div className="flex items-baseline gap-1 mb-4">
-          <span className="text-3xl sm:text-4xl font-serif text-text-headline">
+          <span className="text-3xl sm:text-4xl font-serif text-[#1A1A18]">
             {price}
           </span>
-          <span className="text-text-muted">{period}</span>
+          <span className="text-[#7A766E]">{period}</span>
         </div>
 
         {description && (
-          <p className="text-sm text-text-body leading-relaxed border-t border-white/5 pt-4">
+          <p className="text-sm text-[#4A4A45] leading-relaxed border-t border-[#1A1A18]/8 pt-4">
             {description}
           </p>
         )}
@@ -83,9 +83,9 @@ export default function PricingCard({
           const isBold = typeof feature !== 'string' && feature.bold;
 
           return (
-            <li key={i} className="flex items-start gap-3 text-sm text-text-body">
+            <li key={i} className="flex items-start gap-3 text-sm text-[#4A4A45]">
               <svg
-                className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isFeatured ? "text-accent" : "text-text-muted"
+                className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isFeatured ? "text-[#A85C30]" : "text-[#7A766E]"
                   }`}
                 fill="none"
                 stroke="currentColor"
@@ -98,7 +98,7 @@ export default function PricingCard({
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span className={isBold ? "font-semibold text-white" : ""}>{featureText}</span>
+              <span className={isBold ? "font-semibold text-[#1A1A18]" : ""}>{featureText}</span>
             </li>
           );
         })}

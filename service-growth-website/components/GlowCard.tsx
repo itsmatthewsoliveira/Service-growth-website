@@ -9,6 +9,7 @@ interface GlowCardProps {
   href?: string;
   className?: string;
   delay?: number;
+  dark?: boolean;
 }
 
 export default function GlowCard({
@@ -16,8 +17,11 @@ export default function GlowCard({
   href,
   className = "",
   delay = 0,
+  dark = false,
 }: GlowCardProps) {
-  const cardClasses = `bg-bg-card rounded-xl p-6 card-glow ${className}`;
+  const cardClasses = dark
+    ? `bg-[rgba(245,240,232,0.02)] border border-[rgba(245,240,232,0.06)] rounded-xl p-6 card-glow-dark ${className}`
+    : `bg-white border border-[#1A1A18]/8 rounded-xl p-6 shadow-sm card-glow ${className}`;
 
   const content = (
     <motion.div

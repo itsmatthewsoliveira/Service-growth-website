@@ -42,13 +42,13 @@ function DropdownMenu({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-48 bg-bg-card border border-border rounded-xl overflow-hidden shadow-lg z-50"
+          className="absolute top-full left-0 mt-2 w-48 bg-[#1A1A18] border border-white/10 rounded-xl overflow-hidden shadow-lg z-50"
         >
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block px-4 py-3 text-sm text-text-body hover:text-text-headline hover:bg-bg-elevated transition-colors"
+              className="block px-4 py-3 text-sm text-[#B8B3AA] hover:text-[#C2703A] hover:bg-white/5 transition-colors"
             >
               {item.label}
             </Link>
@@ -64,19 +64,18 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-bg-primary/80 backdrop-blur-lg border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+    <nav className="sticky top-0 z-50 bg-[#1A1A18]/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-0">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="relative flex items-center logo-glow"
+            className="relative flex items-center"
           >
             <img
-              src="/logo-header-transparent.png"
-              srcSet="/logo-header-transparent.png 1x, /logo-header-transparent@2x.png 2x"
+              src="/logo-white.svg"
               alt="Service Growth AI"
-              className="h-12 w-auto"
+              className="h-16 md:h-36 lg:h-44 w-auto"
             />
           </Link>
 
@@ -93,7 +92,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 text-sm text-text-body hover:text-text-headline transition-colors"
+                  className="flex items-center gap-1 text-sm text-[#B8B3AA] hover:text-[#F5F0E8] transition-colors font-medium"
                 >
                   {link.label}
                   {link.dropdown && (
@@ -122,39 +121,38 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Phone + CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="tel:+19044542240" className="text-sm text-[#B8B3AA] hover:text-[#C2703A] transition-colors font-medium">
+              (904) 454-2240
+            </a>
             <Button href="/contact" variant="primary" size="default">
               Book a Call
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button — animated hamburger → X */}
           <button
-            className="lg:hidden p-2 text-text-body"
+            className="lg:hidden relative p-3 text-[#F5F0E8] min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+                className={`origin-center transition-all duration-300 ${mobileMenuOpen ? "opacity-0 scale-0 rotate-180" : "opacity-100 scale-100 rotate-0"}`}
+              />
+            </svg>
             <svg
-              className="w-6 h-6"
+              className={`w-6 h-6 absolute origin-center transition-all duration-300 ${mobileMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-0 -rotate-180"}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -167,25 +165,25 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden mt-4 pt-4 border-t border-border"
+              className="lg:hidden mt-4 pt-4 border-t border-white/10"
             >
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2 pb-4">
                 {navLinks.map((link) => (
                   <div key={link.href}>
                     <Link
                       href={link.href}
-                      className="block py-2 text-text-body hover:text-text-headline transition-colors"
+                      className="block py-3 text-base text-[#B8B3AA] hover:text-[#F5F0E8] transition-colors font-medium min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
                     </Link>
                     {link.dropdown && (
-                      <div className="pl-4 mt-2 space-y-2">
+                      <div className="pl-4 mt-1 space-y-1">
                         {link.dropdown.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block py-2 text-sm text-text-muted hover:text-text-headline transition-colors"
+                            className="block py-3 text-base text-[#7A766E] hover:text-[#C2703A] transition-colors min-h-[44px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.label}
@@ -195,7 +193,10 @@ export default function Navbar() {
                     )}
                   </div>
                 ))}
-                <div className="pt-4">
+                <a href="tel:+19044542240" className="block py-3 text-base text-[#B8B3AA] hover:text-[#C2703A] transition-colors font-medium min-h-[44px] flex items-center">
+                  (904) 454-2240
+                </a>
+                <div className="pt-2">
                   <Button
                     href="/contact"
                     variant="primary"

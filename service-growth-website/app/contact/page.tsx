@@ -21,18 +21,18 @@ const callExpectations = [
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero - Dark charcoal */}
+      <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none bg-[rgba(194,112,58,0.1)]" />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-text-body mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(245,240,232,0.1)] bg-[rgba(245,240,232,0.05)] text-sm text-[#B8B3AA] mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#C2703A] animate-pulse" />
             Free Strategy Call
           </motion.div>
 
@@ -40,18 +40,18 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-serif text-text-headline mb-6"
+            className="text-5xl md:text-6xl font-serif font-bold text-[#F5F0E8] mb-6"
           >
             Let&apos;s See If
             <br />
-            <span className="italic text-accent">We Can Help.</span>
+            <span className="italic text-[#C2703A]">We Can Help.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-text-body max-w-2xl mx-auto"
+            className="text-lg text-[#B8B3AA] max-w-2xl mx-auto"
           >
             25-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re
             losing leads—whether you hire us or not.
@@ -59,8 +59,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <SectionWrapper className="py-20 px-6">
+      {/* Main Content - Cream background */}
+      <SectionWrapper className="py-20 px-6 bg-[#F2EDE5]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column: Info */}
@@ -75,33 +75,33 @@ export default function ContactPage() {
                 {trustSignals.map((signal, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20"
+                    className="badge-glass-cream flex items-center gap-2 px-4 py-2 rounded-full"
                   >
-                    <signal.icon className="w-4 h-4 text-accent" />
-                    <span className="text-sm text-text-body">{signal.text}</span>
+                    <signal.icon className="w-4 h-4 text-[#A85C30]" />
+                    <span className="text-sm text-[#4A4A45]">{signal.text}</span>
                   </div>
                 ))}
               </div>
 
               {/* What to Expect */}
-              <div className="card-embossed p-8">
-                <h3 className="text-xl text-text-headline mb-6 flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-accent" />
+              <div className="card-glass-cream p-8">
+                <h3 className="text-xl text-[#1A1A18] font-bold mb-6 flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-[#A85C30]" />
                   What to Expect on the Call
                 </h3>
                 <ol className="space-y-4">
                   {callExpectations.map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <span className="w-8 h-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0 text-accent font-semibold text-sm">
+                      <span className="w-8 h-8 rounded-full bg-[rgba(194,112,58,0.08)] border border-[rgba(194,112,58,0.25)] flex items-center justify-center flex-shrink-0 text-[#A85C30] font-semibold text-sm">
                         {i + 1}
                       </span>
-                      <span className="text-text-body pt-1">{item}</span>
+                      <span className="text-[#4A4A45] pt-1">{item}</span>
                     </li>
                   ))}
                 </ol>
 
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-text-muted text-sm">
+                <div className="mt-8 pt-6 border-t border-[rgba(0,0,0,0.08)]">
+                  <p className="text-[#7A766E] text-sm">
                     This is a discovery call, not a sales call. We&apos;ll give you
                     actionable insights you can use—whether you work with us or not.
                   </p>
@@ -123,8 +123,8 @@ export default function ContactPage() {
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-2xl font-semibold text-accent">{item.stat}</div>
-                    <div className="text-xs text-text-muted">{item.label}</div>
+                    <div className="text-2xl font-semibold text-[#A85C30]">{item.stat}</div>
+                    <div className="text-xs text-[#7A766E]">{item.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -136,13 +136,13 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="card-embossed overflow-hidden"
+              className="card-glass-cream overflow-hidden"
             >
-              <div className="p-6 border-b border-white/10">
-                <h2 className="text-2xl text-text-headline font-serif">
+              <div className="p-6 border-b border-[rgba(0,0,0,0.08)]">
+                <h2 className="text-2xl text-[#1A1A18] font-bold">
                   Book Your Free Audit
                 </h2>
-                <p className="text-text-muted text-sm mt-2">
+                <p className="text-[#7A766E] text-sm mt-2">
                   Select a time that works for you
                 </p>
               </div>
@@ -150,48 +150,42 @@ export default function ContactPage() {
               {/* Calendly Inline Widget */}
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=28e8fd"
+                data-url="https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=F2EDE5&text_color=1A1A18&primary_color=C2703A"
                 style={{ minWidth: "320px", height: "700px" }}
               />
               <Script
                 src="https://assets.calendly.com/assets/external/widget.js"
-                strategy="lazyOnload"
+                strategy="afterInteractive"
               />
             </motion.div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* Alternative Contact */}
-      <SectionWrapper className="py-16 px-6 bg-bg-secondary">
+      {/* Alternative Contact - Cream background */}
+      <SectionWrapper className="py-16 px-6 bg-[#F2EDE5]">
         <div className="max-w-4xl mx-auto">
-          <div
-            className="rounded-2xl p-8 md:p-12 text-center border border-accent/20"
-            style={{
-              background: "rgba(42, 232, 253, 0.03)",
-              boxShadow: "0 0 60px rgba(42, 232, 253, 0.1)",
-            }}
-          >
-            <h2 className="text-2xl font-serif text-text-headline mb-4">
+          <div className="card-dark-on-cream rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl font-bold text-[#F5F0E8] mb-4">
               Prefer to Reach Out Directly?
             </h2>
-            <p className="text-text-body mb-6">
+            <p className="text-[#B8B3AA] mb-6">
               No problem. Send us an email or give us a call.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="mailto:hello@servicegrowth.ai"
-                className="inline-flex items-center gap-2 text-accent hover:underline"
+                className="inline-flex items-center gap-2 text-[#C2703A] hover:text-[#D4834F] hover:underline transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 hello@servicegrowth.ai
               </a>
-              <span className="hidden sm:inline text-white/20">|</span>
+              <span className="hidden sm:inline text-[rgba(245,240,232,0.2)]">|</span>
               <a
                 href="tel:+19044542240"
-                className="inline-flex items-center gap-2 text-accent hover:underline"
+                className="inline-flex items-center gap-2 text-[#C2703A] hover:text-[#D4834F] hover:underline transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

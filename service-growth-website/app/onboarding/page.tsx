@@ -10,18 +10,23 @@ export default function OnboardingPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero — section-dark */}
+      <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(194,112,58,0.10)" }} />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-text-body mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm mb-6"
+            style={{
+              border: "1px solid rgba(194,112,58,0.25)",
+              backgroundColor: "rgba(194,112,58,0.08)",
+              color: "#B8B3AA",
+            }}
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#C2703A] animate-pulse" />
             {ts("heroBadge", lang)}
           </motion.div>
 
@@ -29,10 +34,11 @@ export default function OnboardingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-serif text-text-headline mb-6"
+            className="text-5xl md:text-6xl font-serif font-bold mb-6"
+            style={{ color: "#F5F0E8" }}
           >
             {ts("heroTitle1", lang)}{" "}
-            <span className="italic text-accent">{ts("heroTitle2", lang)}</span>
+            <span className="italic" style={{ color: "#C2703A" }}>{ts("heroTitle2", lang)}</span>
             <br />
             {ts("heroTitle3", lang)}
           </motion.h1>
@@ -41,15 +47,16 @@ export default function OnboardingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-text-body max-w-lg mx-auto"
+            className="text-lg max-w-lg mx-auto"
+            style={{ color: "#B8B3AA" }}
           >
             {ts("heroSubtitle", lang)}
           </motion.p>
         </div>
       </section>
 
-      {/* Form */}
-      <section className="py-20 px-6">
+      {/* Form — cream */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
         <div className="max-w-[760px] mx-auto">
           <OnboardingForm lang={lang} setLang={setLang} />
         </div>

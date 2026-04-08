@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
-import SectionWrapper from "@/components/SectionWrapper";
 
 const packages = [
   {
@@ -64,17 +63,14 @@ const packages = [
 
 const guarantees = [
   {
-    icon: "🎯",
     title: "15% More Booked Jobs",
     description: "Guaranteed within 60 days or we work free until you do.",
   },
   {
-    icon: "⚡",
     title: "Live in 14 Days",
     description: "From signed to fully operational in two weeks.",
   },
   {
-    icon: "🔒",
     title: "No Long-Term Contracts",
     description: "Month-to-month. Cancel anytime. No questions asked.",
   },
@@ -83,27 +79,29 @@ const guarantees = [
 export default function PackagesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero — section-dark */}
+      <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(194,112,58,0.10)" }} />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl text-text-headline mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
+            style={{ color: "#F5F0E8" }}
           >
             Choose Your
             <br />
-            <span className="text-accent italic">Growth Path</span>
+            <span className="italic" style={{ color: "#C2703A" }}>Growth Path</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-text-body max-w-2xl mx-auto"
+            className="text-lg md:text-xl max-w-2xl mx-auto"
+            style={{ color: "#B8B3AA" }}
           >
             Simple pricing. Real results. No hidden fees.
             <br />
@@ -112,8 +110,8 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Packages Grid */}
-      <SectionWrapper className="py-20 px-6">
+      {/* Packages Grid — cream */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-6">
             {packages.map((pkg, i) => (
@@ -124,37 +122,41 @@ export default function PackagesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`relative rounded-2xl p-8 ${
-                  pkg.featured
-                    ? "bg-accent/5 border-2 border-accent/30"
-                    : "bg-bg-card border border-border"
+                  pkg.featured ? "" : "card-embossed"
                 }`}
                 style={pkg.featured ? {
-                  boxShadow: "0 0 60px rgba(40, 232, 253, 0.15)"
+                  backgroundColor: "rgba(194,112,58,0.05)",
+                  border: "2px solid rgba(194,112,58,0.30)",
+                  boxShadow: "0 0 60px rgba(194,112,58,0.12)",
                 } : {}}
               >
                 {pkg.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-bg-primary text-xs font-semibold px-4 py-1 rounded-full">
+                  <div
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-semibold px-4 py-1 rounded-full"
+                    style={{ backgroundColor: "#C2703A", color: "#F2EDE5" }}
+                  >
                     {pkg.badge}
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-2xl text-text-headline mb-1">{pkg.name}</h3>
-                  <p className="text-text-muted text-sm">{pkg.tagline}</p>
+                  <h3 className="text-2xl font-bold mb-1" style={{ color: "#1A1A18" }}>{pkg.name}</h3>
+                  <p className="text-sm" style={{ color: "#7A766E" }}>{pkg.tagline}</p>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-4xl md:text-5xl text-text-headline">{pkg.price}</span>
-                  <span className="text-text-muted">{pkg.period}</span>
+                  <span className="text-4xl md:text-5xl font-bold" style={{ color: "#1A1A18" }}>{pkg.price}</span>
+                  <span style={{ color: "#7A766E" }}>{pkg.period}</span>
                 </div>
 
-                <p className="text-text-body text-sm mb-8">{pkg.description}</p>
+                <p className="text-sm mb-8" style={{ color: "#4A4A45" }}>{pkg.description}</p>
 
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, j) => (
                     <li key={j} className="flex items-start gap-3 text-sm">
                       <svg
-                        className="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
+                        className="w-5 h-5 mt-0.5 flex-shrink-0"
+                        style={{ color: "#C2703A" }}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -166,7 +168,7 @@ export default function PackagesPage() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-text-body">{feature}</span>
+                      <span style={{ color: "#4A4A45" }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -182,12 +184,12 @@ export default function PackagesPage() {
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Guarantees */}
-      <SectionWrapper className="py-20 px-6 bg-bg-card">
+      {/* Guarantees — charcoal section-dark */}
+      <section className="section-dark py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-text-headline text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: "#F5F0E8" }}>
             Every Package Includes
           </h2>
 
@@ -201,29 +203,28 @@ export default function PackagesPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl text-text-headline mb-2">{item.title}</h3>
-                <p className="text-text-muted text-sm">{item.description}</p>
+                <h3 className="text-xl font-bold mb-2" style={{ color: "#F5F0E8" }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: "#B8B3AA" }}>{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Compare Link */}
-      <SectionWrapper className="py-16 px-6">
+      {/* Compare Link — cream */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#F2EDE5" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-text-body mb-4">
+          <p className="mb-4" style={{ color: "#4A4A45" }}>
             Need help choosing? See our detailed feature comparison.
           </p>
           <Button href="/pricing" variant="ghost">
-            View Full Comparison →
+            View Full Comparison &rarr;
           </Button>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* CTA */}
-      <SectionWrapper className="py-20 px-6">
+      {/* CTA — cream */}
+      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -231,19 +232,19 @@ export default function PackagesPage() {
             viewport={{ once: true }}
             className="relative rounded-2xl p-12 text-center overflow-hidden"
             style={{
-              background: "rgba(40, 232, 253, 0.03)",
-              border: "1px solid rgba(40, 232, 253, 0.15)",
-              boxShadow: "0 0 80px rgba(40, 232, 253, 0.1)"
+              background: "rgba(194,112,58,0.03)",
+              border: "1px solid rgba(194,112,58,0.15)",
+              boxShadow: "0 0 80px rgba(194,112,58,0.08)",
             }}
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-accent/10 rounded-full blur-[60px] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] rounded-full blur-[60px] pointer-events-none" style={{ background: "rgba(194,112,58,0.10)" }} />
 
             <div className="relative">
-              <h2 className="text-3xl md:text-4xl text-text-headline mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A1A18" }}>
                 Not Sure Which Package?
               </h2>
-              <p className="text-text-body text-lg mb-8 max-w-xl mx-auto">
-                Book a free 15-minute call. We'll analyze your business and recommend
+              <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "#4A4A45" }}>
+                Book a free 15-minute call. We&apos;ll analyze your business and recommend
                 the right fit—no pressure, no hard sell.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -257,7 +258,7 @@ export default function PackagesPage() {
             </div>
           </motion.div>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   );
 }

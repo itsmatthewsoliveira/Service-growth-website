@@ -4,8 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Button from "@/components/Button";
-import SectionWrapper from "@/components/SectionWrapper";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqSections = [
   {
@@ -94,34 +93,43 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="card-embossed overflow-hidden">
+    <div className="card-glass-cream overflow-hidden rounded-2xl">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 flex items-center justify-between text-left group"
+        aria-expanded={isOpen}
+        className="w-full p-6 flex items-center justify-between text-left group cursor-pointer hover:bg-black/[0.02] transition-colors"
       >
-        <span className="text-text-headline font-medium pr-4 group-hover:text-accent transition-colors">
+        <span className="text-[#1A1A18] font-medium pr-4 group-hover:text-[#A85C30] transition-colors">
           {question}
         </span>
-        <ChevronDown
-          className={`w-5 h-5 text-accent flex-shrink-0 transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+        <div className="relative w-5 h-5 flex-shrink-0">
+          <Plus
+            className={`absolute inset-0 w-5 h-5 text-[#A85C30] transition-all duration-300 ${
+              isOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
+            }`}
+            strokeWidth={2}
+          />
+          <Minus
+            className={`absolute inset-0 w-5 h-5 text-[#A85C30] transition-all duration-300 ${
+              isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
+            }`}
+            strokeWidth={2}
+          />
+        </div>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-6 pb-6 text-text-body">
-              {answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={false}
+        animate={{
+          height: isOpen ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        style={{ overflow: "hidden" }}
+      >
+        <div className="px-6 pb-6 text-[#4A4A45] text-sm leading-relaxed">
+          {answer}
+        </div>
+      </motion.div>
     </div>
   );
 }
@@ -129,30 +137,30 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function FAQPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-24 pb-16 px-6 gradient-hero overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero - dark section */}
+      <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#C2703A]/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-serif text-text-headline mb-6"
+            className="text-5xl md:text-6xl font-serif text-[#F5F0E8] mb-6"
           >
             Frequently Asked
             <br />
-            <span className="italic text-accent">Questions</span>
+            <span className="italic text-[#C2703A]">Questions</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-text-body max-w-2xl mx-auto"
+            className="text-lg text-[#B8B3AA] max-w-2xl mx-auto"
           >
             Everything you need to know about working with us. Can&apos;t find what you&apos;re looking for?{" "}
-            <Link href="/contact" className="text-accent hover:underline">
+            <Link href="/contact" className="text-[#C2703A] hover:underline">
               Book a call
             </Link>{" "}
             and we&apos;ll answer directly.
@@ -160,8 +168,8 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      <SectionWrapper className="py-20 px-6">
+      {/* FAQ Sections - cream background */}
+      <section className="bg-[#F2EDE5] py-20 px-6">
         <div className="max-w-4xl mx-auto">
           {faqSections.map((section, sectionIndex) => (
             <motion.div
@@ -172,7 +180,7 @@ export default function FAQPage() {
               transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
               className="mb-12"
             >
-              <h2 className="text-2xl font-serif text-text-headline mb-6">{section.title}</h2>
+              <h2 className="text-2xl font-serif text-[#1A1A18] mb-6">{section.title}</h2>
               <div className="space-y-4">
                 {section.items.map((item, i) => (
                   <FAQItem key={i} question={item.question} answer={item.answer} />
@@ -181,22 +189,18 @@ export default function FAQPage() {
             </motion.div>
           ))}
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* CTA */}
-      <SectionWrapper className="py-20 px-6 bg-bg-secondary">
+      {/* CTA - dark section */}
+      <section className="section-dark py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div
-            className="rounded-2xl p-8 md:p-12 border border-accent/20"
-            style={{
-              background: "rgba(42, 232, 253, 0.03)",
-              boxShadow: "0 0 60px rgba(42, 232, 253, 0.1)",
-            }}
+            className="card-embossed rounded-2xl p-8 md:p-12"
           >
-            <h2 className="text-3xl font-serif text-text-headline mb-4">
+            <h2 className="text-3xl font-serif text-[#F5F0E8] mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-text-body mb-8">
+            <p className="text-[#B8B3AA] mb-8">
               Book a free 15-minute call. We&apos;ll answer all your questions and show
               you exactly how this would work for your business.
             </p>
@@ -205,7 +209,7 @@ export default function FAQPage() {
             </Button>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   );
 }

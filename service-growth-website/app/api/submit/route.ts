@@ -1,4 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  createNotionPage,
+  headingBlock,
+  richBlock,
+  todoBlock,
+} from "@/lib/notion";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -38,46 +44,6 @@ interface OnboardingFormData {
   idealClient: string;
   problemSolved: string;
   additionalNotes: string;
-}
-
-// ─── Notion Block Helpers ─────────────────────────────────────────────────────
-
-function headingBlock(level: "heading_2" | "heading_3", text: string) {
-  return {
-    object: "block" as const,
-    type: level,
-    [level]: {
-      rich_text: [{ type: "text" as const, text: { content: text } }],
-    },
-  };
-}
-
-function richBlock(label: string, value: string | undefined) {
-  return {
-    object: "block" as const,
-    type: "paragraph" as const,
-    paragraph: {
-      rich_text: [
-        {
-          type: "text" as const,
-          text: { content: `${label}: ` },
-          annotations: { bold: true },
-        },
-        { type: "text" as const, text: { content: value || "—" } },
-      ],
-    },
-  };
-}
-
-function todoBlock(text: string) {
-  return {
-    object: "block" as const,
-    type: "to_do" as const,
-    to_do: {
-      rich_text: [{ type: "text" as const, text: { content: text } }],
-      checked: false,
-    },
-  };
 }
 
 // ─── Notification Helpers ─────────────────────────────────────────────────────
@@ -241,133 +207,107 @@ export async function POST(req: NextRequest) {
     additionalNotes,
   } = body;
 
-  const notionToken = process.env.NOTION_TOKEN;
-  const notionDbId = process.env.NOTION_DB_ID;
-
-  if (!notionToken || !notionDbId) {
-    return NextResponse.json(
-      { error: "Missing Notion credentials in environment variables." },
-      { status: 500 }
-    );
-  }
-
   try {
-    const response = await fetch("https://api.notion.com/v1/pages", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${notionToken}`,
-        "Content-Type": "application/json",
-        "Notion-Version": "2022-06-28",
-      },
-      body: JSON.stringify({
-        parent: { database_id: notionDbId },
-        properties: {
-          Name: {
-            title: [
-              {
-                text: {
-                  content: `${fullName || "Unknown"} — ${companyName || "Unknown Company"}`,
-                },
+    const notionPage = await createNotionPage({
+      properties: {
+        Name: {
+          title: [
+            {
+              text: {
+                content: `${fullName || "Unknown"} — ${companyName || "Unknown Company"}`,
               },
-            ],
-          },
-          Email: { email: email || null },
-          Phone: { phone_number: phone || null },
-          Company: {
-            rich_text: [{ text: { content: companyName || "" } }],
-          },
-          City: {
-            rich_text: [{ text: { content: city || "" } }],
-          },
-          "Years in Business": {
-            number: yearsInBusiness ? parseInt(yearsInBusiness) : null,
-          },
-          "Project Status": {
-            status: { name: "\uD83D\uDFE1 Onboarding" },
-          },
-          "Primary Goal": {
-            rich_text: [{ text: { content: primaryGoal || "" } }],
-          },
-          "Has Logo": {
-            select: { name: hasLogo || "Unknown" },
-          },
-          "Photos Available": {
-            select: { name: photosAvailable || "Unknown" },
-          },
-          "Submitted At": {
-            date: { start: new Date().toISOString() },
-          },
+            },
+          ],
         },
-        children: [
-          headingBlock("heading_2", "Full Onboarding Responses"),
+        Email: { email: email || null },
+        Phone: { phone_number: phone || null },
+        Company: {
+          rich_text: [{ text: { content: companyName || "" } }],
+        },
+        City: {
+          rich_text: [{ text: { content: city || "" } }],
+        },
+        "Years in Business": {
+          number: yearsInBusiness ? parseInt(yearsInBusiness) : null,
+        },
+        "Project Status": {
+          status: { name: "\uD83D\uDFE1 Onboarding" },
+        },
+        "Lead Source": {
+          select: { name: "Onboarding Form" },
+        },
+        "Primary Goal": {
+          rich_text: [{ text: { content: primaryGoal || "" } }],
+        },
+        "Has Logo": {
+          select: { name: hasLogo || "Unknown" },
+        },
+        "Photos Available": {
+          select: { name: photosAvailable || "Unknown" },
+        },
+        "Submitted At": {
+          date: { start: new Date().toISOString() },
+        },
+      },
+      children: [
+        headingBlock("heading_2", "Full Onboarding Responses"),
 
-          headingBlock("heading_3", "01 — Business Basics"),
-          richBlock("Full Name", fullName),
-          richBlock("Role", role),
-          richBlock("Company", companyName),
-          richBlock("Industry", industry),
-          richBlock("Years in Business", yearsInBusiness),
-          richBlock("City", city),
-          richBlock("Phone", phone),
-          richBlock("Email", email),
-          richBlock("Existing Website", existingWebsite),
-          richBlock("Company Description", companyDescription),
+        headingBlock("heading_3", "01 — Business Basics"),
+        richBlock("Full Name", fullName),
+        richBlock("Role", role),
+        richBlock("Company", companyName),
+        richBlock("Industry", industry),
+        richBlock("Years in Business", yearsInBusiness),
+        richBlock("City", city),
+        richBlock("Phone", phone),
+        richBlock("Email", email),
+        richBlock("Existing Website", existingWebsite),
+        richBlock("Company Description", companyDescription),
 
-          headingBlock("heading_3", "02 — Services & Projects"),
-          richBlock(
-            "Services",
-            Array.isArray(services) ? services.join(", ") : services
-          ),
-          richBlock("Other Services", otherServices),
-          richBlock("Avg Project Size", avgProjectSize),
-          richBlock("Project Duration", projectDuration),
-          richBlock("Notable Project", notableProject),
-          richBlock("Photos Available", photosAvailable),
-          richBlock("Service Area", serviceArea),
+        headingBlock("heading_3", "02 — Services & Projects"),
+        richBlock(
+          "Services",
+          Array.isArray(services) ? services.join(", ") : services
+        ),
+        richBlock("Other Services", otherServices),
+        richBlock("Avg Project Size", avgProjectSize),
+        richBlock("Project Duration", projectDuration),
+        richBlock("Notable Project", notableProject),
+        richBlock("Photos Available", photosAvailable),
+        richBlock("Service Area", serviceArea),
 
-          headingBlock("heading_3", "03 — Brand & Identity"),
-          richBlock(
-            "Brand Personality",
-            Array.isArray(brandPersonality)
-              ? brandPersonality.join(", ")
-              : brandPersonality
-          ),
-          richBlock("Has Logo", hasLogo),
-          richBlock("Brand Colors", brandColors),
-          richBlock("Fonts", fonts),
-          richBlock("Competitor Websites", competitorWebsites),
-          richBlock("Inspired By", inspiredWebsites),
-          richBlock("Website Feeling", websiteFeeling),
+        headingBlock("heading_3", "03 — Brand & Identity"),
+        richBlock(
+          "Brand Personality",
+          Array.isArray(brandPersonality)
+            ? brandPersonality.join(", ")
+            : brandPersonality
+        ),
+        richBlock("Has Logo", hasLogo),
+        richBlock("Brand Colors", brandColors),
+        richBlock("Fonts", fonts),
+        richBlock("Competitor Websites", competitorWebsites),
+        richBlock("Inspired By", inspiredWebsites),
+        richBlock("Website Feeling", websiteFeeling),
 
-          headingBlock("heading_3", "04 — Goals"),
-          richBlock("Primary Goal", primaryGoal),
-          richBlock("Ideal Client", idealClient),
-          richBlock("Problem Solved", problemSolved),
+        headingBlock("heading_3", "04 — Goals"),
+        richBlock("Primary Goal", primaryGoal),
+        richBlock("Ideal Client", idealClient),
+        richBlock("Problem Solved", problemSolved),
 
-          headingBlock("heading_3", "Additional Notes"),
-          richBlock("Notes", additionalNotes || "None provided"),
+        headingBlock("heading_3", "Additional Notes"),
+        richBlock("Notes", additionalNotes || "None provided"),
 
-          headingBlock("heading_2", "Project Tracker"),
-          todoBlock("Form submitted & reviewed"),
-          todoBlock("Strategy call scheduled"),
-          todoBlock("Design direction approved"),
-          todoBlock("Homepage design delivered"),
-          todoBlock("Full site built"),
-          todoBlock("Client review & revisions"),
-          todoBlock("Site launched"),
-        ],
-      }),
+        headingBlock("heading_2", "Project Tracker"),
+        todoBlock("Form submitted & reviewed"),
+        todoBlock("Strategy call scheduled"),
+        todoBlock("Design direction approved"),
+        todoBlock("Homepage design delivered"),
+        todoBlock("Full site built"),
+        todoBlock("Client review & revisions"),
+        todoBlock("Site launched"),
+      ],
     });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error("Notion API error:", data);
-      return NextResponse.json(
-        { error: "Failed to create Notion page", details: data },
-        { status: 500 }
-      );
-    }
 
     // Fire notifications in parallel (non-blocking — don't fail the response)
     await Promise.allSettled([
@@ -376,7 +316,7 @@ export async function POST(req: NextRequest) {
       sendSlackNotification(body),
     ]);
 
-    return NextResponse.json({ success: true, notionPageId: data.id });
+    return NextResponse.json({ success: true, notionPageId: notionPage.id });
   } catch (err) {
     console.error("Server error:", err);
     return NextResponse.json(

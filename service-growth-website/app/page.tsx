@@ -8,52 +8,55 @@ import IndustryCard from "@/components/IndustryCard";
 import BentoCard from "@/components/BentoCard";
 import { Hero } from "@/components/ui/animated-hero";
 import { Globe, Megaphone, Image, Zap, Phone, MessageSquare, Bot, Star, Camera, Box } from "lucide-react";
+import WebsiteShowcase from "@/components/WebsiteShowcase";
+import TestimonialMarquee from "@/components/sections/TestimonialMarquee";
+import ShinyButton from "@/components/ui/ShinyButton";
 
 const services = [
   {
     href: "/services/website",
     icon: Globe,
-    title: "Website Services",
-    description: "Sites that convert, not just exist.",
+    title: "Websites That Book Jobs",
+    description: "Not a pretty brochure. A machine that turns clicks into customers.",
   },
   {
     href: "/services/ads",
     icon: Megaphone,
-    title: "Ads Management",
-    description: "Get in front of buyers ready to hire.",
+    title: "Ads That Pay for Themselves",
+    description: "Google and Meta ads managed by people who spend their own money on ads.",
   },
   {
     href: "/services/content",
     icon: Image,
-    title: "Content & Visual",
-    description: "Look as good as your work actually is.",
+    title: "Photos & Content That Sell",
+    description: "Your work is top-notch. Your photos should be too.",
   },
   {
     href: "/services/automation",
     icon: Zap,
-    title: "Automation",
-    description: "Stop losing leads to slow follow-up.",
+    title: "AI That Works While You Sleep",
+    description: "Missed calls answered. Leads qualified. Appointments booked. All automatic.",
   },
 ];
 
 const industries = [
   {
     href: "/industries/home-services",
-    icon: "🏠",
+    image: "/3d-home-services.png",
     title: "Home Services",
     subtitle: "HVAC, Plumbing, Roofing, Landscaping, Cleaning",
     features: ["AI Lead Booking 24/7", "Missed Call Text-Back", "Review Automation"],
   },
   {
     href: "/industries/medical",
-    icon: "🩺",
+    image: "/3d-medical.png",
     title: "Medical",
     subtitle: "Dentists, Chiropractors, Med Spas, Clinics",
     features: ["Appointment Reminders", "Patient Reactivation", "HIPAA Compliant"],
   },
   {
     href: "/industries/construction",
-    icon: "🏗️",
+    image: "/3d-excavator.png",
     title: "Construction",
     subtitle: "Contractors, Remodelers, Builders, Architects",
     features: ["3D Renders", "Photo Transformation", "Fast Lead Response"],
@@ -70,27 +73,26 @@ const features = [
 ];
 
 const trustBadges = [
-  { stat: "$100K in 90 days", description: "We built this for ourselves first" },
-  { stat: "No long-term contracts", description: "Cancel anytime" },
-  { stat: "Live in 14 days", description: "Fast setup, no tech headaches" },
-  { stat: "Results guaranteed", description: "15% more booked jobs in 60 days or your money back" },
+  { stat: "$100K in 90 Days", description: "We tested this on our own business first" },
+  { stat: "Month-to-Month", description: "No lock-in contracts. We earn your business every month." },
+  { stat: "Live in 14 Days", description: "Not 3 months. Two weeks from today." },
+  { stat: "Money-Back Guarantee", description: "15% more booked jobs in 60 days or we refund you." },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Animated Hero Section */}
-      <section className="gradient-hero">
+      {/* Animated Hero Section — CREAM */}
+      <section className="bg-[#F2EDE5]">
         <Hero />
       </section>
 
-
-      {/* Services Section */}
-      <SectionWrapper className="py-24 px-6 border-t border-white/5">
+      {/* Services Section — CHARCOAL */}
+      <section className="section-dark py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-headline mb-4">
-              Solutions for Every Service Business
+            <h2 className="text-4xl md:text-5xl mb-4">
+              Everything Your Business Needs to Grow
             </h2>
           </div>
 
@@ -107,47 +109,82 @@ export default function HomePage() {
                   href={service.href}
                   className="block card-embossed p-6 h-full group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <service.icon className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-[#C2703A]/10 flex items-center justify-center mb-4 group-hover:bg-[#C2703A]/20 transition-colors">
+                    <service.icon className="w-6 h-6 text-[#C2703A]" />
                   </div>
-                  <h3 className="text-lg font-medium text-text-headline mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-lg font-medium text-[#F5F0E8] mb-2 group-hover:text-[#C2703A] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-text-muted">{service.description}</p>
+                  <p className="text-sm text-[#7A766E]">{service.description}</p>
                 </Link>
               </motion.div>
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Industries */}
-      <SectionWrapper className="py-24 px-6 bg-bg-secondary">
+      {/* Website Showcase — DARK */}
+      <section className="section-dark py-16 md:py-24 px-4 md:px-6">
+        <WebsiteShowcase />
+      </section>
+
+      {/* Industries — CREAM */}
+      <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-headline mb-4">
-              Built for Service Businesses
+            <h2 className="text-4xl md:text-5xl mb-4">
+              We Only Work With Service Businesses
             </h2>
-            <p className="text-text-body text-lg max-w-2xl mx-auto">
-              We specialize in industries where speed, trust, and professionalism
-              make or break deals.
+            <p className="text-lg max-w-2xl mx-auto">
+              Not e-commerce. Not SaaS. Just the trades, medical practices, and contractors
+              who keep the world running.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {industries.map((industry, i) => (
-              <IndustryCard
+              <motion.div
                 key={industry.href}
-                {...industry}
-                delay={i * 0.1}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Link
+                  href={industry.href}
+                  className="block card-glass-cream p-8 h-full group overflow-hidden"
+                >
+                  <div className="w-full h-48 mb-6 rounded-xl overflow-hidden bg-white/30 flex items-center justify-center">
+                    <img
+                      src={industry.image}
+                      alt={industry.title}
+                      className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-2xl mb-2 group-hover:text-[#A85C30] transition-colors">
+                    {industry.title}
+                  </h3>
+                  <p className="text-sm text-[#7A766E] mb-4">{industry.subtitle}</p>
+                  <ul className="text-sm space-y-2 mb-6">
+                    {industry.features.map((feature, fi) => (
+                      <li key={fi} className="flex items-center gap-2">
+                        <span className="text-[#A85C30]">&#8226;</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-[#A85C30] font-semibold flex items-center gap-2 text-sm">
+                    Explore Solutions <span>&#8594;</span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Features Bento Grid */}
-      <SectionWrapper className="py-24 px-6">
+      {/* Features Bento Grid — DARK */}
+      <section className="section-dark py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-accent mb-6">
@@ -247,10 +284,10 @@ export default function HomePage() {
             </BentoCard>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Feature Grid (6 cards) */}
-      <SectionWrapper className="py-24 px-6 bg-bg-secondary">
+      {/* Feature Grid (6 cards) — still DARK */}
+      <section className="section-dark py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, i) => (
@@ -271,53 +308,41 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Testimonial */}
-      <SectionWrapper className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex justify-center gap-1 mb-6">
-            {[1,2,3,4,5].map((star) => (
-              <Star key={star} className="w-6 h-6 text-accent fill-accent" />
-            ))}
-          </div>
-          <blockquote className="text-2xl md:text-3xl font-serif text-text-headline mb-8 leading-relaxed">
-            &quot;We were losing 30+ calls a week to voicemail. First month with ServiceGrowth, we booked 47 extra jobs without hiring anyone.&quot;
-          </blockquote>
-          <p className="text-text-muted">— HVAC Company Owner</p>
-        </div>
-      </SectionWrapper>
+      {/* Testimonials Marquee — DARK */}
+      <TestimonialMarquee />
 
-      {/* Pricing Range Section */}
-      <SectionWrapper className="py-24 px-6 bg-bg-secondary">
+      {/* Pricing Range Section — CREAM */}
+      <section className="section-cream py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-text-headline mb-6">
-            What does it cost?
+          <h2 className="text-4xl md:text-5xl font-serif mb-6">
+            Straight Talk on Pricing
           </h2>
-          <div className="text-text-body text-lg max-w-2xl mx-auto mb-8 space-y-4">
-            <p>Every system is different — because every business is different.</p>
+          <div className="text-lg max-w-2xl mx-auto mb-8 space-y-4" style={{ color: '#4A4A45' }}>
+            <p>We&apos;re not the cheapest. We&apos;re the ones that actually work.</p>
             <p>
-              Our solutions typically range from{" "}
-              <span className="text-accent font-semibold">$1,497 to $6,000+/month</span>{" "}
-              depending on your size, goals, and what you need built.
+              Most clients invest{" "}
+              <span className="text-[#A85C30] font-semibold">$1,497 to $6,000+/month</span>{" "}
+              — that&apos;s typically 2-3 booked jobs paying for the entire system.
             </p>
-            <p>We don&apos;t do cookie-cutter pricing. We build what fits, and we charge fairly for it.</p>
+            <p>No hidden fees. No lock-in contracts. You stay because it&apos;s working, not because you&apos;re trapped.</p>
           </div>
-          <Button href="/contact" variant="primary" size="lg">
-            Book a Free Call — Get Your Custom Quote
-          </Button>
+          <Link href="/contact" className="inline-flex items-center justify-center btn-dark px-8 py-4 text-base font-medium">
+            Book a Free Call — See Your Custom ROI
+          </Link>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* Trust Section */}
-      <SectionWrapper className="py-24 px-6">
+      {/* Trust Section — CREAM */}
+      <section className="section-cream py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-headline mb-4">
-              Built by Operators, Not Grifters
+            <h2 className="text-4xl md:text-5xl font-serif mb-4">
+              We Built This for Ourselves First
             </h2>
-            <p className="text-text-body text-lg max-w-2xl mx-auto">
-              Your growth isn&apos;t our experiment. It&apos;s our system.
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#4A4A45' }}>
+              Every system we sell, we ran on our own service business first. If it didn&apos;t work for us, we didn&apos;t build it for you.
             </p>
           </div>
 
@@ -329,32 +354,36 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="card-embossed p-6 text-center"
+                className="card-glass-cream p-6 text-center"
               >
-                <div className="text-xl font-semibold text-accent mb-2">{badge.stat}</div>
-                <p className="text-sm text-text-muted">{badge.description}</p>
+                <div className="text-xl font-semibold text-[#A85C30] mb-2">{badge.stat}</div>
+                <p className="text-sm text-[#7A766E]">{badge.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </section>
 
-      {/* CTA Section */}
-      <SectionWrapper className="py-24 px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-serif text-text-headline mb-8">
-            Ready to stop <br />
-            <span className="italic text-accent">losing leads?</span>
+      {/* CTA Section — DARK */}
+      <section className="section-dark py-32 px-6 relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/8 rounded-full blur-[120px]" />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-5xl md:text-7xl mb-8">
+            Your competitors are <br />
+            <span className="italic text-accent glow-text">already doing this.</span>
           </h2>
-          <p className="text-text-body text-xl mb-12 max-w-2xl mx-auto">
-            Book a free 25-minute audit. We&apos;ll show you exactly where you&apos;re bleeding money—whether you hire us or not.
+          <p className="text-xl mb-12 max-w-2xl mx-auto">
+            Every day you wait, leads go to your competitor&apos;s voicemail instead of yours. Book a free 25-minute audit — we&apos;ll show you exactly where money is falling through the cracks.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button href="/contact" variant="primary" size="lg">Book Your Free Audit</Button>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <ShinyButton href="/contact">Book Your Free Audit</ShinyButton>
             <Button href="/how-it-works" variant="glass" size="lg">See How It Works</Button>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   );
 }
