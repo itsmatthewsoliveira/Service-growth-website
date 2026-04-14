@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 100K Growth Blueprint — ServiceGrowth AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+  @page { size: letter; margin: 0; }
+
+  :root {
+    --page-w: 8.5in;
+    --page-h: 11in;
+    --margin: 0.75in;
+    --cream: #F5F0E8;
+    --cream-dark: #EDE8DF;
+    --white: #FFFFFF;
+    --charcoal: #0C0C0C;
+    --charcoal-light: #1A1A18;
+    --orange: #C2703A;
+    --orange-hover: #D4804A;
+    --orange-light: rgba(194, 112, 58, 0.08);
+    --orange-border: rgba(194, 112, 58, 0.2);
+    --text-primary: #0C0C0C;
+    --text-secondary: rgba(12, 12, 12, 0.6);
+    --text-muted: rgba(12, 12, 12, 0.4);
+    --border: rgba(12, 12, 12, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #d0ccc4;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Page / Slide — Letter size ── */
+  .slide {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    padding: var(--margin);
+    padding-bottom: 1in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: var(--cream);
+    margin: 20px auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .slide-inner {
+    width: 100%;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--charcoal);
+    text-align: center;
+    align-items: center;
+  }
+  .cover .glow {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(194,112,58,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: rgba(194,112,58,0.1);
+    border: 1px solid rgba(194,112,58,0.3);
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #F5F0E8;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .cover h1 span { color: var(--orange); }
+  .cover .subtitle {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(245, 240, 232, 0.6);
+    margin-bottom: 36px;
+  }
+  .cover .meta {
+    font-size: 11px;
+    color: rgba(245, 240, 232, 0.35);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── Badge (section label) ── */
+  .section-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 5px;
+    background: var(--orange-light);
+    color: var(--orange);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* ── Section Titles ── */
+  .slide h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .slide h2 span { color: var(--orange); }
+
+  .slide .desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* ── Divider (Chapter break) ── */
+  .divider {
+    background: var(--charcoal);
+    text-align: center;
+    align-items: center;
+  }
+  .divider .chapter-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(194,112,58,0.15);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .divider h2 {
+    color: #F5F0E8;
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+  .divider .desc {
+    color: rgba(245,240,232,0.5);
+    font-size: 14px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Card Grid ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .card .icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .card p {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── Bullet List ── */
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    color: var(--text-primary);
+    line-height: 1.55;
+  }
+  .bullet-list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 6px;
+  }
+
+  /* ── KPI Grid ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 14px;
+    text-align: center;
+  }
+  .kpi-card .value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kpi-card .label {
+    font-size: 10.5px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* ── Dark KPI ── */
+  .kpi-dark { background: var(--charcoal); }
+  .kpi-dark h2 { color: #F5F0E8; }
+  .kpi-dark .section-badge { background: rgba(194,112,58,0.15); }
+  .kpi-dark .kpi-card {
+    background: var(--charcoal-light);
+    border-color: rgba(245,240,232,0.06);
+  }
+  .kpi-dark .kpi-card .label { color: rgba(245,240,232,0.5); }
+
+  /* ── Two Columns ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .col-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .col-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .col-card > p {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .col-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .col-card ul li {
+    padding: 6px 0;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .col-card ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--orange);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .timeline-step {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 10px 10px 0 0;
+  }
+  .timeline-step h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .timeline-step p {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── Quote ── */
+  .quote-slide {
+    text-align: center;
+    align-items: center;
+  }
+  .quote-mark {
+    font-size: 60px;
+    color: var(--orange);
+    opacity: 0.2;
+    font-family: 'Instrument Serif', serif;
+    line-height: 1;
+    margin-bottom: -12px;
+  }
+  .quote-text {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text-primary);
+    line-height: 1.55;
+    margin: 0 auto 20px;
+  }
+  .quote-author {
+    font-size: 13px;
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  /* ── Closing ── */
+  .closing {
+    background: var(--charcoal);
+    text-align: center;
+    align-items: center;
+  }
+  .closing h2 {
+    color: #F5F0E8;
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+  .closing .tagline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(245,240,232,0.5);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.5;
+  }
+  .contact-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  .contact-item {
+    background: var(--charcoal-light);
+    border: 1px solid rgba(245,240,232,0.06);
+    border-radius: 10px;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .contact-item .label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 4px;
+  }
+  .contact-item .value {
+    font-size: 13px;
+    color: #F5F0E8;
+    font-weight: 500;
+  }
+
+  /* ── Utility ── */
+  .accent { color: var(--orange); }
+  .mt-sm { margin-top: 12px; }
+  .mt-md { margin-top: 24px; }
+  .center { text-align: center; }
+
+  /* ── Page Footer ── */
+  .page-footer {
+    position: absolute;
+    bottom: 0.5in;
+    left: var(--margin);
+    right: var(--margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+  .page-footer.light { color: rgba(245,240,232,0.2); }
+
+  @media print {
+    body { background: white; }
+    .slide { margin: 0; box-shadow: none; page-break-after: always; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ COVER ════════════════════ -->
+<div class="slide cover">
+  <div class="glow"></div>
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="badge">Free for Construction Business Owners</div>
+    <h1>The 100K Growth <span>Blueprint</span></h1>
+    <p class="subtitle">How We Took a Construction Business from $0 to $100K in 90 Days</p>
+    <div style="max-width:480px;margin:32px auto 0;padding:20px 24px;border:1px solid rgba(194,112,58,0.25);border-radius:10px;background:rgba(194,112,58,0.06);">
+      <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:rgba(245,240,232,0.7);line-height:1.65;text-align:center;">Read this only if you are interested in growing your business. People that want to grow their company pay the price. You can have this PDF on your phone and never look at it &mdash; and keep your company stagnant. But if you take action, I can prove to you that this will change your company.</p>
+      <p style="font-size:11px;color:var(--orange);font-weight:600;text-align:center;margin-top:10px;">&mdash; Matt, Founder of ServiceGrowth AI</p>
+    </div>
+    <p class="meta" style="margin-top:28px;">ServiceGrowth AI &mdash; 2026</p>
+  </div>
+  <div class="page-footer light">
+    <span>servicegrowth.ai</span>
+    <span>The 100K Growth Blueprint</span>
+  </div>
+</div>
+
+<!-- ════════════════════ WHO THIS IS FOR ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">WHO THIS IS FOR</div>
+    <h2>You're Great at Your Craft.<br>Marketing? <span>Not So Much.</span></h2>
+    <p class="desc">This blueprint is for contractors who are tired of relying on word-of-mouth and ready to build a real lead generation machine.</p>
+    <ul class="bullet-list">
+      <li>Pavers, painters, roofers, HVAC techs, landscapers, and general contractors</li>
+      <li>You do incredible work &mdash; but your phone isn't ringing enough</li>
+      <li>You've wasted money on ads that didn't work or agencies that overpromised</li>
+      <li>You're ready to stop guessing and follow a proven, step-by-step system</li>
+      <li>This is the exact playbook we used &mdash; no theory, no fluff, just results</li>
+    </ul>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>02</span></div>
+</div>
+
+<!-- ════════════════════ MATT'S STORY ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">MEET THE FOUNDER</div>
+    <h2>This Blueprint Comes from <span>Real Experience</span> &mdash; Not a Textbook</h2>
+    <p class="desc">Matt didn't learn marketing in a classroom. He learned it in the field &mdash; growing real service companies, solving real problems, and figuring out what actually moves the needle when your livelihood depends on it.</p>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:14px;">
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--orange-light);border:1px solid var(--orange-border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#127912;</div>
+        <div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Chapter 1: His Dad's Painting Company</h3>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.65;">Matt started by growing his father's painting company in one of the most competitive markets in the country &mdash; the North Shore of Boston. The company was stuck doing low-end jobs, competing on price against dozens of other painters. Matt rebuilt the brand, repositioned them as a premium service, and took the company from over $100K/year in revenue to painting multi-million dollar homes. Same crew, same skills &mdash; completely different clients and completely different money.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:14px;">
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--orange-light);border:1px solid var(--orange-border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#127959;</div>
+        <div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Chapter 2: The Outdoor Design Company</h3>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.65;">With 5+ years of marketing experience under his belt, Matt took everything he learned and applied it to his first construction company &mdash; an outdoor design business. Using AI-powered systems, automated follow-up, and the exact strategies in this blueprint, the company hit $100K in revenue in just 3 months. $3 per lead. All high-end clients. No tire-kickers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;">
+      <div style="display:flex;align-items:flex-start;gap:20px;">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--orange-light);border:1px solid var(--orange-border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#128640;</div>
+        <div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Chapter 3: ServiceGrowth AI</h3>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.65;">Now Matt's mission is to give every contractor access to the same systems that transformed his businesses. ServiceGrowth AI builds the entire growth engine for you &mdash; start with paid leads to get cash flowing fast, then build your organic profile so you're getting leads from Google, Yelp, referrals, and everywhere else. The goal: never be dependent on ad spend alone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>03</span></div>
+</div>
+
+<!-- ════════════════════ THE VISION ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">OUR APPROACH</div>
+    <h2>Paid Leads Start the Engine.<br><span>Organic Keeps It Running.</span></h2>
+    <p class="desc">Most marketing agencies just run ads and call it a day. When you stop paying, the leads stop. We build something different &mdash; a company that attracts leads from every direction.</p>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>Phase 1: Paid Leads</h3>
+        <p>Get cash flowing immediately.</p>
+        <ul>
+          <li>Google Ads targeting high-intent searches</li>
+          <li>Facebook Ads with before/after creative</li>
+          <li>$600 in free Yelp ad credits from our reps</li>
+          <li>AI-powered speed-to-lead response</li>
+          <li>Revenue starts in weeks, not months</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>Phase 2: Organic Growth</h3>
+        <p>Build assets that generate leads for free.</p>
+        <ul>
+          <li>Google Business Profile optimized for local SEO</li>
+          <li>Review generation system across Yelp + Google</li>
+          <li>Professional website that ranks and converts</li>
+          <li>Premium brand that attracts premium clients</li>
+          <li>Leads come in even when ads are off</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--text-secondary);">The companies that win long-term aren't the ones spending the most on ads &mdash; they're the ones who built an organic presence that works while they sleep.</p>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>04</span></div>
+</div>
+
+<!-- ════════════════════ RELATIONSHIPS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">RELATIONSHIPS &amp; REFERRALS</div>
+    <h2>Ads Get You Started.<br><span>Relationships Get You Rich.</span></h2>
+    <p class="desc">Some companies depend on contractors and subs to get off the ground &mdash; and that's fine to start. But the real money isn't in chasing contractor referrals who send you their leftovers. It's in building relationships with the people who control the high-end projects.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#128208;</span>
+        <h3>Stop Depending on Bad Referrals</h3>
+        <p>Most contractor referral networks send you their worst leads &mdash; the jobs they don't want. You end up competing on price for scraps. We help you build your own pipeline so you're never dependent on someone else's leftovers.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#9997;&#65039;</span>
+        <h3>Build Relationships with Architects</h3>
+        <p>Architects spec the projects and recommend the contractors. One relationship with the right architect can be worth $500K+ in projects per year. We show you how to get in front of them and stay top of mind.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#127968;</span>
+        <h3>Connect with Interior Designers</h3>
+        <p>Designers work with homeowners who have real budgets. When a designer recommends you, the client doesn't shop around &mdash; they trust the referral. These are the highest-close-rate leads you'll ever get.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#129302;</span>
+        <h3>AI-Powered Outreach</h3>
+        <p>We use AI to identify architects, designers, and builders in your area, craft personalized outreach, and manage follow-ups automatically. Build a referral network without spending hours cold-calling or showing up to networking events.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--text-secondary);">The best contractors don't just run ads. They build a reputation and a network that feeds them premium projects year after year.</p>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>05</span></div>
+</div>
+
+<!-- ════════════════════ CLIENT RESULTS ════════════════════ -->
+<div class="slide kpi-dark">
+  <div class="slide-inner">
+    <div class="section-badge" style="display:block;text-align:center;">REAL CLIENT RESULTS</div>
+    <h2 style="text-align:center;margin-bottom:24px;">This Isn't Just Matt's Story.<br><span>Our Clients Are Winning Too.</span></h2>
+    <div class="two-col" style="margin-bottom:28px;">
+      <div class="kpi-card" style="padding:24px;text-align:left;border-radius:10px;">
+        <div class="value" style="font-size:24px;margin-bottom:4px;">Matt's Outdoor Design Co.</div>
+        <div class="label" style="font-size:11px;margin-bottom:16px;">Founder's company &mdash; the original blueprint</div>
+        <div style="display:flex;gap:12px;">
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">$100K+</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">Revenue in 90 Days</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">$3</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">Cost Per Lead</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">100%</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">High-End Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="kpi-card" style="padding:24px;text-align:left;border-radius:10px;">
+        <div class="value" style="font-size:24px;margin-bottom:4px;">Active Client</div>
+        <div class="label" style="font-size:11px;margin-bottom:16px;">Construction company using our system today</div>
+        <div style="display:flex;gap:12px;">
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">50+</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">Leads Per Month</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">$60K+</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">Monthly Revenue</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:rgba(194,112,58,0.08);border-radius:8px;">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#C2703A;">Live</div>
+            <div style="font-size:9px;color:rgba(245,240,232,0.5);margin-top:2px;">Results We Can Show</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:rgba(245,240,232,0.5);">Hop on a call with us and we'll walk you through the actual dashboards, the real numbers, and exactly how we did it.</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>04</span></div>
+</div>
+
+<!-- ════════════════════ RESULTS KPI ════════════════════ -->
+<div class="slide kpi-dark">
+  <div class="slide-inner center">
+    <div class="section-badge">THE SYSTEM</div>
+    <h2>What This Blueprint Produces in 90 Days</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="value">$100K+</div><div class="label">Revenue Generated</div></div>
+      <div class="kpi-card"><div class="value">47+</div><div class="label">New Clients Booked</div></div>
+      <div class="kpi-card"><div class="value">5x</div><div class="label">Return on Ad Spend</div></div>
+      <div class="kpi-card"><div class="value">60s</div><div class="label">Avg Lead Response</div></div>
+    </div>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>05</span></div>
+</div>
+
+<!-- ════════════════════ CH1 DIVIDER ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">01</div>
+    <h2>Google Ads That<br>Actually Convert</h2>
+    <p class="desc">The exact setup that generates $5&ndash;$15 leads for local contractors</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>04</span></div>
+</div>
+
+<!-- ════════════════════ CH1 CARDS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">GOOGLE ADS</div>
+    <h2>Stop Burning Money on <span>Bad Keywords</span></h2>
+    <p class="desc">Most contractors set up Google Ads wrong. They bid on broad terms, waste budget, and quit. Here's what actually works.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#127919;</span>
+        <h3>High-Intent Keywords Only</h3>
+        <p>Target "paver installer near me", "roof repair [city]", "HVAC emergency [zip]". These people are ready to buy. We saw 25%+ conversion rates.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128176;</span>
+        <h3>Budget: $30&ndash;$50/Day to Start</h3>
+        <p>Start with $30-$50/day on 5-10 exact-match keywords. Scale what works. Kill what doesn't. We hit $100K spending only $1,200/month on ads.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128205;</span>
+        <h3>Tight Geo-Targeting</h3>
+        <p>Set a 15-25 mile radius around your service area. Exclude areas you won't drive to. Every dollar goes to people who can actually hire you.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128241;</span>
+        <h3>Call-Only Campaigns</h3>
+        <p>For contractors, phone calls beat form fills. Set up call-only ads that ring your phone directly. Our cost per call averaged $8-$12.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>05</span></div>
+</div>
+
+<!-- ════════════════════ CH1 PRO TIPS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">GOOGLE ADS PRO TIPS</div>
+    <h2>The Details That <span>10x Your Results</span></h2>
+    <ul class="bullet-list mt-md">
+      <li>Add negative keywords religiously &mdash; "DIY", "jobs", "salary", "how to" are costing you money</li>
+      <li>Run ads only during business hours (or when your AI chatbot captures after-hours leads)</li>
+      <li>Use ad extensions: location, call, sitelink, and callout &mdash; boosts CTR by 15-20%</li>
+      <li>Write ads that mention your city &mdash; "Jacksonville Paver Installation | Free Estimates"</li>
+      <li>Track conversions with call tracking numbers &mdash; if you're not measuring, you're guessing</li>
+      <li>Check search terms report weekly and add irrelevant terms as negatives</li>
+    </ul>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>06</span></div>
+</div>
+
+<!-- ════════════════════ CH2 DIVIDER ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">02</div>
+    <h2>Facebook Ads<br>for Contractors</h2>
+    <p class="desc">How to get a flood of leads from homeowners in your area</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>07</span></div>
+</div>
+
+<!-- ════════════════════ CH2 CARDS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">FACEBOOK ADS</div>
+    <h2>The Before/After Strategy That <span>Prints Leads</span></h2>
+    <p class="desc">Facebook isn't like Google &mdash; people aren't searching for you. You need to stop the scroll with visuals that make homeowners say "I want that."</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#128248;</span>
+        <h3>Before/After Creative</h3>
+        <p>Show dramatic transformations. Ugly driveway to beautiful paver patio. These get 3-5x more engagement than stock photos. Use real job site photos.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128101;</span>
+        <h3>Target Homeowners, Not Renters</h3>
+        <p>Ages 30-65, homeowners, income $75K+, within 25 miles. Layer on interests like "home improvement", "HGTV", "Zillow". Exclude renters.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128260;</span>
+        <h3>Retarget Everyone</h3>
+        <p>Install the Facebook Pixel. Retarget everyone who visited your site but didn't call. These warm leads convert at 3-5x the rate of cold traffic.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128203;</span>
+        <h3>Lead Form Ads</h3>
+        <p>Use Facebook's native lead forms &mdash; they auto-fill name, email, and phone. Less friction = more leads. We averaged $8-$15 per lead.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>08</span></div>
+</div>
+
+<!-- ════════════════════ CH2 COPY FORMULA ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">FACEBOOK CREATIVE FORMULA</div>
+    <h2>The Ad Copy Template That <span>Works Every Time</span></h2>
+    <div class="two-col mt-md">
+      <div class="col-card">
+        <h3>The Hook (First 2 Lines)</h3>
+        <p>Lead with a result or transformation. Make them stop scrolling.</p>
+        <ul>
+          <li>"We turned this cracked driveway into a backyard paradise"</li>
+          <li>"[City] homeowners: your neighbors are upgrading. Are you?"</li>
+          <li>"This $12K patio job started with a free estimate"</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>The Offer (CTA)</h3>
+        <p>Give them a reason to act NOW, not later.</p>
+        <ul>
+          <li>Free estimates with no obligation</li>
+          <li>"Spring special: 10% off projects booked this month"</li>
+          <li>"Limited spots available for [month] installations"</li>
+          <li>Button CTA: "Get Your Free Estimate"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>09</span></div>
+</div>
+
+<!-- ════════════════════ CH3 DIVIDER — BRANDING ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">03</div>
+    <h2>Premium Branding<br>That Attracts Premium Clients</h2>
+    <p class="desc">How we positioned ourselves as the high-end choice &mdash; and eliminated bad clients forever</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>10</span></div>
+</div>
+
+<!-- ════════════════════ CH3 CARDS — BRANDING ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">BRANDING</div>
+    <h2>Look Like a <span>$10M Company</span> Before You Are One</h2>
+    <p class="desc">One of the biggest reasons we hit $100K in 3 months wasn't just ads &mdash; it was branding. When you look professional, you attract professional clients. When you look cheap, you attract cheap clients who haggle, complain, and waste your time.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#127912;</span>
+        <h3>Professional Visual Identity</h3>
+        <p>Consistent logo, colors, and fonts across everything &mdash; your truck, website, business cards, uniforms, and social media. Homeowners judge you in 3 seconds. Look like the premium choice and they'll pay premium prices.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128248;</span>
+        <h3>Portfolio-Quality Photos</h3>
+        <p>Stop posting dark iPhone photos from the job site. Invest in clean, well-lit photos of completed work. AI tools can enhance your existing photos to look professional. Your portfolio IS your sales pitch.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128176;</span>
+        <h3>Price Like a Professional</h3>
+        <p>When your branding screams quality, you can charge 20-40% more than competitors with the same skillset. We stopped competing on price and started competing on presentation. Our average ticket went up $3K.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128683;</span>
+        <h3>Cut Out Bad Clients</h3>
+        <p>Premium branding filters out bargain hunters automatically. We learned to qualify leads by budget upfront &mdash; "What's your investment range?" If they can't afford you, refer them out. Your time is worth more than chasing $500 jobs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>11</span></div>
+</div>
+
+<!-- ════════════════════ CH3 BRANDING TIPS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">BRANDING PLAYBOOK</div>
+    <h2>How to Position Yourself as <span>High-End</span></h2>
+    <ul class="bullet-list mt-md">
+      <li>Get a real logo &mdash; not a Canva template. It's the face of your company on every estimate, invoice, and ad</li>
+      <li>Pick 2-3 brand colors and use them everywhere. Consistency = trust. Inconsistency = amateur hour</li>
+      <li>Build a professional website that showcases your best work &mdash; not a free Wix site with stock photos</li>
+      <li>Wear branded uniforms on every job. Branded trucks, branded shirts, branded everything. It's a walking billboard</li>
+      <li>Write proposals, not text quotes. A professional PDF proposal with photos closes 2x more than "hey it'll be $8K"</li>
+      <li>Show your process &mdash; consultations, 3D renders, material selections. High-end clients want an experience, not just a service</li>
+      <li>Say no to projects that don't fit. Every $500 job you take is a $5K job you didn't have time for</li>
+    </ul>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>12</span></div>
+</div>
+
+<!-- ════════════════════ CH4 DIVIDER — YELP ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">04</div>
+    <h2>The Yelp Strategy</h2>
+    <p class="desc">$600 in free ad credits + organic domination from day one</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>13</span></div>
+</div>
+
+<!-- ════════════════════ CH4 CARDS — YELP ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">YELP</div>
+    <h2>Yelp Sends the <span>Highest-Intent Leads.</span> Period.</h2>
+    <p class="desc">People on Yelp are actively looking for a contractor RIGHT NOW. We have reps at Yelp who get our clients $600 in free ad credits in the first month &mdash; so you can start running ads at zero cost.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#127873;</span>
+        <h3>$600 in Free Ad Credits</h3>
+        <p>We work directly with Yelp reps who set up your ad campaign and get you $600 in free ad spend in the first month. That's real leads, real calls &mdash; at zero cost to you. We handle the setup.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#11088;</span>
+        <h3>Get Reviews on Autopilot</h3>
+        <p>After every job, send a text: "Thanks for choosing us! A Yelp review would mean the world." Link directly to your Yelp page. Aim for 2-3 new reviews/month. Reviews compound over time.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128221;</span>
+        <h3>Optimize Your Profile</h3>
+        <p>Complete every field. Add 20+ high-quality photos. Write a detailed description with your services and area. Respond to EVERY review &mdash; good and bad. This is your digital storefront.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128172;</span>
+        <h3>Respond to Leads Fast</h3>
+        <p>Yelp tracks and shows your response time publicly. Respond within 1 hour. Contractors who respond in 30 minutes close 40% more Yelp leads. Speed + reviews = domination.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>14</span></div>
+</div>
+
+<!-- ════════════════════ CH5 DIVIDER ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">05</div>
+    <h2>Speed-to-Lead<br>System</h2>
+    <p class="desc">The first contractor to respond books 78% of estimates</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>15</span></div>
+</div>
+
+<!-- ════════════════════ CH5 CARDS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">SPEED TO LEAD</div>
+    <h2>You're Losing Leads While <span>You're on the Job Site</span></h2>
+    <p class="desc">The average contractor takes 3+ days to return a call. By then, the homeowner has already talked to 3 competitors.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#9889;</span>
+        <h3>60-Second Response Time</h3>
+        <p>Every lead gets a response within 60 seconds. Not a human &mdash; an AI system that qualifies them, answers questions, and books the estimate.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#129302;</span>
+        <h3>AI Chatbot on Your Website</h3>
+        <p>A 24/7 AI chatbot that knows your services, pricing, and area. It captures name, phone, email, address, and project details &mdash; then texts you the lead.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128242;</span>
+        <h3>Instant SMS Follow-Up</h3>
+        <p>Every form fill and missed call triggers an automatic text. This alone recovered 30% of leads we would have lost.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#127769;</span>
+        <h3>24/7 Coverage</h3>
+        <p>Nights, weekends, holidays. 40% of leads come after hours. If you're not capturing them, your competitor is. The AI never sleeps.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>16</span></div>
+</div>
+
+<!-- ════════════════════ CH5 KPI ════════════════════ -->
+<div class="slide kpi-dark">
+  <div class="slide-inner center">
+    <div class="section-badge">SPEED MATTERS</div>
+    <h2>The Numbers Don't Lie</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="value">78%</div><div class="label">Win Rate for First Responder</div></div>
+      <div class="kpi-card"><div class="value">391%</div><div class="label">More Conversions at 1 Min vs 30</div></div>
+      <div class="kpi-card"><div class="value">3 Days</div><div class="label">Avg Contractor Response</div></div>
+      <div class="kpi-card"><div class="value">60s</div><div class="label">Our Response Time</div></div>
+    </div>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>17</span></div>
+</div>
+
+<!-- ════════════════════ CH6 DIVIDER ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">06</div>
+    <h2>Follow-Up<br>That Closes</h2>
+    <p class="desc">Turn "let me think about it" into signed contracts</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>18</span></div>
+</div>
+
+<!-- ════════════════════ CH6 CARDS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">FOLLOW-UP SYSTEM</div>
+    <h2>The Fortune Is in the <span>Follow-Up</span></h2>
+    <p class="desc">80% of sales happen after the 5th follow-up. Most contractors follow up once &mdash; maybe twice &mdash; then give up.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">&#128197;</span>
+        <h3>Day 0: Instant Confirmation</h3>
+        <p>"Thanks for having us out! Here's a summary of what we discussed." Attach the quote immediately. Strike while the iron is hot.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128232;</span>
+        <h3>Day 2: Value Add</h3>
+        <p>"Wanted to share photos of a similar project we recently completed in your area. Happy to answer any questions!" Show, don't tell.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#128276;</span>
+        <h3>Day 5: Gentle Nudge</h3>
+        <p>"Just checking in on your project. Our calendar is filling up for next month. Any questions I can help with?" Light urgency.</p>
+      </div>
+      <div class="card">
+        <span class="icon">&#9200;</span>
+        <h3>Day 7: Urgency Close</h3>
+        <p>"Last follow-up &mdash; we have [X] spots left this month. If you'd like to move forward, we can lock in your date today."</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>19</span></div>
+</div>
+
+<!-- ════════════════════ CH6 TIPS ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">PRO TIPS</div>
+    <h2>Follow-Up Rules That <span>Matter</span></h2>
+    <ul class="bullet-list mt-md">
+      <li>Text beats email for contractors &mdash; 98% open rate for texts vs 20% for email</li>
+      <li>Always personalize &mdash; use their name, project type, and neighborhood</li>
+      <li>Include photos of similar completed projects in your follow-ups</li>
+      <li>Never be pushy &mdash; be helpful. "Any questions?" beats "Are you ready to sign?"</li>
+      <li>Automate everything. If you're manually following up, you'll forget. Set it and forget it.</li>
+      <li>Track which follow-up converts &mdash; for us, Day 5 had the highest close rate</li>
+    </ul>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>20</span></div>
+</div>
+
+<!-- ════════════════════ CH7 DIVIDER ════════════════════ -->
+<div class="slide divider">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="chapter-num">07</div>
+    <h2>Putting It<br>All Together</h2>
+    <p class="desc">The complete system running on autopilot</p>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span>21</span></div>
+</div>
+
+<!-- ════════════════════ CH7 TIMELINE ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">90-DAY ROADMAP</div>
+    <h2>What $100K in 90 Days <span>Actually Looks Like</span></h2>
+    <div class="timeline">
+      <div class="timeline-step">
+        <h3>Week 1&ndash;2</h3>
+        <p>Set up Google Ads, Facebook Ads, optimize Yelp. Install AI chatbot and speed-to-lead system. Build follow-up sequences.</p>
+      </div>
+      <div class="timeline-step">
+        <h3>Week 3&ndash;4</h3>
+        <p>First leads flowing. Refine targeting based on data. Dial in follow-up timing. Book first 5-10 estimates.</p>
+      </div>
+      <div class="timeline-step">
+        <h3>Month 2</h3>
+        <p>System optimized. Leads consistent. Scale ad spend on winners. Revenue hits $30-40K cumulative.</p>
+      </div>
+      <div class="timeline-step">
+        <h3>Month 3</h3>
+        <p>Full autopilot. 30+ leads/week. AI handles intake. Follow-up closes deals. Cross $100K revenue.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>19</span></div>
+</div>
+
+<!-- ════════════════════ CH7 SYSTEM ════════════════════ -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="section-badge">THE FULL SYSTEM</div>
+    <h2>Your Lead Machine, <span>Visualized</span></h2>
+    <div class="two-col mt-md">
+      <div class="col-card">
+        <h3>Lead Generation</h3>
+        <p>Where the leads come from:</p>
+        <ul>
+          <li>Google Ads &mdash; high-intent local searches</li>
+          <li>Facebook Ads &mdash; before/after scroll-stoppers</li>
+          <li>Yelp &mdash; organic reviews + fast response</li>
+          <li>Website &mdash; SEO + AI chatbot capture</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>Lead Conversion</h3>
+        <p>How leads become revenue:</p>
+        <ul>
+          <li>60-second AI response to every lead</li>
+          <li>Auto-qualify: name, project, budget, timeline</li>
+          <li>Instant estimate booking</li>
+          <li>Day 2/5/7 automated follow-up sequence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>20</span></div>
+</div>
+
+<!-- ════════════════════ QUOTE ════════════════════ -->
+<div class="slide quote-slide">
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote-text">The contractors who win aren't always the best at their craft. They're the ones who show up first, follow up consistently, and make it easy to say yes.</p>
+    <p class="quote-author">ServiceGrowth AI</p>
+  </div>
+  <div class="page-footer"><span>servicegrowth.ai</span><span>21</span></div>
+</div>
+
+<!-- ════════════════════ CLOSING ════════════════════ -->
+<div class="slide closing">
+  <div class="glow" style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(194,112,58,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="slide-inner" style="display:flex;flex-direction:column;align-items:center;position:relative;">
+    <h2>Ready to Build<br>This System?</h2>
+    <p class="tagline">We build and run this entire growth engine for contractors &mdash; so you can focus on the work you love.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Get Started</div>
+        <div class="value">servicegrowth.ai</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Call Us</div>
+        <div class="value">(904) 874-2245</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <div class="value">hello@servicegrowth.ai</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer light"><span>servicegrowth.ai</span><span></span></div>
+</div>
+
+</body>
+</html>
