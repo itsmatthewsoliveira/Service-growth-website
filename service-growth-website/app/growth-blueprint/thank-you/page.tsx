@@ -3,7 +3,7 @@
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Download, Play, Phone, Users, DollarSign, Zap, TrendingUp } from "lucide-react";
+import { Check, ArrowRight, Download, Phone, Users, DollarSign, Zap, TrendingUp } from "lucide-react";
 
 // ─── Vimeo walkthrough video ───────────────────────────────────────────────
 const WALKTHROUGH_VIDEO_ID = "1183151954"; // 2.5 min walkthrough for this page
@@ -81,27 +81,15 @@ function ThankYouContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {WALKTHROUGH_VIDEO_ID !== "PLACEHOLDER" ? (
-              <div className="relative rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-xl" style={{ aspectRatio: "16/9" }}>
-                <iframe
-                  src={`https://player.vimeo.com/video/${WALKTHROUGH_VIDEO_ID}?title=0&byline=0&portrait=0`}
-                  title="100K Growth Blueprint Walkthrough"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-            ) : (
-              <div className="relative rounded-2xl overflow-hidden bg-[#0C0C0C] border border-[#0C0C0C]/10 shadow-xl flex items-center justify-center" style={{ aspectRatio: "16/9" }}>
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-[#C2703A]/20 flex items-center justify-center mx-auto mb-4">
-                    <Play className="w-10 h-10 text-[#C2703A] ml-1" />
-                  </div>
-                  <p className="text-[#F5F0E8]/60 text-lg font-medium">Video walkthrough coming soon</p>
-                  <p className="text-[#F5F0E8]/30 text-sm mt-1">In the meantime, download the blueprint below</p>
-                </div>
-              </div>
-            )}
+            <div className="relative rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-xl" style={{ aspectRatio: "16/9" }}>
+              <iframe
+                src={`https://player.vimeo.com/video/${WALKTHROUGH_VIDEO_ID}?title=0&byline=0&portrait=0`}
+                title="100K Growth Blueprint Walkthrough"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
           </motion.div>
         </div>
       </section>

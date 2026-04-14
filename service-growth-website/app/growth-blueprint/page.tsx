@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Check, ArrowRight, TrendingUp, Users, DollarSign, Zap, Play } from "lucide-react";
+import { Check, ArrowRight, TrendingUp, Users, DollarSign, Zap } from "lucide-react";
 
 // ─── Vimeo teaser video ────────────────────────────────────────────────────
 const TEASER_VIDEO_ID = "1183159176"; // 30-60s teaser for landing page
@@ -81,26 +81,15 @@ export default function GrowthBlueprintPage() {
               transition={{ duration: 0.6 }}
             >
               {/* Teaser Video */}
-              {TEASER_VIDEO_ID !== "PLACEHOLDER" ? (
-                <div className="rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-lg mb-6" style={{ aspectRatio: "16/9" }}>
-                  <iframe
-                    src={`https://player.vimeo.com/video/${TEASER_VIDEO_ID}?title=0&byline=0&portrait=0`}
-                    title="Growth Blueprint Teaser"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
-              ) : (
-                <div className="rounded-2xl overflow-hidden bg-[#0C0C0C] border border-[#0C0C0C]/10 shadow-lg mb-6 flex items-center justify-center p-6" style={{ aspectRatio: "16/9" }}>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-[#C2703A]/20 flex items-center justify-center mx-auto mb-3">
-                      <Play className="w-7 h-7 text-[#C2703A] ml-0.5" />
-                    </div>
-                    <p className="text-[#F5F0E8]/50 text-sm font-medium">Watch how we did it</p>
-                  </div>
-                </div>
-              )}
+              <div className="rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-lg mb-6" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src={`https://player.vimeo.com/video/${TEASER_VIDEO_ID}?title=0&byline=0&portrait=0`}
+                  title="Growth Blueprint Teaser"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
 
               <span className="inline-block px-4 py-1.5 rounded-full bg-[#C2703A]/10 border border-[#C2703A]/30 text-[#C2703A] text-sm font-medium mb-6">
                 Free for Construction Business Owners
