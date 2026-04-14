@@ -148,16 +148,23 @@ export default function GrowthBlueprintPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8 md:mb-10"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#C2703A]/10 border border-[#C2703A]/30 text-[#C2703A] text-xs md:text-sm font-semibold tracking-wide uppercase mb-5">
-              Free for Construction Business Owners
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#0C0C0C]/10 shadow-sm mb-6">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C2703A] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C2703A]"></span>
+              </span>
+              <span className="text-[#0C0C0C]/70 text-[11px] md:text-xs font-semibold tracking-wide uppercase">
+                Free for Construction Business Owners
+              </span>
+            </div>
 
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0C0C0C] leading-[1.1] mb-4">
-              The Exact Blueprint We Used to Hit<br />
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0C0C0C] leading-[1.02] tracking-tight mb-5">
+              The Exact Blueprint<br />
+              We Used to Hit<br />
               <span className="text-[#C2703A]">$100K in 3 Months</span>
             </h1>
 
-            <p className="text-[#0C0C0C]/60 text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-[#0C0C0C]/60 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Watch the 60-second breakdown below. Then grab the full blueprint — free.
             </p>
           </motion.div>
@@ -253,25 +260,29 @@ export default function GrowthBlueprintPage() {
           >
             <button
               onClick={scrollToForm}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#0C0C0C] hover:bg-[#1A1A18] text-[#F5F0E8] font-semibold text-base md:text-lg transition-all hover:scale-[1.02] shadow-xl"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#0C0C0C] hover:bg-[#1A1A18] text-[#F5F0E8] font-semibold text-[15px] transition-all duration-200 shadow-[0_4px_20px_rgba(12,12,12,0.15)] hover:shadow-[0_8px_30px_rgba(12,12,12,0.25)] hover:-translate-y-0.5"
             >
               Get the Free Blueprint
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
-            <p className="text-[#0C0C0C]/40 text-xs mt-3">
-              Instant access. No spam. Delivered to your inbox + on the next page.
+            <p className="text-[#0C0C0C]/40 text-[12px] mt-4 tracking-tight">
+              Instant access · No spam · Delivered to your inbox
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══════════════════ RESULTS STRIP ═══════════════════ */}
-      <section className="py-10 md:py-14 border-y border-[#0C0C0C]/5 bg-white/40">
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
-          <p className="text-center text-[#0C0C0C]/50 text-xs uppercase tracking-widest font-semibold mb-6">
-            Real results from this exact system
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {/* ═══════════════════ RESULTS STRIP — Linear-style big numbers ═══════════════════ */}
+      <section className="py-14 md:py-20 border-y border-[#0C0C0C]/5">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex items-center gap-2 justify-center mb-10">
+            <div className="h-px w-8 bg-[#0C0C0C]/20"></div>
+            <p className="text-[#0C0C0C]/50 text-[11px] uppercase tracking-[0.2em] font-semibold">
+              Real Results From This System
+            </p>
+            <div className="h-px w-8 bg-[#0C0C0C]/20"></div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#0C0C0C]/10 border border-[#0C0C0C]/10 rounded-2xl overflow-hidden">
             {results.map((r, i) => (
               <motion.div
                 key={r.label}
@@ -279,15 +290,15 @@ export default function GrowthBlueprintPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white border border-[#0C0C0C]/10 text-center"
+                className="flex flex-col items-start justify-between p-6 md:p-8 bg-white min-h-[140px] md:min-h-[180px] hover:bg-[#C2703A]/[0.02] transition-colors"
               >
-                <div className="p-2 rounded-lg bg-[#C2703A]/10">
-                  <r.icon className="w-4 h-4 text-[#C2703A]" />
+                <r.icon className="w-5 h-5 text-[#C2703A]/70" strokeWidth={1.5} />
+                <div>
+                  <p className="text-[#0C0C0C] font-bold text-3xl md:text-5xl leading-none font-heading tracking-tight mb-2">
+                    {r.value}
+                  </p>
+                  <p className="text-[#0C0C0C]/50 text-xs md:text-sm font-medium">{r.label}</p>
                 </div>
-                <p className="text-[#0C0C0C] font-bold text-xl md:text-2xl leading-tight font-heading">
-                  {r.value}
-                </p>
-                <p className="text-[#0C0C0C]/50 text-[11px] md:text-xs font-medium">{r.label}</p>
               </motion.div>
             ))}
           </div>
@@ -295,16 +306,16 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ TRUST — Platforms we help you dominate ═══════════════════ */}
-      <section className="py-10 md:py-12">
+      <section className="py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
-          <p className="text-center text-[#0C0C0C]/50 text-xs uppercase tracking-widest font-semibold mb-6">
-            Get leads from every platform that matters
+          <p className="text-center text-[#0C0C0C]/40 text-[11px] uppercase tracking-[0.2em] font-semibold mb-8">
+            Get Leads From Every Platform That Matters
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
             {platforms.map((p) => (
-              <div key={p.name} className="flex items-center gap-2 opacity-40 hover:opacity-70 transition-opacity">
-                <img src={p.src} alt={p.name} className="h-5 md:h-6 w-auto" />
-                <span className="text-[#0C0C0C]/70 font-semibold text-sm md:text-base">{p.name}</span>
+              <div key={p.name} className="flex items-center gap-2.5 opacity-30 hover:opacity-60 transition-opacity duration-300">
+                <img src={p.src} alt={p.name} className="h-5 md:h-6 w-auto grayscale" />
+                <span className="text-[#0C0C0C] font-semibold text-sm md:text-base tracking-tight">{p.name}</span>
               </div>
             ))}
           </div>
@@ -333,9 +344,9 @@ export default function GrowthBlueprintPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative p-6 md:p-8 rounded-2xl bg-white border border-[#0C0C0C]/10 shadow-xl"
+            className="relative p-6 md:p-10 rounded-2xl bg-white border border-[#0C0C0C]/[0.08] shadow-[0_1px_3px_rgba(12,12,12,0.04),0_20px_60px_-15px_rgba(12,12,12,0.12)]"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#C2703A]/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#C2703A]/[0.03] via-transparent to-transparent pointer-events-none" />
             <div className="relative">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -426,9 +437,9 @@ export default function GrowthBlueprintPage() {
                 <button
                   type="submit"
                   disabled={loading || !formData.budget}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-[15px] md:text-base transition-all duration-200 shadow-[0_4px_20px_rgba(194,112,58,0.25)] hover:shadow-[0_8px_30px_rgba(194,112,58,0.35)] hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none"
                 >
-                  {loading ? "Sending..." : <>Send Me the Blueprint <ArrowRight className="w-5 h-5" /></>}
+                  {loading ? "Sending..." : (<>Send Me the Blueprint <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></>)}
                 </button>
 
                 <div className="flex items-center justify-center gap-4 pt-1 text-[11px] text-[#0C0C0C]/40">
@@ -529,9 +540,9 @@ export default function GrowthBlueprintPage() {
             </p>
             <button
               onClick={scrollToForm}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-lg transition-colors shadow-xl"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-[15px] md:text-base transition-all duration-200 shadow-[0_4px_20px_rgba(194,112,58,0.3)] hover:shadow-[0_8px_30px_rgba(194,112,58,0.4)] hover:-translate-y-0.5"
             >
-              Get the Free Blueprint <ArrowRight className="w-5 h-5" />
+              Get the Free Blueprint <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </motion.div>
         </div>
