@@ -12,7 +12,7 @@ const PDF_URL = "/downloads/100K-Growth-Blueprint.pdf";
 const stats = [
   { icon: DollarSign, value: "$100K+", label: "Revenue in 3 months" },
   { icon: Users, value: "50+", label: "Leads/month (client)" },
-  { icon: Zap, value: "$3", label: "Cost per lead" },
+  { icon: Zap, value: "$5–$15", label: "Cost per lead" },
   { icon: TrendingUp, value: "$60K+", label: "Monthly revenue" },
 ];
 
@@ -214,8 +214,11 @@ function ThankYouContent() {
 
                 {/* Secondary: Growth Lab */}
                 <div className="bg-white border border-[#0C0C0C]/[0.08] rounded-2xl p-6 text-center">
-                  <p className="text-[#0C0C0C]/60 text-sm mb-3">
-                    Not ready for a call? Join the Growth Lab &mdash; free weekly content.
+                  <p className="text-[#0C0C0C]/60 text-sm mb-1">
+                    Not ready for a call? Join the <span className="text-[#C2703A] font-semibold">Growth Lab</span> &mdash; first month free.
+                  </p>
+                  <p className="text-[#0C0C0C]/40 text-xs mb-3">
+                    First 10 to join win a free professional website · Only 10 spots this month
                   </p>
                   {!labSubmitted ? (
                     <form onSubmit={handleLabSignup} className="flex gap-2 max-w-md mx-auto">
@@ -252,14 +255,23 @@ function ThankYouContent() {
                     <div className="p-3 rounded-xl bg-[#C2703A]/10 w-fit mx-auto mb-5">
                       <Users className="w-5 h-5 text-[#C2703A]" />
                     </div>
-                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#F5F0E8] tracking-tight leading-[1.05] mb-4">
-                      Join the Growth Lab<br /><span className="text-[#C2703A]">— It&apos;s Free</span>
+                    <h2 style={{ color: "#F5F0E8" }} className="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-[1.05] mb-4">
+                      Join the Growth Lab<br />
+                      <span style={{ color: "#C2703A" }}>— Free for Your First Month</span>
                     </h2>
-                    <p className="text-[#F5F0E8]/50 text-base max-w-lg mx-auto mb-7 leading-relaxed">
+                    <p className="text-[#F5F0E8]/60 text-base max-w-lg mx-auto mb-5 leading-relaxed">
                       Every week I drop content showing you how to build your company
                       from zero. First clients, branding, ads, the works. Everything
                       you need to do it yourself.
                     </p>
+                    <div className="flex flex-wrap items-center justify-center gap-2 mb-7 text-xs">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C2703A]/15 border border-[#C2703A]/30 text-[#C2703A] font-semibold">
+                        <Check className="w-3 h-3" /> First month free
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C2703A]/15 border border-[#C2703A]/30 text-[#C2703A] font-semibold">
+                        🎁 First 10 win a free website
+                      </span>
+                    </div>
                     {!labSubmitted ? (
                       <form onSubmit={handleLabSignup} className="flex gap-2 max-w-md mx-auto">
                         <input
@@ -284,8 +296,8 @@ function ThankYouContent() {
                         You&apos;re on the waitlist!
                       </p>
                     )}
-                    <p className="text-[#F5F0E8]/30 text-xs mt-5 tracking-tight">
-                      First 10 to join are entered to win a free professional website
+                    <p className="text-[#F5F0E8]/40 text-xs mt-5 tracking-tight">
+                      Only 10 spots this month · Free for the first 30 days
                     </p>
                   </div>
                 </div>

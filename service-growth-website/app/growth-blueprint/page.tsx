@@ -19,7 +19,7 @@ const budgetOptions = [
 const results = [
   { icon: DollarSign, value: "$100K+", label: "Revenue in 3 months" },
   { icon: Users, value: "50+", label: "Leads/month (active client)" },
-  { icon: Zap, value: "$3", label: "Cost per lead" },
+  { icon: Zap, value: "$5–$15", label: "Cost per lead" },
   { icon: TrendingUp, value: "5x", label: "Return on ad spend" },
 ];
 

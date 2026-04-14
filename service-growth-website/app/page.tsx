@@ -73,7 +73,7 @@ const features = [
 
 const trustBadges = [
   { stat: "$100K in 90 Days", description: "Our founder's proven playbook — not theory" },
-  { stat: "$3 Per Lead", description: "High-intent leads, not tire-kickers" },
+  { stat: "$5–$15 Per Lead", description: "High-intent leads, not tire-kickers" },
   { stat: "50+ Leads/Month", description: "What our active clients are pulling in right now" },
   { stat: "Live in 14 Days", description: "Not 3 months. Two weeks and you're running" },
 ];
