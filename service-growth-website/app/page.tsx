@@ -8,7 +8,6 @@ import IndustryCard from "@/components/IndustryCard";
 import BentoCard from "@/components/BentoCard";
 import { Hero } from "@/components/ui/animated-hero";
 import { Globe, Megaphone, Image, Zap, Phone, MessageSquare, Bot, Star, Camera, Box } from "lucide-react";
-import WebsiteShowcase from "@/components/WebsiteShowcase";
 import TestimonialMarquee from "@/components/sections/TestimonialMarquee";
 import ShinyButton from "@/components/ui/ShinyButton";
 
@@ -121,11 +120,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Website Showcase — DARK */}
-      <section className="section-dark py-16 md:py-24 px-4 md:px-6">
-        <WebsiteShowcase />
       </section>
 
       {/* Industries — CREAM */}

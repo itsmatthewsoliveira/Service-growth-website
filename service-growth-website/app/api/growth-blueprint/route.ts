@@ -8,6 +8,8 @@ interface BlueprintLeadData {
   phone: string;
   email: string;
   budget: string;
+  engaged?: boolean;
+  watchSeconds?: number;
 }
 
 // ─── Email Alert ────────────────────────────────────────────────────────────
@@ -217,6 +219,7 @@ export async function POST(req: NextRequest) {
         richBlock("Phone", body.phone),
         richBlock("Monthly Marketing Budget", body.budget),
         richBlock("Segment", segment),
+        richBlock("Video Engagement", body.engaged ? `🔥 Engaged viewer (${body.watchSeconds || 0}s watched)` : `Watched ${body.watchSeconds || 0}s`),
       ],
     });
 

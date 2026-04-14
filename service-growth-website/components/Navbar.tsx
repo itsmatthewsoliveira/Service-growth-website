@@ -64,8 +64,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#1A1A18]/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-0">
+    <nav className="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -75,7 +75,7 @@ export default function Navbar() {
             <img
               src="/logo-white.svg"
               alt="Service Growth AI"
-              className="h-16 md:h-36 lg:h-44 w-auto"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 
