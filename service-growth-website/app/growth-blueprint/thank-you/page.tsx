@@ -5,8 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Download, Play, Phone, Users, DollarSign, Zap, TrendingUp } from "lucide-react";
 
-// ─── Video Placeholders — swap these when videos are uploaded ────────────────
-const WALKTHROUGH_VIDEO_ID = "PLACEHOLDER"; // 2.5 min walkthrough for this page
+// ─── Vimeo walkthrough video ───────────────────────────────────────────────
+const WALKTHROUGH_VIDEO_ID = "1183151954"; // 2.5 min walkthrough for this page
 const PDF_URL = "/downloads/100K-Growth-Blueprint.html";
 
 const stats = [
@@ -84,9 +84,9 @@ function ThankYouContent() {
             {WALKTHROUGH_VIDEO_ID !== "PLACEHOLDER" ? (
               <div className="relative rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-xl" style={{ aspectRatio: "16/9" }}>
                 <iframe
-                  src={`https://www.youtube.com/embed/${WALKTHROUGH_VIDEO_ID}`}
+                  src={`https://player.vimeo.com/video/${WALKTHROUGH_VIDEO_ID}?title=0&byline=0&portrait=0`}
                   title="100K Growth Blueprint Walkthrough"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"
                 />
