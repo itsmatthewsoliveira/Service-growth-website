@@ -215,10 +215,10 @@ function ThankYouContent() {
                 {/* Secondary: Growth Lab */}
                 <div className="bg-white border border-[#0C0C0C]/[0.08] rounded-2xl p-6 text-center">
                   <p className="text-[#0C0C0C]/60 text-sm mb-1">
-                    Not ready for a call? Join the <span className="text-[#C2703A] font-semibold">Growth Lab</span> &mdash; first month free.
+                    Not ready for a call? Get on the <span className="text-[#C2703A] font-semibold">Growth Lab waitlist</span> &mdash; first month free at launch.
                   </p>
                   <p className="text-[#0C0C0C]/40 text-xs mb-3">
-                    First 10 to join win a free professional website · Only 10 spots this month
+                    First 10 on the list win a free professional website · Launching soon
                   </p>
                   {!labSubmitted ? (
                     <form onSubmit={handleLabSignup} className="flex gap-2 max-w-md mx-auto">
@@ -235,7 +235,7 @@ function ThankYouContent() {
                         disabled={labLoading}
                         className="px-5 py-3 rounded-xl bg-[#0C0C0C] text-[#F5F0E8] text-sm font-semibold hover:bg-[#1A1A18] transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-50 disabled:translate-y-0"
                       >
-                        {labLoading ? "..." : "Join Free"}
+                        {labLoading ? "..." : "Join Waitlist"}
                       </button>
                     </form>
                   ) : (
@@ -257,16 +257,16 @@ function ThankYouContent() {
                     </div>
                     <h2 style={{ color: "#F5F0E8" }} className="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-[1.05] mb-4">
                       Join the Growth Lab<br />
-                      <span style={{ color: "#C2703A" }}>— Free for Your First Month</span>
+                      <span style={{ color: "#C2703A" }}>Waitlist</span>
                     </h2>
                     <p className="text-[#F5F0E8]/60 text-base max-w-lg mx-auto mb-5 leading-relaxed">
-                      Every week I drop content showing you how to build your company
-                      from zero. First clients, branding, ads, the works. Everything
-                      you need to do it yourself.
+                      We&apos;re building a course for contractors who want to run this
+                      system themselves. First clients, branding, ads, the works &mdash;
+                      everything you need to do it on your own.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-2 mb-7 text-xs">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C2703A]/15 border border-[#C2703A]/30 text-[#C2703A] font-semibold">
-                        <Check className="w-3 h-3" /> First month free
+                        <Check className="w-3 h-3" /> First month free at launch
                       </span>
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C2703A]/15 border border-[#C2703A]/30 text-[#C2703A] font-semibold">
                         🎁 First 10 win a free website
@@ -287,17 +287,17 @@ function ThankYouContent() {
                           disabled={labLoading}
                           className="group px-6 py-3 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-sm transition-all duration-200 shadow-[0_4px_20px_rgba(194,112,58,0.3)] hover:shadow-[0_8px_30px_rgba(194,112,58,0.4)] hover:-translate-y-0.5 disabled:opacity-50 disabled:translate-y-0"
                         >
-                          {labLoading ? "..." : "Join Free"}
+                          {labLoading ? "..." : "Join Waitlist"}
                         </button>
                       </form>
                     ) : (
                       <p className="text-[#C2703A] font-semibold">
                         <Check className="w-4 h-4 inline mr-1" />
-                        You&apos;re on the waitlist!
+                        You&apos;re on the list! We&apos;ll ping you at launch.
                       </p>
                     )}
                     <p className="text-[#F5F0E8]/40 text-xs mt-5 tracking-tight">
-                      Only 10 spots this month · Free for the first 30 days
+                      Launching soon · Only 10 free website spots on the list
                     </p>
                   </div>
                 </div>
