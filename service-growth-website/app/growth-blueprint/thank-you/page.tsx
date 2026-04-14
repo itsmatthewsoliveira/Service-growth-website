@@ -260,9 +260,9 @@ function ThankYouContent() {
                       <span style={{ color: "#C2703A" }}>Waitlist</span>
                     </h2>
                     <p className="text-[#F5F0E8]/60 text-base max-w-lg mx-auto mb-5 leading-relaxed">
-                      We&apos;re building a course for contractors who want to run this
-                      system themselves. First clients, branding, ads, the works &mdash;
-                      everything you need to do it on your own.
+                      We&apos;re launching a private group for contractors who want to
+                      run this system themselves. First clients, branding, ads, the
+                      works &mdash; everything you need to grow your company.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-2 mb-7 text-xs">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C2703A]/15 border border-[#C2703A]/30 text-[#C2703A] font-semibold">
