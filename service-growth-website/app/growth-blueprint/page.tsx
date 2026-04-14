@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, TrendingUp, Users, DollarSign, Zap, Play } from "lucide-react";
 
-// ─── Video placeholder — swap when teaser is uploaded ────────────────────────
-const TEASER_VIDEO_ID = "PLACEHOLDER"; // 30-60s teaser for landing page
+// ─── Vimeo teaser video ────────────────────────────────────────────────────
+const TEASER_VIDEO_ID = "1183159176"; // 30-60s teaser for landing page
 
 const budgetOptions = [
   { value: "under-1k", label: "Under $1,000/mo", description: "Just getting started" },
@@ -84,9 +84,9 @@ export default function GrowthBlueprintPage() {
               {TEASER_VIDEO_ID !== "PLACEHOLDER" ? (
                 <div className="rounded-2xl overflow-hidden bg-white border border-[#0C0C0C]/10 shadow-lg mb-6" style={{ aspectRatio: "16/9" }}>
                   <iframe
-                    src={`https://www.youtube.com/embed/${TEASER_VIDEO_ID}`}
+                    src={`https://player.vimeo.com/video/${TEASER_VIDEO_ID}?title=0&byline=0&portrait=0`}
                     title="Growth Blueprint Teaser"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                     allowFullScreen
                     className="w-full h-full"
                   />
