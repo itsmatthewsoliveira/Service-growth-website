@@ -40,7 +40,7 @@ function Hero() {
   };
 
   const titles = useMemo(
-    () => ["Contractors", "Roofers", "Plumbers", "HVAC", "Dentists", "Med Spas", "Remodelers", "Landscapers"],
+    () => ["Contractors", "Pavers", "Roofers", "Remodelers", "Landscapers", "Builders", "HVAC", "Painters"],
     []
   );
 

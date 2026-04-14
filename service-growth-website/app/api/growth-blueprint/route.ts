@@ -55,7 +55,7 @@ async function sendEmailAlert(data: BlueprintLeadData) {
 // ─── Welcome Email to Lead ──────────────────────────────────────────────────
 
 const DEEP_DIVE_VIDEO_URL = "https://servicegrowth.ai/growth-blueprint/thank-you"; // Update with actual video URL
-const PDF_URL = "https://www.servicegrowth.ai/downloads/100K-Growth-Blueprint.html";
+const PDF_URL = "https://www.servicegrowth.ai/downloads/100K-Growth-Blueprint.pdf";
 
 async function sendWelcomeEmail(data: BlueprintLeadData) {
   const resendKey = process.env.RESEND_API_KEY;

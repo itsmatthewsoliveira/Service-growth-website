@@ -13,52 +13,52 @@ import ShinyButton from "@/components/ui/ShinyButton";
 
 const services = [
   {
-    href: "/services/website",
-    icon: Globe,
-    title: "Websites That Book Jobs",
-    description: "Not a pretty brochure. A machine that turns clicks into customers.",
-  },
-  {
     href: "/services/ads",
     icon: Megaphone,
-    title: "Ads That Pay for Themselves",
-    description: "Google and Meta ads managed by people who spend their own money on ads.",
-  },
-  {
-    href: "/services/content",
-    icon: Image,
-    title: "Photos & Content That Sell",
-    description: "Your work is top-notch. Your photos should be too.",
+    title: "Ads That Book High-End Jobs",
+    description: "Google, Facebook, and Yelp ads built to attract homeowners with real budgets — not tire-kickers.",
   },
   {
     href: "/services/automation",
     icon: Zap,
-    title: "AI That Works While You Sleep",
-    description: "Missed calls answered. Leads qualified. Appointments booked. All automatic.",
+    title: "AI That Never Misses a Lead",
+    description: "60-second response to every inquiry. AI qualifies, books estimates, and follows up while you're on the job site.",
+  },
+  {
+    href: "/services/content",
+    icon: Image,
+    title: "Photos That Close the Deal",
+    description: "Turn iPhone job-site shots into portfolio-quality images. Before/after content that sells itself.",
+  },
+  {
+    href: "/services/website",
+    icon: Globe,
+    title: "Websites That Convert",
+    description: "Look like the premium choice. Sites that rank on Google and turn visitors into booked estimates.",
   },
 ];
 
 const industries = [
   {
+    href: "/industries/construction",
+    image: "/3d-excavator.png",
+    title: "Construction",
+    subtitle: "Pavers, Remodelers, GCs, Builders, Architects",
+    features: ["Speed-to-Lead AI (60s response)", "Before/After Photo Magic", "3D Project Renders", "Yelp $600 Ad Credits"],
+  },
+  {
     href: "/industries/home-services",
     image: "/3d-home-services.png",
     title: "Home Services",
-    subtitle: "HVAC, Plumbing, Roofing, Landscaping, Cleaning",
+    subtitle: "Roofing, HVAC, Plumbing, Landscaping",
     features: ["AI Lead Booking 24/7", "Missed Call Text-Back", "Review Automation"],
   },
   {
     href: "/industries/medical",
     image: "/3d-medical.png",
     title: "Medical",
-    subtitle: "Dentists, Chiropractors, Med Spas, Clinics",
+    subtitle: "Dentists, Chiropractors, Med Spas",
     features: ["Appointment Reminders", "Patient Reactivation", "HIPAA Compliant"],
-  },
-  {
-    href: "/industries/construction",
-    image: "/3d-excavator.png",
-    title: "Construction",
-    subtitle: "Contractors, Remodelers, Builders, Architects",
-    features: ["3D Renders", "Photo Transformation", "Fast Lead Response"],
   },
 ];
 
@@ -72,10 +72,10 @@ const features = [
 ];
 
 const trustBadges = [
-  { stat: "$100K in 90 Days", description: "We tested this on our own business first" },
-  { stat: "Month-to-Month", description: "No lock-in contracts. We earn your business every month." },
-  { stat: "Live in 14 Days", description: "Not 3 months. Two weeks from today." },
-  { stat: "Money-Back Guarantee", description: "15% more booked jobs in 60 days or we refund you." },
+  { stat: "$100K in 90 Days", description: "Our founder's proven playbook — not theory" },
+  { stat: "$3 Per Lead", description: "High-intent leads, not tire-kickers" },
+  { stat: "50+ Leads/Month", description: "What our active clients are pulling in right now" },
+  { stat: "Live in 14 Days", description: "Not 3 months. Two weeks and you're running" },
 ];
 
 export default function HomePage() {
@@ -90,9 +90,19 @@ export default function HomePage() {
       <section className="section-dark py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4">
-              Everything Your Business Needs to Grow
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A] animate-pulse"></span>
+              <span className="text-[#F5F0E8]/70 text-[11px] md:text-xs font-semibold tracking-wide uppercase">
+                The Complete Growth Engine
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-4 tracking-tight leading-[1.05] font-bold">
+              Everything Your Company<br />Needs to <span className="text-[#C2703A]">Dominate</span>
             </h2>
+            <p className="text-lg max-w-2xl mx-auto text-[#B8B3AA]">
+              Not just marketing. The whole system — ads, AI, branding, and relationships —
+              built to take contractors from struggling to stacked.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -126,12 +136,22 @@ export default function HomePage() {
       <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4">
-              We Only Work With Service Businesses
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#0C0C0C]/10 shadow-sm mb-6">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C2703A] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C2703A]"></span>
+              </span>
+              <span className="text-[#0C0C0C]/70 text-[11px] md:text-xs font-semibold tracking-wide uppercase">
+                Built for Contractors First
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl mb-5 tracking-tight leading-[1.05] font-bold">
+              Construction Is Our <span className="text-[#C2703A]">Home Turf</span>
             </h2>
-            <p className="text-lg max-w-2xl mx-auto">
-              Not e-commerce. Not SaaS. Just the trades, medical practices, and contractors
-              who keep the world running.
+            <p className="text-lg max-w-2xl mx-auto text-[#0C0C0C]/60">
+              Matt started by growing his dad&apos;s painting company in Boston&apos;s North Shore,
+              then took an outdoor design company from $0 to $100K in 90 days. We know
+              construction. And we know how to bring in high-end leads.
             </p>
           </div>
 
