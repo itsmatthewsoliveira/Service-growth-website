@@ -50,6 +50,72 @@ async function sendEmailAlert(data: BlueprintLeadData) {
   });
 }
 
+// ─── Welcome Email to Lead ──────────────────────────────────────────────────
+
+const DEEP_DIVE_VIDEO_URL = "https://servicegrowth.ai/growth-blueprint/thank-you"; // Update with actual video URL
+const PDF_URL = "https://www.servicegrowth.ai/downloads/100K-Growth-Blueprint.html";
+
+async function sendWelcomeEmail(data: BlueprintLeadData) {
+  const resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) return;
+
+  const isHighBudget = data.budget === "3k-5k" || data.budget === "5k-plus";
+
+  const ctaSection = isHighBudget
+    ? `<a href="https://www.servicegrowth.ai/contact" style="display:inline-block;padding:14px 28px;background:#C2703A;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Book a Strategy Call</a>
+       <p style="color:#7A766E;font-size:13px;margin-top:12px;">I'll personally look at your business and show you exactly where the gaps are.</p>`
+    : `<a href="https://www.servicegrowth.ai/growth-blueprint/thank-you?name=${encodeURIComponent(data.name)}&budget=${data.budget}" style="display:inline-block;padding:14px 28px;background:#C2703A;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Join the Growth Lab (Free)</a>
+       <p style="color:#7A766E;font-size:13px;margin-top:12px;">Free weekly content to help you build your company from zero.</p>`;
+
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "Matt from ServiceGrowth <noreply@servicegrowth.ai>",
+      to: [data.email],
+      subject: `${data.name}, your 100K Growth Blueprint is ready`,
+      html: `
+        <div style="max-width:600px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;background:#F5F0E8;padding:40px 32px;border-radius:12px;">
+          <div style="text-align:center;margin-bottom:32px;">
+            <p style="display:inline-block;padding:4px 14px;background:rgba(194,112,58,0.1);color:#C2703A;border-radius:100px;font-size:12px;font-weight:600;">100K GROWTH BLUEPRINT</p>
+          </div>
+
+          <h1 style="font-size:24px;color:#0C0C0C;margin-bottom:8px;">Hey ${data.name},</h1>
+          <p style="font-size:16px;color:#0C0C0C;opacity:0.7;line-height:1.6;margin-bottom:24px;">
+            Thanks for downloading the blueprint. This is the exact system I used to take an outdoor design company from $0 to $100K in 90 days &mdash; and it's yours now.
+          </p>
+
+          <div style="background:#fff;border:1px solid rgba(12,12,12,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
+            <h2 style="font-size:18px;color:#0C0C0C;margin-bottom:8px;">Your Blueprint</h2>
+            <p style="font-size:14px;color:#0C0C0C;opacity:0.6;margin-bottom:16px;">Google Ads, Facebook Ads, Yelp, speed-to-lead, branding, follow-up &mdash; everything broken down step by step.</p>
+            <a href="${PDF_URL}" style="display:inline-block;padding:12px 24px;background:#0C0C0C;color:#F5F0E8;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Download the Blueprint</a>
+          </div>
+
+          <div style="background:#fff;border:1px solid rgba(12,12,12,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
+            <h2 style="font-size:18px;color:#0C0C0C;margin-bottom:8px;">Watch the Deep Dive</h2>
+            <p style="font-size:14px;color:#0C0C0C;opacity:0.6;margin-bottom:16px;">I recorded a 15-minute video walking through the entire system, my story, and how we can help you implement it.</p>
+            <a href="${DEEP_DIVE_VIDEO_URL}" style="display:inline-block;padding:12px 24px;background:#0C0C0C;color:#F5F0E8;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Watch the Video</a>
+          </div>
+
+          <div style="text-align:center;padding:32px 0 16px;">
+            <h2 style="font-size:18px;color:#0C0C0C;margin-bottom:12px;">Ready for the Next Step?</h2>
+            ${ctaSection}
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(12,12,12,0.08);margin:32px 0 16px;" />
+          <p style="font-size:12px;color:#7A766E;text-align:center;">
+            ServiceGrowth AI &mdash; The growth engine for service businesses<br>
+            <a href="https://www.servicegrowth.ai" style="color:#C2703A;">servicegrowth.ai</a> &middot; (904) 874-2245
+          </p>
+        </div>
+      `,
+    }),
+  });
+}
+
 // ─── Slack Notification ─────────────────────────────────────────────────────
 
 async function sendSlackNotification(data: BlueprintLeadData) {
@@ -154,10 +220,11 @@ export async function POST(req: NextRequest) {
       ],
     });
 
-    // Notifications (non-blocking)
+    // Notifications + welcome email (non-blocking)
     await Promise.allSettled([
       sendEmailAlert(body),
       sendSlackNotification(body),
+      sendWelcomeEmail(body),
     ]);
 
     return NextResponse.json({ success: true });
