@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin, GrowthLabWaitlistEntry } from "@/lib/supabase";
+import { createNotionPage, headingBlock, richBlock } from "@/lib/notion";
 
 // ─── Slack Notification ─────────────────────────────────────────────────────
 
@@ -73,6 +74,36 @@ export async function POST(req: NextRequest) {
       console.error("Supabase insert error:", dbError);
       throw new Error(dbError.message);
     }
+
+    // Save to Notion CRM (tagged as Growth Lab Waitlist)
+    await createNotionPage({
+      properties: {
+        Name: {
+          title: [{ text: { content: `${body.name || "Growth Lab"} — Waitlist` } }],
+        },
+        Email: { email: body.email },
+        ...(body.phone ? { Phone: { phone_number: body.phone } } : {}),
+        ...(body.company ? { Company: { rich_text: [{ text: { content: body.company } }] } } : {}),
+        ...(body.state ? { City: { rich_text: [{ text: { content: body.state } }] } } : {}),
+        "Project Status": {
+          status: { name: "\uD83D\uDFE1 Onboarding" },
+        },
+        "Lead Source": {
+          select: { name: "Growth Lab Waitlist" },
+        },
+        "Submitted At": {
+          date: { start: new Date().toISOString() },
+        },
+      },
+      children: [
+        headingBlock("heading_2", "Growth Lab Waitlist Signup"),
+        richBlock("Email", body.email),
+        ...(body.name ? [richBlock("Name", body.name)] : []),
+        ...(body.company ? [richBlock("Company", body.company)] : []),
+        ...(body.budget ? [richBlock("Budget", body.budget)] : []),
+        ...(body.source ? [richBlock("Source", body.source)] : []),
+      ],
+    }).catch((err) => console.error("Notion insert error (non-critical):", err));
 
     // Slack notification (non-blocking)
     await Promise.allSettled([sendSlackNotification(body)]);
