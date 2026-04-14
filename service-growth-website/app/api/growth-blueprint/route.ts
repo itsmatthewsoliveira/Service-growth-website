@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { createNotionPage, headingBlock, richBlock } from "@/lib/notion";
 
 interface BlueprintLeadData {
+  name: string;
+  company: string;
+  state: string;
   phone: string;
   email: string;
   budget: string;
@@ -30,9 +33,12 @@ async function sendEmailAlert(data: BlueprintLeadData) {
     body: JSON.stringify({
       from: "ServiceGrowth.ai <noreply@servicegrowth.ai>",
       to: [alertEmail],
-      subject: `New Blueprint Lead: ${data.email} — ${segment}`,
+      subject: `New Blueprint Lead: ${data.name} (${data.company}) — ${segment}`,
       html: `
         <h2>New 100K Blueprint Lead</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Company:</strong> ${data.company}</p>
+        <p><strong>State:</strong> ${data.state}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
         <p><strong>Budget:</strong> ${data.budget}</p>
@@ -70,10 +76,12 @@ async function sendSlackNotification(data: BlueprintLeadData) {
         {
           type: "section",
           fields: [
+            { type: "mrkdwn", text: `*Name:*\n${data.name}` },
+            { type: "mrkdwn", text: `*Company:*\n${data.company}` },
+            { type: "mrkdwn", text: `*State:*\n${data.state}` },
             { type: "mrkdwn", text: `*Email:*\n${data.email}` },
             { type: "mrkdwn", text: `*Phone:*\n${data.phone}` },
-            { type: "mrkdwn", text: `*Budget:*\n${data.budget}` },
-            { type: "mrkdwn", text: `*Segment:*\n${segment}` },
+            { type: "mrkdwn", text: `*Budget:*\n${data.budget} (${segment})` },
           ],
         },
         {
@@ -96,7 +104,7 @@ export async function POST(req: NextRequest) {
   try {
     const body: BlueprintLeadData = await req.json();
 
-    if (!body.phone || !body.email || !body.budget) {
+    if (!body.name || !body.company || !body.state || !body.phone || !body.email || !body.budget) {
       return NextResponse.json(
         { error: "Please fill in all fields." },
         { status: 400 }
@@ -114,10 +122,16 @@ export async function POST(req: NextRequest) {
     await createNotionPage({
       properties: {
         Name: {
-          title: [{ text: { content: `Blueprint Lead — ${body.email}` } }],
+          title: [{ text: { content: `${body.name} — ${body.company}` } }],
         },
         Email: { email: body.email },
         Phone: { phone_number: body.phone || null },
+        Company: {
+          rich_text: [{ text: { content: body.company } }],
+        },
+        City: {
+          rich_text: [{ text: { content: body.state } }],
+        },
         "Project Status": {
           status: { name: "\uD83D\uDFE1 Onboarding" },
         },
@@ -130,6 +144,9 @@ export async function POST(req: NextRequest) {
       },
       children: [
         headingBlock("heading_2", "100K Growth Blueprint — Lead Capture"),
+        richBlock("Name", body.name),
+        richBlock("Company", body.company),
+        richBlock("State", body.state),
         richBlock("Email", body.email),
         richBlock("Phone", body.phone),
         richBlock("Monthly Marketing Budget", body.budget),
