@@ -181,7 +181,7 @@ export default function GrowthBlueprintPage() {
             </h1>
 
             <p className="text-[#0C0C0C]/60 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-              Watch the 60-second breakdown below. Then grab the full blueprint — free.
+              Watch the 30-second video below. Then grab the full blueprint — free.
             </p>
           </motion.div>
 
@@ -222,7 +222,7 @@ export default function GrowthBlueprintPage() {
                     </div>
                     <div className="mt-5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-lg border border-white/10">
                       <p className="text-white text-xs md:text-sm font-medium">
-                        Watch how we did it → 60 sec
+                        Watch how we did it → 30 sec
                       </p>
                     </div>
                   </div>
