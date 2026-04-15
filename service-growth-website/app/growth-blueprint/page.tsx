@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Check, ArrowRight, TrendingUp, Users, DollarSign, Zap, Play, Shield, Award, Clock } from "lucide-react";
+import { Check, ArrowRight, TrendingUp, Users, DollarSign, Zap, Play, Shield, Award, Clock, ChevronDown, HardHat, Hammer, Wrench } from "lucide-react";
 
 // ─── Vimeo teaser video ────────────────────────────────────────────────────
 const TEASER_VIDEO_ID = "1183159176";
@@ -155,13 +155,6 @@ export default function GrowthBlueprintPage() {
         {/* Ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#C2703A]/10 rounded-full blur-[140px] pointer-events-none" />
 
-        {/* 3D excavator floating decoration */}
-        <div className="absolute -right-16 md:right-0 top-32 md:top-16 w-40 md:w-64 opacity-[0.08] pointer-events-none rotate-12">
-          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
-        </div>
-        <div className="absolute -left-20 md:-left-10 top-64 md:top-32 w-36 md:w-56 opacity-[0.06] pointer-events-none -rotate-12 scale-x-[-1]">
-          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
-        </div>
 
         <div className="relative max-w-5xl mx-auto px-4 md:px-6">
           {/* Eyebrow + headline */}
@@ -291,12 +284,33 @@ export default function GrowthBlueprintPage() {
             <p className="text-[#0C0C0C]/40 text-[12px] mt-4 tracking-tight">
               Instant access · No spam · Delivered to your inbox
             </p>
+
+            {/* Scroll-down indicator */}
+            <motion.button
+              onClick={() => document.getElementById("results-strip")?.scrollIntoView({ behavior: "smooth" })}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="mt-10 inline-flex flex-col items-center gap-1 group cursor-pointer"
+              aria-label="Scroll to see more"
+            >
+              <span className="text-[#0C0C0C]/40 text-[10px] uppercase tracking-[0.2em] font-semibold group-hover:text-[#C2703A] transition-colors">
+                See the proof
+              </span>
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                className="w-8 h-8 rounded-full border border-[#0C0C0C]/20 flex items-center justify-center group-hover:border-[#C2703A]/50 group-hover:bg-[#C2703A]/5 transition-colors"
+              >
+                <ChevronDown className="w-4 h-4 text-[#0C0C0C]/50 group-hover:text-[#C2703A] transition-colors" />
+              </motion.div>
+            </motion.button>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════ RESULTS STRIP — Linear-style big numbers ═══════════════════ */}
-      <section className="py-14 md:py-20 border-y border-[#0C0C0C]/5 relative z-10">
+      <section id="results-strip" className="py-14 md:py-20 border-y border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex items-center gap-2 justify-center mb-10">
             <div className="h-px w-8 bg-[#0C0C0C]/20"></div>
@@ -346,50 +360,58 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ BLACK CONTRAST BAND — Matt's proof ═══════════════════ */}
-      <section className="relative py-14 md:py-20 bg-[#0A0A0A] overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-black overflow-hidden">
         {/* Grid texture on dark */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          className="absolute inset-0 pointer-events-none opacity-[0.06]"
           style={{
             backgroundImage: `linear-gradient(rgba(194,112,58,1) 1px, transparent 1px), linear-gradient(90deg, rgba(194,112,58,1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
         />
-        {/* Orange glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#C2703A]/15 rounded-full blur-[140px] pointer-events-none" />
-        {/* 3D excavator decoration */}
-        <div className="absolute -right-10 md:right-10 top-1/2 -translate-y-1/2 w-40 md:w-72 opacity-20 pointer-events-none">
-          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
-        </div>
+        {/* Radial orange glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#C2703A]/15 rounded-full blur-[160px] pointer-events-none" />
+        {/* Corner gradient accents */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#C2703A]/20 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#C2703A]/10 to-transparent pointer-events-none" />
+
+        {/* Floating construction icons — SVG silhouettes work cleanly on dark */}
+        <HardHat className="absolute top-16 right-[8%] w-20 h-20 text-[#C2703A]/15 pointer-events-none -rotate-12" strokeWidth={1} />
+        <Hammer className="absolute bottom-20 right-[15%] w-16 h-16 text-[#C2703A]/10 pointer-events-none rotate-45" strokeWidth={1} />
+        <Wrench className="absolute top-32 right-[25%] w-12 h-12 text-[#C2703A]/10 pointer-events-none -rotate-45 hidden md:block" strokeWidth={1} />
 
         <div className="relative max-w-5xl mx-auto px-4 md:px-6">
           <div className="flex items-center gap-2 mb-6">
-            <div className="h-px w-8 bg-[#C2703A]/40"></div>
+            <div className="h-px w-8 bg-[#C2703A]/60"></div>
             <p className="text-[#C2703A] text-[11px] uppercase tracking-[0.2em] font-semibold">
               Built for Construction
             </p>
           </div>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#F5F0E8] tracking-tight leading-[1.05] mb-5 max-w-3xl">
+          <h2
+            style={{ color: "#F5F0E8" }}
+            className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 max-w-3xl"
+          >
             This isn&apos;t theory from a<br />
-            marketing guru. <span className="text-[#C2703A]">It&apos;s proven.</span>
+            marketing guru.{" "}
+            <span style={{ color: "#C2703A" }}>It&apos;s proven.</span>
           </h2>
-          <p className="text-[#F5F0E8]/60 text-base md:text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-[#F5F0E8]/70 text-base md:text-lg max-w-2xl leading-relaxed mb-8">
             Matt grew his dad&apos;s painting company from stuck doing low-end jobs
             to painting <span className="text-[#F5F0E8] font-semibold">multi-million dollar homes</span> in
-            the North Shore of Boston. Then took his own outdoor design company from
-            <span className="text-[#F5F0E8] font-semibold"> $0 to $100K in 90 days</span>.
+            the North Shore of Boston. Then took his own outdoor design company from{" "}
+            <span className="text-[#F5F0E8] font-semibold">$0 to $100K in 90 days</span>.
             Now we&apos;re building the same system for contractors across the country.
           </p>
           <div className="flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-[#F5F0E8]/80 text-sm backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
               5+ years marketing experience
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-[#F5F0E8]/80 text-sm backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
               Active client doing $60K+/mo
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-[#F5F0E8]/80 text-sm backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
               Built by a contractor, for contractors
             </span>

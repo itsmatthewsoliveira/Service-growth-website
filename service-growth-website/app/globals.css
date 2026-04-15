@@ -67,8 +67,8 @@ body {
 }
 
 /* Heading styles - Bold, thick, professional */
-h1,
-h2 {
+/* Use :where() to lower specificity so Tailwind text-* utilities win */
+:where(h1, h2) {
   font-family: var(--font-heading);
   color: #1A1A18;
   font-weight: 800;

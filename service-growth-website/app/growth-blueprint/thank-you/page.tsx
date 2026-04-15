@@ -51,9 +51,24 @@ function ThankYouContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F0E8]">
+    <div className="min-h-screen bg-[#F5F0E8] relative">
+      {/* ═══════════════════ GLOBAL TEXTURE — Grid + noise ═══════════════════ */}
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.035] z-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(12,12,12,1) 1px, transparent 1px), linear-gradient(90deg, rgba(12,12,12,1) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.04] z-0 mix-blend-multiply"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E")`,
+        }}
+      />
+
       {/* ═══════════════════ Hero — Confirmation ═══════════════════ */}
-      <section className="pt-20 pb-10 md:pt-28 md:pb-14 relative overflow-hidden">
+      <section className="pt-20 pb-10 md:pt-28 md:pb-14 relative overflow-hidden z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#C2703A]/8 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative max-w-3xl mx-auto px-4 md:px-6 text-center">
@@ -86,7 +101,7 @@ function ThankYouContent() {
       </section>
 
       {/* ═══════════════════ Video Section — Glass play button ═══════════════════ */}
-      <section className="pb-12">
+      <section className="pb-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +155,7 @@ function ThankYouContent() {
       </section>
 
       {/* ═══════════════════ PDF Download ═══════════════════ */}
-      <section className="pb-12">
+      <section className="pb-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +190,7 @@ function ThankYouContent() {
       </section>
 
       {/* ═══════════════════ Budget-Segmented CTAs ═══════════════════ */}
-      <section className="py-12 border-t border-[#0C0C0C]/5">
+      <section className="py-12 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,7 +206,7 @@ function ThankYouContent() {
                     <div className="p-3 rounded-xl bg-[#C2703A]/10 w-fit mx-auto mb-5">
                       <Phone className="w-5 h-5 text-[#C2703A]" />
                     </div>
-                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#F5F0E8] tracking-tight leading-[1.05] mb-4">
+                    <h2 style={{ color: "#F5F0E8" }} className="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-[1.05] mb-4">
                       Let&apos;s Look at Your<br />Business Together
                     </h2>
                     <p className="text-[#F5F0E8]/50 text-base max-w-lg mx-auto mb-7 leading-relaxed">
@@ -322,7 +337,7 @@ function ThankYouContent() {
       </section>
 
       {/* ═══════════════════ Social Proof Strip — Linear-style big numbers ═══════════════════ */}
-      <section className="py-14 md:py-20 border-t border-[#0C0C0C]/5">
+      <section className="py-14 md:py-20 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex items-center gap-2 justify-center mb-10">
             <div className="h-px w-8 bg-[#0C0C0C]/20"></div>
