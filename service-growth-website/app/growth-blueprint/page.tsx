@@ -134,11 +134,34 @@ export default function GrowthBlueprintPage() {
   const watchProgress = Math.min((watchSeconds / WATCH_GATE_SECONDS) * 100, 100);
 
   return (
-    <div className="min-h-screen bg-[#F5F0E8]">
+    <div className="min-h-screen bg-[#F5F0E8] relative">
+      {/* ═══════════════════ GLOBAL TEXTURE — Grid + noise ═══════════════════ */}
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.035] z-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(12,12,12,1) 1px, transparent 1px), linear-gradient(90deg, rgba(12,12,12,1) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.04] z-0 mix-blend-multiply"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E")`,
+        }}
+      />
+
       {/* ═══════════════════ HERO — Full-width video ═══════════════════ */}
-      <section className="relative pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden">
+      <section className="relative pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden z-10">
         {/* Ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#C2703A]/10 rounded-full blur-[140px] pointer-events-none" />
+
+        {/* 3D excavator floating decoration */}
+        <div className="absolute -right-16 md:right-0 top-32 md:top-16 w-40 md:w-64 opacity-[0.08] pointer-events-none rotate-12">
+          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
+        </div>
+        <div className="absolute -left-20 md:-left-10 top-64 md:top-32 w-36 md:w-56 opacity-[0.06] pointer-events-none -rotate-12 scale-x-[-1]">
+          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
+        </div>
 
         <div className="relative max-w-5xl mx-auto px-4 md:px-6">
           {/* Eyebrow + headline */}
@@ -273,7 +296,7 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ RESULTS STRIP — Linear-style big numbers ═══════════════════ */}
-      <section className="py-14 md:py-20 border-y border-[#0C0C0C]/5">
+      <section className="py-14 md:py-20 border-y border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex items-center gap-2 justify-center mb-10">
             <div className="h-px w-8 bg-[#0C0C0C]/20"></div>
@@ -306,7 +329,7 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ TRUST — Platforms we help you dominate ═══════════════════ */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 relative z-10">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
           <p className="text-center text-[#0C0C0C]/40 text-[11px] uppercase tracking-[0.2em] font-semibold mb-8">
             Get Leads From Every Platform That Matters
@@ -322,8 +345,60 @@ export default function GrowthBlueprintPage() {
         </div>
       </section>
 
+      {/* ═══════════════════ BLACK CONTRAST BAND — Matt's proof ═══════════════════ */}
+      <section className="relative py-14 md:py-20 bg-[#0A0A0A] overflow-hidden">
+        {/* Grid texture on dark */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(194,112,58,1) 1px, transparent 1px), linear-gradient(90deg, rgba(194,112,58,1) 1px, transparent 1px)`,
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Orange glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#C2703A]/15 rounded-full blur-[140px] pointer-events-none" />
+        {/* 3D excavator decoration */}
+        <div className="absolute -right-10 md:right-10 top-1/2 -translate-y-1/2 w-40 md:w-72 opacity-20 pointer-events-none">
+          <img src="/3d-excavator.png" alt="" className="w-full h-auto" />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 md:px-6">
+          <div className="flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-[#C2703A]/40"></div>
+            <p className="text-[#C2703A] text-[11px] uppercase tracking-[0.2em] font-semibold">
+              Built for Construction
+            </p>
+          </div>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#F5F0E8] tracking-tight leading-[1.05] mb-5 max-w-3xl">
+            This isn&apos;t theory from a<br />
+            marketing guru. <span className="text-[#C2703A]">It&apos;s proven.</span>
+          </h2>
+          <p className="text-[#F5F0E8]/60 text-base md:text-lg max-w-2xl leading-relaxed mb-8">
+            Matt grew his dad&apos;s painting company from stuck doing low-end jobs
+            to painting <span className="text-[#F5F0E8] font-semibold">multi-million dollar homes</span> in
+            the North Shore of Boston. Then took his own outdoor design company from
+            <span className="text-[#F5F0E8] font-semibold"> $0 to $100K in 90 days</span>.
+            Now we&apos;re building the same system for contractors across the country.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
+              5+ years marketing experience
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
+              Active client doing $60K+/mo
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#F5F0E8]/80 text-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A]"></span>
+              Built by a contractor, for contractors
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════ LEAD CAPTURE FORM ═══════════════════ */}
-      <section id="lead-form" className="py-12 md:py-16 border-t border-[#0C0C0C]/5">
+      <section id="lead-form" className="py-12 md:py-16 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-2xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,7 +529,7 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ WHAT'S INSIDE ═══════════════════ */}
-      <section className="py-12 md:py-20 border-t border-[#0C0C0C]/5">
+      <section className="py-12 md:py-20 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -489,7 +564,7 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ SEGMENTATION — Who this is for ═══════════════════ */}
-      <section className="py-12 md:py-20 border-t border-[#0C0C0C]/5">
+      <section className="py-12 md:py-20 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -527,7 +602,7 @@ export default function GrowthBlueprintPage() {
       </section>
 
       {/* ═══════════════════ FINAL CTA ═══════════════════ */}
-      <section className="py-14 md:py-20 border-t border-[#0C0C0C]/5">
+      <section className="py-14 md:py-20 border-t border-[#0C0C0C]/5 relative z-10">
         <div className="max-w-2xl mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

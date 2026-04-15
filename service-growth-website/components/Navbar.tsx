@@ -64,7 +64,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.06]">
+    <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.05]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
