@@ -47,6 +47,7 @@ const platforms = [
 export default function GrowthBlueprintPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({ name: "", company: "", state: "", phone: "", email: "", budget: "" });
+  const [consent, setConsent] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -110,7 +111,7 @@ export default function GrowthBlueprintPage() {
       const res = await fetch("/api/growth-blueprint", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, engaged, watchSeconds: Math.floor(watchSeconds) }),
+        body: JSON.stringify({ ...formData, consent, engaged, watchSeconds: Math.floor(watchSeconds) }),
       });
 
       if (!res.ok) {
@@ -531,9 +532,22 @@ export default function GrowthBlueprintPage() {
 
                 {error && <p className="text-red-500 text-sm">{error}</p>}
 
+                {/* Marketing consent */}
+                <label className="flex items-start gap-2.5 cursor-pointer group pt-1">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 rounded border-[#0C0C0C]/20 text-[#C2703A] focus:ring-[#C2703A]/30 flex-shrink-0 accent-[#C2703A] cursor-pointer"
+                  />
+                  <span className="text-[12px] text-[#0C0C0C]/60 leading-relaxed">
+                    I agree to receive emails and text messages from ServiceGrowth AI about the blueprint, growth tips, and services. Message frequency varies. Reply STOP to unsubscribe. See our <a href="/privacy" className="text-[#C2703A] hover:underline">privacy policy</a>.
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  disabled={loading || !formData.budget}
+                  disabled={loading || !formData.budget || !consent}
                   className="group w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#C2703A] hover:bg-[#D4804A] text-white font-semibold text-[15px] md:text-base transition-all duration-200 shadow-[0_4px_20px_rgba(194,112,58,0.25)] hover:shadow-[0_8px_30px_rgba(194,112,58,0.35)] hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none"
                 >
                   {loading ? "Sending..." : (<>Send Me the Blueprint <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></>)}

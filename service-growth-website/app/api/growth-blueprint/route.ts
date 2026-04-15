@@ -8,6 +8,7 @@ interface BlueprintLeadData {
   phone: string;
   email: string;
   budget: string;
+  consent?: boolean;
   engaged?: boolean;
   watchSeconds?: number;
 }
@@ -220,6 +221,7 @@ export async function POST(req: NextRequest) {
         richBlock("Monthly Marketing Budget", body.budget),
         richBlock("Segment", segment),
         richBlock("Video Engagement", body.engaged ? `🔥 Engaged viewer (${body.watchSeconds || 0}s watched)` : `Watched ${body.watchSeconds || 0}s`),
+        richBlock("Marketing Consent", body.consent ? `✅ OPTED IN for email + SMS on ${new Date().toISOString()}` : "❌ Did not consent to marketing communications"),
       ],
     });
 
