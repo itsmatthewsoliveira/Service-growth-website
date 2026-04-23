@@ -1,201 +1,341 @@
 "use client";
 
 import Script from "next/script";
-import { motion } from "framer-motion";
-import SectionWrapper from "@/components/SectionWrapper";
-import { Clock, Shield, Zap, Calendar } from "lucide-react";
+import PageHero from "@/components/sections/PageHero";
 
-const trustSignals = [
-  { icon: Clock, text: "Live in 14 days" },
-  { icon: Shield, text: "No long-term contracts" },
-  { icon: Zap, text: "Results guaranteed" },
+const ACCENT = "#FF6A00";
+const INK = "#121114";
+const CREAM = "#FCFFD5";
+
+const EXPECTATIONS = [
+  { num: "01", title: "We listen first", body: "Tell us where you are — revenue, team size, biggest bottleneck. No pitch." },
+  { num: "02", title: "Diagnose the leak", body: "We identify exactly where leads are falling through — with evidence, not guesses." },
+  { num: "03", title: "Show you the fix", body: "If a system makes sense, we map out the exact build. If it doesn't, we tell you." },
+  { num: "04", title: "You decide", body: "No pressure, no follow-up spam. You leave with a plan — whether you hire us or not." },
 ];
 
-const callExpectations = [
-  "We'll learn about your business and current challenges",
-  "We'll identify exactly where you're losing leads",
-  "We'll show you what we'd build to fix it",
-  "You decide if it makes sense—no pressure",
+const STATS = [
+  { value: "25 min", label: "Average call length" },
+  { value: "500+", label: "Calls booked" },
+  { value: "$0", label: "No pitch, no cost" },
 ];
 
 export default function ContactPage() {
   return (
     <>
-      {/* Hero - Dark charcoal */}
-      <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none bg-[rgba(255, 106, 0,0.1)]" />
+      <PageHero
+        eyebrow="Free strategy call"
+        headlineLead="Let's see if"
+        headlineAccent="we can help."
+        subhead="25-minute call. No pitch. We'll tell you exactly where you're losing leads — whether you hire us or not."
+        align="centered"
+      />
 
-        <div className="relative max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(252, 255, 213,0.1)] bg-[rgba(252, 255, 213,0.05)] text-sm text-[#B8B3AA] mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse" />
-            Free Strategy Call
-          </motion.div>
+      {/* What to expect — LIGHT 4-up */}
+      <section className="relative w-full" style={{ background: "#FFFFFF", color: INK }}>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-20 py-20 lg:py-28">
+          <div className="max-w-2xl mb-14">
+            <div
+              className="inline-flex items-center gap-2.5 uppercase mb-6"
+              style={{
+                fontFamily: "var(--font-mono), ui-monospace, monospace",
+                fontSize: 12,
+                letterSpacing: "0.22em",
+                color: INK,
+                fontWeight: 500,
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+              What to expect
+            </div>
+            <h2
+              className="uppercase"
+              style={{
+                fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(38px, 5.6vw, 64px)",
+                lineHeight: 0.98,
+                letterSpacing: "-0.02em",
+                color: INK,
+              }}
+            >
+              Four things happen{" "}
+              <span
+                style={{
+                  color: ACCENT,
+                  fontStyle: "italic",
+                  fontFamily: "var(--font-display), 'Instrument Serif', serif",
+                }}
+              >
+                on this call.
+              </span>
+            </h2>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-serif font-bold text-[#FCFFD5] mb-6"
-          >
-            Let&apos;s See If
-            <br />
-            <span className="italic text-[#FF6A00]">We Can Help.</span>
-          </motion.h1>
+          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-[#B8B3AA] max-w-2xl mx-auto"
-          >
-            25-minute call. No pitch. We&apos;ll tell you exactly where you&apos;re
-            losing leads—whether you hire us or not.
-          </motion.p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {EXPECTATIONS.map((item) => (
+              <div key={item.num}>
+                <div
+                  className="mb-5"
+                  style={{
+                    fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 56,
+                    lineHeight: 1,
+                    letterSpacing: "-0.025em",
+                    color: ACCENT,
+                  }}
+                >
+                  {item.num}
+                </div>
+                <h3
+                  className="uppercase mb-3"
+                  style={{
+                    fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 22,
+                    lineHeight: 1.08,
+                    letterSpacing: "-0.01em",
+                    color: INK,
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter), system-ui, sans-serif",
+                    fontSize: 14,
+                    lineHeight: 1.55,
+                    color: "rgba(18,17,20,0.68)",
+                  }}
+                >
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Main Content - Cream background */}
-      <SectionWrapper className="py-20 px-6 bg-[#FCFFD5]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column: Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* Trust Signals */}
-              <div className="flex flex-wrap gap-4 mb-10">
-                {trustSignals.map((signal, i) => (
-                  <div
-                    key={i}
-                    className="badge-glass-cream flex items-center gap-2 px-4 py-2 rounded-full"
-                  >
-                    <signal.icon className="w-4 h-4 text-[#D45800]" />
-                    <span className="text-sm text-[#4A4A45]">{signal.text}</span>
-                  </div>
-                ))}
+      {/* Calendar + Direct contact — DARK */}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ background: INK, color: CREAM }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            opacity: 0.05,
+            mixBlendMode: "multiply",
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+          }}
+        />
+
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            {/* Left: calendar */}
+            <div className="lg:col-span-8">
+              <div
+                className="inline-flex items-center gap-2.5 uppercase mb-6"
+                style={{
+                  fontFamily: "var(--font-mono), ui-monospace, monospace",
+                  fontSize: 12,
+                  letterSpacing: "0.22em",
+                  color: CREAM,
+                  fontWeight: 500,
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: ACCENT }} />
+                Book your slot
               </div>
+              <h2
+                className="uppercase mb-8"
+                style={{
+                  fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(36px, 5.2vw, 60px)",
+                  lineHeight: 0.98,
+                  letterSpacing: "-0.02em",
+                  color: CREAM,
+                }}
+              >
+                Pick a time that{" "}
+                <span
+                  style={{
+                    color: ACCENT,
+                    fontStyle: "italic",
+                    fontFamily: "var(--font-display), 'Instrument Serif', serif",
+                  }}
+                >
+                  actually works.
+                </span>
+              </h2>
 
-              {/* What to Expect */}
-              <div className="card-glass-cream p-8">
-                <h3 className="text-xl text-[#0F0E10] font-bold mb-6 flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-[#D45800]" />
-                  What to Expect on the Call
-                </h3>
-                <ol className="space-y-4">
-                  {callExpectations.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4">
-                      <span className="w-8 h-8 rounded-full bg-[rgba(255, 106, 0,0.08)] border border-[rgba(255, 106, 0,0.25)] flex items-center justify-center flex-shrink-0 text-[#D45800] font-semibold text-sm">
-                        {i + 1}
-                      </span>
-                      <span className="text-[#4A4A45] pt-1">{item}</span>
-                    </li>
-                  ))}
-                </ol>
+              <div
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(252,255,213,0.12)",
+                  borderRadius: 14,
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=FFFFFF&text_color=121114&primary_color=FF6A00"
+                  style={{ minWidth: "320px", height: "720px" }}
+                />
+                <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+              </div>
+            </div>
 
-                <div className="mt-8 pt-6 border-t border-[rgba(0,0,0,0.08)]">
-                  <p className="text-[#7A766E] text-sm">
-                    This is a discovery call, not a sales call. We&apos;ll give you
-                    actionable insights you can use—whether you work with us or not.
-                  </p>
+            {/* Right: direct contact + stats */}
+            <div className="lg:col-span-4 flex flex-col gap-8">
+              {/* Direct lines */}
+              <div
+                style={{
+                  background: "#0F0E10",
+                  border: "1px solid rgba(252,255,213,0.12)",
+                  borderRadius: 14,
+                  padding: 32,
+                }}
+              >
+                <div
+                  className="uppercase mb-5"
+                  style={{
+                    fontFamily: "var(--font-mono), ui-monospace, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    color: ACCENT,
+                    fontWeight: 700,
+                  }}
+                >
+                  Prefer direct?
                 </div>
+
+                <a
+                  href="mailto:hello@servicegrowth.ai"
+                  className="block mb-6 group"
+                >
+                  <div
+                    className="uppercase mb-2"
+                    style={{
+                      fontFamily: "var(--font-mono), ui-monospace, monospace",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      color: "rgba(252,255,213,0.55)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Email
+                  </div>
+                  <div
+                    className="group-hover:text-[#FF6A00] transition-colors"
+                    style={{
+                      fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                      fontWeight: 700,
+                      fontSize: 22,
+                      letterSpacing: "-0.01em",
+                      color: CREAM,
+                    }}
+                  >
+                    hello@servicegrowth.ai
+                  </div>
+                </a>
+
+                <div className="h-px mb-6" style={{ background: "rgba(252,255,213,0.12)" }} />
+
+                <a href="tel:+19044542240" className="block group">
+                  <div
+                    className="uppercase mb-2"
+                    style={{
+                      fontFamily: "var(--font-mono), ui-monospace, monospace",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      color: "rgba(252,255,213,0.55)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Phone
+                  </div>
+                  <div
+                    className="group-hover:text-[#FF6A00] transition-colors"
+                    style={{
+                      fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                      fontWeight: 700,
+                      fontSize: 26,
+                      letterSpacing: "-0.01em",
+                      color: CREAM,
+                    }}
+                  >
+                    (904) 454-2240
+                  </div>
+                </a>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-8">
-                {[
-                  { stat: "500+", label: "Calls Booked" },
-                  { stat: "25min", label: "Avg Call Time" },
-                  { stat: "100%", label: "Free" },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-2xl font-semibold text-[#D45800]">{item.stat}</div>
-                    <div className="text-xs text-[#7A766E]">{item.label}</div>
-                  </motion.div>
-                ))}
+              <div>
+                <div
+                  className="uppercase mb-5"
+                  style={{
+                    fontFamily: "var(--font-mono), ui-monospace, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    color: "rgba(252,255,213,0.55)",
+                    fontWeight: 500,
+                  }}
+                >
+                  The numbers
+                </div>
+                <div className="space-y-4">
+                  {STATS.map((s) => (
+                    <div key={s.label} className="flex items-baseline justify-between py-3" style={{ borderBottom: "1px solid rgba(252,255,213,0.1)" }}>
+                      <div
+                        style={{
+                          fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                          fontWeight: 700,
+                          fontSize: 28,
+                          lineHeight: 1,
+                          letterSpacing: "-0.02em",
+                          color: ACCENT,
+                        }}
+                      >
+                        {s.value}
+                      </div>
+                      <div
+                        className="uppercase"
+                        style={{
+                          fontFamily: "var(--font-mono), ui-monospace, monospace",
+                          fontSize: 10,
+                          letterSpacing: "0.22em",
+                          color: "rgba(252,255,213,0.6)",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </motion.div>
 
-            {/* Right Column: Calendar Embed */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="card-glass-cream overflow-hidden"
-            >
-              <div className="p-6 border-b border-[rgba(0,0,0,0.08)]">
-                <h2 className="text-2xl text-[#0F0E10] font-bold">
-                  Book Your Free Audit
-                </h2>
-                <p className="text-[#7A766E] text-sm mt-2">
-                  Select a time that works for you
-                </p>
-              </div>
-
-              {/* Calendly Inline Widget */}
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/servicegrowth-info/30min?hide_gdpr_banner=1&background_color=F2EDE5&text_color=1A1A18&primary_color=C2703A"
-                style={{ minWidth: "320px", height: "700px" }}
-              />
-              <Script
-                src="https://assets.calendly.com/assets/external/widget.js"
-                strategy="afterInteractive"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Alternative Contact - Cream background */}
-      <SectionWrapper className="py-16 px-6 bg-[#FCFFD5]">
-        <div className="max-w-4xl mx-auto">
-          <div className="card-dark-on-cream rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl font-bold text-[#FCFFD5] mb-4">
-              Prefer to Reach Out Directly?
-            </h2>
-            <p className="text-[#B8B3AA] mb-6">
-              No problem. Send us an email or give us a call.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
-                href="mailto:hello@servicegrowth.ai"
-                className="inline-flex items-center gap-2 text-[#FF6A00] hover:text-[#FF8F3F] hover:underline transition-colors"
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  fontSize: 13,
+                  lineHeight: 1.6,
+                  color: "rgba(252,255,213,0.55)",
+                }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                hello@servicegrowth.ai
-              </a>
-              <span className="hidden sm:inline text-[rgba(252, 255, 213,0.2)]">|</span>
-              <a
-                href="tel:+19044542240"
-                className="inline-flex items-center gap-2 text-[#FF6A00] hover:text-[#FF8F3F] hover:underline transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                (904) 454-2240
-              </a>
+                Discovery call — not a sales call. You leave with actionable insights whether you work with us or not.
+              </p>
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   );
 }
