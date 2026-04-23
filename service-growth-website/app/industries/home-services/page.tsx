@@ -30,7 +30,7 @@ export default function HomeServicesPage() {
         headlineLead="The 2 AM call"
         headlineAccent="is your biggest opportunity."
         subhead="Roofing, HVAC, plumbing, landscaping — the jobs that pay most are the ones that come in after hours. Our AI answers every call, books every estimate, and never sleeps."
-        primaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         image="/hero-climb.png"
         imageAlt="Emergency dispatch — anime placeholder"

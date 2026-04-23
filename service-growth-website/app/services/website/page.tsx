@@ -24,7 +24,7 @@ export default function WebsitePage() {
         headlineTrail="Not just exist."
         subhead="Your website should be your hardest-working employee. We build fast, mobile-first, conversion-focused sites that rank on Google and turn visitors into booked estimates — not bounce stats."
         primaryCta={{ label: "See pricing", href: "/pricing" }}
-        secondaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        secondaryCta={{ label: "Book a demo", href: "/contact" }}
         image="/hero-climb.png"
         imageAlt="Website mockups — anime placeholder"
       />

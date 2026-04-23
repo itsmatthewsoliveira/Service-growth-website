@@ -62,7 +62,7 @@ export default function ClosingCTA() {
 
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <Link
-                href="/growth-blueprint"
+                href="/contact"
                 className="group inline-flex items-center gap-3 px-7 py-4 font-bold uppercase transition-colors"
                 style={{
                   fontFamily: "var(--font-inter), system-ui, sans-serif",

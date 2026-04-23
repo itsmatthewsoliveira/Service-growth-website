@@ -96,7 +96,7 @@ export default function HeroSplit() {
       />
 
       {/* Main split — stacks under lg, splits at lg+ */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-20 pt-28 lg:pt-32 pb-14 lg:pb-32">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-20 pt-36 lg:pt-44 pb-14 lg:pb-32">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-start">
           {/* ── Left column: copy (cols 1–6) ── */}
           <motion.div
@@ -153,7 +153,7 @@ export default function HeroSplit() {
             {/* CTAs */}
             <div className="mt-9 flex items-center gap-4 flex-wrap">
               <Link
-                href="/growth-blueprint"
+                href="/contact"
                 className="group inline-flex items-center gap-3 px-6 py-4 text-[14px] font-bold uppercase border text-[#FCFFD5] transition-colors hover:bg-[#FCFFD5]/10"
                 style={{
                   fontFamily: "var(--font-inter), system-ui, sans-serif",

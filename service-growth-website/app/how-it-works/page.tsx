@@ -50,7 +50,7 @@ export default function HowItWorksPage() {
         headlineLead="From signed to"
         headlineAccent="live in 14 days"
         subhead="We handle everything. You fill out a questionnaire, we build your systems, and you're live in two weeks. Total time from you: about two hours."
-        primaryCta={{ label: "Book discovery call", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book discovery call", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         image="/hero-climb.png"
         imageAlt="Team building the AI stack — anime placeholder"

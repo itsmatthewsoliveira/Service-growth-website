@@ -139,7 +139,7 @@ export default function FAQPage() {
         headlineLead="Questions we hear"
         headlineAccent="every week."
         subhead="Straight answers. No fine print. If yours isn't here, book a 15-minute call and we'll answer directly."
-        primaryCta={{ label: "Book a call", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a call", href: "/contact" }}
         align="centered"
       />
 

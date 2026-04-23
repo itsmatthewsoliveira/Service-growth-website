@@ -29,7 +29,7 @@ export default function AutomationPage() {
         headlineLead="AI that never"
         headlineAccent="misses a lead."
         subhead="60-second response on every call, text, and form. Qualifies intent, books estimates, and syncs to your calendar while you're on a jobsite. Human operators pick up the warm ones."
-        primaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "How it works", href: "/how-it-works" }}
         image="/growth-collab.png"
         imageAlt="AI agent in action — anime placeholder"

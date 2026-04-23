@@ -29,7 +29,7 @@ export default function MedicalPage() {
         headlineLead="Fill your chair."
         headlineAccent="Keep it full."
         subhead="Dentists, chiropractors, med spas. HIPAA-compliant patient reactivation, appointment reminders, and a review flywheel — so your schedule stays booked without pulling front-desk time."
-        primaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         image="/growth-collab.png"
         imageAlt="Medical practice — anime placeholder"

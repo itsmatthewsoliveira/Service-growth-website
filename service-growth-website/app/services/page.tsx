@@ -63,7 +63,7 @@ export default function ServicesPage() {
         headlineAccent="Every solution."
         subhead="Four services, built to work together. You don't need five vendors and a spreadsheet — you need one team running the whole growth engine."
         primaryCta={{ label: "See pricing", href: "/pricing" }}
-        secondaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        secondaryCta={{ label: "Book a demo", href: "/contact" }}
         align="centered"
       />
 

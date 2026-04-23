@@ -29,7 +29,7 @@ export default function AdsPage() {
         headlineLead="Ads that book"
         headlineAccent="high-end jobs"
         subhead="Stop wasting money on clicks from tire-kickers. We run Google, Meta, and Yelp campaigns tuned for buyer intent — so every dollar lands in front of someone actually ready to hire."
-        primaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         image="/hero-climb.png"
         imageAlt="Ads campaign in flight — anime placeholder"

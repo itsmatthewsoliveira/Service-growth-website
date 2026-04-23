@@ -23,7 +23,7 @@ export default function ContentPage() {
         headlineAccent="close the deal."
         subhead="Your competitors with worse work are winning jobs because their photos look better. We fix that — iPhone shots to editorial, before/after magic, and 3D renders that sell the vision before the work starts."
         primaryCta={{ label: "See pricing", href: "/pricing" }}
-        secondaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        secondaryCta={{ label: "Book a demo", href: "/contact" }}
         image="/growth-collab.png"
         imageAlt="Content + visual pipeline — anime placeholder"
       />

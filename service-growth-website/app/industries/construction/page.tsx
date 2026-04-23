@@ -30,7 +30,7 @@ export default function ConstructionPage() {
         headlineLead="Built for"
         headlineAccent="the trades."
         subhead="Pavers, GCs, builders, architects, remodelers. We cut our teeth growing an outdoor living company zero-to-$100K in 90 days. We know construction — and we know how to win high-ticket jobs."
-        primaryCta={{ label: "Book a demo", href: "/growth-blueprint" }}
+        primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         image="/hero-climb.png"
         imageAlt="Construction crew on site — anime placeholder"

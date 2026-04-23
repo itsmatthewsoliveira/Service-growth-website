@@ -241,7 +241,7 @@ export default function PricingPage() {
                   </ul>
 
                   <Link
-                    href="/growth-blueprint"
+                    href="/contact"
                     className="mt-8 inline-flex items-center justify-center gap-2 px-5 py-3.5 uppercase transition-colors"
                     style={{
                       fontFamily: "var(--font-inter), system-ui, sans-serif",

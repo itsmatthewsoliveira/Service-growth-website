@@ -53,7 +53,7 @@ export default function PageHero({
         }}
       />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 pt-28 lg:pt-32 pb-16 lg:pb-24">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 pt-36 lg:pt-44 pb-16 lg:pb-24">
         <div className={hasImage ? "grid lg:grid-cols-12 gap-8 lg:gap-8 items-start" : "flex justify-center"}>
           {/* Copy column */}
           <motion.div
