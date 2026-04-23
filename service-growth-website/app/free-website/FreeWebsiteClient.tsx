@@ -104,8 +104,8 @@ function LeadForm({ darkBg = false }: { darkBg?: boolean }) {
   });
 
   const inputBase = darkBg
-    ? "w-full px-4 py-3.5 rounded-lg bg-[rgba(245,240,232,0.08)] border border-[rgba(245,240,232,0.12)] text-[#F5F0E8] placeholder-[#7A766E] focus:outline-none focus:ring-2 focus:ring-[#C2703A] focus:border-transparent transition-all"
-    : "w-full px-4 py-3.5 rounded-lg bg-[#1A1A18] border border-[#2A2A28] text-[#F5F0E8] placeholder-[#7A766E] focus:outline-none focus:ring-2 focus:ring-[#C2703A] focus:border-transparent transition-all";
+    ? "w-full px-4 py-3.5 rounded-lg bg-[rgba(252, 255, 213,0.08)] border border-[rgba(252, 255, 213,0.12)] text-[#FCFFD5] placeholder-[#7A766E] focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:border-transparent transition-all"
+    : "w-full px-4 py-3.5 rounded-lg bg-[#0F0E10] border border-[#2A2A28] text-[#FCFFD5] placeholder-[#7A766E] focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:border-transparent transition-all";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -164,7 +164,7 @@ function LeadForm({ darkBg = false }: { darkBg?: boolean }) {
             Select Your Industry
           </option>
           {industries.map((industry) => (
-            <option key={industry} value={industry} className="bg-[#1A1A18]">
+            <option key={industry} value={industry} className="bg-[#0F0E10]">
               {industry}
             </option>
           ))}
@@ -175,7 +175,7 @@ function LeadForm({ darkBg = false }: { darkBg?: boolean }) {
         Claim My Free Website
       </Button>
       <div className="flex items-center justify-center gap-2 pt-1">
-        <Shield className="w-4 h-4 text-[#C2703A]" />
+        <Shield className="w-4 h-4 text-[#FF6A00]" />
         <span
           className={`text-xs ${darkBg ? "text-[#7A766E]" : "text-[#7A766E]"}`}
         >
@@ -199,7 +199,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         className="w-full flex items-center justify-between py-5 text-left"
       >
         <span
-          className="text-lg font-semibold text-[#1A1A18]"
+          className="text-lg font-semibold text-[#0F0E10]"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           {q}
@@ -208,7 +208,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown className="w-5 h-5 text-[#C2703A]" />
+          <ChevronDown className="w-5 h-5 text-[#FF6A00]" />
         </motion.div>
       </button>
       <motion.div
@@ -232,7 +232,7 @@ export default function FreeWebsitePage() {
       {/* ===== HERO ===== */}
       <section className="section-cream relative pt-28 pb-20 px-6 overflow-hidden">
         {/* Subtle warm glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none bg-[rgba(194,112,58,0.06)]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none bg-[rgba(255, 106, 0,0.06)]" />
 
         <div className="relative max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -242,9 +242,9 @@ export default function FreeWebsitePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C2703A]/20 bg-[#C2703A]/5 text-sm text-[#C2703A] font-medium mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FF6A00]/20 bg-[#FF6A00]/5 text-sm text-[#FF6A00] font-medium mb-6"
               >
-                <span className="w-2 h-2 rounded-full bg-[#C2703A] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse" />
                 Limited to 10 businesses this month
               </motion.div>
 
@@ -256,11 +256,11 @@ export default function FreeWebsitePage() {
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontWeight: 800,
-                  color: "#1A1A18",
+                  color: "#0F0E10",
                 }}
               >
                 We&apos;ll Build Your Website{" "}
-                <span className="text-[#C2703A]">&mdash; Free.</span>
+                <span className="text-[#FF6A00]">&mdash; Free.</span>
               </motion.h1>
 
               <motion.p
@@ -285,7 +285,7 @@ export default function FreeWebsitePage() {
                   "You own it. No strings.",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#C2703A] flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
                     <span className="text-sm sm:text-base">{item}</span>
                   </div>
                 ))}
@@ -300,7 +300,7 @@ export default function FreeWebsitePage() {
               className="bg-white/60 backdrop-blur-sm border border-white/80 rounded-2xl p-6 sm:p-8 shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
             >
               <h2
-                className="text-xl sm:text-2xl font-bold text-[#1A1A18] mb-1"
+                className="text-xl sm:text-2xl font-bold text-[#0F0E10] mb-1"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Get Your Free Website
@@ -319,7 +319,7 @@ export default function FreeWebsitePage() {
         <div className="max-w-6xl mx-auto">
           <SectionWrapper>
             <div className="text-center mb-14">
-              <p className="text-[#C2703A] text-sm font-medium tracking-wide uppercase mb-3">
+              <p className="text-[#FF6A00] text-sm font-medium tracking-wide uppercase mb-3">
                 What&apos;s Included
               </p>
               <h2
@@ -338,12 +338,12 @@ export default function FreeWebsitePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedFeatures.map((feature, index) => (
               <SectionWrapper key={feature.title} delay={index * 0.1}>
-                <div className="p-6 rounded-xl border border-[rgba(245,240,232,0.08)] bg-[rgba(245,240,232,0.03)] hover:bg-[rgba(245,240,232,0.06)] transition-all duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-[#C2703A]/10 flex items-center justify-center mb-4">
-                    <feature.icon className="w-5 h-5 text-[#C2703A]" />
+                <div className="p-6 rounded-xl border border-[rgba(252, 255, 213,0.08)] bg-[rgba(252, 255, 213,0.03)] hover:bg-[rgba(252, 255, 213,0.06)] transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-[#FF6A00]/10 flex items-center justify-center mb-4">
+                    <feature.icon className="w-5 h-5 text-[#FF6A00]" />
                   </div>
                   <h3
-                    className="text-lg font-semibold text-[#F5F0E8] mb-2"
+                    className="text-lg font-semibold text-[#FCFFD5] mb-2"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {feature.title}
@@ -363,11 +363,11 @@ export default function FreeWebsitePage() {
         <div className="max-w-4xl mx-auto">
           <SectionWrapper>
             <div className="text-center mb-10">
-              <p className="text-[#C2703A] text-sm font-medium tracking-wide uppercase mb-3">
+              <p className="text-[#FF6A00] text-sm font-medium tracking-wide uppercase mb-3">
                 Why Free?
               </p>
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A18] mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F0E10] mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Because We Know What Happens Next
@@ -388,7 +388,7 @@ export default function FreeWebsitePage() {
                 going to want more. Ads. Automation. A full pipeline of
                 customers. That&apos;s where we come in.
               </p>
-              <p className="text-lg sm:text-xl text-[#1A1A18] font-semibold leading-relaxed">
+              <p className="text-lg sm:text-xl text-[#0F0E10] font-semibold leading-relaxed">
                 The website is our way of proving it. Zero risk. Zero
                 obligation. You keep it no matter what.
               </p>
@@ -400,7 +400,7 @@ export default function FreeWebsitePage() {
                   { icon: Star, text: "You own it 100%" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <item.icon className="w-5 h-5 text-[#C2703A] flex-shrink-0" />
+                    <item.icon className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
                     <span className="text-[#4A4A45] font-medium">
                       {item.text}
                     </span>
@@ -417,7 +417,7 @@ export default function FreeWebsitePage() {
         <div className="max-w-6xl mx-auto">
           <SectionWrapper>
             <div className="text-center mb-14">
-              <p className="text-[#C2703A] text-sm font-medium tracking-wide uppercase mb-3">
+              <p className="text-[#FF6A00] text-sm font-medium tracking-wide uppercase mb-3">
                 Results That Speak
               </p>
               <h2
@@ -448,10 +448,10 @@ export default function FreeWebsitePage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="text-center p-8 rounded-xl border border-[rgba(245,240,232,0.08)] bg-[rgba(245,240,232,0.03)]"
+                  className="text-center p-8 rounded-xl border border-[rgba(252, 255, 213,0.08)] bg-[rgba(252, 255, 213,0.03)]"
                 >
                   <p
-                    className="text-4xl sm:text-5xl font-bold text-[#C2703A] mb-2"
+                    className="text-4xl sm:text-5xl font-bold text-[#FF6A00] mb-2"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {item.stat}
@@ -464,23 +464,23 @@ export default function FreeWebsitePage() {
 
           {/* Testimonial */}
           <SectionWrapper delay={0.2}>
-            <div className="max-w-3xl mx-auto p-8 sm:p-10 rounded-2xl border border-[rgba(245,240,232,0.08)] bg-[rgba(245,240,232,0.03)]">
+            <div className="max-w-3xl mx-auto p-8 sm:p-10 rounded-2xl border border-[rgba(252, 255, 213,0.08)] bg-[rgba(252, 255, 213,0.03)]">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 text-[#C2703A] fill-[#C2703A]"
+                    className="w-5 h-5 text-[#FF6A00] fill-[#FF6A00]"
                   />
                 ))}
               </div>
-              <blockquote className="text-lg sm:text-xl text-[#F5F0E8] leading-relaxed mb-6 italic">
+              <blockquote className="text-lg sm:text-xl text-[#FCFFD5] leading-relaxed mb-6 italic">
                 &ldquo;I was skeptical about the free website. Thought there had
                 to be a catch. There wasn&apos;t. They built us a site that
                 looks better than anything I&apos;ve paid for. Within 3 weeks we
                 were getting calls from it. Now we use them for everything.&rdquo;
               </blockquote>
               <div>
-                <p className="text-[#F5F0E8] font-semibold">Marcus T.</p>
+                <p className="text-[#FCFFD5] font-semibold">Marcus T.</p>
                 <p className="text-[#7A766E] text-sm">
                   Owner, Precision HVAC Services
                 </p>
@@ -495,11 +495,11 @@ export default function FreeWebsitePage() {
         <div className="max-w-3xl mx-auto">
           <SectionWrapper>
             <div className="text-center mb-12">
-              <p className="text-[#C2703A] text-sm font-medium tracking-wide uppercase mb-3">
+              <p className="text-[#FF6A00] text-sm font-medium tracking-wide uppercase mb-3">
                 Questions
               </p>
               <h2
-                className="text-3xl sm:text-4xl font-bold text-[#1A1A18]"
+                className="text-3xl sm:text-4xl font-bold text-[#0F0E10]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Straight Answers
@@ -528,7 +528,7 @@ export default function FreeWebsitePage() {
               >
                 Your Competitors Are Already Online.
                 <br />
-                <span className="text-[#C2703A]">Are You?</span>
+                <span className="text-[#FF6A00]">Are You?</span>
               </h2>
               <p className="text-[#B8B3AA] text-lg max-w-xl mx-auto">
                 Every day without a website is a day your customers are finding
@@ -538,7 +538,7 @@ export default function FreeWebsitePage() {
           </SectionWrapper>
 
           <SectionWrapper delay={0.1}>
-            <div className="p-6 sm:p-8 rounded-2xl border border-[rgba(245,240,232,0.08)] bg-[rgba(245,240,232,0.03)]">
+            <div className="p-6 sm:p-8 rounded-2xl border border-[rgba(252, 255, 213,0.08)] bg-[rgba(252, 255, 213,0.03)]">
               <LeadForm darkBg />
             </div>
           </SectionWrapper>
@@ -552,7 +552,7 @@ export default function FreeWebsitePage() {
                 "Live in 14 days",
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C2703A]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#FF6A00]" />
                   <span>{text}</span>
                 </div>
               ))}

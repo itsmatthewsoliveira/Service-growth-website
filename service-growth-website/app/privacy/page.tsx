@@ -142,12 +142,12 @@ export default function PrivacyPage() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm mb-6"
             style={{
-              border: "1px solid rgba(194,112,58,0.25)",
-              backgroundColor: "rgba(194,112,58,0.08)",
+              border: "1px solid rgba(255, 106, 0,0.25)",
+              backgroundColor: "rgba(255, 106, 0,0.08)",
               color: "#B8B3AA",
             }}
           >
-            <Shield className="w-4 h-4" style={{ color: "#C2703A" }} />
+            <Shield className="w-4 h-4" style={{ color: "#FF6A00" }} />
             Legal
           </motion.div>
 
@@ -156,10 +156,10 @@ export default function PrivacyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl font-serif font-bold mb-6"
-            style={{ color: "#F5F0E8" }}
+            style={{ color: "#FCFFD5" }}
           >
             Privacy{" "}
-            <span className="italic" style={{ color: "#C2703A" }}>Policy</span>
+            <span className="italic" style={{ color: "#FF6A00" }}>Policy</span>
           </motion.h1>
 
           <motion.p
@@ -185,7 +185,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* Content — cream body */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-3xl mx-auto">
           <p className="text-lg mb-12 leading-relaxed" style={{ color: "#4A4A45" }}>
             ServiceGrowth.ai (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;) is committed to
@@ -204,7 +204,7 @@ export default function PrivacyPage() {
                   border: "1px solid #E5DFD6",
                 }}
               >
-                <h2 className="text-lg font-semibold mb-3" style={{ color: "#1A1A18" }}>
+                <h2 className="text-lg font-semibold mb-3" style={{ color: "#0F0E10" }}>
                   {section.title}
                 </h2>
                 {section.content && (
@@ -216,7 +216,7 @@ export default function PrivacyPage() {
                   <ul className="space-y-2 mt-2">
                     {section.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: "#4A4A45" }}>
-                        <span className="mt-1 shrink-0" style={{ color: "#C2703A" }}>&bull;</span>
+                        <span className="mt-1 shrink-0" style={{ color: "#FF6A00" }}>&bull;</span>
                         {item}
                       </li>
                     ))}
@@ -226,7 +226,7 @@ export default function PrivacyPage() {
                   <div className="space-y-4 mt-2">
                     {section.subsections.map((sub, j) => (
                       <div key={j}>
-                        <h3 className="text-sm font-medium mb-1" style={{ color: "#A85C30" }}>
+                        <h3 className="text-sm font-medium mb-1" style={{ color: "#D45800" }}>
                           {sub.subtitle}
                         </h3>
                         <p className="text-sm leading-relaxed" style={{ color: "#4A4A45" }}>
@@ -244,13 +244,13 @@ export default function PrivacyPage() {
           <div
             className="mt-12 p-6 rounded-xl text-center"
             style={{
-              backgroundColor: "rgba(194,112,58,0.04)",
-              border: "1px solid rgba(194,112,58,0.15)",
+              backgroundColor: "rgba(255, 106, 0,0.04)",
+              border: "1px solid rgba(255, 106, 0,0.15)",
             }}
           >
             <p className="text-sm" style={{ color: "#4A4A45" }}>
               See also our{" "}
-              <Link href="/terms" className="underline hover:no-underline" style={{ color: "#A85C30" }}>
+              <Link href="/terms" className="underline hover:no-underline" style={{ color: "#D45800" }}>
                 Terms &amp; Conditions
               </Link>{" "}
               for full service terms and messaging program details.

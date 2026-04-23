@@ -30,11 +30,11 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#C2703A] text-[#F5F0E8] hover:bg-[#D4834F] btn-glow font-semibold",
+      "bg-[#FF6A00] text-[#FCFFD5] hover:bg-[#FF8F3F] btn-glow font-semibold",
     secondary:
-      "bg-white/50 text-[#1A1A18] border border-black/10 hover:border-[#C2703A]/50 hover:bg-white/70 backdrop-blur-sm",
+      "bg-white/50 text-[#0F0E10] border border-black/10 hover:border-[#FF6A00]/50 hover:bg-white/70 backdrop-blur-sm",
     ghost:
-      "text-[#C2703A] hover:text-[#D4834F] bg-transparent",
+      "text-[#FF6A00] hover:text-[#FF8F3F] bg-transparent",
     glass:
       "btn-glass",
     "glass-dark":

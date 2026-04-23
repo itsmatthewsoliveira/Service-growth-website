@@ -1,216 +1,159 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Button from "./Button";
-
-const servicesDropdown = [
-  { href: "/services/website", label: "Website Services" },
-  { href: "/services/ads", label: "Ads Management" },
-  { href: "/services/content", label: "Content & Visual" },
-  { href: "/services/automation", label: "Automation" },
-];
-
-const industriesDropdown = [
-  { href: "/industries/home-services", label: "Home Services" },
-  { href: "/industries/medical", label: "Medical" },
-  { href: "/industries/construction", label: "Construction" },
-];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services", dropdown: servicesDropdown },
-  { href: "/industries", label: "Industries", dropdown: industriesDropdown },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/services", label: "Services" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
-function DropdownMenu({
-  items,
-  isOpen,
-}: {
-  items: { href: string; label: string }[];
-  isOpen: boolean;
-}) {
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-48 bg-[#1A1A18] border border-white/10 rounded-xl overflow-hidden shadow-lg z-50"
-        >
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-3 text-sm text-[#B8B3AA] hover:text-[#C2703A] hover:bg-white/5 transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
-
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.05]">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="relative flex items-center"
-          >
+    <>
+      {/* ─── DESKTOP: glass pill floating at top ─── */}
+      <nav
+        className="hidden lg:block fixed inset-x-0 top-4 z-50 px-6 xl:px-20 pointer-events-none"
+      >
+        <div
+          className={`mx-auto flex items-center justify-between pointer-events-auto transition-all duration-300 ${
+            scrolled ? "py-1.5 px-5" : "py-2 px-6"
+          }`}
+          style={{
+            background: "rgba(18,17,20,0.55)",
+            backdropFilter: "blur(22px) saturate(160%)",
+            WebkitBackdropFilter: "blur(22px) saturate(160%)",
+            border: "1px solid rgba(252,255,213,0.12)",
+            borderRadius: 16,
+            boxShadow: "0 8px 32px rgba(18,17,20,0.25)",
+          }}
+        >
+          {/* Logo mark only — no wordmark */}
+          <Link href="/" className="flex items-center flex-shrink-0">
             <img
-              src="/logo-white.svg"
+              src="/logo-v2.png"
               alt="Service Growth AI"
-              className="h-10 md:h-12 w-auto"
+              className={`transition-all duration-300 ${
+                scrolled ? "w-11 h-11" : "w-14 h-14"
+              }`}
+              style={{ objectFit: "contain" }}
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Center links */}
+          <div className="flex items-center gap-7">
             {navLinks.map((link) => (
-              <div
+              <Link
                 key={link.href}
-                className="relative"
-                onMouseEnter={() =>
-                  link.dropdown && setOpenDropdown(link.label)
-                }
-                onMouseLeave={() => setOpenDropdown(null)}
+                href={link.href}
+                className="text-[14px] font-medium text-[#FCFFD5]/85 hover:text-[#FCFFD5] transition-colors"
+                style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
               >
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-1 text-sm text-[#B8B3AA] hover:text-[#F5F0E8] transition-colors font-medium"
-                >
-                  {link.label}
-                  {link.dropdown && (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  )}
-                </Link>
-                {link.dropdown && (
-                  <DropdownMenu
-                    items={link.dropdown}
-                    isOpen={openDropdown === link.label}
-                  />
-                )}
-              </div>
+                {link.label}
+              </Link>
             ))}
           </div>
 
-          {/* Phone + CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+19044542240" className="text-sm text-[#B8B3AA] hover:text-[#C2703A] transition-colors font-medium">
-              (904) 454-2240
-            </a>
-            <Button href="/contact" variant="primary" size="default">
-              Book a Call
-            </Button>
+          {/* Right: Sign in + CTA */}
+          <div className="flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="text-[14px] font-medium text-[#FCFFD5]/85 hover:text-[#FCFFD5] transition-colors"
+              style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/growth-blueprint"
+              className="group inline-flex items-center gap-2 px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.08em] text-[#FCFFD5] border border-[#FCFFD5]/90 rounded hover:bg-[#FCFFD5]/10 transition-colors"
+              style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+            >
+              Book a demo
+              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* ─── MOBILE: simplified top bar ─── */}
+      <nav
+        className={`lg:hidden fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-[#121114]/85 backdrop-blur-2xl backdrop-saturate-150 border-b border-[#FCFFD5]/10"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center">
+              <img src="/logo-v2.png" alt="Service Growth AI" className="w-10 h-10 object-contain" />
+            </Link>
+
+            <button
+              className="relative p-3 text-[#FCFFD5] min-w-[44px] min-h-[44px] flex items-center justify-center"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 7h16M4 17h16"}
+                />
+              </svg>
+            </button>
           </div>
 
-          {/* Mobile Menu Button — animated hamburger → X */}
-          <button
-            className="lg:hidden relative p-3 text-[#F5F0E8] min-w-[44px] min-h-[44px] flex items-center justify-center"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-                className={`origin-center transition-all duration-300 ${mobileMenuOpen ? "opacity-0 scale-0 rotate-180" : "opacity-100 scale-100 rotate-0"}`}
-              />
-            </svg>
-            <svg
-              className={`w-6 h-6 absolute origin-center transition-all duration-300 ${mobileMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-0 -rotate-180"}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden mt-4 pt-4 border-t border-white/10"
-            >
-              <div className="flex flex-col gap-2 pb-4">
-                {navLinks.map((link) => (
-                  <div key={link.href}>
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.25 }}
+                className="overflow-hidden border-t border-[#FCFFD5]/10"
+              >
+                <div className="flex flex-col py-4">
+                  {navLinks.map((link) => (
                     <Link
+                      key={link.href}
                       href={link.href}
-                      className="block py-3 text-base text-[#B8B3AA] hover:text-[#F5F0E8] transition-colors font-medium min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-2 text-[15px] text-[#FCFFD5]/85 hover:text-[#FCFFD5] font-medium min-h-[44px] flex items-center"
+                      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
                     >
                       {link.label}
                     </Link>
-                    {link.dropdown && (
-                      <div className="pl-4 mt-1 space-y-1">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            className="block py-3 text-base text-[#7A766E] hover:text-[#C2703A] transition-colors min-h-[44px] flex items-center"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-                <a href="tel:+19044542240" className="block py-3 text-base text-[#B8B3AA] hover:text-[#C2703A] transition-colors font-medium min-h-[44px] flex items-center">
-                  (904) 454-2240
-                </a>
-                <div className="pt-2">
-                  <Button
-                    href="/contact"
-                    variant="primary"
-                    fullWidth
+                  ))}
+                  <Link
+                    href="/growth-blueprint"
                     onClick={() => setMobileMenuOpen(false)}
+                    className="mt-3 inline-flex items-center justify-center gap-2 px-5 py-3 text-[13px] font-bold uppercase tracking-[0.08em] text-[#FCFFD5] border border-[#FCFFD5]/90 rounded"
+                    style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
                   >
-                    Book a Call
-                  </Button>
+                    Book a demo →
+                  </Link>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </nav>
+    </>
   );
 }

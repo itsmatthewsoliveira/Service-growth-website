@@ -77,18 +77,18 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     <li className="p-8 rounded-2xl border border-white/10 bg-[#1E1E1C] shadow-lg shadow-black/10 max-w-xs w-full select-none">
       <div className="flex gap-0.5 mb-4">
         {Array.from({ length: testimonial.stars ?? 5 }).map((_, i) => (
-          <Star key={i} className="w-4 h-4 text-[#C2703A] fill-[#C2703A]" />
+          <Star key={i} className="w-4 h-4 text-[#FF6A00] fill-[#FF6A00]" />
         ))}
       </div>
       <blockquote className="text-[#B8B3AA] leading-relaxed text-sm mb-6">
         &ldquo;{testimonial.text}&rdquo;
       </blockquote>
       <footer className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-[#C2703A]/20 flex items-center justify-center text-[#C2703A] text-sm font-semibold">
+        <div className="w-9 h-9 rounded-full bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] text-sm font-semibold">
           {testimonial.name.charAt(0)}
         </div>
         <div>
-          <cite className="not-italic font-medium text-sm text-[#F5F0E8]">
+          <cite className="not-italic font-medium text-sm text-[#FCFFD5]">
             {testimonial.name}
           </cite>
           <p className="text-xs text-[#7A766E] mt-0.5">{testimonial.role}</p>
@@ -142,12 +142,12 @@ export default function TestimonialMarquee() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-[#C2703A] mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-[#FF6A00] mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse" />
             REAL RESULTS
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-[#F5F0E8] mb-4">
-            Service Businesses That <span className="italic text-[#C2703A]">Grew</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-[#FCFFD5] mb-4">
+            Service Businesses That <span className="italic text-[#FF6A00]">Grew</span>
           </h2>
           <p className="text-[#B8B3AA] text-lg max-w-xl mx-auto">
             Don&apos;t take our word for it. Here&apos;s what our clients have to say.

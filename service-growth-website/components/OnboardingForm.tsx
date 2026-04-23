@@ -203,7 +203,7 @@ function FormField({
 }) {
   return (
     <div className="space-y-2">
-      <label className="block text-xs tracking-[0.15em] uppercase text-[#C2703A]">
+      <label className="block text-xs tracking-[0.15em] uppercase text-[#FF6A00]">
         {label}
         {hint && (
           <span className="text-[#7A766E] text-[10px] ml-1 normal-case tracking-normal">
@@ -217,7 +217,7 @@ function FormField({
 }
 
 const inputClasses =
-  "w-full bg-white border border-[#D6D0C7] text-[#1A1A18] font-sans text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-[#7A766E] placeholder:italic focus:border-[#C2703A] focus:ring-2 focus:ring-[#C2703A]/20 rounded-lg";
+  "w-full bg-white border border-[#D6D0C7] text-[#0F0E10] font-sans text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-[#7A766E] placeholder:italic focus:border-[#FF6A00] focus:ring-2 focus:ring-[#FF6A00]/20 rounded-lg";
 
 const textareaClasses = `${inputClasses} resize-y min-h-[100px] leading-relaxed`;
 
@@ -243,8 +243,8 @@ function LanguageSwitcher({
 
   return (
     <div className="flex items-center gap-2 mb-10 justify-end">
-      <Globe className="w-3.5 h-3.5 text-[#C2703A]/60" />
-      <div className="flex border border-[#C2703A]/20 overflow-hidden">
+      <Globe className="w-3.5 h-3.5 text-[#FF6A00]/60" />
+      <div className="flex border border-[#FF6A00]/20 overflow-hidden">
         {langs.map((l) => (
           <button
             key={l}
@@ -252,8 +252,8 @@ function LanguageSwitcher({
             onClick={() => setLang(l)}
             className={`px-3 py-1.5 text-[10px] tracking-[0.15em] uppercase font-medium transition-all duration-300 ${
               lang === l
-                ? "bg-[#C2703A] text-[#1A1A18]"
-                : "text-[#7A766E] hover:text-[#1A1A18] hover:bg-[#F5F0E8]/5"
+                ? "bg-[#FF6A00] text-[#0F0E10]"
+                : "text-[#7A766E] hover:text-[#0F0E10] hover:bg-[#FCFFD5]/5"
             }`}
           >
             {LANG_LABELS[l]}
@@ -333,19 +333,19 @@ export default function OnboardingForm({
         transition={{ duration: 0.6 }}
         className="text-center py-20"
       >
-        <div className="w-[72px] h-[72px] border border-[#C2703A] rounded-full flex items-center justify-center mx-auto mb-8">
-          <Check className="w-7 h-7 text-[#C2703A]" />
+        <div className="w-[72px] h-[72px] border border-[#FF6A00] rounded-full flex items-center justify-center mx-auto mb-8">
+          <Check className="w-7 h-7 text-[#FF6A00]" />
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-serif text-[#1A1A18] mb-4">
+        <h2 className="text-4xl md:text-5xl font-serif text-[#0F0E10] mb-4">
           {ts("thankYou", lang)}
         </h2>
         <p className="text-sm text-[#7A766E] max-w-md mx-auto leading-relaxed tracking-wide">
           {ts("submittedMessage", lang)}
         </p>
 
-        <div className="mt-10 border border-[#C2703A]/20 text-left max-w-md mx-auto p-6">
-          <span className="text-xs tracking-[0.15em] uppercase text-[#C2703A] block mb-4">
+        <div className="mt-10 border border-[#FF6A00]/20 text-left max-w-md mx-auto p-6">
+          <span className="text-xs tracking-[0.15em] uppercase text-[#FF6A00] block mb-4">
             {ts("whatsNext", lang)}
           </span>
           <ul className="space-y-3">
@@ -354,7 +354,7 @@ export default function OnboardingForm({
                 key={i}
                 className="flex items-start gap-3 text-sm text-[#4A4A45] tracking-wide"
               >
-                <ArrowRight className="w-3.5 h-3.5 text-[#C2703A] mt-0.5 flex-shrink-0" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#FF6A00] mt-0.5 flex-shrink-0" />
                 {step}
               </li>
             ))}
@@ -367,7 +367,7 @@ export default function OnboardingForm({
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center gap-3 w-full px-8 py-4 bg-[#C2703A] text-[#1A1A18] text-sm font-medium tracking-wide uppercase transition-all duration-300 hover:bg-[#D4834F] hover:-translate-y-0.5"
+            className="group flex items-center justify-center gap-3 w-full px-8 py-4 bg-[#FF6A00] text-[#0F0E10] text-sm font-medium tracking-wide uppercase transition-all duration-300 hover:bg-[#FF8F3F] hover:-translate-y-0.5"
           >
             <Calendar className="w-4 h-4" />
             {ts("bookCall", lang)}
@@ -524,22 +524,22 @@ export default function OnboardingForm({
                 key={service}
                 className={`flex items-center gap-3 px-4 py-3 border cursor-pointer transition-all duration-300 select-none ${
                   formData.services.includes(service)
-                    ? "border-[#C2703A]/50 bg-[#C2703A]/[0.08]"
-                    : "border-[#C2703A]/15 hover:border-[#C2703A]/30 hover:bg-[#C2703A]/[0.03]"
+                    ? "border-[#FF6A00]/50 bg-[#FF6A00]/[0.08]"
+                    : "border-[#FF6A00]/15 hover:border-[#FF6A00]/30 hover:bg-[#FF6A00]/[0.03]"
                 }`}
               >
                 <input
                   type="checkbox"
                   checked={formData.services.includes(service)}
                   onChange={() => toggleCheckbox("services", service)}
-                  className="w-3.5 h-3.5 accent-[#C2703A] flex-shrink-0"
+                  className="w-3.5 h-3.5 accent-[#FF6A00] flex-shrink-0"
                 />
-                <span className="text-sm text-[#1A1A18] tracking-wide">{service}</span>
+                <span className="text-sm text-[#0F0E10] tracking-wide">{service}</span>
               </label>
             ))}
           </div>
         ) : (
-          <p className="text-sm text-[#7A766E] italic py-4 border border-dashed border-[#C2703A]/15 text-center">
+          <p className="text-sm text-[#7A766E] italic py-4 border border-dashed border-[#FF6A00]/15 text-center">
             {ts("selectIndustryFirst", lang)}
           </p>
         )}
@@ -554,8 +554,8 @@ export default function OnboardingForm({
         />
       </FormField>
 
-      <hr className="border-[#C2703A]/15" />
-      <span className="block text-xs tracking-[0.15em] uppercase text-[#C2703A]/60 pb-2 border-b border-[#C2703A]/10">
+      <hr className="border-[#FF6A00]/15" />
+      <span className="block text-xs tracking-[0.15em] uppercase text-[#FF6A00]/60 pb-2 border-b border-[#FF6A00]/10">
         {ts("projectHistory", lang)}
       </span>
 
@@ -632,17 +632,17 @@ export default function OnboardingForm({
               key={trait}
               className={`flex items-center gap-3 px-4 py-3 border cursor-pointer transition-all duration-300 select-none ${
                 formData.brandPersonality.includes(trait)
-                  ? "border-[#C2703A]/50 bg-[#C2703A]/[0.08]"
-                  : "border-[#C2703A]/15 hover:border-[#C2703A]/30 hover:bg-[#C2703A]/[0.03]"
+                  ? "border-[#FF6A00]/50 bg-[#FF6A00]/[0.08]"
+                  : "border-[#FF6A00]/15 hover:border-[#FF6A00]/30 hover:bg-[#FF6A00]/[0.03]"
               }`}
             >
               <input
                 type="checkbox"
                 checked={formData.brandPersonality.includes(trait)}
                 onChange={() => toggleCheckbox("brandPersonality", trait)}
-                className="w-3.5 h-3.5 accent-[#C2703A] flex-shrink-0"
+                className="w-3.5 h-3.5 accent-[#FF6A00] flex-shrink-0"
               />
-              <span className="text-sm text-[#1A1A18] tracking-wide">{trait}</span>
+              <span className="text-sm text-[#0F0E10] tracking-wide">{trait}</span>
             </label>
           ))}
         </div>
@@ -758,7 +758,7 @@ export default function OnboardingForm({
         />
       </FormField>
 
-      <hr className="border-[#C2703A]/15" />
+      <hr className="border-[#FF6A00]/15" />
 
       <FormField label={ts("additionalNotes", lang)}>
         <textarea
@@ -792,9 +792,9 @@ export default function OnboardingForm({
             <div
               className={`h-0.5 transition-colors duration-400 ${
                 i < current
-                  ? "bg-[#C2703A]/50"
+                  ? "bg-[#FF6A00]/50"
                   : i === current
-                    ? "bg-[#C2703A]"
+                    ? "bg-[#FF6A00]"
                     : "bg-[#E8E0D4]"
               }`}
             />
@@ -819,12 +819,12 @@ export default function OnboardingForm({
       </AnimatePresence>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-12 pt-8 border-t border-[#C2703A]/15">
+      <div className="flex items-center justify-between mt-12 pt-8 border-t border-[#FF6A00]/15">
         {current > 0 ? (
           <button
             type="button"
             onClick={() => goTo(current - 1)}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#7A766E] hover:text-[#1A1A18] transition-colors"
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#7A766E] hover:text-[#0F0E10] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             {ts("back", lang)}
@@ -841,7 +841,7 @@ export default function OnboardingForm({
           <button
             type="button"
             onClick={() => goTo(current + 1)}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#1A1A18] bg-[#C2703A] px-8 py-4 hover:bg-[#D4834F] hover:-translate-y-px transition-all duration-300"
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#0F0E10] bg-[#FF6A00] px-8 py-4 hover:bg-[#FF8F3F] hover:-translate-y-px transition-all duration-300"
           >
             {ts("continue", lang)}
             <ArrowRight className="w-3.5 h-3.5" />
@@ -851,7 +851,7 @@ export default function OnboardingForm({
             type="button"
             onClick={handleSubmit}
             disabled={submitting}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#1A1A18] bg-[#C2703A] px-8 py-4 hover:bg-[#D4834F] hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-[#0F0E10] bg-[#FF6A00] px-8 py-4 hover:bg-[#FF8F3F] hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {submitting ? (
               <>
@@ -888,10 +888,10 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-10">
-      <span className="text-[10px] tracking-[0.2em] text-[#C2703A] uppercase block mb-2">
+      <span className="text-[10px] tracking-[0.2em] text-[#FF6A00] uppercase block mb-2">
         {sectionWord} {number} / {total}
       </span>
-      <h2 className="text-3xl font-bold text-[#1A1A18]" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h2>
+      <h2 className="text-3xl font-bold text-[#0F0E10]" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h2>
       <p className="text-sm text-[#7A766E] mt-2 tracking-wide">{subtitle}</p>
     </div>
   );

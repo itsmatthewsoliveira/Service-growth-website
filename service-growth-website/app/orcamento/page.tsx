@@ -94,7 +94,7 @@ export default function OrcamentoPage() {
 
   /* Shared input classes for cream background */
   const inputCls =
-    "w-full px-4 py-3 bg-white border border-[#D6D0C7] rounded-lg text-[#1A1A18] text-sm outline-none transition-colors focus:ring-2 focus:ring-[#C2703A]/40 focus:border-[#C2703A] placeholder:text-[#B8B3AA]";
+    "w-full px-4 py-3 bg-white border border-[#D6D0C7] rounded-lg text-[#0F0E10] text-sm outline-none transition-colors focus:ring-2 focus:ring-[#FF6A00]/40 focus:border-[#FF6A00] placeholder:text-[#B8B3AA]";
 
   return (
     <div className="relative overflow-hidden min-h-screen">
@@ -104,9 +104,9 @@ export default function OrcamentoPage() {
           <div
             className="inline-block text-xs font-semibold tracking-[3px] uppercase px-4 py-1.5 rounded-full mb-6"
             style={{
-              color: "#C2703A",
-              background: "rgba(194,112,58,0.10)",
-              border: "1px solid rgba(194,112,58,0.25)",
+              color: "#FF6A00",
+              background: "rgba(255, 106, 0,0.10)",
+              border: "1px solid rgba(255, 106, 0,0.25)",
             }}
           >
             FERRAMENTA GRATUITA
@@ -114,11 +114,11 @@ export default function OrcamentoPage() {
 
           <h1
             className="font-serif text-[44px] max-md:text-[32px] font-bold leading-[1.1] mb-5 tracking-[-0.02em]"
-            style={{ color: "#F5F0E8" }}
+            style={{ color: "#FCFFD5" }}
           >
             Gere Orcamentos
             <br />
-            <span className="italic" style={{ color: "#C2703A" }}>Profissionais</span> com IA
+            <span className="italic" style={{ color: "#FF6A00" }}>Profissionais</span> com IA
           </h1>
 
           <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#B8B3AA" }}>
@@ -135,8 +135,8 @@ export default function OrcamentoPage() {
             }
             className="font-medium text-base px-10 py-4 rounded-xl cursor-pointer border-none transition-all"
             style={{
-              backgroundColor: "#C2703A",
-              color: "#F2EDE5",
+              backgroundColor: "#FF6A00",
+              color: "#FCFFD5",
             }}
           >
             Baixar Gratis
@@ -145,7 +145,7 @@ export default function OrcamentoPage() {
       </section>
 
       {/* Features — cream */}
-      <section className="px-6 py-20" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="px-6 py-20" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-3 max-md:grid-cols-1 gap-4">
             {FEATURES.map((f) => (
@@ -153,7 +153,7 @@ export default function OrcamentoPage() {
                 key={f.title}
                 className="card-embossed rounded-xl p-6"
               >
-                <h3 className="text-base font-medium mb-1.5" style={{ color: "#1A1A18" }}>
+                <h3 className="text-base font-medium mb-1.5" style={{ color: "#0F0E10" }}>
                   {f.title}
                 </h3>
                 <p className="text-[13px] leading-relaxed m-0" style={{ color: "#7A766E" }}>
@@ -169,7 +169,7 @@ export default function OrcamentoPage() {
       <section
         id="form-section"
         className="px-6 pb-24"
-        style={{ backgroundColor: "#F2EDE5" }}
+        style={{ backgroundColor: "#FCFFD5" }}
       >
         <div className="max-w-lg mx-auto">
           <div
@@ -182,7 +182,7 @@ export default function OrcamentoPage() {
           >
             {!submitted ? (
               <>
-                <h2 className="font-serif text-[22px] font-bold mb-1.5 text-center" style={{ color: "#1A1A18" }}>
+                <h2 className="font-serif text-[22px] font-bold mb-1.5 text-center" style={{ color: "#0F0E10" }}>
                   Receba Seu Gerador de Orcamento
                 </h2>
                 <p className="text-sm text-center mb-7" style={{ color: "#7A766E" }}>
@@ -266,8 +266,8 @@ export default function OrcamentoPage() {
                     disabled={loading}
                     className="w-full font-semibold text-base py-4 rounded-xl cursor-pointer border-none transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                     style={{
-                      backgroundColor: "#C2703A",
-                      color: "#F2EDE5",
+                      backgroundColor: "#FF6A00",
+                      color: "#FCFFD5",
                     }}
                   >
                     {loading ? "Enviando..." : "Receber Meu Gerador Gratis"}
@@ -280,12 +280,12 @@ export default function OrcamentoPage() {
               </>
             ) : (
               <div className="text-center">
-                <h2 className="font-serif text-[22px] font-bold mb-2" style={{ color: "#1A1A18" }}>
+                <h2 className="font-serif text-[22px] font-bold mb-2" style={{ color: "#0F0E10" }}>
                   Pronto, {name.split(" ")[0]}!
                 </h2>
                 <p className="text-sm mb-7 leading-relaxed" style={{ color: "#4A4A45" }}>
                   Seus arquivos estao prontos. Tambem enviamos tudo para{" "}
-                  <strong style={{ color: "#1A1A18" }}>{email}</strong>.
+                  <strong style={{ color: "#0F0E10" }}>{email}</strong>.
                 </p>
 
                 <div className="flex flex-col gap-2.5">
@@ -294,8 +294,8 @@ export default function OrcamentoPage() {
                     download
                     className="block text-center no-underline font-semibold text-sm py-3.5 px-6 rounded-xl transition-all"
                     style={{
-                      backgroundColor: "#C2703A",
-                      color: "#F2EDE5",
+                      backgroundColor: "#FF6A00",
+                      color: "#FCFFD5",
                     }}
                   >
                     Baixar Guia PDF
@@ -305,9 +305,9 @@ export default function OrcamentoPage() {
                     download
                     className="block text-center no-underline text-sm py-3.5 px-6 rounded-xl transition-all"
                     style={{
-                      backgroundColor: "rgba(194,112,58,0.08)",
-                      border: "1px solid rgba(194,112,58,0.20)",
-                      color: "#A85C30",
+                      backgroundColor: "rgba(255, 106, 0,0.08)",
+                      border: "1px solid rgba(255, 106, 0,0.20)",
+                      color: "#D45800",
                     }}
                   >
                     Baixar Template PT-BR (.zip)
@@ -317,9 +317,9 @@ export default function OrcamentoPage() {
                     download
                     className="block text-center no-underline text-sm py-3.5 px-6 rounded-xl transition-all"
                     style={{
-                      backgroundColor: "rgba(194,112,58,0.08)",
-                      border: "1px solid rgba(194,112,58,0.20)",
-                      color: "#A85C30",
+                      backgroundColor: "rgba(255, 106, 0,0.08)",
+                      border: "1px solid rgba(255, 106, 0,0.20)",
+                      color: "#D45800",
                     }}
                   >
                     Baixar Template EN (.zip)

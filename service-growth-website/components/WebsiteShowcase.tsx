@@ -59,7 +59,7 @@ function ShowcaseCard({ site, index }: { site: ShowcaseSite; index: number }) {
           />
         </div>
         <div className="text-center">
-          <h4 className="text-lg font-semibold mb-1" style={{ color: "#F5F0E8" }}>
+          <h4 className="text-lg font-semibold mb-1" style={{ color: "#FCFFD5" }}>
             {site.industry}
           </h4>
           <p className="text-sm text-[#B8B3AA]">{site.description}</p>
@@ -75,7 +75,7 @@ export default function WebsiteShowcase() {
       <div className="text-center mb-16">
         <h2
           className="text-3xl sm:text-4xl md:text-5xl mb-4"
-          style={{ fontFamily: "var(--font-heading)", fontWeight: 800, color: "#F5F0E8" }}
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 800, color: "#FCFFD5" }}
         >
           Websites That Actually Convert
         </h2>

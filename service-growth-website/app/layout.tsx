@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Instrument_Serif, Archivo_Narrow, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GrainOverlay from "@/components/GrainOverlay";
 
-// Inter for body text
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-// Instrument Serif for accent/italic headlines
 const instrumentSerif = Instrument_Serif({
   variable: "--font-display",
   subsets: ["latin"],
@@ -21,11 +19,16 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-// Plus Jakarta Sans for bold headlines - thick, modern, professional
-const plusJakarta = Plus_Jakarta_Sans({
+const headingFont = Archivo_Narrow({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -220,7 +223,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} ${plusJakarta.variable} antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} ${headingFont.variable} ${mono.variable} antialiased`}
+        style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
       >
         <GrainOverlay />
         <Navbar />

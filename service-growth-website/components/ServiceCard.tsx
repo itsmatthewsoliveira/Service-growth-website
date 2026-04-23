@@ -28,16 +28,16 @@ export default function ServiceCard({
     >
       <Link
         href={href}
-        className="block bg-white border border-[#1A1A18]/8 rounded-xl p-6 shadow-sm card-glow group"
+        className="block bg-white border border-[#0F0E10]/8 rounded-xl p-6 shadow-sm card-glow group"
       >
-        <div className="w-12 h-12 rounded-lg bg-[#C2703A]/10 flex items-center justify-center mb-4 text-[#A85C30] group-hover:bg-[#C2703A]/20 transition-colors">
+        <div className="w-12 h-12 rounded-lg bg-[#FF6A00]/10 flex items-center justify-center mb-4 text-[#D45800] group-hover:bg-[#FF6A00]/20 transition-colors">
           {icon}
         </div>
-        <h3 className="text-xl font-bold text-[#1A1A18] mb-2 group-hover:text-[#A85C30] transition-colors">
+        <h3 className="text-xl font-bold text-[#0F0E10] mb-2 group-hover:text-[#D45800] transition-colors">
           {title}
         </h3>
         <p className="text-[#4A4A45] text-sm">{description}</p>
-        <div className="mt-4 text-[#A85C30] text-sm font-medium flex items-center gap-2">
+        <div className="mt-4 text-[#D45800] text-sm font-medium flex items-center gap-2">
           Learn more
           <motion.span
             className="inline-block"

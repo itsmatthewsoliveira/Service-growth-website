@@ -60,8 +60,8 @@ export default function ReviewSlider() {
     return (
         <div className="w-full relative group">
             {/* Gradient fade on sides */}
-            <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#F2EDE5] to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#F2EDE5] to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#FCFFD5] to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#FCFFD5] to-transparent pointer-events-none" />
 
             <motion.div
                 ref={carousel}
@@ -86,10 +86,10 @@ export default function ReviewSlider() {
 
             {/* Navigation arrows */}
             <div className="flex justify-center mt-8 gap-3">
-                <button className="p-2 rounded-full border border-[#1A1A18]/10 hover:bg-[#1A1A18]/5 transition-colors text-[#7A766E] hover:text-[#1A1A18]">
+                <button className="p-2 rounded-full border border-[#0F0E10]/10 hover:bg-[#0F0E10]/5 transition-colors text-[#7A766E] hover:text-[#0F0E10]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button className="p-2 rounded-full border border-[#1A1A18]/10 hover:bg-[#1A1A18]/5 transition-colors text-[#7A766E] hover:text-[#1A1A18]">
+                <button className="p-2 rounded-full border border-[#0F0E10]/10 hover:bg-[#0F0E10]/5 transition-colors text-[#7A766E] hover:text-[#0F0E10]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </button>
             </div>

@@ -24,7 +24,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C0C0C] border-t border-white/5 py-12 md:py-16 px-4 md:px-6 text-[#B8B3AA]">
+    <footer className="bg-[#121114] border-t border-white/5 py-12 md:py-16 px-4 md:px-6 text-[#B8B3AA]">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -41,20 +41,20 @@ export default function Footer() {
               for operators.
             </p>
             <div className="space-y-2 text-sm">
-              <a href="tel:+19044542240" className="block text-[#B8B3AA] hover:text-[#C2703A] transition-colors">(904) 454-2240</a>
-              <a href="mailto:hello@servicegrowth.ai" className="block text-[#B8B3AA] hover:text-[#C2703A] transition-colors">hello@servicegrowth.ai</a>
+              <a href="tel:+19044542240" className="block text-[#B8B3AA] hover:text-[#FF6A00] transition-colors">(904) 454-2240</a>
+              <a href="mailto:hello@servicegrowth.ai" className="block text-[#B8B3AA] hover:text-[#FF6A00] transition-colors">hello@servicegrowth.ai</a>
             </div>
           </div>
 
           {/* Pages */}
           <div>
-            <h4 className="text-[#F5F0E8] font-semibold mb-4">Pages</h4>
+            <h4 className="text-[#FCFFD5] font-semibold mb-4">Pages</h4>
             <ul className="space-y-3">
               {footerLinks.pages.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -65,13 +65,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[#F5F0E8] font-semibold mb-4">Services</h4>
+            <h4 className="text-[#FCFFD5] font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -82,13 +82,13 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="text-[#F5F0E8] font-semibold mb-4">Industries</h4>
+            <h4 className="text-[#FCFFD5] font-semibold mb-4">Industries</h4>
             <ul className="space-y-3">
               {footerLinks.industries.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -104,11 +104,11 @@ export default function Footer() {
             © {new Date().getFullYear()} ServiceGrowth.ai. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
-            <Link href="/community" className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors">The Growth Lab</Link>
-            <Link href="/free-website" className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors">Free Website</Link>
-            <Link href="/privacy" className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors">Terms</Link>
-            <Link href="/contact" className="text-[#7A766E] text-sm hover:text-[#C2703A] transition-colors">Contact</Link>
+            <Link href="/community" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">The Growth Lab</Link>
+            <Link href="/free-website" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Free Website</Link>
+            <Link href="/privacy" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Terms</Link>
+            <Link href="/contact" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Contact</Link>
           </div>
         </div>
       </div>

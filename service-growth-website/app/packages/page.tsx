@@ -81,7 +81,7 @@ export default function PackagesPage() {
     <>
       {/* Hero — section-dark */}
       <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(194,112,58,0.10)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(255, 106, 0,0.10)" }} />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.h1
@@ -89,11 +89,11 @@ export default function PackagesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-6"
-            style={{ color: "#F5F0E8" }}
+            style={{ color: "#FCFFD5" }}
           >
             Choose Your
             <br />
-            <span className="italic" style={{ color: "#C2703A" }}>Growth Path</span>
+            <span className="italic" style={{ color: "#FF6A00" }}>Growth Path</span>
           </motion.h1>
 
           <motion.p
@@ -111,7 +111,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Packages Grid — cream */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-6">
             {packages.map((pkg, i) => (
@@ -125,27 +125,27 @@ export default function PackagesPage() {
                   pkg.featured ? "" : "card-embossed"
                 }`}
                 style={pkg.featured ? {
-                  backgroundColor: "rgba(194,112,58,0.05)",
-                  border: "2px solid rgba(194,112,58,0.30)",
-                  boxShadow: "0 0 60px rgba(194,112,58,0.12)",
+                  backgroundColor: "rgba(255, 106, 0,0.05)",
+                  border: "2px solid rgba(255, 106, 0,0.30)",
+                  boxShadow: "0 0 60px rgba(255, 106, 0,0.12)",
                 } : {}}
               >
                 {pkg.badge && (
                   <div
                     className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-semibold px-4 py-1 rounded-full"
-                    style={{ backgroundColor: "#C2703A", color: "#F2EDE5" }}
+                    style={{ backgroundColor: "#FF6A00", color: "#FCFFD5" }}
                   >
                     {pkg.badge}
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-1" style={{ color: "#1A1A18" }}>{pkg.name}</h3>
+                  <h3 className="text-2xl font-bold mb-1" style={{ color: "#0F0E10" }}>{pkg.name}</h3>
                   <p className="text-sm" style={{ color: "#7A766E" }}>{pkg.tagline}</p>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-bold" style={{ color: "#1A1A18" }}>{pkg.price}</span>
+                  <span className="text-4xl md:text-5xl font-bold" style={{ color: "#0F0E10" }}>{pkg.price}</span>
                   <span style={{ color: "#7A766E" }}>{pkg.period}</span>
                 </div>
 
@@ -156,7 +156,7 @@ export default function PackagesPage() {
                     <li key={j} className="flex items-start gap-3 text-sm">
                       <svg
                         className="w-5 h-5 mt-0.5 flex-shrink-0"
-                        style={{ color: "#C2703A" }}
+                        style={{ color: "#FF6A00" }}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -189,7 +189,7 @@ export default function PackagesPage() {
       {/* Guarantees — charcoal section-dark */}
       <section className="section-dark py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: "#F5F0E8" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: "#FCFFD5" }}>
             Every Package Includes
           </h2>
 
@@ -203,7 +203,7 @@ export default function PackagesPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
-                <h3 className="text-xl font-bold mb-2" style={{ color: "#F5F0E8" }}>{item.title}</h3>
+                <h3 className="text-xl font-bold mb-2" style={{ color: "#FCFFD5" }}>{item.title}</h3>
                 <p className="text-sm" style={{ color: "#B8B3AA" }}>{item.description}</p>
               </motion.div>
             ))}
@@ -212,7 +212,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Compare Link — cream */}
-      <section className="py-16 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="py-16 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-4xl mx-auto text-center">
           <p className="mb-4" style={{ color: "#4A4A45" }}>
             Need help choosing? See our detailed feature comparison.
@@ -224,7 +224,7 @@ export default function PackagesPage() {
       </section>
 
       {/* CTA — cream */}
-      <section className="py-20 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="py-20 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -232,15 +232,15 @@ export default function PackagesPage() {
             viewport={{ once: true }}
             className="relative rounded-2xl p-12 text-center overflow-hidden"
             style={{
-              background: "rgba(194,112,58,0.03)",
-              border: "1px solid rgba(194,112,58,0.15)",
-              boxShadow: "0 0 80px rgba(194,112,58,0.08)",
+              background: "rgba(255, 106, 0,0.03)",
+              border: "1px solid rgba(255, 106, 0,0.15)",
+              boxShadow: "0 0 80px rgba(255, 106, 0,0.08)",
             }}
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] rounded-full blur-[60px] pointer-events-none" style={{ background: "rgba(194,112,58,0.10)" }} />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] rounded-full blur-[60px] pointer-events-none" style={{ background: "rgba(255, 106, 0,0.10)" }} />
 
             <div className="relative">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1A1A18" }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0F0E10" }}>
                 Not Sure Which Package?
               </h2>
               <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "#4A4A45" }}>

@@ -36,22 +36,22 @@ export default function PricingCard({
   return (
     <div
       className={`relative overflow-hidden rounded-3xl border p-8 transition-transform hover:-translate-y-1 duration-300 flex flex-col h-full ${isFeatured
-          ? "border-[#C2703A]/30 bg-gradient-to-b from-[#C2703A]/5 to-white shadow-md"
-          : "border-[#1A1A18]/8 bg-white shadow-sm"
+          ? "border-[#FF6A00]/30 bg-gradient-to-b from-[#FF6A00]/5 to-white shadow-md"
+          : "border-[#0F0E10]/8 bg-white shadow-sm"
         }`}
     >
       {/* Badge for Pro */}
       {isFeatured && (
         <div className="absolute top-0 right-0 p-6">
-          <div className="w-12 h-12 rounded-full border border-dashed border-[#C2703A]/50 flex items-center justify-center animate-spin-slow">
-            <span className="text-[10px] font-bold text-[#A85C30] uppercase tracking-tighter">Pro</span>
+          <div className="w-12 h-12 rounded-full border border-dashed border-[#FF6A00]/50 flex items-center justify-center animate-spin-slow">
+            <span className="text-[10px] font-bold text-[#D45800] uppercase tracking-tighter">Pro</span>
           </div>
         </div>
       )}
 
       <div className="mb-8">
         {tagline && (
-          <p className="text-xs font-medium text-[#A85C30] uppercase tracking-wider mb-2">
+          <p className="text-xs font-medium text-[#D45800] uppercase tracking-wider mb-2">
             {tagline}
           </p>
         )}
@@ -61,17 +61,17 @@ export default function PricingCard({
           </p>
         )}
 
-        <h3 className="text-3xl md:text-4xl font-serif text-[#1A1A18] mb-4">{displayTitle}</h3>
+        <h3 className="text-3xl md:text-4xl font-serif text-[#0F0E10] mb-4">{displayTitle}</h3>
 
         <div className="flex items-baseline gap-1 mb-4">
-          <span className="text-3xl sm:text-4xl font-serif text-[#1A1A18]">
+          <span className="text-3xl sm:text-4xl font-serif text-[#0F0E10]">
             {price}
           </span>
           <span className="text-[#7A766E]">{period}</span>
         </div>
 
         {description && (
-          <p className="text-sm text-[#4A4A45] leading-relaxed border-t border-[#1A1A18]/8 pt-4">
+          <p className="text-sm text-[#4A4A45] leading-relaxed border-t border-[#0F0E10]/8 pt-4">
             {description}
           </p>
         )}
@@ -85,7 +85,7 @@ export default function PricingCard({
           return (
             <li key={i} className="flex items-start gap-3 text-sm text-[#4A4A45]">
               <svg
-                className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isFeatured ? "text-[#A85C30]" : "text-[#7A766E]"
+                className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isFeatured ? "text-[#D45800]" : "text-[#7A766E]"
                   }`}
                 fill="none"
                 stroke="currentColor"
@@ -98,7 +98,7 @@ export default function PricingCard({
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span className={isBold ? "font-semibold text-[#1A1A18]" : ""}>{featureText}</span>
+              <span className={isBold ? "font-semibold text-[#0F0E10]" : ""}>{featureText}</span>
             </li>
           );
         })}

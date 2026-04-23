@@ -77,7 +77,7 @@ export default function DemoPage() {
 
   /* Shared input classes for cream background */
   const inputCls =
-    "w-full px-4 py-3 rounded-lg bg-white border border-[#D6D0C7] text-[#1A1A18] text-sm placeholder:text-[#B8B3AA] focus:outline-none focus:ring-2 focus:ring-[#C2703A]/40 focus:border-[#C2703A] transition-colors";
+    "w-full px-4 py-3 rounded-lg bg-white border border-[#D6D0C7] text-[#0F0E10] text-sm placeholder:text-[#B8B3AA] focus:outline-none focus:ring-2 focus:ring-[#FF6A00]/40 focus:border-[#FF6A00] transition-colors";
 
   return (
     <>
@@ -92,16 +92,16 @@ export default function DemoPage() {
             <div
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6"
               style={{
-                backgroundColor: "rgba(194,112,58,0.10)",
-                border: "1px solid rgba(194,112,58,0.25)",
-                color: "#C2703A",
+                backgroundColor: "rgba(255, 106, 0,0.10)",
+                border: "1px solid rgba(255, 106, 0,0.25)",
+                color: "#FF6A00",
               }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C2703A] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse" />
               LIVE DEMO
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" style={{ color: "#F5F0E8" }}>
-              See Our AI <span className="italic" style={{ color: "#C2703A" }}>In Action</span>
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" style={{ color: "#FCFFD5" }}>
+              See Our AI <span className="italic" style={{ color: "#FF6A00" }}>In Action</span>
             </h1>
             <p className="text-lg max-w-xl mx-auto" style={{ color: "#B8B3AA" }}>
               Enter your info below. Within seconds, our AI will reach out to you
@@ -112,7 +112,7 @@ export default function DemoPage() {
       </section>
 
       {/* How It Works Steps — cream */}
-      <section className="pb-12 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="pb-12 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
@@ -129,12 +129,12 @@ export default function DemoPage() {
               >
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3"
-                  style={{ backgroundColor: "rgba(194,112,58,0.10)" }}
+                  style={{ backgroundColor: "rgba(255, 106, 0,0.10)" }}
                 >
-                  <item.icon className="w-5 h-5" style={{ color: "#C2703A" }} />
+                  <item.icon className="w-5 h-5" style={{ color: "#FF6A00" }} />
                 </div>
-                <div className="text-xs font-medium mb-1" style={{ color: "#A85C30" }}>STEP {item.step}</div>
-                <h3 className="text-sm font-medium mb-1" style={{ color: "#1A1A18" }}>{item.title}</h3>
+                <div className="text-xs font-medium mb-1" style={{ color: "#D45800" }}>STEP {item.step}</div>
+                <h3 className="text-sm font-medium mb-1" style={{ color: "#0F0E10" }}>{item.title}</h3>
                 <p className="text-xs" style={{ color: "#7A766E" }}>{item.desc}</p>
               </motion.div>
             ))}
@@ -143,7 +143,7 @@ export default function DemoPage() {
       </section>
 
       {/* Form / Success — cream */}
-      <section className="pb-24 px-6" style={{ backgroundColor: "#F2EDE5" }}>
+      <section className="pb-24 px-6" style={{ backgroundColor: "#FCFFD5" }}>
         <div className="max-w-lg mx-auto">
           <AnimatePresence mode="wait">
             {state === "success" ? (
@@ -156,11 +156,11 @@ export default function DemoPage() {
               >
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: "rgba(194,112,58,0.10)" }}
+                  style={{ backgroundColor: "rgba(255, 106, 0,0.10)" }}
                 >
-                  <CheckCircle className="w-8 h-8" style={{ color: "#C2703A" }} />
+                  <CheckCircle className="w-8 h-8" style={{ color: "#FF6A00" }} />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4" style={{ color: "#1A1A18" }}>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4" style={{ color: "#0F0E10" }}>
                   {result?.smsSent ? "Check Your Phone & Email" : "Check Your Email"}
                 </h2>
                 <p className="mb-6" style={{ color: "#4A4A45" }}>
@@ -171,9 +171,9 @@ export default function DemoPage() {
 
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center gap-3 card-embossed p-4 rounded-lg">
-                    <Mail className="w-5 h-5 shrink-0" style={{ color: "#C2703A" }} />
+                    <Mail className="w-5 h-5 shrink-0" style={{ color: "#FF6A00" }} />
                     <div className="text-left">
-                      <div className="text-sm font-medium" style={{ color: "#1A1A18" }}>
+                      <div className="text-sm font-medium" style={{ color: "#0F0E10" }}>
                         {result?.emailSent ? "Email Sent" : "Email Pending"}
                       </div>
                       <div className="text-xs" style={{ color: "#7A766E" }}>Check your inbox (and spam)</div>
@@ -182,9 +182,9 @@ export default function DemoPage() {
                   </div>
                   {result?.smsSent && (
                     <div className="flex items-center gap-3 card-embossed p-4 rounded-lg">
-                      <MessageSquare className="w-5 h-5 shrink-0" style={{ color: "#C2703A" }} />
+                      <MessageSquare className="w-5 h-5 shrink-0" style={{ color: "#FF6A00" }} />
                       <div className="text-left">
-                        <div className="text-sm font-medium" style={{ color: "#1A1A18" }}>SMS Sent</div>
+                        <div className="text-sm font-medium" style={{ color: "#0F0E10" }}>SMS Sent</div>
                         <div className="text-xs" style={{ color: "#7A766E" }}>Check your text messages</div>
                       </div>
                       <CheckCircle className="w-4 h-4 text-green-600 ml-auto shrink-0" />
@@ -222,7 +222,7 @@ export default function DemoPage() {
                 exit={{ opacity: 0 }}
               >
                 <div className="card-glass-cream rounded-2xl p-8">
-                  <h2 className="text-xl font-medium mb-1" style={{ color: "#1A1A18" }}>
+                  <h2 className="text-xl font-medium mb-1" style={{ color: "#0F0E10" }}>
                     Try It Yourself
                   </h2>
                   <p className="text-sm mb-6" style={{ color: "#7A766E" }}>
@@ -346,7 +346,7 @@ export default function DemoPage() {
                     By submitting this form, you consent to receive automated AI-generated
                     text messages and emails from ServiceGrowth.ai. Message &amp; data rates
                     may apply. Reply STOP to opt out. View our{" "}
-                    <a href="/privacy" className="underline hover:no-underline" style={{ color: "#A85C30" }}>
+                    <a href="/privacy" className="underline hover:no-underline" style={{ color: "#D45800" }}>
                       Privacy Policy
                     </a>
                     .

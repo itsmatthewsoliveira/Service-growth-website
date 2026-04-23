@@ -1,380 +1,448 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import PricingCard from "@/components/PricingCard";
-import Button from "@/components/Button";
+import { useState } from "react";
+import PageHero from "@/components/sections/PageHero";
+import ClosingCTA from "@/components/sections/ClosingCTA";
 
-export const metadata: Metadata = {
-  title: "Pricing - Service Growth AI",
-  description:
-    "Simple pricing. Real results. No long-term contracts. If you don't see results in 60 days, we work for free until you do.",
-};
+const ACCENT = "#FF6A00";
+const INK = "#121114";
+const CREAM = "#FCFFD5";
 
-const pricingPlans = [
+const PLANS = [
   {
-    title: "Launchpad",
-    tagline: "For businesses ready to stop losing leads",
+    num: "01",
+    name: "Launchpad",
+    tagline: "Stop losing leads",
     price: "$1,497",
     period: "/mo",
-    description:
-      "Best for solo operators or small teams doing $30k-$75k/mo who need the basics working.",
+    ideal: "Solo operators or small teams · $30k–$75k/mo",
     features: [
-      { text: "Missed Call Text-Back" },
-      { text: "Basic Email/SMS Automation (5 sequences)" },
-      { text: "Lead Capture Forms" },
-      { text: "CRM Setup & Integration" },
-      { text: "Monthly Performance Report" },
+      "Missed-call text-back",
+      "5 email/SMS automation sequences",
+      "Lead capture forms",
+      "CRM setup + integration",
+      "Monthly performance report",
     ],
     featured: false,
   },
   {
-    title: "Growth Engine",
-    tagline: "For businesses ready to scale without hiring",
+    num: "02",
+    name: "Growth Engine",
+    tagline: "Scale without hiring",
     price: "$2,997",
     period: "/mo",
-    description:
-      "Best for businesses doing $75k-$250k/mo ready to grow 30-50% without hiring.",
+    ideal: "Businesses doing $75k–$250k/mo · ready to grow 30-50%",
     features: [
-      { text: "Everything in Launchpad" },
-      { text: "AI Lead Automation (24/7 capture, qualify, follow-up)", bold: true },
-      { text: "Voice Chat Bot (AI answers calls 24/7)", bold: true },
-      { text: "Unlimited Email/SMS Sequences" },
-      { text: "Review Automation" },
-      { text: "Website Included (or Optimization)" },
-      { text: "Bi-weekly Strategy Calls" },
-      { text: "Priority Support" },
+      "Everything in Launchpad",
+      "AI lead automation — 24/7 capture, qualify, follow-up",
+      "Voice chat bot — AI answers calls 24/7",
+      "Unlimited email/SMS sequences",
+      "Review automation",
+      "Website included (or optimization)",
+      "Bi-weekly strategy calls",
+      "Priority support",
     ],
     featured: true,
-    badge: "MOST POPULAR",
+    badge: "Most popular",
   },
   {
-    title: "Market Dominator",
-    tagline: "For businesses ready to own their market",
+    num: "03",
+    name: "Market Dominator",
+    tagline: "Own your market",
     price: "$5,997",
     period: "/mo",
-    description:
-      "Best for businesses doing $250k+/mo competing for premium jobs.",
+    ideal: "Businesses doing $250k+/mo · competing for premium jobs",
     features: [
-      { text: "Everything in Growth Engine" },
-      { text: "Photo Transformation (unlimited)", bold: true },
-      { text: "3D Rendering (2 per month)", bold: true },
-      { text: "Image Animation for Social" },
-      { text: "Custom AI Workflows" },
-      { text: "Dedicated Account Manager" },
-      { text: "Weekly Strategy Calls" },
-      { text: "Competitor Intelligence Reports" },
+      "Everything in Growth Engine",
+      "Unlimited photo transformation",
+      "2 × 3D renders per month",
+      "Image animation for social",
+      "Custom AI workflows",
+      "Dedicated account manager",
+      "Weekly strategy calls",
+      "Competitor intelligence reports",
     ],
     featured: false,
   },
 ];
 
-const addOns = [
-  { name: "Website Build", price: "$3,997 - $7,997" },
-  { name: "Additional 3D Renders", price: "$497 each" },
-  { name: "Custom Voice Bot Training", price: "$997" },
-];
-
-const comparisonFeatures = [
-  { feature: "Price", launchpad: "$1,497/mo", growth: "$2,997/mo", dominator: "$5,997/mo" },
-  { feature: "Missed Call Text-Back", launchpad: true, growth: true, dominator: true },
-  { feature: "Email/SMS Automation", launchpad: "5 sequences", growth: "Unlimited", dominator: "Unlimited" },
-  { feature: "AI Lead Capture & Qualify", launchpad: false, growth: true, dominator: true },
-  { feature: "Voice Chat Bot (24/7)", launchpad: false, growth: true, dominator: true },
-  { feature: "Review Automation", launchpad: false, growth: true, dominator: true },
-  { feature: "Website", launchpad: false, growth: "Included", dominator: "Included" },
-  { feature: "Photo Transformation", launchpad: false, growth: false, dominator: "Unlimited" },
-  { feature: "3D Rendering", launchpad: false, growth: false, dominator: "2/month" },
-  { feature: "Strategy Calls", launchpad: false, growth: "Bi-weekly", dominator: "Weekly" },
-  { feature: "Dedicated Account Manager", launchpad: false, growth: false, dominator: true },
-];
-
-const faqItems = [
+const FAQ = [
   {
-    question: "Why is this more expensive than other AI agencies?",
-    answer:
-      "Because we're not other AI agencies. We're not kids who watched a YouTube course—we actually scaled our own service business to $100k/month using these exact systems. You're paying for proven expertise, not experiments.",
+    q: "Why is this more expensive than other AI agencies?",
+    a: "Because we're not other AI agencies. We're not kids who watched a YouTube course — we scaled our own service business to $100k/month using these exact systems. You're paying for proven expertise, not experiments.",
   },
   {
-    question: "What if it doesn't work for my business?",
-    answer:
-      "If you don't see at least 15% more booked jobs within 60 days of going live, we'll work for free until you do—or refund your setup fee. We only win when you win.",
+    q: "What if it doesn't work for my business?",
+    a: "If you don't see at least 15% more booked jobs within 60 days of going live, we work for free until you do — or refund your setup fee. We only win when you win.",
   },
   {
-    question: "Can I start small and upgrade later?",
-    answer:
-      "Absolutely. Most clients start with Launchpad to stop losing leads, then upgrade to Growth Engine once they see results. No long-term contracts—upgrade or cancel anytime.",
+    q: "Can I start small and upgrade later?",
+    a: "Absolutely. Most clients start with Launchpad to stop losing leads, then upgrade to Growth Engine once they see results. No long-term contracts — upgrade or cancel anytime.",
   },
   {
-    question: "What's the setup process?",
-    answer:
-      "We handle everything. You fill out a short questionnaire, we build and configure your systems, and you're live within 14 days. Total time investment from you: about 2 hours.",
+    q: "What's the setup process?",
+    a: "We handle everything. You fill out a short questionnaire, we build and configure your systems, and you're live within 14 days. Total time from you: about 2 hours.",
   },
   {
-    question: "Do I need to hire someone to manage this?",
-    answer:
-      "No. That's the point. The AI handles the work, we handle the strategy. You just focus on doing what you do best.",
+    q: "Do I need to hire someone to manage this?",
+    a: "No. That's the point. The AI handles the work, we handle the strategy. You focus on doing what you do best.",
   },
 ];
-
-function CheckIcon() {
-  return <span className="text-[#C2703A]">&#10003;</span>;
-}
-
-function DashIcon() {
-  return <span className="text-[#B8B3AA]/30">&mdash;</span>;
-}
 
 export default function PricingPage() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
   return (
     <>
-      {/* Hero - dark section */}
-      <header className="section-dark pt-16 pb-12 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl leading-[0.9] text-[#F5F0E8] mb-6 font-serif">
-            Simple Pricing.
-            <br />
-            <span className="italic text-[#F5F0E8]/50">Real Results.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-[#B8B3AA] max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
-            No long-term contracts. No hidden fees. Cancel anytime.
-            <br />
-            If you don&apos;t see results in 60 days, we work for free until you
-            do.
-          </p>
-        </div>
-      </header>
+      {/* 1 · Hero — DARK, centered, no image (price pages benefit from center gravity) */}
+      <PageHero
+        eyebrow="Pricing"
+        headlineLead="Straight talk"
+        headlineAccent="on pricing."
+        subhead="We're not the cheapest. We're the ones that actually work. Most clients invest $1,497–$6,000+/mo — typically 2–3 booked jobs pay for the whole system. No hidden fees. No lock-in."
+        align="centered"
+      />
 
-      {/* Pricing Cards - cream section */}
-      <section className="bg-[#F2EDE5] px-6 pt-16 pb-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.title}
-                className={
-                  plan.featured
-                    ? "card-dark-on-cream p-8 flex flex-col h-full relative overflow-hidden rounded-2xl transition-transform hover:-translate-y-1 duration-300"
-                    : "card-glass-cream p-8 flex flex-col h-full relative overflow-hidden rounded-2xl transition-transform hover:-translate-y-1 duration-300"
-                }
-              >
-                {/* Badge for featured */}
-                {plan.featured && (
-                  <div className="absolute top-4 right-4">
-                    <span className="text-xs font-bold text-[#C2703A] uppercase tracking-wider bg-[#C2703A]/10 border border-[#C2703A]/30 rounded-full px-3 py-1">
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-
-                <div className="mb-8">
-                  {plan.tagline && (
-                    <p className={`text-xs font-medium uppercase tracking-wider mb-2 ${plan.featured ? "text-[#C2703A]" : "text-[#A85C30]"}`}>
-                      {plan.tagline}
-                    </p>
+      {/* 2 · Pricing tiers — WHITE, editorial 3-up */}
+      <section className="relative w-full" style={{ background: "#FFFFFF", color: INK }}>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-20 py-20 lg:py-28">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {PLANS.map((p) => {
+              const isDark = p.featured;
+              return (
+                <div
+                  key={p.name}
+                  className="relative flex flex-col"
+                  style={{
+                    padding: 36,
+                    border: `1px solid ${isDark ? "rgba(252,255,213,0.12)" : "rgba(18,17,20,0.1)"}`,
+                    background: isDark ? INK : "#FFFFFF",
+                    color: isDark ? CREAM : INK,
+                    borderRadius: 14,
+                    transition: "transform 320ms cubic-bezier(.2,.7,.2,1), box-shadow 320ms",
+                  }}
+                >
+                  {p.badge && (
+                    <div
+                      className="absolute -top-3 left-8 uppercase"
+                      style={{
+                        background: ACCENT,
+                        color: INK,
+                        padding: "4px 10px",
+                        fontFamily: "var(--font-mono), ui-monospace, monospace",
+                        fontSize: 10,
+                        letterSpacing: "0.2em",
+                        fontWeight: 700,
+                        borderRadius: 4,
+                      }}
+                    >
+                      {p.badge}
+                    </div>
                   )}
 
-                  <h3 className={`text-3xl md:text-4xl font-serif mb-4 ${plan.featured ? "text-[#F5F0E8]" : "text-[#1A1A18]"}`}>
-                    {plan.title}
+                  <div className="flex items-center justify-between mb-6">
+                    <span
+                      className="uppercase"
+                      style={{
+                        fontFamily: "var(--font-mono), ui-monospace, monospace",
+                        fontSize: 11,
+                        letterSpacing: "0.22em",
+                        color: isDark ? "rgba(252,255,213,0.55)" : "rgba(18,17,20,0.5)",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {p.num}
+                    </span>
+                    <span
+                      className="uppercase"
+                      style={{
+                        fontFamily: "var(--font-mono), ui-monospace, monospace",
+                        fontSize: 11,
+                        letterSpacing: "0.22em",
+                        color: ACCENT,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {p.tagline}
+                    </span>
+                  </div>
+
+                  <h3
+                    className="uppercase mb-2"
+                    style={{
+                      fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                      fontWeight: 700,
+                      fontSize: 36,
+                      lineHeight: 1,
+                      letterSpacing: "-0.02em",
+                      color: isDark ? CREAM : INK,
+                    }}
+                  >
+                    {p.name}
                   </h3>
 
-                  <div className="flex items-baseline gap-1 mb-4">
-                    <span className={`text-3xl sm:text-4xl font-serif ${plan.featured ? "text-[#F5F0E8]" : "text-[#1A1A18]"}`}>
-                      {plan.price}
+                  <div className="flex items-baseline gap-1 mt-5 mb-3">
+                    <span
+                      style={{
+                        fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                        fontWeight: 700,
+                        fontSize: 52,
+                        lineHeight: 1,
+                        letterSpacing: "-0.02em",
+                        color: isDark ? CREAM : INK,
+                      }}
+                    >
+                      {p.price}
                     </span>
-                    <span className={plan.featured ? "text-[#7A766E]" : "text-[#7A766E]"}>
-                      {plan.period}
+                    <span
+                      style={{
+                        fontFamily: "var(--font-inter), system-ui, sans-serif",
+                        fontSize: 15,
+                        color: isDark ? "rgba(252,255,213,0.6)" : "rgba(18,17,20,0.5)",
+                      }}
+                    >
+                      {p.period}
                     </span>
                   </div>
 
-                  {plan.description && (
-                    <p className={`text-sm leading-relaxed border-t pt-4 ${plan.featured ? "text-[#B8B3AA] border-[#F5F0E8]/10" : "text-[#4A4A45] border-[#1A1A18]/10"}`}>
-                      {plan.description}
+                  <p
+                    className="pb-6 mb-6"
+                    style={{
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: 13,
+                      lineHeight: 1.5,
+                      color: isDark ? "rgba(252,255,213,0.6)" : "rgba(18,17,20,0.55)",
+                      borderBottom: `1px solid ${isDark ? "rgba(252,255,213,0.1)" : "rgba(18,17,20,0.1)"}`,
+                    }}
+                  >
+                    {p.ideal}
+                  </p>
+
+                  <ul className="space-y-3 flex-1">
+                    {p.features.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-start gap-3"
+                        style={{
+                          fontFamily: "var(--font-inter), system-ui, sans-serif",
+                          fontSize: 14,
+                          lineHeight: 1.5,
+                          color: isDark ? "rgba(252,255,213,0.85)" : "rgba(18,17,20,0.82)",
+                        }}
+                      >
+                        <span
+                          className="mt-[7px] flex-shrink-0"
+                          style={{ width: 6, height: 6, background: ACCENT, borderRadius: 1 }}
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="/growth-blueprint"
+                    className="mt-8 inline-flex items-center justify-center gap-2 px-5 py-3.5 uppercase transition-colors"
+                    style={{
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: 13,
+                      letterSpacing: "0.08em",
+                      fontWeight: 700,
+                      background: isDark ? ACCENT : "transparent",
+                      color: isDark ? INK : INK,
+                      border: isDark ? "none" : `1.5px solid ${INK}`,
+                      borderRadius: 4,
+                    }}
+                  >
+                    Get started →
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          <p
+            className="mt-10 text-center"
+            style={{
+              fontFamily: "var(--font-mono), ui-monospace, monospace",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "rgba(18,17,20,0.5)",
+              fontWeight: 500,
+            }}
+          >
+            <span style={{ color: ACCENT }}>●</span>&nbsp;&nbsp;Setup fee waived on annual plans · No hidden
+            fees
+          </p>
+        </div>
+      </section>
+
+      {/* 3 · Guarantee — DARK editorial strip */}
+      <section className="relative w-full overflow-hidden" style={{ background: INK, color: CREAM }}>
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            opacity: 0.05,
+            mixBlendMode: "multiply",
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+          }}
+        />
+        <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-20 py-20 lg:py-24 text-center">
+          <div
+            className="inline-flex items-center gap-2.5 uppercase mb-6"
+            style={{
+              fontFamily: "var(--font-mono), ui-monospace, monospace",
+              fontSize: 12,
+              letterSpacing: "0.22em",
+              color: CREAM,
+              fontWeight: 500,
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+            Our guarantee
+          </div>
+          <h2
+            className="uppercase mx-auto mb-6"
+            style={{
+              fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(42px, 6.2vw, 76px)",
+              lineHeight: 0.96,
+              letterSpacing: "-0.025em",
+              color: CREAM,
+              maxWidth: 900,
+            }}
+          >
+            If it doesn&apos;t book jobs,{" "}
+            <span
+              style={{
+                color: ACCENT,
+                fontStyle: "italic",
+                fontFamily: "var(--font-display), 'Instrument Serif', serif",
+              }}
+            >
+              you don&apos;t pay.
+            </span>
+          </h2>
+          <p
+            className="max-w-2xl mx-auto"
+            style={{
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: 17,
+              lineHeight: 1.55,
+              color: "rgba(252,255,213,0.72)",
+            }}
+          >
+            15%+ more booked jobs in 60 days or we work free until you hit it. Simple.
+          </p>
+        </div>
+      </section>
+
+      {/* 4 · FAQ — LIGHT, accordion editorial */}
+      <section className="relative w-full" style={{ background: "#FFFFFF", color: INK }}>
+        <div className="max-w-[960px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div>
+              <div
+                className="inline-flex items-center gap-2.5 uppercase mb-6"
+                style={{
+                  fontFamily: "var(--font-mono), ui-monospace, monospace",
+                  fontSize: 12,
+                  letterSpacing: "0.22em",
+                  color: INK,
+                  fontWeight: 500,
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+                Questions
+              </div>
+              <h2
+                className="uppercase"
+                style={{
+                  fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(38px, 5.6vw, 64px)",
+                  lineHeight: 0.98,
+                  letterSpacing: "-0.02em",
+                  color: INK,
+                }}
+              >
+                Good ones.{" "}
+                <span
+                  style={{
+                    color: ACCENT,
+                    fontStyle: "italic",
+                    fontFamily: "var(--font-display), 'Instrument Serif', serif",
+                  }}
+                >
+                  Real answers.
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="divide-y" style={{ borderColor: "rgba(18,17,20,0.1)" }}>
+            {FAQ.map((item, i) => {
+              const open = openIdx === i;
+              return (
+                <div key={item.q} style={{ borderBottom: "1px solid rgba(18,17,20,0.1)" }}>
+                  <button
+                    onClick={() => setOpenIdx(open ? null : i)}
+                    className="w-full flex items-start justify-between gap-6 py-7 text-left"
+                  >
+                    <span
+                      className="uppercase"
+                      style={{
+                        fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                        fontWeight: 700,
+                        fontSize: 22,
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.01em",
+                        color: INK,
+                      }}
+                    >
+                      {item.q}
+                    </span>
+                    <span
+                      className="flex-shrink-0 transition-transform"
+                      style={{
+                        fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif",
+                        fontSize: 32,
+                        lineHeight: 1,
+                        color: ACCENT,
+                        transform: open ? "rotate(45deg)" : "rotate(0)",
+                        transition: "transform 220ms cubic-bezier(.2,.7,.2,1)",
+                      }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  {open && (
+                    <p
+                      className="pb-7 pr-10"
+                      style={{
+                        fontFamily: "var(--font-inter), system-ui, sans-serif",
+                        fontSize: 16,
+                        lineHeight: 1.6,
+                        color: "rgba(18,17,20,0.72)",
+                        maxWidth: 720,
+                      }}
+                    >
+                      {item.a}
                     </p>
                   )}
                 </div>
-
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {plan.features.map((feature, i) => {
-                    const featureText = typeof feature === "string" ? feature : feature.text;
-                    const isBold = typeof feature !== "string" && feature.bold;
-                    return (
-                      <li key={i} className={`flex items-start gap-3 text-sm ${plan.featured ? "text-[#B8B3AA]" : "text-[#4A4A45]"}`}>
-                        <svg
-                          className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.featured ? "text-[#C2703A]" : "text-[#7A766E]"}`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className={isBold ? (plan.featured ? "font-semibold text-[#F5F0E8]" : "font-semibold text-[#1A1A18]") : ""}>
-                          {featureText}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-
-                <Button
-                  href="/contact"
-                  variant={plan.featured ? "primary" : "glass-dark"}
-                  className="w-full justify-center"
-                >
-                  Get Started
-                </Button>
-              </div>
-            ))}
-          </div>
-
-          {/* Add-ons */}
-          <div className="mt-12 card-dark-on-cream p-8">
-            <h3 className="text-2xl text-[#F5F0E8] mb-6 font-serif">One-Time Add-Ons</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {addOns.map((addon, i) => (
-                <div key={i} className="flex justify-between items-center">
-                  <span className="text-[#B8B3AA]">{addon.name}</span>
-                  <span className="text-[#F5F0E8] font-medium">{addon.price}</span>
-                </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Comparison Table - dark section */}
-      <section className="section-dark px-6 py-24">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-[#F5F0E8] text-center mb-12 font-serif">
-            Compare Plans
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="border-b border-[#F5F0E8]/10">
-                  <th className="py-4 px-4 text-[#7A766E] font-medium">Feature</th>
-                  <th className="py-4 px-4 text-[#F5F0E8] font-medium">Launchpad</th>
-                  <th className="py-4 px-4 text-[#C2703A] font-medium">
-                    Growth Engine
-                  </th>
-                  <th className="py-4 px-4 text-[#F5F0E8] font-medium">
-                    Market Dominator
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                {comparisonFeatures.map((row, i) => (
-                  <tr key={i} className="border-b border-[#F5F0E8]/5">
-                    <td className="py-4 px-4 text-[#B8B3AA]">{row.feature}</td>
-                    <td className="py-4 px-4">
-                      {typeof row.launchpad === "boolean" ? (
-                        row.launchpad ? (
-                          <CheckIcon />
-                        ) : (
-                          <DashIcon />
-                        )
-                      ) : (
-                        <span className="text-[#F5F0E8]">{row.launchpad}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4">
-                      {typeof row.growth === "boolean" ? (
-                        row.growth ? (
-                          <CheckIcon />
-                        ) : (
-                          <DashIcon />
-                        )
-                      ) : (
-                        <span className="text-[#C2703A] font-medium">
-                          {row.growth}
-                        </span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4">
-                      {typeof row.dominator === "boolean" ? (
-                        row.dominator ? (
-                          <CheckIcon />
-                        ) : (
-                          <DashIcon />
-                        )
-                      ) : (
-                        <span className="text-[#F5F0E8]">{row.dominator}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Guarantee - cream section */}
-      <section className="bg-[#F2EDE5] px-6 py-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-[#C2703A]/10 border border-[#C2703A]/30 rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl text-[#1A1A18] mb-6 font-serif">
-              The &quot;More Booked Jobs&quot; Guarantee
-            </h2>
-            <p className="text-[#4A4A45] text-lg mb-6 max-w-2xl mx-auto">
-              We&apos;re so confident this works that we guarantee results:{" "}
-              <strong className="text-[#1A1A18]">
-                If you don&apos;t see at least 15% more booked jobs within 60 days
-                of going live, we&apos;ll work for free until you do
-              </strong>
-              &mdash;or refund your entire setup fee. No questions asked.
-            </p>
-            <p className="text-[#7A766E] text-sm">
-              Why can we offer this? Because we used these exact systems to grow
-              our own service business. We know what works.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ - cream section */}
-      <section className="bg-[#F2EDE5] px-6 pb-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-[#1A1A18] text-center mb-12 font-serif">
-            Pricing FAQ
-          </h2>
-          <div className="space-y-6">
-            {faqItems.map((item, i) => (
-              <div
-                key={i}
-                className="card-glass-cream p-6 rounded-2xl"
-              >
-                <h3 className="text-lg text-[#1A1A18] mb-3 font-medium">{item.question}</h3>
-                <p className="text-[#4A4A45] text-sm">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/faq" className="text-[#A85C30] hover:underline">
-              View all FAQs &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA - dark section */}
-      <section className="section-dark px-6 py-24 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl text-[#F5F0E8] mb-6 font-serif">
-            Ready to Stop Losing Leads?
-          </h2>
-          <p className="text-[#B8B3AA] text-lg mb-8">
-            Book a free 15-minute audit. We&apos;ll show you exactly where
-            you&apos;re losing leads&mdash;whether you hire us or not.
-          </p>
-          <Button href="/contact" variant="primary" size="lg">
-            Book Your Free Audit
-          </Button>
-        </div>
-      </section>
+      {/* 5 · Closing CTA */}
+      <ClosingCTA />
     </>
   );
 }
