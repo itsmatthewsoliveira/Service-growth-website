@@ -137,9 +137,7 @@ export default function GrowthBlueprintPage() {
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-20 pt-36 lg:pt-44 pb-12 lg:pb-16">
           {/* Eyebrow */}
-          <div
-            className="flex justify-center mb-7"
-          >
+          <div className="flex justify-center mb-7">
             <div
               className="inline-flex items-center gap-2.5 uppercase"
               style={{
@@ -151,7 +149,7 @@ export default function GrowthBlueprintPage() {
               }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: ACCENT }} />
-              Free for construction business owners
+              Free 6-question diagnostic
             </div>
           </div>
 
@@ -165,12 +163,12 @@ export default function GrowthBlueprintPage() {
               lineHeight: 0.94,
               letterSpacing: "-0.028em",
               color: CREAM,
-              maxWidth: 1000,
+              maxWidth: 1100,
             }}
           >
-            The exact blueprint
+            See what level
             <br />
-            we used to hit{" "}
+            your business is at —{" "}
             <span
               style={{
                 color: ACCENT,
@@ -178,7 +176,7 @@ export default function GrowthBlueprintPage() {
                 fontFamily: "var(--font-display), 'Instrument Serif', serif",
               }}
             >
-              $100K in 3 months
+              then get the blueprint.
             </span>
           </h1>
 
@@ -189,10 +187,10 @@ export default function GrowthBlueprintPage() {
               fontSize: 17,
               lineHeight: 1.55,
               color: "rgba(252,255,213,0.7)",
-              maxWidth: 560,
+              maxWidth: 640,
             }}
           >
-            Watch the 30-second video. Then grab the full blueprint — free.
+            6 questions. We show you exactly where you're leaking leads + send the full $100K-in-90-days playbook to your inbox. Watch the 30-second preview first.
           </p>
 
           {/* Video */}

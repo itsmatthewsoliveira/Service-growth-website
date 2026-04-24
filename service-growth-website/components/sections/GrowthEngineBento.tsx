@@ -404,8 +404,7 @@ export default function GrowthEngineBento() {
                 color: CREAM,
               }}
             >
-              <span style={{ width: 5, height: 5, borderRadius: 999, background: ACCENT }} />
-              Live · 8s avg
+              Avg response · 8s
             </div>
             {/* Content pinned bottom */}
             <div
