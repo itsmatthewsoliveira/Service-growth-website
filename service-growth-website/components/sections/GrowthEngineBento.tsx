@@ -10,7 +10,7 @@ const FG_RGB = "252,255,213";
 const tone = (a: number) => `rgba(${FG_RGB}, ${a})`;
 
 // Monoline icon set — editorial pictograms
-function MonoIcon({ name, size = 20 }: { name: "phone" | "camera" | "globe" | "chart"; size?: number }) {
+function MonoIcon({ name, size = 20 }: { name: "phone" | "camera" | "globe" | "chart" | "megaphone" | "proof" | "flow"; size?: number }) {
   const props = {
     width: size,
     height: size,
@@ -48,6 +48,47 @@ function MonoIcon({ name, size = 20 }: { name: "phone" | "camera" | "globe" | "c
         <path d="M3.5 12h17" />
         <path d="M12 3.5c3 2.5 4.5 5.5 4.5 8.5S15 18 12 20.5C9 18 7.5 15 7.5 12S9 6 12 3.5z" />
         <circle cx="16.5" cy="8.5" r="1.6" fill={ACCENT} stroke="none" />
+      </svg>
+    );
+  }
+  if (name === "chart") {
+    return (
+      <svg {...props}>
+        <path d="M4 18h16" />
+        <path d="M6 15l4-4 3 2 5-7" />
+        <path d="M18 6h-4M18 6v4" />
+        <circle cx="10" cy="11" r="1.4" fill={ACCENT} stroke="none" />
+      </svg>
+    );
+  }
+  if (name === "megaphone") {
+    return (
+      <svg {...props}>
+        <path d="M5 14H3.8A1.8 1.8 0 0 1 2 12.2v-.4A1.8 1.8 0 0 1 3.8 10H5l11-5v14L5 14z" />
+        <path d="M5 14l2 5h3l-1.8-4.1" />
+        <path d="M19 9.5c1.1 1.4 1.1 3.6 0 5" opacity="0.55" />
+        <circle cx="16" cy="12" r="1.5" fill={ACCENT} stroke="none" />
+      </svg>
+    );
+  }
+  if (name === "proof") {
+    return (
+      <svg {...props}>
+        <rect x="4" y="4" width="16" height="16" rx="2.5" />
+        <path d="M8 9h8M8 13h4" />
+        <path d="M13.5 15.2l1.2 1.2 2.6-3" />
+        <circle cx="8" cy="16" r="1.2" fill={ACCENT} stroke="none" />
+      </svg>
+    );
+  }
+  if (name === "flow") {
+    return (
+      <svg {...props}>
+        <rect x="3.5" y="4" width="6" height="5" rx="1.2" />
+        <rect x="14.5" y="4" width="6" height="5" rx="1.2" />
+        <rect x="9" y="15" width="6" height="5" rx="1.2" />
+        <path d="M9.5 6.5h5M17.5 9v3.5L12 15M6.5 9v3.5L12 15" />
+        <circle cx="12" cy="17.5" r="1" fill={ACCENT} stroke="none" />
       </svg>
     );
   }
@@ -333,6 +374,67 @@ function BookingRail() {
   );
 }
 
+function SystemIconCard({ icon, label }: { icon: "phone" | "camera" | "globe" | "chart" | "megaphone" | "proof" | "flow"; label: string }) {
+  return (
+    <div
+      style={{
+        ...glassCard,
+        borderRadius: 24,
+        padding: 18,
+        minHeight: 130,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        background:
+          "linear-gradient(145deg, rgba(252,255,213,0.075), rgba(29,28,26,0.92) 48%, rgba(226,83,18,0.14))",
+      }}
+    >
+      <IconRing size={46}>
+        <MonoIcon name={icon} size={21} />
+      </IconRing>
+      <div
+        style={{
+          marginTop: 16,
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: 10,
+          lineHeight: 1.35,
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          color: tone(0.66),
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function CommunicationConsole() {
+  const rows = [
+    ["Call", "Answered", "08s"],
+    ["Text", "Qualified", "02m"],
+    ["Email", "Follow-up sent", "Auto"],
+  ];
+  return (
+    <div style={{ ...glassCard, borderRadius: 26, padding: 18, width: "100%" }}>
+      <div className="grid grid-cols-3 gap-2">
+        <SystemIconCard icon="phone" label="Callbot" />
+        <SystemIconCard icon="flow" label="Chatbot" />
+        <SystemIconCard icon="megaphone" label="Autosender" />
+      </div>
+      <div style={{ marginTop: 14, borderTop: `1px solid ${tone(0.1)}` }}>
+        {rows.map(([a, b, c]) => (
+          <div key={a} className="grid grid-cols-[0.7fr_1fr_auto] gap-3 items-center py-3" style={{ borderBottom: `1px solid ${tone(0.08)}` }}>
+            <span style={{ fontSize: 11, color: tone(0.55), fontFamily: "var(--font-mono), ui-monospace, monospace", textTransform: "uppercase" }}>{a}</span>
+            <span style={{ fontSize: 13, color: CREAM }}>{b}</span>
+            <span style={{ fontSize: 12, color: ACCENT, fontWeight: 800 }}>{c}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function IconRing({ children, size = 48 }: { children: React.ReactNode; size?: number }) {
   return (
     <div
@@ -408,7 +510,7 @@ export default function GrowthEngineBento() {
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
-            Installed growth system
+            Three-part AI operating system
           </div>
           <h2
             className="uppercase mx-auto"
@@ -423,9 +525,9 @@ export default function GrowthEngineBento() {
               maxWidth: 960,
             }}
           >
-            Not another agency.{" "}
+            Sales. Communication.{" "}
             <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>
-              A better operator.
+              Marketing.
             </span>
           </h2>
           <p
@@ -439,8 +541,8 @@ export default function GrowthEngineBento() {
               fontFamily: "var(--font-inter), system-ui, sans-serif",
             }}
           >
-            We look at how your company actually wins work, find the drop-offs, then install simple AI systems around the
-            calls, texts, reviews, ads, and website you already use.
+            We look at how your company actually wins work, then install AI agents where money leaks out:
+            sales follow-up, customer communication, and local marketing.
           </p>
         </div>
 
@@ -467,13 +569,13 @@ export default function GrowthEngineBento() {
             }}
           >
             <GlossyMetricCard />
-            <h3 style={{ ...titleText, fontSize: 26 }}>Your lead path, mapped</h3>
+            <h3 style={{ ...titleText, fontSize: 26 }}>Sales managed by AI</h3>
             <p style={{ ...bodyText, maxWidth: 240 }}>
-              We trace where jobs come from, who replies, what gets missed, and what should happen next.
+              Image creation, client response, estimate follow-up, and sales speed systems that help more leads close.
             </p>
           </div>
 
-          {/* Card 2: AI agent — full-bleed anime image, span 2 */}
+          {/* Card 2: Communication console, span 2 */}
           <div
             onMouseEnter={onEnter("ai")}
             onMouseLeave={onLeave}
@@ -481,70 +583,28 @@ export default function GrowthEngineBento() {
             style={{
               ...cardStyle("ai"),
               minHeight: 320,
-              padding: 0,
+              padding: 28,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "flex-end",
-              backgroundImage: "url(/growth-collab.webp)",
-              backgroundSize: "cover",
-              backgroundPosition: "center 30%",
-              backgroundRepeat: "no-repeat",
+              justifyContent: "space-between",
             }}
           >
-            {/* Scrim */}
             <div
               style={{
                 position: "absolute",
                 inset: 0,
-                background: `linear-gradient(180deg, rgba(15,14,16,0.0) 0%, rgba(15,14,16,0.25) 40%, rgba(15,14,16,0.85) 80%, ${INK_CARD} 100%)`,
+                background:
+                  "radial-gradient(circle at 72% 18%, rgba(226,83,18,0.22), transparent 34%), radial-gradient(circle at 16% 100%, rgba(252,255,213,0.06), transparent 34%)",
                 pointerEvents: "none",
               }}
             />
-            {/* Top-left chip */}
-            <div
-              style={{
-                position: "absolute",
-                top: 18,
-                left: 18,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "6px 10px",
-                borderRadius: 999,
-                background: "rgba(15,14,16,0.55)",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                border: `1px solid ${tone(0.18)}`,
-                fontFamily: "var(--font-mono), ui-monospace, monospace",
-                fontSize: 9,
-                fontWeight: 600,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Answer first
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <CommunicationConsole />
             </div>
-            <div style={{ position: "absolute", left: 18, right: 18, top: 62, zIndex: 1 }}>
-              <SignalTiles />
-            </div>
-            {/* Content pinned bottom */}
-            <div
-              style={{
-                position: "relative",
-                padding: 28,
-                zIndex: 1,
-                display: "flex",
-                flexDirection: "column",
-                gap: 12,
-              }}
-            >
-              <IconRing size={40}>
-                <MonoIcon name="phone" size={18} />
-              </IconRing>
-              <h3 style={{ ...titleText, fontSize: 24 }}>Calls and texts covered</h3>
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <h3 style={{ ...titleText, fontSize: 24 }}>Communication managed by AI</h3>
               <p style={{ ...bodyText, marginTop: 0 }}>
-                When your team is busy, the system responds, qualifies, and pushes the next step forward.
+                AI chatbots, callbots, missed-call text-back, email autosenders, and fast handoffs to your team.
               </p>
             </div>
           </div>
@@ -556,13 +616,16 @@ export default function GrowthEngineBento() {
             className="col-span-6 md:col-span-6 lg:col-span-2"
             style={{ ...cardStyle("ads"), minHeight: 320, display: "flex", flexDirection: "column", justifyContent: "center" }}
           >
-            <BookingRail />
-            <div style={{ height: 92, marginTop: 20 }}>
+            <div className="grid grid-cols-2 gap-3">
+              <SystemIconCard icon="megaphone" label="Local channels" />
+              <SystemIconCard icon="chart" label="Booked pipeline" />
+            </div>
+            <div style={{ height: 98, marginTop: 18 }}>
               <LineBars />
             </div>
-            <h3 style={{ ...titleText, marginTop: 16, textAlign: "center" }}>Ads connected to booking</h3>
+            <h3 style={{ ...titleText, marginTop: 16, textAlign: "center" }}>Marketing managed by AI</h3>
             <p style={{ ...bodyText, textAlign: "center" }}>
-              Traffic, landing pages, and follow-up run together so paid leads do not disappear after the click.
+              Yelp, Google, Facebook, Nextdoor, landing pages, and follow-up all tied to actual booked jobs.
             </p>
           </div>
 
@@ -580,9 +643,7 @@ export default function GrowthEngineBento() {
             }}
           >
             <div>
-              <IconRing>
-                <MonoIcon name="camera" size={20} />
-              </IconRing>
+              <SystemIconCard icon="proof" label="Proof engine" />
               <h3 style={{ ...titleText, marginTop: 20 }}>Proof that sells for you</h3>
               <p style={bodyText}>
                 Turn real job photos and reviews into the kind of trust signals buyers check before they call.
@@ -624,9 +685,7 @@ export default function GrowthEngineBento() {
             }}
           >
             <div>
-              <IconRing>
-                <MonoIcon name="globe" size={20} />
-              </IconRing>
+              <SystemIconCard icon="globe" label="Website control center" />
               <h3 style={{ ...titleText, marginTop: 20 }}>Website as the control center</h3>
               <p style={bodyText}>
                 Your website does more than look good. It qualifies visitors and routes them into the right follow-up.

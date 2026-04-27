@@ -11,7 +11,7 @@ const INDUSTRIES = [
     href: "/industries/construction",
     tag: "CONSTRUCTION",
     title: "Pavers, GCs, builders, architects",
-    sub: "We cut our teeth growing an outdoor living company from zero to $100K in 90 days. We know how to bring in high-ticket jobs.",
+    sub: "Custom growth strategies for pavers, builders, architects, and construction teams selling high-ticket work.",
     features: [
       "Speed-to-lead AI (<60s)",
       "Before/after photo magic",
@@ -19,6 +19,7 @@ const INDUSTRIES = [
       "Yelp $600 ad credit",
     ],
     image: "/industry-construction-ai.webp",
+    position: "62% center",
   },
   {
     num: "02",
@@ -33,6 +34,7 @@ const INDUSTRIES = [
       "Dispatch-ready CRM",
     ],
     image: "/growth-collab.webp", // placeholder — user will swap
+    position: "center 30%",
   },
   {
     num: "03",
@@ -47,10 +49,41 @@ const INDUSTRIES = [
       "Insurance-aware intake",
     ],
     image: "/industry-medical-ai.webp",
+    position: "center center",
+  },
+  {
+    num: "04",
+    href: "/contact",
+    tag: "LEGAL",
+    title: "Lawyers, firms, professional services",
+    sub: "Intake, lead response, review proof, and follow-up systems for service-based expert businesses.",
+    features: [
+      "AI intake routing",
+      "Consultation follow-up",
+      "Review + referral loops",
+      "Local trust campaigns",
+    ],
+    image: "/professional-services-ai.webp",
+    position: "center center",
+  },
+  {
+    num: "05",
+    href: "/contact",
+    tag: "LOCAL EXPERTS",
+    title: "Tax experts, consultants, real businesses",
+    sub: "For businesses where trust, speed, and clear communication turn demand into booked appointments.",
+    features: [
+      "Email autosenders",
+      "Google + Yelp strategy",
+      "Facebook + Nextdoor campaigns",
+      "Custom AI workflows",
+    ],
+    image: "/growth-collab.webp",
+    position: "center 35%",
   },
 ];
 
-function ImageSlot({ src, alt }: { src: string; alt: string }) {
+function ImageSlot({ src, alt, position = "center" }: { src: string; alt: string; position?: string }) {
   return (
     <div
       className="relative overflow-hidden w-full"
@@ -65,7 +98,7 @@ function ImageSlot({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ filter: "contrast(1.05) brightness(0.92)" }}
+        style={{ filter: "contrast(1.05) brightness(0.92)", objectPosition: position }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
@@ -111,9 +144,9 @@ export default function IndustriesEditorial() {
                 color: INK,
               }}
             >
-              Built for the{" "}
+              Real businesses.{" "}
               <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>
-                trades
+                Real growth.
               </span>
             </h2>
           </div>
@@ -126,7 +159,7 @@ export default function IndustriesEditorial() {
               color: "rgba(16,16,15,0.62)",
             }}
           >
-            We don&apos;t sell generic agency packages. Every stack is calibrated to the rhythm of the service business it powers.
+            We don&apos;t sell generic agency packages. Every stack is calibrated to the rhythm, channels, and sales cycle of the business it powers.
           </p>
         </div>
 
@@ -141,7 +174,7 @@ export default function IndustriesEditorial() {
               href={ind.href}
               className="group flex flex-col"
             >
-              <ImageSlot src={ind.image} alt={ind.title} />
+              <ImageSlot src={ind.image} alt={ind.title} position={ind.position} />
 
               <div
                 className="mt-6 flex items-center justify-between"
