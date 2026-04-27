@@ -24,7 +24,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121114] border-t border-white/5 py-12 md:py-16 px-4 md:px-6 text-[#B8B3AA]">
+    <footer className="bg-[#10100F] border-t border-white/5 py-12 md:py-16 px-4 md:px-6 text-[#B8B3AA]">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -41,8 +41,8 @@ export default function Footer() {
               for operators.
             </p>
             <div className="space-y-2 text-sm">
-              <a href="tel:+19044542240" className="block text-[#B8B3AA] hover:text-[#FF6A00] transition-colors">(904) 454-2240</a>
-              <a href="mailto:hello@servicegrowth.ai" className="block text-[#B8B3AA] hover:text-[#FF6A00] transition-colors">hello@servicegrowth.ai</a>
+              <a href="tel:+19044542240" className="block text-[#B8B3AA] hover:text-[#E25312] transition-colors">(904) 454-2240</a>
+              <a href="mailto:hello@servicegrowth.ai" className="block text-[#B8B3AA] hover:text-[#E25312] transition-colors">hello@servicegrowth.ai</a>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors"
+                    className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -104,11 +104,11 @@ export default function Footer() {
             © {new Date().getFullYear()} ServiceGrowth.ai. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
-            <Link href="/community" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">The Growth Lab</Link>
-            <Link href="/free-website" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Free Website</Link>
-            <Link href="/privacy" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Terms</Link>
-            <Link href="/contact" className="text-[#7A766E] text-sm hover:text-[#FF6A00] transition-colors">Contact</Link>
+            <Link href="/community" className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors">The Growth Lab</Link>
+            <Link href="/free-website" className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors">Free Website</Link>
+            <Link href="/privacy" className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors">Terms</Link>
+            <Link href="/contact" className="text-[#7A766E] text-sm hover:text-[#E25312] transition-colors">Contact</Link>
           </div>
         </div>
       </div>

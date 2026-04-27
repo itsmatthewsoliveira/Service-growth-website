@@ -5,8 +5,8 @@ import { useState } from "react";
 import { Loader2, CheckCircle } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const EXPECTATIONS = [
@@ -53,7 +53,7 @@ export default function ContactPage() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/growth-blueprint", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -78,7 +78,7 @@ export default function ContactPage() {
   const inputCls = "w-full px-4 py-3.5 bg-white border text-[15px] focus:outline-none";
   const inputStyle: React.CSSProperties = {
     fontFamily: "var(--font-inter), system-ui, sans-serif",
-    borderColor: "rgba(18,17,20,0.15)",
+    borderColor: "rgba(16,16,15,0.15)",
     borderRadius: 6,
     color: INK,
   };
@@ -134,14 +134,14 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {EXPECTATIONS.map((item) => (
               <div key={item.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 56, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{item.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.08, letterSpacing: "-0.01em", color: INK }}>{item.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{item.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
               </h2>
 
               {state === "success" ? (
-                <div style={{ background: "#0F0E10", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: "40px 36px", textAlign: "center" }}>
+                <div style={{ background: "#1D1C1A", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: "40px 36px", textAlign: "center" }}>
                   <div className="inline-flex items-center justify-center mx-auto mb-5" style={{ width: 56, height: 56, borderRadius: 999, background: `${ACCENT}1A`, border: `1px solid ${ACCENT}55` }}>
                     <CheckCircle className="w-7 h-7" style={{ color: ACCENT }} />
                   </div>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ background: "#0F0E10", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: "32px 32px 28px" }} className="space-y-5">
+                <form onSubmit={handleSubmit} style={{ background: "#1D1C1A", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: "32px 32px 28px" }} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className={labelCls} style={labelStyle}>Name</label>
@@ -253,18 +253,18 @@ export default function ContactPage() {
 
             {/* Right: direct + stats */}
             <div className="lg:col-span-4 flex flex-col gap-8">
-              <div style={{ background: "#0F0E10", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: 32 }}>
+              <div style={{ background: "#1D1C1A", border: "1px solid rgba(252,255,213,0.12)", borderRadius: 14, padding: 32 }}>
                 <div className="uppercase mb-5" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 11, letterSpacing: "0.22em", color: ACCENT, fontWeight: 700 }}>
                   Prefer direct?
                 </div>
                 <a href="mailto:hello@servicegrowth.ai" className="block mb-6 group">
                   <div className="uppercase mb-2" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 10, letterSpacing: "0.22em", color: "rgba(252,255,213,0.55)", fontWeight: 500 }}>Email</div>
-                  <div className="group-hover:text-[#FF6A00] transition-colors" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, letterSpacing: "-0.01em", color: CREAM }}>hello@servicegrowth.ai</div>
+                  <div className="group-hover:text-[#E25312] transition-colors" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, letterSpacing: "-0.01em", color: CREAM }}>hello@servicegrowth.ai</div>
                 </a>
                 <div className="h-px mb-6" style={{ background: "rgba(252,255,213,0.12)" }} />
                 <a href="tel:+19044542240" className="block group">
                   <div className="uppercase mb-2" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 10, letterSpacing: "0.22em", color: "rgba(252,255,213,0.55)", fontWeight: 500 }}>Phone</div>
-                  <div className="group-hover:text-[#FF6A00] transition-colors" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 26, letterSpacing: "-0.01em", color: CREAM }}>(904) 454-2240</div>
+                  <div className="group-hover:text-[#E25312] transition-colors" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 26, letterSpacing: "-0.01em", color: CREAM }}>(904) 454-2240</div>
                 </a>
               </div>
 

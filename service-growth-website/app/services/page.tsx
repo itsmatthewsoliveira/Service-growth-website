@@ -14,7 +14,7 @@ const SERVICES = [
     trail: "— not just exist",
     body: "Your website should be your hardest-working employee. We build conversion-focused, mobile-first sites that load fast, rank on Google, and turn visitors into booked jobs.",
     bullets: ["Custom design built for your service", "Mobile-first, fast-loading", "Local SEO baked in", "Lead capture wired to your CRM"],
-    image: "/hero-climb.png",
+    image: "/hero-climb.webp",
     imagePosition: "right" as const,
   },
   {
@@ -26,7 +26,7 @@ const SERVICES = [
     trail: "— not tire-kickers",
     body: "Stop wasting money on ads that don't convert. We run Google and Meta campaigns that put you in front of people actively searching for your services right now.",
     bullets: ["Google Ads (Search + Local)", "Meta / Facebook / Instagram", "Retargeting funnels", "Weekly reporting you can read"],
-    image: "/growth-collab.png",
+    image: "/growth-collab.webp",
     imagePosition: "left" as const,
   },
   {
@@ -38,7 +38,7 @@ const SERVICES = [
     trail: "actually is",
     body: "Your competitors with worse work are winning jobs because their photos look better. We fix that — professional visual content, before/after magic, and social content that sells itself.",
     bullets: ["iPhone → editorial photo transformation", "3D renders + mood boards", "Video animation for social", "Full social content calendar"],
-    image: "/hero-climb.png",
+    image: "/hero-climb.webp",
     imagePosition: "right" as const,
   },
   {
@@ -49,7 +49,7 @@ const SERVICES = [
     accent: "another lead.",
     body: "Every missed call is a missed job. Our AI systems respond in under 60 seconds, qualify leads automatically, and book appointments while you're on the jobsite.",
     bullets: ["AI lead capture + qualification", "Voice bot — AI answers every call", "SMS/email follow-up sequences", "Full CRM + calendar integration"],
-    image: "/growth-collab.png",
+    image: "/growth-collab.webp",
     imagePosition: "left" as const,
   },
 ];

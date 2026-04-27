@@ -46,18 +46,18 @@ export default function Navbar() {
             scrolled ? "py-1.5 px-5" : "py-2 px-6"
           }`}
           style={{
-            background: "rgba(18,17,20,0.55)",
+            background: "rgba(16,16,15,0.55)",
             backdropFilter: "blur(22px) saturate(160%)",
             WebkitBackdropFilter: "blur(22px) saturate(160%)",
             border: "1px solid rgba(252,255,213,0.12)",
             borderRadius: 16,
-            boxShadow: "0 8px 32px rgba(18,17,20,0.25)",
+            boxShadow: "0 8px 32px rgba(16,16,15,0.25)",
           }}
         >
           {/* Logo mark */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <img
-              src="/logo-v2.png"
+              src="/logo-v2-small.webp"
               alt="Service Growth AI"
               className={`transition-all duration-300 ${scrolled ? "w-11 h-11" : "w-14 h-14"}`}
               style={{ objectFit: "contain" }}
@@ -104,7 +104,7 @@ export default function Navbar() {
                         >
                           <div
                             style={{
-                              background: "rgba(18,17,20,0.9)",
+                              background: "rgba(16,16,15,0.9)",
                               backdropFilter: "blur(22px) saturate(160%)",
                               WebkitBackdropFilter: "blur(22px) saturate(160%)",
                               border: "1px solid rgba(252,255,213,0.12)",
@@ -132,7 +132,7 @@ export default function Navbar() {
                                       fontFamily: "var(--font-mono), ui-monospace, monospace",
                                       fontSize: 9,
                                       letterSpacing: "0.2em",
-                                      color: "#FF6A00",
+                                      color: "#E25312",
                                       fontWeight: 700,
                                     }}
                                   >
@@ -179,14 +179,14 @@ export default function Navbar() {
       <nav
         className={`lg:hidden fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#121114]/85 backdrop-blur-2xl backdrop-saturate-150 border-b border-[#FCFFD5]/10"
-            : "bg-[#121114]/40 backdrop-blur-xl"
+            ? "bg-[#10100F]/85 backdrop-blur-2xl backdrop-saturate-150 border-b border-[#FCFFD5]/10"
+            : "bg-[#10100F]/40 backdrop-blur-xl"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center">
-              <img src="/logo-v2.png" alt="Service Growth AI" className="w-10 h-10 object-contain" />
+              <img src="/logo-v2-small.webp" alt="Service Growth AI" className="w-10 h-10 object-contain" />
             </Link>
 
             <button

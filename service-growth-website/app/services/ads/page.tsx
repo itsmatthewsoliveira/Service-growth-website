@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const PLATFORMS = [
@@ -31,7 +31,7 @@ export default function AdsPage() {
         subhead="Stop wasting money on clicks from tire-kickers. We run Google, Meta, and Yelp campaigns tuned for buyer intent — so every dollar lands in front of someone actually ready to hire."
         primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Ads campaign in flight — anime placeholder"
       />
 
@@ -47,13 +47,13 @@ export default function AdsPage() {
               <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>one funnel.</span>
             </h2>
           </div>
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {PLATFORMS.map((p) => (
               <div key={p.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 56, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{p.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.08, letterSpacing: "-0.01em", color: INK }}>{p.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{p.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{p.body}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export default function AdsPage() {
           "Weekly optimization — test, kill, scale",
         ]}
         cta={{ label: "See pricing", href: "/pricing" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="Ad performance dashboard — anime placeholder"
         imagePosition="right"
       />

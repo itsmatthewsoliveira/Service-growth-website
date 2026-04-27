@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Zap, Mail, MessageSquare, CheckCircle, Loader2 } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -84,7 +84,7 @@ export default function DemoPage() {
 
   const inputStyle: React.CSSProperties = {
     fontFamily: "var(--font-inter), system-ui, sans-serif",
-    borderColor: "rgba(18,17,20,0.15)",
+    borderColor: "rgba(16,16,15,0.15)",
     borderRadius: 6,
     color: INK,
   };
@@ -136,7 +136,7 @@ export default function DemoPage() {
                     fontFamily: "var(--font-inter), system-ui, sans-serif",
                     fontSize: 15,
                     lineHeight: 1.55,
-                    color: "rgba(18,17,20,0.68)",
+                    color: "rgba(16,16,15,0.68)",
                   }}
                 >
                   {s.body}
@@ -165,7 +165,7 @@ export default function DemoPage() {
             <div
               className="text-center"
               style={{
-                background: "#0F0E10",
+                background: "#1D1C1A",
                 border: "1px solid rgba(252,255,213,0.12)",
                 borderRadius: 14,
                 padding: "48px 36px",
@@ -304,7 +304,7 @@ export default function DemoPage() {
           ) : (
             <div
               style={{
-                background: "#0F0E10",
+                background: "#1D1C1A",
                 border: "1px solid rgba(252,255,213,0.12)",
                 borderRadius: 14,
                 padding: "36px 32px",

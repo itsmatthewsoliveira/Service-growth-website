@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const ACCENT = "#FF6A00";
+const ACCENT = "#E25312";
 const CREAM = "#FCFFD5";
-const INK = "#121114";
+const INK = "#10100F";
 
 export interface EditorialBlockProps {
   theme?: "light" | "dark"; // light = white bg, dark = ink bg
@@ -39,9 +39,9 @@ export default function EditorialBlock({
   const isDark = theme === "dark";
   const bg = isDark ? INK : "#FFFFFF";
   const fg = isDark ? CREAM : INK;
-  const body_color = isDark ? "rgba(252,255,213,0.7)" : "rgba(18,17,20,0.7)";
-  const line = isDark ? "rgba(252,255,213,0.14)" : "rgba(18,17,20,0.12)";
-  const muted = isDark ? "rgba(252,255,213,0.6)" : "rgba(18,17,20,0.6)";
+  const body_color = isDark ? "rgba(252,255,213,0.7)" : "rgba(16,16,15,0.7)";
+  const line = isDark ? "rgba(252,255,213,0.14)" : "rgba(16,16,15,0.12)";
+  const muted = isDark ? "rgba(252,255,213,0.6)" : "rgba(16,16,15,0.6)";
 
   const imageLeft = imagePosition === "left";
   const hasImage = Boolean(image);
@@ -72,7 +72,7 @@ export default function EditorialBlock({
                 style={{
                   aspectRatio: "4 / 5",
                   maxHeight: "min(640px, 72vh)",
-                  background: isDark ? "#0F0E10" : "#F5F5F0",
+                  background: isDark ? "#1D1C1A" : "#F5F5F0",
                   border: `1px solid ${line}`,
                   borderRadius: 8,
                 }}
@@ -88,8 +88,8 @@ export default function EditorialBlock({
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background: isDark
-                      ? "linear-gradient(180deg, rgba(18,17,20,0) 50%, rgba(18,17,20,0.55) 100%)"
-                      : "linear-gradient(180deg, rgba(18,17,20,0) 70%, rgba(18,17,20,0.15) 100%)",
+                      ? "linear-gradient(180deg, rgba(16,16,15,0) 50%, rgba(16,16,15,0.55) 100%)"
+                      : "linear-gradient(180deg, rgba(16,16,15,0) 70%, rgba(16,16,15,0.15) 100%)",
                   }}
                 />
               </div>

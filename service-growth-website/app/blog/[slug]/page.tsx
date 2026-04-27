@@ -80,14 +80,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-[#121114]/60 hover:text-[#FF6A00] text-sm font-medium mb-8 transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#10100F]/60 hover:text-[#E25312] text-sm font-medium mb-8 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             All posts
           </Link>
 
           <div className="flex items-center gap-2 mb-5">
-            <time className="text-[11px] uppercase tracking-[0.15em] font-semibold text-[#121114]/40">
+            <time className="text-[11px] uppercase tracking-[0.15em] font-semibold text-[#10100F]/40">
               {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -97,18 +97,18 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.frontmatter.tags?.map((tag) => (
               <span
                 key={tag}
-                className="text-[10px] uppercase tracking-[0.1em] font-medium text-[#FF6A00] bg-[#FF6A00]/8 px-2 py-0.5 rounded-full"
+                className="text-[10px] uppercase tracking-[0.1em] font-medium text-[#E25312] bg-[#E25312]/8 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-semibold text-[#121114] leading-[1.05] tracking-tight mb-6">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-semibold text-[#10100F] leading-[1.05] tracking-tight mb-6">
             {post.frontmatter.title}
           </h1>
 
-          <p className="text-[#121114]/60 text-lg md:text-xl leading-relaxed font-light mb-10">
+          <p className="text-[#10100F]/60 text-lg md:text-xl leading-relaxed font-light mb-10">
             {post.frontmatter.excerpt}
           </p>
 
@@ -124,10 +124,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             </ReactMarkdown>
           </div>
 
-          <div className="mt-12 pt-6 border-t border-[#121114]/10 flex items-center justify-between text-xs text-[#121114]/40">
+          <div className="mt-12 pt-6 border-t border-[#10100F]/10 flex items-center justify-between text-xs text-[#10100F]/40">
             <a
               href={`/blog/${slug}.md`}
-              className="inline-flex items-center gap-1.5 hover:text-[#FF6A00] transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#E25312] transition-colors"
               title="Raw markdown — for AI assistants and machine readers"
             >
               <FileCode className="w-3.5 h-3.5" />

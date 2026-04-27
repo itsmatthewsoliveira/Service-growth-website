@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const STEPS = [
@@ -52,7 +52,7 @@ export default function HowItWorksPage() {
         subhead="We handle everything. You fill out a questionnaire, we build your systems, and you're live in two weeks. Total time from you: about two hours."
         primaryCta={{ label: "Book discovery call", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Team building the AI stack — anime placeholder"
       />
 
@@ -103,14 +103,14 @@ export default function HowItWorksPage() {
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 16,
                 lineHeight: 1.55,
-                color: "rgba(18,17,20,0.62)",
+                color: "rgba(16,16,15,0.62)",
               }}
             >
               Every step is timeboxed. No three-month &ldquo;discovery phase&rdquo; that burns a quarter before you see value.
             </p>
           </div>
 
-          <div className="h-px mb-16" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-16" style={{ background: "rgba(16,16,15,0.12)" }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
             {STEPS.map((s) => (
@@ -136,7 +136,7 @@ export default function HowItWorksPage() {
                       fontFamily: "var(--font-mono), ui-monospace, monospace",
                       fontSize: 11,
                       letterSpacing: "0.22em",
-                      color: "rgba(18,17,20,0.55)",
+                      color: "rgba(16,16,15,0.55)",
                       fontWeight: 500,
                     }}
                   >
@@ -161,7 +161,7 @@ export default function HowItWorksPage() {
                     fontFamily: "var(--font-inter), system-ui, sans-serif",
                     fontSize: 15,
                     lineHeight: 1.55,
-                    color: "rgba(18,17,20,0.68)",
+                    color: "rgba(16,16,15,0.68)",
                   }}
                 >
                   {s.body}
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
           "Full CRM integration + testing",
         ]}
         cta={{ label: "See what's included", href: "/pricing" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="Operators building the AI stack — anime placeholder"
         imagePosition="right"
       />
@@ -271,13 +271,13 @@ export default function HowItWorksPage() {
                     >
                       {item.time}
                     </span>
-                    <span style={{ color: "rgba(18,17,20,0.8)" }}>{item.task}</span>
+                    <span style={{ color: "rgba(16,16,15,0.8)" }}>{item.task}</span>
                   </li>
                 ))}
               </ul>
               <div
                 className="pt-6 border-t"
-                style={{ borderColor: "rgba(18,17,20,0.12)" }}
+                style={{ borderColor: "rgba(16,16,15,0.12)" }}
               >
                 <div
                   className="uppercase mb-2"
@@ -285,7 +285,7 @@ export default function HowItWorksPage() {
                     fontFamily: "var(--font-mono), ui-monospace, monospace",
                     fontSize: 11,
                     letterSpacing: "0.22em",
-                    color: "rgba(18,17,20,0.55)",
+                    color: "rgba(16,16,15,0.55)",
                     fontWeight: 500,
                   }}
                 >
@@ -328,7 +328,7 @@ export default function HowItWorksPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 15,
                       lineHeight: 1.5,
-                      color: "rgba(18,17,20,0.82)",
+                      color: "rgba(16,16,15,0.82)",
                     }}
                   >
                     <span

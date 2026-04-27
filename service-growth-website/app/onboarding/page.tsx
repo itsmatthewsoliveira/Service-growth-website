@@ -12,7 +12,7 @@ export default function OnboardingPage() {
     <>
       {/* Hero — section-dark */}
       <section className="section-dark relative pt-24 pb-16 px-6 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(255, 106, 0,0.10)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: "rgba(226, 83, 18,0.10)" }} />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
@@ -21,12 +21,12 @@ export default function OnboardingPage() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm mb-6"
             style={{
-              border: "1px solid rgba(255, 106, 0,0.25)",
-              backgroundColor: "rgba(255, 106, 0,0.08)",
+              border: "1px solid rgba(226, 83, 18,0.25)",
+              backgroundColor: "rgba(226, 83, 18,0.08)",
               color: "#B8B3AA",
             }}
           >
-            <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#E25312] animate-pulse" />
             {ts("heroBadge", lang)}
           </motion.div>
 
@@ -38,7 +38,7 @@ export default function OnboardingPage() {
             style={{ color: "#FCFFD5" }}
           >
             {ts("heroTitle1", lang)}{" "}
-            <span className="italic" style={{ color: "#FF6A00" }}>{ts("heroTitle2", lang)}</span>
+            <span className="italic" style={{ color: "#E25312" }}>{ts("heroTitle2", lang)}</span>
             <br />
             {ts("heroTitle3", lang)}
           </motion.h1>

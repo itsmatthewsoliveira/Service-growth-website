@@ -4,8 +4,8 @@ import { useState } from "react";
 import PageHero from "@/components/sections/PageHero";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 const SECTIONS = [
   {
@@ -81,7 +81,7 @@ const SECTIONS = [
 function AccordionItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ borderBottom: "1px solid rgba(18,17,20,0.1)" }}>
+    <div style={{ borderBottom: "1px solid rgba(16,16,15,0.1)" }}>
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left"
@@ -120,7 +120,7 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
             fontFamily: "var(--font-inter), system-ui, sans-serif",
             fontSize: 16,
             lineHeight: 1.6,
-            color: "rgba(18,17,20,0.72)",
+            color: "rgba(16,16,15,0.72)",
             maxWidth: 720,
           }}
         >

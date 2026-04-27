@@ -165,31 +165,31 @@ export default function DiagnosticChat() {
   return (
     <div className="relative w-full max-w-2xl mx-auto">
       {/* Glow behind card */}
-      <div className="absolute -inset-8 bg-[#FF6A00]/10 rounded-[32px] blur-3xl pointer-events-none" />
+      <div className="absolute -inset-8 bg-[#E25312]/10 rounded-[32px] blur-3xl pointer-events-none" />
 
-      <div className="relative bg-white border border-[#121114]/[0.08] rounded-2xl shadow-[0_1px_3px_rgba(18, 17, 20,0.04),0_20px_60px_-15px_rgba(18, 17, 20,0.15)] overflow-hidden">
+      <div className="relative bg-white border border-[#10100F]/[0.08] rounded-2xl shadow-[0_1px_3px_rgba(16, 16, 15,0.04),0_20px_60px_-15px_rgba(16, 16, 15,0.15)] overflow-hidden">
         {/* Header */}
-        <div className="px-5 py-4 border-b border-[#121114]/[0.06] flex items-center gap-3 bg-[#FCFFD5]/40">
+        <div className="px-5 py-4 border-b border-[#10100F]/[0.06] flex items-center gap-3 bg-[#FCFFD5]/40">
           <div className="relative">
-            <div className="w-9 h-9 rounded-full bg-[#FF6A00] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-9 h-9 rounded-full bg-[#E25312] flex items-center justify-center text-white font-bold text-sm">
               A
             </div>
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#4ADE80] border-2 border-white rounded-full" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <p className="font-heading font-bold text-[#121114] text-[15px] tracking-tight">
+              <p className="font-heading font-bold text-[#10100F] text-[15px] tracking-tight">
                 Alex
               </p>
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#121114]/40 font-semibold">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#10100F]/40 font-semibold">
                 ServiceGrowth AI
               </span>
             </div>
-            <p className="text-[#121114]/50 text-xs">
+            <p className="text-[#10100F]/50 text-xs">
               Qualifying leads · Replies in seconds
             </p>
           </div>
-          <div className="flex items-center gap-1 text-[#121114]/40 text-[10px]">
+          <div className="flex items-center gap-1 text-[#10100F]/40 text-[10px]">
             <Shield className="w-3 h-3" />
             <span>Secure</span>
           </div>
@@ -214,8 +214,8 @@ export default function DiagnosticChat() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed ${
                     m.role === "user"
-                      ? "bg-[#121114] text-[#FCFFD5] rounded-br-md"
-                      : "bg-white border border-[#121114]/[0.08] text-[#121114] rounded-bl-md shadow-sm"
+                      ? "bg-[#10100F] text-[#FCFFD5] rounded-br-md"
+                      : "bg-white border border-[#10100F]/[0.08] text-[#10100F] rounded-bl-md shadow-sm"
                   }`}
                 >
                   {m.content}
@@ -230,11 +230,11 @@ export default function DiagnosticChat() {
               animate={{ opacity: 1 }}
               className="flex justify-start"
             >
-              <div className="bg-white border border-[#121114]/[0.08] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm flex items-center gap-1.5">
+              <div className="bg-white border border-[#10100F]/[0.08] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm flex items-center gap-1.5">
                 {[0, 150, 300].map((d) => (
                   <motion.span
                     key={d}
-                    className="w-1.5 h-1.5 rounded-full bg-[#FF6A00]/60"
+                    className="w-1.5 h-1.5 rounded-full bg-[#E25312]/60"
                     animate={{ opacity: [0.3, 1, 0.3] }}
                     transition={{
                       duration: 1.2,
@@ -253,10 +253,10 @@ export default function DiagnosticChat() {
               animate={{ opacity: 1, y: 0 }}
               className="pt-3"
             >
-              <div className="bg-[#121114] rounded-2xl p-5 text-[#FCFFD5]">
+              <div className="bg-[#10100F] rounded-2xl p-5 text-[#FCFFD5]">
                 <div className="flex items-center gap-2 mb-3">
-                  <Check className="w-4 h-4 text-[#FF6A00]" />
-                  <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#FF6A00]">
+                  <Check className="w-4 h-4 text-[#E25312]" />
+                  <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#E25312]">
                     Your Diagnostic
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export default function DiagnosticChat() {
                         href={submitted.result.calendly_url || "#"}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF6A00] hover:bg-[#D4804A] text-white font-semibold text-sm transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#E25312] hover:bg-[#C65320] text-white font-semibold text-sm transition-colors"
                       >
                         Skip the wait — pick a time now
                         <ArrowRight className="w-4 h-4" />
@@ -286,7 +286,7 @@ export default function DiagnosticChat() {
                       href={submitted.result.calendly_url || "#"}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF6A00] hover:bg-[#D4804A] text-white font-semibold text-sm transition-colors"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#E25312] hover:bg-[#C65320] text-white font-semibold text-sm transition-colors"
                     >
                       Pick a time on the calendar
                       <ArrowRight className="w-4 h-4" />
@@ -311,7 +311,7 @@ export default function DiagnosticChat() {
         </div>
 
         {/* Input */}
-        <div className="px-4 py-3 border-t border-[#121114]/[0.06] bg-white">
+        <div className="px-4 py-3 border-t border-[#10100F]/[0.06] bg-white">
           <div className="flex items-center gap-2">
             <input
               ref={inputRef}
@@ -321,13 +321,13 @@ export default function DiagnosticChat() {
               onKeyDown={onKey}
               placeholder={placeholder}
               disabled={loading || !!submitted}
-              className="flex-1 px-4 py-2.5 rounded-xl bg-[#FCFFD5]/60 border border-[#121114]/10 text-[#121114] placeholder:text-[#121114]/40 focus:outline-none focus:border-[#FF6A00]/50 focus:ring-1 focus:ring-[#FF6A00]/30 text-[15px] transition-colors disabled:opacity-50"
+              className="flex-1 px-4 py-2.5 rounded-xl bg-[#FCFFD5]/60 border border-[#10100F]/10 text-[#10100F] placeholder:text-[#10100F]/40 focus:outline-none focus:border-[#E25312]/50 focus:ring-1 focus:ring-[#E25312]/30 text-[15px] transition-colors disabled:opacity-50"
               autoComplete="off"
             />
             <button
               onClick={sendMessage}
               disabled={loading || !input.trim() || !!submitted}
-              className="w-10 h-10 flex-shrink-0 rounded-xl bg-[#FF6A00] hover:bg-[#D4804A] text-white flex items-center justify-center transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-10 h-10 flex-shrink-0 rounded-xl bg-[#E25312] hover:bg-[#C65320] text-white flex items-center justify-center transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               aria-label="Send"
             >
               {loading ? (
@@ -337,7 +337,7 @@ export default function DiagnosticChat() {
               )}
             </button>
           </div>
-          <p className="text-[10px] text-[#121114]/40 mt-2 text-center tracking-tight">
+          <p className="text-[10px] text-[#10100F]/40 mt-2 text-center tracking-tight">
             Chat with Alex · Your answers go to our sales team · We never spam
           </p>
         </div>

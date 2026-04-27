@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const PAINS = [
@@ -32,8 +32,8 @@ export default function ConstructionPage() {
         subhead="Pavers, GCs, builders, architects, remodelers. We cut our teeth growing an outdoor living company zero-to-$100K in 90 days. We know construction — and we know how to win high-ticket jobs."
         primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        image="/hero-climb.png"
-        imageAlt="Construction crew on site — anime placeholder"
+        image="/industry-construction-ai.webp"
+        imageAlt="Construction operator reviewing plans with an AI assistant on a job site"
       />
 
       {/* Pain points — LIGHT */}
@@ -49,13 +49,13 @@ export default function ConstructionPage() {
               <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>hit a ceiling.</span>
             </h2>
           </div>
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
           <div className="grid md:grid-cols-2 gap-10 lg:gap-14">
             {PAINS.map((p) => (
               <div key={p.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 52, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{p.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 26, lineHeight: 1.08, letterSpacing: "-0.015em", color: INK }}>{p.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{p.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{p.body}</p>
               </div>
             ))}
           </div>
@@ -77,8 +77,8 @@ export default function ConstructionPage() {
           "Every system documented, tested, and transferred to clients",
         ]}
         cta={{ label: "Read the story", href: "/about" }}
-        image="/growth-collab.png"
-        imageAlt="Matthews on the job — anime placeholder"
+        image="/industry-construction-ai.webp"
+        imageAlt="Construction growth system installed around field operations"
         imagePosition="right"
       />
 

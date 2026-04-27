@@ -6,8 +6,8 @@ import { Play, Check } from "lucide-react";
 import DiagnosticChat from "@/components/DiagnosticChat";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 // ─── Vimeo teaser video ────────────────────────────────────────────────────
@@ -199,7 +199,7 @@ export default function GrowthBlueprintPage() {
               className="relative overflow-hidden group"
               style={{
                 aspectRatio: "16/9",
-                background: "#0F0E10",
+                background: "#1D1C1A",
                 border: "1px solid rgba(252,255,213,0.12)",
                 borderRadius: 14,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.35)",
@@ -220,7 +220,7 @@ export default function GrowthBlueprintPage() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(to top, rgba(18,17,20,0.65), rgba(18,17,20,0.2) 40%, transparent)",
+                        "linear-gradient(to top, rgba(16,16,15,0.65), rgba(16,16,15,0.2) 40%, transparent)",
                     }}
                   />
                   <div className="relative z-10 flex flex-col items-center">
@@ -479,7 +479,7 @@ export default function GrowthBlueprintPage() {
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 16,
                 lineHeight: 1.55,
-                color: "rgba(18,17,20,0.62)",
+                color: "rgba(16,16,15,0.62)",
                 maxWidth: 560,
               }}
             >
@@ -495,7 +495,7 @@ export default function GrowthBlueprintPage() {
               fontFamily: "var(--font-mono), ui-monospace, monospace",
               fontSize: 10,
               letterSpacing: "0.22em",
-              color: "rgba(18,17,20,0.5)",
+              color: "rgba(16,16,15,0.5)",
               fontWeight: 500,
             }}
           >
@@ -641,7 +641,7 @@ export default function GrowthBlueprintPage() {
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 16,
                 lineHeight: 1.55,
-                color: "rgba(18,17,20,0.6)",
+                color: "rgba(16,16,15,0.6)",
                 maxWidth: 640,
               }}
             >
@@ -683,7 +683,7 @@ export default function GrowthBlueprintPage() {
                     fontFamily: "var(--font-inter), system-ui, sans-serif",
                     fontSize: 15,
                     lineHeight: 1.55,
-                    color: "rgba(18,17,20,0.68)",
+                    color: "rgba(16,16,15,0.68)",
                   }}
                 >
                   {s.body}

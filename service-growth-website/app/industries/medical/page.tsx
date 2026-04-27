@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const COMPLIANCE = [
@@ -31,8 +31,8 @@ export default function MedicalPage() {
         subhead="Dentists, chiropractors, med spas. HIPAA-compliant patient reactivation, appointment reminders, and a review flywheel — so your schedule stays booked without pulling front-desk time."
         primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        image="/growth-collab.png"
-        imageAlt="Medical practice — anime placeholder"
+        image="/industry-medical-ai.webp"
+        imageAlt="Medical spa front desk supported by an AI workflow assistant"
       />
 
       {/* Compliance badge block — DARK editorial */}
@@ -49,8 +49,8 @@ export default function MedicalPage() {
           "Front-desk handoff flows, not replacement",
         ]}
         cta={{ label: "See how it works", href: "/how-it-works" }}
-        image="/hero-climb.png"
-        imageAlt="Compliance + stack — anime placeholder"
+        image="/industry-medical-ai.webp"
+        imageAlt="Patient management workflow supported by AI inside a medical practice"
         imagePosition="left"
       />
 
@@ -67,13 +67,13 @@ export default function MedicalPage() {
               <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>practice.</span>
             </h2>
           </div>
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {COMPLIANCE.map((c) => (
               <div key={c.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 56, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{c.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.08, letterSpacing: "-0.01em", color: INK }}>{c.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{c.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{c.body}</p>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 const FG_RGB = "252,255,213";
 const tone = (a: number) => `rgba(${FG_RGB}, ${a})`;

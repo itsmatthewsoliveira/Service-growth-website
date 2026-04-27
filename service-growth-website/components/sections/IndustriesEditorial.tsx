@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 const INDUSTRIES = [
   {
@@ -18,7 +18,7 @@ const INDUSTRIES = [
       "3D renders + mood boards",
       "Yelp $600 ad credit",
     ],
-    image: "/hero-climb.png", // placeholder — user will swap
+    image: "/industry-construction-ai.webp",
   },
   {
     num: "02",
@@ -32,7 +32,7 @@ const INDUSTRIES = [
       "Review automation",
       "Dispatch-ready CRM",
     ],
-    image: "/growth-collab.png", // placeholder — user will swap
+    image: "/growth-collab.webp", // placeholder — user will swap
   },
   {
     num: "03",
@@ -46,20 +46,18 @@ const INDUSTRIES = [
       "HIPAA compliant stack",
       "Insurance-aware intake",
     ],
-    image: "/hero-climb.png", // placeholder — user will swap
+    image: "/industry-medical-ai.webp",
   },
 ];
 
 function ImageSlot({ src, alt }: { src: string; alt: string }) {
-  // Placeholder container — user will drop anime art here.
-  // Rendering the existing asset for now; styled to match the handoff editorial look.
   return (
     <div
       className="relative overflow-hidden w-full"
       style={{
         aspectRatio: "4 / 5",
         background: INK,
-        border: `1px solid rgba(18,17,20,0.08)`,
+        border: `1px solid rgba(16,16,15,0.08)`,
         borderRadius: 6,
       }}
     >
@@ -72,7 +70,7 @@ function ImageSlot({ src, alt }: { src: string; alt: string }) {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(180deg, rgba(18,17,20,0) 40%, rgba(18,17,20,0.55) 100%)",
+          background: "linear-gradient(180deg, rgba(16,16,15,0) 40%, rgba(16,16,15,0.55) 100%)",
         }}
       />
     </div>
@@ -125,7 +123,7 @@ export default function IndustriesEditorial() {
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: 16,
               lineHeight: 1.55,
-              color: "rgba(18,17,20,0.62)",
+              color: "rgba(16,16,15,0.62)",
             }}
           >
             We don&apos;t sell generic agency packages. Every stack is calibrated to the rhythm of the service business it powers.
@@ -133,7 +131,7 @@ export default function IndustriesEditorial() {
         </div>
 
         {/* Divider */}
-        <div className="h-px mb-16" style={{ background: "rgba(18,17,20,0.12)" }} />
+        <div className="h-px mb-16" style={{ background: "rgba(16,16,15,0.12)" }} />
 
         {/* Cards — 3-up grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -151,7 +149,7 @@ export default function IndustriesEditorial() {
                   fontFamily: "var(--font-mono), ui-monospace, monospace",
                   fontSize: 11,
                   letterSpacing: "0.22em",
-                  color: "rgba(18,17,20,0.6)",
+                  color: "rgba(16,16,15,0.6)",
                   fontWeight: 500,
                 }}
               >
@@ -189,7 +187,7 @@ export default function IndustriesEditorial() {
                   fontFamily: "var(--font-inter), system-ui, sans-serif",
                   fontSize: 15,
                   lineHeight: 1.55,
-                  color: "rgba(18,17,20,0.7)",
+                  color: "rgba(16,16,15,0.7)",
                 }}
               >
                 {ind.sub}
@@ -204,7 +202,7 @@ export default function IndustriesEditorial() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 14,
                       lineHeight: 1.45,
-                      color: "rgba(18,17,20,0.78)",
+                      color: "rgba(16,16,15,0.78)",
                     }}
                   >
                     <span

@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const EMERGENCIES = [
@@ -32,7 +32,7 @@ export default function HomeServicesPage() {
         subhead="Roofing, HVAC, plumbing, landscaping — the jobs that pay most are the ones that come in after hours. Our AI answers every call, books every estimate, and never sleeps."
         primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Emergency dispatch — anime placeholder"
       />
 
@@ -81,13 +81,13 @@ export default function HomeServicesPage() {
               <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>Zero dropped calls.</span>
             </h2>
           </div>
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {STACK.map((s) => (
               <div key={s.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 56, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{s.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.08, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{s.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{s.body}</p>
               </div>
             ))}
           </div>

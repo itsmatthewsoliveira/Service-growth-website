@@ -129,16 +129,16 @@ async function sendWelcomeEmail(body: SubmitBody) {
 
   const qualifiedCopy = body.qualified
     ? body.cta_variant === "phone"
-      ? `<p style="font-size:16px;color:#121114;line-height:1.6;margin-bottom:20px;">
+      ? `<p style="font-size:16px;color:#10100F;line-height:1.6;margin-bottom:20px;">
            I just pinged ${SALES_REP_NAME} — he'll call you <strong>today</strong>.
            He'll text first so you know it's him. If you want to skip the wait, grab a time here:
          </p>
-         <a href="${CALENDLY_URL}" style="display:inline-block;padding:12px 24px;background:#FF6A00;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Pick a time on his calendar</a>`
-      : `<p style="font-size:16px;color:#121114;line-height:1.6;margin-bottom:20px;">
+         <a href="${CALENDLY_URL}" style="display:inline-block;padding:12px 24px;background:#E25312;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Pick a time on his calendar</a>`
+      : `<p style="font-size:16px;color:#10100F;line-height:1.6;margin-bottom:20px;">
            You're booked — or you can grab a time right now if you haven't:
          </p>
-         <a href="${CALENDLY_URL}" style="display:inline-block;padding:12px 24px;background:#FF6A00;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Pick a time on the calendar</a>`
-    : `<p style="font-size:16px;color:#121114;line-height:1.6;margin-bottom:20px;">
+         <a href="${CALENDLY_URL}" style="display:inline-block;padding:12px 24px;background:#E25312;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Pick a time on the calendar</a>`
+    : `<p style="font-size:16px;color:#10100F;line-height:1.6;margin-bottom:20px;">
          Dig into the blueprint below — it covers our entire playbook.
          When you hit $15–20K a month and want a partner to scale it, come back.
        </p>`;
@@ -156,32 +156,32 @@ async function sendWelcomeEmail(body: SubmitBody) {
       html: `
         <div style="max-width:600px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;background:#FCFFD5;padding:40px 32px;border-radius:12px;">
           <div style="text-align:center;margin-bottom:24px;">
-            <p style="display:inline-block;padding:4px 14px;background:rgba(255, 106, 0,0.1);color:#FF6A00;border-radius:100px;font-size:12px;font-weight:600;margin:0;">YOUR DIAGNOSTIC</p>
+            <p style="display:inline-block;padding:4px 14px;background:rgba(226, 83, 18,0.1);color:#E25312;border-radius:100px;font-size:12px;font-weight:600;margin:0;">YOUR DIAGNOSTIC</p>
           </div>
 
-          <h1 style="font-size:24px;color:#121114;margin:0 0 12px;">Hey ${body.name},</h1>
+          <h1 style="font-size:24px;color:#10100F;margin:0 0 12px;">Hey ${body.name},</h1>
 
-          <div style="background:#fff;border:1px solid rgba(18, 17, 20,0.08);border-radius:10px;padding:20px 24px;margin-bottom:24px;">
-            <p style="font-size:15px;color:#121114;line-height:1.6;margin:0;">
+          <div style="background:#fff;border:1px solid rgba(16, 16, 15,0.08);border-radius:10px;padding:20px 24px;margin-bottom:24px;">
+            <p style="font-size:15px;color:#10100F;line-height:1.6;margin:0;">
               ${body.summary}
             </p>
           </div>
 
           ${qualifiedCopy}
 
-          <hr style="border:none;border-top:1px solid rgba(18, 17, 20,0.08);margin:28px 0;" />
+          <hr style="border:none;border-top:1px solid rgba(16, 16, 15,0.08);margin:28px 0;" />
 
-          <div style="background:#fff;border:1px solid rgba(18, 17, 20,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
-            <h2 style="font-size:18px;color:#121114;margin:0 0 8px;">The 100K Growth Blueprint</h2>
-            <p style="font-size:14px;color:#121114;opacity:0.6;margin:0 0 16px;">
+          <div style="background:#fff;border:1px solid rgba(16, 16, 15,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
+            <h2 style="font-size:18px;color:#10100F;margin:0 0 8px;">The 100K Growth Blueprint</h2>
+            <p style="font-size:14px;color:#10100F;opacity:0.6;margin:0 0 16px;">
               Google Ads, Facebook Ads, Yelp, speed-to-lead, branding, follow-up — the whole playbook.
             </p>
-            <a href="${PDF_URL}" style="display:inline-block;padding:12px 24px;background:#121114;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Download the PDF</a>
+            <a href="${PDF_URL}" style="display:inline-block;padding:12px 24px;background:#10100F;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Download the PDF</a>
           </div>
 
           <p style="font-size:12px;color:#7A766E;text-align:center;margin-top:32px;">
             ServiceGrowth AI — operators, not grifters<br>
-            <a href="https://www.servicegrowth.ai" style="color:#FF6A00;">servicegrowth.ai</a>
+            <a href="https://www.servicegrowth.ai" style="color:#E25312;">servicegrowth.ai</a>
           </p>
         </div>
       `,

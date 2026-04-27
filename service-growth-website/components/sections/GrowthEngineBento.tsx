@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-const INK = "#121114";
-const INK_CARD = "#0F0E10";
+const INK = "#10100F";
+const INK_CARD = "#1D1C1A";
 const CREAM = "#FCFFD5";
-const ACCENT = "#FF6A00";
+const ACCENT = "#E25312";
 const FG_RGB = "252,255,213";
 const tone = (a: number) => `rgba(${FG_RGB}, ${a})`;
 
@@ -190,6 +190,149 @@ const titleText: React.CSSProperties = {
   margin: 0,
 };
 
+const glassCard: React.CSSProperties = {
+  borderRadius: 26,
+  border: `1px solid ${tone(0.12)}`,
+  background:
+    "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.015) 36%, rgba(226,83,18,0.06) 100%)",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.12), 0 26px 70px rgba(0,0,0,0.46)",
+  overflow: "hidden",
+  position: "relative",
+};
+
+function GlossyMetricCard() {
+  return (
+    <div style={{ ...glassCard, width: "min(100%, 260px)", aspectRatio: "1 / 1", padding: 22 }}>
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(circle at 50% 100%, rgba(226,83,18,0.34), transparent 44%), radial-gradient(circle at 6% 0%, rgba(252,255,213,0.1), transparent 32%)",
+        }}
+      />
+      <div
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: 10,
+          textTransform: "uppercase",
+          letterSpacing: "0.16em",
+          color: tone(0.7),
+        }}
+      >
+        <span>Lead flow</span>
+        <span
+          style={{
+            borderRadius: 999,
+            padding: "5px 8px",
+            background: tone(0.08),
+            border: `1px solid ${tone(0.1)}`,
+          }}
+        >
+          Month
+        </span>
+      </div>
+      <svg viewBox="0 0 220 112" style={{ position: "relative", marginTop: 24, width: "100%", height: 112 }}>
+        {[28, 56, 84, 112, 140, 168, 196].map((x) => (
+          <line key={x} x1={x} x2={x} y1="18" y2="106" stroke={tone(0.12)} strokeWidth="1" />
+        ))}
+        <path d="M0 88 C30 62 48 60 70 49 S112 77 138 61 S170 22 220 8" fill="none" stroke={tone(0.35)} strokeWidth="6" strokeLinecap="round" />
+        <path d="M0 88 C30 62 48 60 70 49 S112 77 138 61 S170 22 220 8" fill="none" stroke={CREAM} strokeWidth="3" strokeLinecap="round" />
+        {[54, 108, 154, 196].map((x, i) => {
+          const y = [58, 58, 50, 22][i];
+          return <circle key={x} cx={x} cy={y} r="6" fill={CREAM} stroke={INK_CARD} strokeWidth="2" />;
+        })}
+      </svg>
+      <div style={{ position: "relative", marginTop: -2, textAlign: "center" }}>
+        <div style={{ fontSize: 12, color: tone(0.62), fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+          Booked jobs
+        </div>
+        <div style={{ fontSize: 58, lineHeight: 1, fontWeight: 700, color: CREAM, fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+          78%
+        </div>
+        <div style={{ marginTop: 8, fontSize: 11, lineHeight: 1.35, color: tone(0.52), fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+          More leads reaching a clear next step
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SignalTiles() {
+  const tiles = [
+    { label: "Missed calls", value: "12", accent: false },
+    { label: "Replied", value: "94%", accent: true },
+    { label: "Booked", value: "31", accent: true },
+  ];
+  return (
+    <div className="grid grid-cols-3 gap-2 w-full">
+      {tiles.map((tile) => (
+        <div
+          key={tile.label}
+          style={{
+            ...glassCard,
+            borderRadius: 18,
+            padding: "14px 12px",
+            minHeight: 86,
+            background: tile.accent
+              ? "linear-gradient(145deg, rgba(226,83,18,0.22), rgba(20,18,16,0.86))"
+              : "linear-gradient(145deg, rgba(255,255,255,0.06), rgba(20,18,16,0.92))",
+          }}
+        >
+          <div style={{ fontSize: 28, fontWeight: 700, color: tile.accent ? ACCENT : CREAM, lineHeight: 1 }}>
+            {tile.value}
+          </div>
+          <div style={{ marginTop: 10, fontSize: 10, lineHeight: 1.25, color: tone(0.62), textTransform: "uppercase", fontFamily: "var(--font-mono), ui-monospace, monospace", letterSpacing: "0.08em" }}>
+            {tile.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function BookingRail() {
+  const steps = ["Lead", "Reply", "Qualify", "Book"];
+  return (
+    <div style={{ ...glassCard, borderRadius: 24, padding: 18, width: "100%" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+        {steps.map((step, i) => (
+          <div key={step} style={{ display: "flex", alignItems: "center", flex: i === steps.length - 1 ? "0 0 auto" : 1 }}>
+            <div
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 15,
+                display: "grid",
+                placeItems: "center",
+                background: i === steps.length - 1 ? ACCENT : "rgba(252,255,213,0.06)",
+                color: i === steps.length - 1 ? INK : CREAM,
+                border: `1px solid ${i === steps.length - 1 ? "rgba(226,83,18,0.8)" : tone(0.12)}`,
+                fontWeight: 800,
+              }}
+            >
+              {i + 1}
+            </div>
+            {i < steps.length - 1 && <div style={{ height: 1, flex: 1, background: i < 2 ? tone(0.18) : ACCENT, margin: "0 8px" }} />}
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-4 gap-2" style={{ marginTop: 12 }}>
+        {steps.map((step) => (
+          <span key={step} style={{ fontSize: 10, color: tone(0.58), fontFamily: "var(--font-mono), ui-monospace, monospace", textTransform: "uppercase", textAlign: "center" }}>
+            {step}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function IconRing({ children, size = 48 }: { children: React.ReactNode; size?: number }) {
   return (
     <div
@@ -215,8 +358,9 @@ export default function GrowthEngineBento() {
   const [hoverId, setHoverId] = useState<string | null>(null);
 
   const cardBase: React.CSSProperties = {
-    background: INK_CARD,
-    borderRadius: 14,
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,0.045), rgba(15,14,16,0.98) 42%, rgba(226,83,18,0.035))",
+    borderRadius: 24,
     padding: 28,
     position: "relative",
     overflow: "hidden",
@@ -264,7 +408,7 @@ export default function GrowthEngineBento() {
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
-            The Complete Growth Engine
+            Installed growth system
           </div>
           <h2
             className="uppercase mx-auto"
@@ -273,15 +417,15 @@ export default function GrowthEngineBento() {
               fontWeight: 700,
               fontSize: "clamp(42px, 7vw, 88px)",
               lineHeight: 0.96,
-              letterSpacing: "-0.025em",
+              letterSpacing: "0",
               color: CREAM,
               marginTop: 24,
               maxWidth: 960,
             }}
           >
-            Everything you need to{" "}
+            Not another agency.{" "}
             <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>
-              dominate
+              A better operator.
             </span>
           </h2>
           <p
@@ -295,8 +439,8 @@ export default function GrowthEngineBento() {
               fontFamily: "var(--font-inter), system-ui, sans-serif",
             }}
           >
-            Not just marketing. The whole system — ads, AI, branding, and follow-up — built to take service businesses
-            from scrambling to booked out.
+            We look at how your company actually wins work, find the drop-offs, then install simple AI systems around the
+            calls, texts, reviews, ads, and website you already use.
           </p>
         </div>
 
@@ -322,35 +466,10 @@ export default function GrowthEngineBento() {
               textAlign: "center",
             }}
           >
-            <div
-              style={{
-                position: "relative",
-                width: 240,
-                height: 100,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: 28,
-              }}
-            >
-              <HandEllipse color={tone(0.4)} />
-              <span
-                style={{
-                  fontFamily: "var(--font-inter), system-ui, sans-serif",
-                  fontSize: 52,
-                  fontWeight: 600,
-                  color: CREAM,
-                  letterSpacing: "-0.02em",
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                100%
-              </span>
-            </div>
-            <h3 style={{ ...titleText, fontSize: 26 }}>Every lead, captured</h3>
+            <GlossyMetricCard />
+            <h3 style={{ ...titleText, fontSize: 26 }}>Your lead path, mapped</h3>
             <p style={{ ...bodyText, maxWidth: 240 }}>
-              No after-hours leak. No &quot;we&apos;ll call you back.&quot; Every inquiry meets a real reply in under a minute.
+              We trace where jobs come from, who replies, what gets missed, and what should happen next.
             </p>
           </div>
 
@@ -366,7 +485,7 @@ export default function GrowthEngineBento() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
-              backgroundImage: "url(/growth-collab.png)",
+              backgroundImage: "url(/growth-collab.webp)",
               backgroundSize: "cover",
               backgroundPosition: "center 30%",
               backgroundRepeat: "no-repeat",
@@ -404,7 +523,10 @@ export default function GrowthEngineBento() {
                 color: CREAM,
               }}
             >
-              Avg response · 8s
+              Answer first
+            </div>
+            <div style={{ position: "absolute", left: 18, right: 18, top: 62, zIndex: 1 }}>
+              <SignalTiles />
             </div>
             {/* Content pinned bottom */}
             <div
@@ -420,9 +542,9 @@ export default function GrowthEngineBento() {
               <IconRing size={40}>
                 <MonoIcon name="phone" size={18} />
               </IconRing>
-              <h3 style={{ ...titleText, fontSize: 24 }}>AI that never misses a lead</h3>
+              <h3 style={{ ...titleText, fontSize: 24 }}>Calls and texts covered</h3>
               <p style={{ ...bodyText, marginTop: 0 }}>
-                60-second response on every call, text, and form. Books estimates while you&apos;re on the job site.
+                When your team is busy, the system responds, qualifies, and pushes the next step forward.
               </p>
             </div>
           </div>
@@ -432,14 +554,15 @@ export default function GrowthEngineBento() {
             onMouseEnter={onEnter("ads")}
             onMouseLeave={onLeave}
             className="col-span-6 md:col-span-6 lg:col-span-2"
-            style={{ ...cardStyle("ads"), minHeight: 320 }}
+            style={{ ...cardStyle("ads"), minHeight: 320, display: "flex", flexDirection: "column", justifyContent: "center" }}
           >
-            <div style={{ height: 120 }}>
+            <BookingRail />
+            <div style={{ height: 92, marginTop: 20 }}>
               <LineBars />
             </div>
-            <h3 style={{ ...titleText, marginTop: 16, textAlign: "center" }}>Ads that book high-end jobs</h3>
+            <h3 style={{ ...titleText, marginTop: 16, textAlign: "center" }}>Ads connected to booking</h3>
             <p style={{ ...bodyText, textAlign: "center" }}>
-              Buyer-intent traffic from Google, Meta, and Yelp. 3.8× ROAS in 90 days.
+              Traffic, landing pages, and follow-up run together so paid leads do not disappear after the click.
             </p>
           </div>
 
@@ -447,12 +570,11 @@ export default function GrowthEngineBento() {
           <div
             onMouseEnter={onEnter("photos")}
             onMouseLeave={onLeave}
-            className="col-span-6 lg:col-span-3"
+            className="col-span-6 lg:col-span-3 grid-cols-1 md:grid-cols-[1fr_1.3fr]"
             style={{
               ...cardStyle("photos"),
               minHeight: 280,
               display: "grid",
-              gridTemplateColumns: "1fr 1.3fr",
               gap: 24,
               alignItems: "center",
             }}
@@ -461,9 +583,9 @@ export default function GrowthEngineBento() {
               <IconRing>
                 <MonoIcon name="camera" size={20} />
               </IconRing>
-              <h3 style={{ ...titleText, marginTop: 20 }}>Photos that close the deal</h3>
+              <h3 style={{ ...titleText, marginTop: 20 }}>Proof that sells for you</h3>
               <p style={bodyText}>
-                Turn iPhone job-site shots into editorial-grade before/after content that sells itself.
+                Turn real job photos and reviews into the kind of trust signals buyers check before they call.
               </p>
             </div>
             <div
@@ -492,12 +614,11 @@ export default function GrowthEngineBento() {
           <div
             onMouseEnter={onEnter("web")}
             onMouseLeave={onLeave}
-            className="col-span-6 lg:col-span-3"
+            className="col-span-6 lg:col-span-3 grid-cols-1 md:grid-cols-[1fr_1.4fr]"
             style={{
               ...cardStyle("web"),
               minHeight: 280,
               display: "grid",
-              gridTemplateColumns: "1fr 1.4fr",
               gap: 16,
               alignItems: "center",
             }}
@@ -506,9 +627,9 @@ export default function GrowthEngineBento() {
               <IconRing>
                 <MonoIcon name="globe" size={20} />
               </IconRing>
-              <h3 style={{ ...titleText, marginTop: 20 }}>Websites that convert</h3>
+              <h3 style={{ ...titleText, marginTop: 20 }}>Website as the control center</h3>
               <p style={bodyText}>
-                Look like the premium choice. Sites that rank #1 local and turn visits into booked estimates.
+                Your website does more than look good. It qualifies visitors and routes them into the right follow-up.
               </p>
             </div>
             <div style={{ position: "relative", overflow: "hidden", height: "100%", display: "flex", alignItems: "center" }}>

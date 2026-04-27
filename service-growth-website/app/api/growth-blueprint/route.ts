@@ -65,9 +65,9 @@ async function sendWelcomeEmail(data: BlueprintLeadData) {
   const isHighBudget = data.budget === "3k-5k" || data.budget === "5k-plus";
 
   const ctaSection = isHighBudget
-    ? `<a href="https://www.servicegrowth.ai/contact" style="display:inline-block;padding:14px 28px;background:#FF6A00;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Book a Strategy Call</a>
+    ? `<a href="https://www.servicegrowth.ai/contact" style="display:inline-block;padding:14px 28px;background:#E25312;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Book a Strategy Call</a>
        <p style="color:#7A766E;font-size:13px;margin-top:12px;">I'll personally look at your business and show you exactly where the gaps are.</p>`
-    : `<a href="https://www.servicegrowth.ai/growth-blueprint/thank-you?name=${encodeURIComponent(data.name)}&budget=${data.budget}" style="display:inline-block;padding:14px 28px;background:#FF6A00;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Join the Growth Lab (Free)</a>
+    : `<a href="https://www.servicegrowth.ai/growth-blueprint/thank-you?name=${encodeURIComponent(data.name)}&budget=${data.budget}" style="display:inline-block;padding:14px 28px;background:#E25312;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">Join the Growth Lab (Free)</a>
        <p style="color:#7A766E;font-size:13px;margin-top:12px;">Free weekly content to help you build your company from zero.</p>`;
 
   await fetch("https://api.resend.com/emails", {
@@ -83,35 +83,35 @@ async function sendWelcomeEmail(data: BlueprintLeadData) {
       html: `
         <div style="max-width:600px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;background:#FCFFD5;padding:40px 32px;border-radius:12px;">
           <div style="text-align:center;margin-bottom:32px;">
-            <p style="display:inline-block;padding:4px 14px;background:rgba(255, 106, 0,0.1);color:#FF6A00;border-radius:100px;font-size:12px;font-weight:600;">100K GROWTH BLUEPRINT</p>
+            <p style="display:inline-block;padding:4px 14px;background:rgba(226, 83, 18,0.1);color:#E25312;border-radius:100px;font-size:12px;font-weight:600;">100K GROWTH BLUEPRINT</p>
           </div>
 
-          <h1 style="font-size:24px;color:#121114;margin-bottom:8px;">Hey ${data.name},</h1>
-          <p style="font-size:16px;color:#121114;opacity:0.7;line-height:1.6;margin-bottom:24px;">
+          <h1 style="font-size:24px;color:#10100F;margin-bottom:8px;">Hey ${data.name},</h1>
+          <p style="font-size:16px;color:#10100F;opacity:0.7;line-height:1.6;margin-bottom:24px;">
             Thanks for downloading the blueprint. This is the exact system I used to take an outdoor design company from $0 to $100K in 90 days &mdash; and it's yours now.
           </p>
 
-          <div style="background:#fff;border:1px solid rgba(18, 17, 20,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
-            <h2 style="font-size:18px;color:#121114;margin-bottom:8px;">Your Blueprint</h2>
-            <p style="font-size:14px;color:#121114;opacity:0.6;margin-bottom:16px;">Google Ads, Facebook Ads, Yelp, speed-to-lead, branding, follow-up &mdash; everything broken down step by step.</p>
-            <a href="${PDF_URL}" style="display:inline-block;padding:12px 24px;background:#121114;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Download the Blueprint</a>
+          <div style="background:#fff;border:1px solid rgba(16, 16, 15,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
+            <h2 style="font-size:18px;color:#10100F;margin-bottom:8px;">Your Blueprint</h2>
+            <p style="font-size:14px;color:#10100F;opacity:0.6;margin-bottom:16px;">Google Ads, Facebook Ads, Yelp, speed-to-lead, branding, follow-up &mdash; everything broken down step by step.</p>
+            <a href="${PDF_URL}" style="display:inline-block;padding:12px 24px;background:#10100F;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Download the Blueprint</a>
           </div>
 
-          <div style="background:#fff;border:1px solid rgba(18, 17, 20,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
-            <h2 style="font-size:18px;color:#121114;margin-bottom:8px;">Watch the Deep Dive</h2>
-            <p style="font-size:14px;color:#121114;opacity:0.6;margin-bottom:16px;">I recorded a 15-minute video walking through the entire system, my story, and how we can help you implement it.</p>
-            <a href="${DEEP_DIVE_VIDEO_URL}" style="display:inline-block;padding:12px 24px;background:#121114;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Watch the Video</a>
+          <div style="background:#fff;border:1px solid rgba(16, 16, 15,0.08);border-radius:10px;padding:24px;margin-bottom:20px;">
+            <h2 style="font-size:18px;color:#10100F;margin-bottom:8px;">Watch the Deep Dive</h2>
+            <p style="font-size:14px;color:#10100F;opacity:0.6;margin-bottom:16px;">I recorded a 15-minute video walking through the entire system, my story, and how we can help you implement it.</p>
+            <a href="${DEEP_DIVE_VIDEO_URL}" style="display:inline-block;padding:12px 24px;background:#10100F;color:#FCFFD5;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Watch the Video</a>
           </div>
 
           <div style="text-align:center;padding:32px 0 16px;">
-            <h2 style="font-size:18px;color:#121114;margin-bottom:12px;">Ready for the Next Step?</h2>
+            <h2 style="font-size:18px;color:#10100F;margin-bottom:12px;">Ready for the Next Step?</h2>
             ${ctaSection}
           </div>
 
-          <hr style="border:none;border-top:1px solid rgba(18, 17, 20,0.08);margin:32px 0 16px;" />
+          <hr style="border:none;border-top:1px solid rgba(16, 16, 15,0.08);margin:32px 0 16px;" />
           <p style="font-size:12px;color:#7A766E;text-align:center;">
             ServiceGrowth AI &mdash; The growth engine for service businesses<br>
-            <a href="https://www.servicegrowth.ai" style="color:#FF6A00;">servicegrowth.ai</a> &middot; (904) 874-2245
+            <a href="https://www.servicegrowth.ai" style="color:#E25312;">servicegrowth.ai</a> &middot; (904) 874-2245
           </p>
         </div>
       `,

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 interface Section {
   title: string;
@@ -62,7 +62,7 @@ export default function TermsPage() {
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: 17,
               lineHeight: 1.65,
-              color: "rgba(18,17,20,0.7)",
+              color: "rgba(16,16,15,0.7)",
             }}
           >
             By accessing or using ServiceGrowth.ai (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;), you agree to be bound by these Terms &amp; Conditions. If you do not agree, please discontinue use of our services.
@@ -73,7 +73,7 @@ export default function TermsPage() {
               <div
                 key={i}
                 className="pb-10 mb-10"
-                style={{ borderBottom: i < SECTIONS.length - 1 ? "1px solid rgba(18,17,20,0.1)" : "none" }}
+                style={{ borderBottom: i < SECTIONS.length - 1 ? "1px solid rgba(16,16,15,0.1)" : "none" }}
               >
                 <div className="flex items-baseline gap-4 mb-5">
                   <span
@@ -108,7 +108,7 @@ export default function TermsPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 15,
                       lineHeight: 1.65,
-                      color: "rgba(18,17,20,0.72)",
+                      color: "rgba(16,16,15,0.72)",
                     }}
                   >
                     {section.content}
@@ -136,7 +136,7 @@ export default function TermsPage() {
                             fontFamily: "var(--font-inter), system-ui, sans-serif",
                             fontSize: 14.5,
                             lineHeight: 1.65,
-                            color: "rgba(18,17,20,0.72)",
+                            color: "rgba(16,16,15,0.72)",
                           }}
                         >
                           {sub.text}
@@ -152,8 +152,8 @@ export default function TermsPage() {
           <div
             className="mt-8 p-6 text-center"
             style={{
-              background: "rgba(255,106,0,0.05)",
-              border: "1px solid rgba(255,106,0,0.2)",
+              background: "rgba(226,83,18,0.05)",
+              border: "1px solid rgba(226,83,18,0.2)",
               borderRadius: 6,
             }}
           >
@@ -161,7 +161,7 @@ export default function TermsPage() {
               style={{
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 14,
-                color: "rgba(18,17,20,0.7)",
+                color: "rgba(16,16,15,0.7)",
               }}
             >
               See also our{" "}

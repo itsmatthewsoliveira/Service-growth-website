@@ -86,10 +86,10 @@ export default function ReviewSlider() {
 
             {/* Navigation arrows */}
             <div className="flex justify-center mt-8 gap-3">
-                <button className="p-2 rounded-full border border-[#0F0E10]/10 hover:bg-[#0F0E10]/5 transition-colors text-[#7A766E] hover:text-[#0F0E10]">
+                <button className="p-2 rounded-full border border-[#1D1C1A]/10 hover:bg-[#1D1C1A]/5 transition-colors text-[#7A766E] hover:text-[#1D1C1A]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button className="p-2 rounded-full border border-[#0F0E10]/10 hover:bg-[#0F0E10]/5 transition-colors text-[#7A766E] hover:text-[#0F0E10]">
+                <button className="p-2 rounded-full border border-[#1D1C1A]/10 hover:bg-[#1D1C1A]/5 transition-colors text-[#7A766E] hover:text-[#1D1C1A]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </button>
             </div>

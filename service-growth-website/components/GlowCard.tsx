@@ -21,7 +21,7 @@ export default function GlowCard({
 }: GlowCardProps) {
   const cardClasses = dark
     ? `bg-[rgba(252, 255, 213,0.02)] border border-[rgba(252, 255, 213,0.06)] rounded-xl p-6 card-glow-dark ${className}`
-    : `bg-white border border-[#0F0E10]/8 rounded-xl p-6 shadow-sm card-glow ${className}`;
+    : `bg-white border border-[#1D1C1A]/8 rounded-xl p-6 shadow-sm card-glow ${className}`;
 
   const content = (
     <motion.div

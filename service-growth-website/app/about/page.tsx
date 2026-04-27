@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const WHY_DIFFERENT = [
@@ -60,7 +60,7 @@ export default function AboutPage() {
         headlineLead="We built this"
         headlineAccent="for ourselves first"
         subhead="Matthews ran service businesses in Jacksonville before building ServiceGrowth. He knows what it's like to lose a job because the phone rang on a roof. The systems we sell are the ones he ran on himself."
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Founder portrait — anime placeholder"
       />
 
@@ -79,7 +79,7 @@ export default function AboutPage() {
           "Every client gets the exact playbook I used on myself",
         ]}
         cta={{ label: "See the numbers", href: "#stats" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="Matthews working the job site — anime placeholder"
         imagePosition="left"
       />
@@ -189,7 +189,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="h-px mb-16" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-16" style={{ background: "rgba(16,16,15,0.12)" }} />
 
           <div className="grid md:grid-cols-3 gap-10 lg:gap-12">
             {WHY_DIFFERENT.map((item) => (
@@ -225,7 +225,7 @@ export default function AboutPage() {
                     fontFamily: "var(--font-inter), system-ui, sans-serif",
                     fontSize: 15,
                     lineHeight: 1.55,
-                    color: "rgba(18,17,20,0.7)",
+                    color: "rgba(16,16,15,0.7)",
                   }}
                 >
                   {item.body}
@@ -295,7 +295,7 @@ export default function AboutPage() {
                 key={item.title}
                 style={{
                   padding: 32,
-                  background: "#0F0E10",
+                  background: "#1D1C1A",
                   border: "1px solid rgba(252,255,213,0.08)",
                   borderRadius: 14,
                 }}
@@ -412,7 +412,7 @@ export default function AboutPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 16,
                       lineHeight: 1.5,
-                      color: "rgba(18,17,20,0.8)",
+                      color: "rgba(16,16,15,0.8)",
                     }}
                   >
                     <span
@@ -432,7 +432,7 @@ export default function AboutPage() {
                   fontFamily: "var(--font-mono), ui-monospace, monospace",
                   fontSize: 13,
                   letterSpacing: "0.22em",
-                  color: "rgba(18,17,20,0.5)",
+                  color: "rgba(16,16,15,0.5)",
                   fontWeight: 700,
                 }}
               >
@@ -453,7 +453,7 @@ export default function AboutPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 16,
                       lineHeight: 1.5,
-                      color: "rgba(18,17,20,0.5)",
+                      color: "rgba(16,16,15,0.5)",
                     }}
                   >
                     <span
@@ -461,7 +461,7 @@ export default function AboutPage() {
                       style={{
                         width: 8,
                         height: 8,
-                        border: `1.5px solid rgba(18,17,20,0.3)`,
+                        border: `1.5px solid rgba(16,16,15,0.3)`,
                         borderRadius: 1,
                       }}
                     />

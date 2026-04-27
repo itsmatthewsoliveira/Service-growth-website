@@ -3,8 +3,8 @@
 import Link from "next/link";
 import PageHero from "@/components/sections/PageHero";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 interface Section {
   title: string;
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: 17,
               lineHeight: 1.65,
-              color: "rgba(18,17,20,0.7)",
+              color: "rgba(16,16,15,0.7)",
             }}
           >
             ServiceGrowth.ai (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;) is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you visit our website, use our services, or receive communications from us.
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
               <div
                 key={i}
                 className="pb-10 mb-10"
-                style={{ borderBottom: i < SECTIONS.length - 1 ? "1px solid rgba(18,17,20,0.1)" : "none" }}
+                style={{ borderBottom: i < SECTIONS.length - 1 ? "1px solid rgba(16,16,15,0.1)" : "none" }}
               >
                 <div className="flex items-baseline gap-4 mb-5">
                   <span
@@ -158,7 +158,7 @@ export default function PrivacyPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 15,
                       lineHeight: 1.65,
-                      color: "rgba(18,17,20,0.72)",
+                      color: "rgba(16,16,15,0.72)",
                     }}
                   >
                     {section.content}
@@ -175,7 +175,7 @@ export default function PrivacyPage() {
                           fontFamily: "var(--font-inter), system-ui, sans-serif",
                           fontSize: 15,
                           lineHeight: 1.6,
-                          color: "rgba(18,17,20,0.78)",
+                          color: "rgba(16,16,15,0.78)",
                         }}
                       >
                         <span className="mt-[8px] flex-shrink-0" style={{ width: 6, height: 6, background: ACCENT, borderRadius: 1 }} />
@@ -206,7 +206,7 @@ export default function PrivacyPage() {
                             fontFamily: "var(--font-inter), system-ui, sans-serif",
                             fontSize: 14.5,
                             lineHeight: 1.65,
-                            color: "rgba(18,17,20,0.72)",
+                            color: "rgba(16,16,15,0.72)",
                           }}
                         >
                           {sub.text}
@@ -222,8 +222,8 @@ export default function PrivacyPage() {
           <div
             className="mt-8 p-6 text-center"
             style={{
-              background: "rgba(255,106,0,0.05)",
-              border: "1px solid rgba(255,106,0,0.2)",
+              background: "rgba(226,83,18,0.05)",
+              border: "1px solid rgba(226,83,18,0.2)",
               borderRadius: 6,
             }}
           >
@@ -231,7 +231,7 @@ export default function PrivacyPage() {
               style={{
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 14,
-                color: "rgba(18,17,20,0.7)",
+                color: "rgba(16,16,15,0.7)",
               }}
             >
               See also our{" "}

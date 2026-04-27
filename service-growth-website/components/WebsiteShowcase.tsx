@@ -12,32 +12,32 @@ const showcaseSites: ShowcaseSite[] = [
   {
     industry: "Roofing",
     description: "Lead-capturing roofing site with instant estimates",
-    image: "/mockup-roofing.png",
+    image: "/mockup-roofing.webp",
   },
   {
     industry: "HVAC",
     description: "24/7 booking system for climate companies",
-    image: "/mockup-hvac.png",
+    image: "/mockup-hvac.webp",
   },
   {
     industry: "Dental",
     description: "Patient-friendly design that fills chairs",
-    image: "/mockup-dental.png",
+    image: "/mockup-dental.webp",
   },
   {
     industry: "Landscaping",
     description: "Premium outdoor living showcase with form overlay",
-    image: "/mockup-landscaping.png",
+    image: "/mockup-landscaping.webp",
   },
   {
     industry: "Construction",
     description: "Portfolio-driven site for general contractors",
-    image: "/mockup-construction.png",
+    image: "/mockup-construction.webp",
   },
   {
     industry: "Cleaning",
     description: "Bright, trust-building site with instant quotes",
-    image: "/mockup-cleaning.png",
+    image: "/mockup-cleaning.webp",
   },
 ];
 

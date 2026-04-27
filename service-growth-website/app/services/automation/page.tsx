@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const FLOW = [
@@ -31,7 +31,7 @@ export default function AutomationPage() {
         subhead="60-second response on every call, text, and form. Qualifies intent, books estimates, and syncs to your calendar while you're on a jobsite. Human operators pick up the warm ones."
         primaryCta={{ label: "Book a demo", href: "/contact" }}
         secondaryCta={{ label: "How it works", href: "/how-it-works" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="AI agent in action — anime placeholder"
       />
 
@@ -53,7 +53,7 @@ export default function AutomationPage() {
               <div key={s.step} className="relative">
                 <div className="relative flex items-center justify-center w-14 h-14 mb-6" style={{ background: i === FLOW.length - 1 ? ACCENT : "#FFFFFF", color: i === FLOW.length - 1 ? INK : ACCENT, border: `2px solid ${ACCENT}`, borderRadius: 999, fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em" }}>{s.step}</div>
                 <h3 className="uppercase mb-2" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{s.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{s.body}</p>
               </div>
             ))}
           </div>
@@ -74,7 +74,7 @@ export default function AutomationPage() {
           "Human operators trained on your offer",
         ]}
         cta={{ label: "See how it works", href: "/how-it-works" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="AI + human operator stack — anime placeholder"
         imagePosition="left"
       />

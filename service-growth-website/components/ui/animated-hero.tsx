@@ -72,7 +72,7 @@ function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(255, 106, 0, 0.06) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(226, 83, 18, 0.06) 0%, transparent 60%)',
         }}
       />
 
@@ -89,8 +89,8 @@ function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-6"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FF6A00]/20 bg-[#FF6A00]/5 text-sm text-[#4A4A45]">
-                <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#E25312]/20 bg-[#E25312]/5 text-sm text-[#4A4A45]">
+                <span className="w-2 h-2 rounded-full bg-[#E25312] animate-pulse" />
                 Built by service business owners
               </div>
             </motion.div>
@@ -101,7 +101,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter text-center" style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, letterSpacing: '-0.03em', color: '#0F0E10' }}>
+              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter text-center" style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, letterSpacing: '-0.03em', color: '#1D1C1A' }}>
                 <span>More booked jobs<br />for</span>
                 <span className="relative flex w-full justify-center overflow-hidden md:pb-4 md:pt-1">
                   &nbsp;
@@ -109,7 +109,7 @@ function Hero() {
                     <motion.span
                       key={index}
                       className="absolute font-semibold"
-                      style={{ color: "#FF6A00" }}
+                      style={{ color: "#E25312" }}
                       initial={{ opacity: 0, y: "-100" }}
                       transition={{ type: "spring", stiffness: 50 }}
                       animate={
@@ -133,13 +133,13 @@ function Hero() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               {submitted ? (
-                <div className="relative rounded-2xl bg-[#0F0E10] border border-[#FF6A00]/20 shadow-xl shadow-[#0F0E10]/10 p-6 md:p-8 text-center">
-                  <CheckCircle className="w-8 h-8 text-[#FF6A00] mx-auto mb-3" />
+                <div className="relative rounded-2xl bg-[#1D1C1A] border border-[#E25312]/20 shadow-xl shadow-[#1D1C1A]/10 p-6 md:p-8 text-center">
+                  <CheckCircle className="w-8 h-8 text-[#E25312] mx-auto mb-3" />
                   <p className="text-[#FCFFD5] font-semibold text-lg">Thanks! We&apos;ll be in touch within 24 hours.</p>
                 </div>
               ) : (
               <form
-                className="relative rounded-2xl md:rounded-full bg-[#0F0E10] border border-[#FF6A00]/10 shadow-xl shadow-[#0F0E10]/10 p-2 md:p-2"
+                className="relative rounded-2xl md:rounded-full bg-[#1D1C1A] border border-[#E25312]/10 shadow-xl shadow-[#1D1C1A]/10 p-2 md:p-2"
                 onSubmit={handleSubmit}
               >
                 {/* Desktop: single row */}
@@ -173,7 +173,7 @@ function Hero() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex-shrink-0 px-6 py-3 rounded-full bg-[#FF6A00] hover:bg-[#D45800] disabled:opacity-60 text-[#FCFFD5] font-semibold text-sm transition-all whitespace-nowrap"
+                    className="flex-shrink-0 px-6 py-3 rounded-full bg-[#E25312] hover:bg-[#B9410B] disabled:opacity-60 text-[#FCFFD5] font-semibold text-sm transition-all whitespace-nowrap"
                   >
                     {loading ? "Sending..." : "Get Free Analysis"}
                   </button>
@@ -208,7 +208,7 @@ function Hero() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full px-5 py-3.5 rounded-full bg-[#FF6A00] hover:bg-[#D45800] disabled:opacity-60 text-[#FCFFD5] font-semibold text-base transition-all min-h-[44px]"
+                    className="w-full px-5 py-3.5 rounded-full bg-[#E25312] hover:bg-[#B9410B] disabled:opacity-60 text-[#FCFFD5] font-semibold text-base transition-all min-h-[44px]"
                   >
                     {loading ? "Sending..." : "Get Free Analysis"}
                   </button>
@@ -249,7 +249,7 @@ function Hero() {
                 { value: "$200K", label: "Invoiced" },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#FF6A00]">{stat.value}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#E25312]">{stat.value}</div>
                   <div className="text-xs text-[#7A766E] mt-0.5">{stat.label}</div>
                 </div>
               ))}
@@ -264,32 +264,32 @@ function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative rounded-3xl overflow-hidden bg-[#0F0E10] border border-[#FF6A00]/10">
+            <div className="relative rounded-3xl overflow-hidden bg-[#1D1C1A] border border-[#E25312]/10">
               {/* Atmospheric background — layered gradients for depth */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Mountain silhouette effect via CSS */}
                 <div className="absolute bottom-0 left-0 right-0 h-[70%]" style={{
                   background: `
-                    linear-gradient(175deg, transparent 30%, rgba(255, 106, 0, 0.08) 60%, rgba(255, 106, 0, 0.15) 100%),
+                    linear-gradient(175deg, transparent 30%, rgba(226, 83, 18, 0.08) 60%, rgba(226, 83, 18, 0.15) 100%),
                     linear-gradient(to right, transparent 0%, rgba(252, 255, 213, 0.02) 50%, transparent 100%)
                   `
                 }} />
                 {/* Peak glow */}
                 <div className="absolute top-[15%] left-[20%] w-[300px] h-[300px] bg-[#FCFFD5]/3 rounded-full blur-[100px]" />
                 {/* Depth fog */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0F0E10] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1D1C1A] to-transparent" />
               </div>
 
               <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 md:gap-10 p-6 md:p-10 lg:p-16">
                 {/* LEFT: Creative Copy */}
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF6A00]/20 bg-[#FF6A00]/5 text-xs text-[#B8B3AA] mb-6">
-                    <Mountain className="w-3.5 h-3.5 text-[#FF6A00]" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#E25312]/20 bg-[#E25312]/5 text-xs text-[#B8B3AA] mb-6">
+                    <Mountain className="w-3.5 h-3.5 text-[#E25312]" />
                     THE CLIMB
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, letterSpacing: '-0.02em', color: '#FCFFD5' }}>
                     Running a business is a grind.<br />
-                    <span style={{ color: '#FF6A00' }}>You don&apos;t have to do it alone.</span>
+                    <span style={{ color: '#E25312' }}>You don&apos;t have to do it alone.</span>
                   </h2>
                   <p className="text-[#B8B3AA] text-lg leading-relaxed max-w-lg mb-8">
                     You answer calls at dinner. You lose leads to voicemail at 2am.
@@ -310,8 +310,8 @@ function Hero() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <ArrowUpRight className="w-4 h-4 text-[#FF6A00]" />
+                        <div className="w-8 h-8 rounded-lg bg-[#E25312]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ArrowUpRight className="w-4 h-4 text-[#E25312]" />
                         </div>
                         <div>
                           <p className="text-[#FCFFD5] font-semibold text-sm">{item.label}</p>
@@ -327,16 +327,16 @@ function Hero() {
                   <div className="relative w-full max-w-[450px] rounded-2xl overflow-hidden">
                     {/* The actual photo */}
                     <img
-                      src="/mountain-climber.png"
+                      src="/mountain-climber.webp"
                       alt="Ice wall climber - representing the climb of growing a business"
                       className="w-full h-auto object-cover rounded-2xl grayscale"
                       style={{ filter: 'grayscale(100%) contrast(1.1) brightness(0.95)' }}
                     />
                     {/* Orange gradient overlay on bottom for text legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E10] via-transparent to-transparent rounded-2xl" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#FF6A00]/10 via-transparent to-transparent rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1D1C1A] via-transparent to-transparent rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#E25312]/10 via-transparent to-transparent rounded-2xl" />
                     {/* Subtle border glow */}
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#FF6A00]/15" />
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-[#E25312]/15" />
                   </div>
                 </div>
               </div>
@@ -362,35 +362,35 @@ function Hero() {
                 <motion.div className="flex-1 w-full" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#FF6A00]/20 flex items-center justify-center"><PhoneCall className="w-4 h-4 text-[#FF6A00]" /></div>
-                      <span className="text-xs text-[#FF6A00] font-medium">NEW LEAD</span>
+                      <div className="w-8 h-8 rounded-full bg-[#E25312]/20 flex items-center justify-center"><PhoneCall className="w-4 h-4 text-[#E25312]" /></div>
+                      <span className="text-xs text-[#E25312] font-medium">NEW LEAD</span>
                     </div>
                     <p className="text-sm text-[#FCFFD5]">&quot;Need roof repair ASAP&quot;</p>
                     <p className="text-xs text-[#7A766E] mt-1">Missed call at 2:34 PM</p>
                   </div>
                 </motion.div>
-                <div className="hidden md:block text-[#FF6A00]/50"><MoveRight className="w-6 h-6" /></div>
-                <div className="md:hidden text-[#FF6A00]/50 rotate-90"><MoveRight className="w-5 h-5" /></div>
+                <div className="hidden md:block text-[#E25312]/50"><MoveRight className="w-6 h-6" /></div>
+                <div className="md:hidden text-[#E25312]/50 rotate-90"><MoveRight className="w-5 h-5" /></div>
                 <motion.div className="flex-1 w-full" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#FF6A00]/20 flex items-center justify-center"><MessageSquare className="w-4 h-4 text-[#FF6A00]" /></div>
-                      <span className="text-xs text-[#FF6A00] font-medium">AI RESPONSE</span>
+                      <div className="w-8 h-8 rounded-full bg-[#E25312]/20 flex items-center justify-center"><MessageSquare className="w-4 h-4 text-[#E25312]" /></div>
+                      <span className="text-xs text-[#E25312] font-medium">AI RESPONSE</span>
                     </div>
                     <p className="text-sm text-[#FCFFD5]">&quot;Hi! We can help. When works for an estimate?&quot;</p>
                     <p className="text-xs text-[#7A766E] mt-1">Sent in 8 seconds</p>
                   </div>
                 </motion.div>
-                <div className="hidden md:block text-[#FF6A00]/50"><MoveRight className="w-6 h-6" /></div>
-                <div className="md:hidden text-[#FF6A00]/50 rotate-90"><MoveRight className="w-5 h-5" /></div>
+                <div className="hidden md:block text-[#E25312]/50"><MoveRight className="w-6 h-6" /></div>
+                <div className="md:hidden text-[#E25312]/50 rotate-90"><MoveRight className="w-5 h-5" /></div>
                 <motion.div className="flex-1 w-full" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-                  <div className="bg-white/5 rounded-xl p-4 border border-[#FF6A00]/20">
+                  <div className="bg-white/5 rounded-xl p-4 border border-[#E25312]/20">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#FF6A00]/20 flex items-center justify-center"><Calendar className="w-4 h-4 text-[#FF6A00]" /></div>
-                      <span className="text-xs text-[#FF6A00] font-medium">BOOKED</span>
+                      <div className="w-8 h-8 rounded-full bg-[#E25312]/20 flex items-center justify-center"><Calendar className="w-4 h-4 text-[#E25312]" /></div>
+                      <span className="text-xs text-[#E25312] font-medium">BOOKED</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#FF6A00]" />
+                      <CheckCircle className="w-4 h-4 text-[#E25312]" />
                       <p className="text-sm text-[#FCFFD5]">Tomorrow 9:00 AM</p>
                     </div>
                     <p className="text-xs text-[#7A766E] mt-1">Added to calendar</p>

@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const ACCENT = "#FF6A00";
+const ACCENT = "#E25312";
 const CREAM = "#FCFFD5";
-const INK = "#121114";
+const INK = "#10100F";
 
 export interface PageHeroProps {
   eyebrow: string;
@@ -152,7 +152,7 @@ export default function PageHero({
                     }}
                   >
                     <span
-                      className="inline-flex items-center justify-center w-[30px] h-[30px] rounded-full border transition-colors group-hover:bg-[#FF6A00]/20"
+                      className="inline-flex items-center justify-center w-[30px] h-[30px] rounded-full border transition-colors group-hover:bg-[#E25312]/20"
                       style={{ borderColor: `${CREAM}E6` }}
                     >
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -191,7 +191,7 @@ export default function PageHero({
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(18,17,20,0) 55%, rgba(18,17,20,0.5) 100%)",
+                      "linear-gradient(180deg, rgba(16,16,15,0) 55%, rgba(16,16,15,0.5) 100%)",
                   }}
                 />
               </div>

@@ -4,14 +4,14 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 const GALLERY = [
-  { label: "Before / After", src: "/hero-climb.png", caption: "Editorial-grade photo transformation" },
-  { label: "3D Rendering", src: "/growth-collab.png", caption: "Pre-build visuals that close jobs" },
-  { label: "Social Animation", src: "/hero-climb.png", caption: "iPhone shots → scroll-stopping clips" },
-  { label: "Mood Boards", src: "/growth-collab.png", caption: "Design direction in one page" },
+  { label: "Before / After", src: "/hero-climb.webp", caption: "Editorial-grade photo transformation" },
+  { label: "3D Rendering", src: "/growth-collab.webp", caption: "Pre-build visuals that close jobs" },
+  { label: "Social Animation", src: "/hero-climb.webp", caption: "iPhone shots → scroll-stopping clips" },
+  { label: "Mood Boards", src: "/growth-collab.webp", caption: "Design direction in one page" },
 ];
 
 export default function ContentPage() {
@@ -24,7 +24,7 @@ export default function ContentPage() {
         subhead="Your competitors with worse work are winning jobs because their photos look better. We fix that — iPhone shots to editorial, before/after magic, and 3D renders that sell the vision before the work starts."
         primaryCta={{ label: "See pricing", href: "/pricing" }}
         secondaryCta={{ label: "Book a demo", href: "/contact" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="Content + visual pipeline — anime placeholder"
       />
 
@@ -42,7 +42,7 @@ export default function ContentPage() {
                 <span style={{ color: ACCENT, fontStyle: "italic", fontFamily: "var(--font-display), 'Instrument Serif', serif" }}>magic.</span>
               </h2>
             </div>
-            <p className="max-w-xs" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, color: "rgba(18,17,20,0.6)" }}>
+            <p className="max-w-xs" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 15, lineHeight: 1.55, color: "rgba(16,16,15,0.6)" }}>
               Every deliverable ships inside 7 days. Rights stay with you forever.
             </p>
           </div>
@@ -50,9 +50,9 @@ export default function ContentPage() {
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {GALLERY.map((g) => (
               <figure key={g.label} className="group">
-                <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 3", background: INK, borderRadius: 6, border: "1px solid rgba(18,17,20,0.08)" }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 3", background: INK, borderRadius: 6, border: "1px solid rgba(16,16,15,0.08)" }}>
                   <img src={g.src} alt={g.caption} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" style={{ filter: "contrast(1.05) brightness(0.92)" }} />
-                  <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(18,17,20,0) 55%, rgba(18,17,20,0.55) 100%)" }} />
+                  <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(16,16,15,0) 55%, rgba(16,16,15,0.55) 100%)" }} />
                   <div className="absolute top-4 left-4 uppercase" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 10, letterSpacing: "0.22em", fontWeight: 700, color: "#FFFFFF", background: "rgba(0,0,0,0.55)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", padding: "6px 10px", borderRadius: 999 }}>
                     {g.label}
                   </div>
@@ -81,7 +81,7 @@ export default function ContentPage() {
           "Short-form video for Instagram + TikTok",
         ]}
         cta={{ label: "See pricing", href: "/pricing" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Content pipeline — anime placeholder"
         imagePosition="right"
       />

@@ -4,8 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialBlock from "@/components/sections/EditorialBlock";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 const FEATURES = [
   { num: "01", title: "Built to convert", body: "Every section tested against a buyer journey — not just designed to look pretty." },
@@ -25,7 +25,7 @@ export default function WebsitePage() {
         subhead="Your website should be your hardest-working employee. We build fast, mobile-first, conversion-focused sites that rank on Google and turn visitors into booked estimates — not bounce stats."
         primaryCta={{ label: "See pricing", href: "/pricing" }}
         secondaryCta={{ label: "Book a demo", href: "/contact" }}
-        image="/hero-climb.png"
+        image="/hero-climb.webp"
         imageAlt="Website mockups — anime placeholder"
       />
 
@@ -44,14 +44,14 @@ export default function WebsitePage() {
             </h2>
           </div>
 
-          <div className="h-px mb-14" style={{ background: "rgba(18,17,20,0.12)" }} />
+          <div className="h-px mb-14" style={{ background: "rgba(16,16,15,0.12)" }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {FEATURES.map((f) => (
               <div key={f.num}>
                 <div className="mb-5" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 56, lineHeight: 1, letterSpacing: "-0.025em", color: ACCENT }}>{f.num}</div>
                 <h3 className="uppercase mb-3" style={{ fontFamily: "var(--font-heading), 'Archivo Narrow', sans-serif", fontWeight: 700, fontSize: 22, lineHeight: 1.08, letterSpacing: "-0.01em", color: INK }}>{f.title}</h3>
-                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(18,17,20,0.68)" }}>{f.body}</p>
+                <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: 14, lineHeight: 1.55, color: "rgba(16,16,15,0.68)" }}>{f.body}</p>
               </div>
             ))}
           </div>
@@ -73,7 +73,7 @@ export default function WebsitePage() {
           "Quarterly conversion reviews + tweaks",
         ]}
         cta={{ label: "See pricing", href: "/pricing" }}
-        image="/growth-collab.png"
+        image="/growth-collab.webp"
         imageAlt="Website mockup + analytics — anime placeholder"
         imagePosition="left"
       />

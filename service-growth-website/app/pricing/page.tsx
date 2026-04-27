@@ -5,8 +5,8 @@ import { useState } from "react";
 import PageHero from "@/components/sections/PageHero";
 import ClosingCTA from "@/components/sections/ClosingCTA";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 const CREAM = "#FCFFD5";
 
 const PLANS = [
@@ -116,7 +116,7 @@ export default function PricingPage() {
                   className="relative flex flex-col"
                   style={{
                     padding: 36,
-                    border: `1px solid ${isDark ? "rgba(252,255,213,0.12)" : "rgba(18,17,20,0.1)"}`,
+                    border: `1px solid ${isDark ? "rgba(252,255,213,0.12)" : "rgba(16,16,15,0.1)"}`,
                     background: isDark ? INK : "#FFFFFF",
                     color: isDark ? CREAM : INK,
                     borderRadius: 14,
@@ -148,7 +148,7 @@ export default function PricingPage() {
                         fontFamily: "var(--font-mono), ui-monospace, monospace",
                         fontSize: 11,
                         letterSpacing: "0.22em",
-                        color: isDark ? "rgba(252,255,213,0.55)" : "rgba(18,17,20,0.5)",
+                        color: isDark ? "rgba(252,255,213,0.55)" : "rgba(16,16,15,0.5)",
                         fontWeight: 500,
                       }}
                     >
@@ -199,7 +199,7 @@ export default function PricingPage() {
                       style={{
                         fontFamily: "var(--font-inter), system-ui, sans-serif",
                         fontSize: 15,
-                        color: isDark ? "rgba(252,255,213,0.6)" : "rgba(18,17,20,0.5)",
+                        color: isDark ? "rgba(252,255,213,0.6)" : "rgba(16,16,15,0.5)",
                       }}
                     >
                       {p.period}
@@ -212,8 +212,8 @@ export default function PricingPage() {
                       fontFamily: "var(--font-inter), system-ui, sans-serif",
                       fontSize: 13,
                       lineHeight: 1.5,
-                      color: isDark ? "rgba(252,255,213,0.6)" : "rgba(18,17,20,0.55)",
-                      borderBottom: `1px solid ${isDark ? "rgba(252,255,213,0.1)" : "rgba(18,17,20,0.1)"}`,
+                      color: isDark ? "rgba(252,255,213,0.6)" : "rgba(16,16,15,0.55)",
+                      borderBottom: `1px solid ${isDark ? "rgba(252,255,213,0.1)" : "rgba(16,16,15,0.1)"}`,
                     }}
                   >
                     {p.ideal}
@@ -228,7 +228,7 @@ export default function PricingPage() {
                           fontFamily: "var(--font-inter), system-ui, sans-serif",
                           fontSize: 14,
                           lineHeight: 1.5,
-                          color: isDark ? "rgba(252,255,213,0.85)" : "rgba(18,17,20,0.82)",
+                          color: isDark ? "rgba(252,255,213,0.85)" : "rgba(16,16,15,0.82)",
                         }}
                       >
                         <span
@@ -268,7 +268,7 @@ export default function PricingPage() {
               fontSize: 11,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
-              color: "rgba(18,17,20,0.5)",
+              color: "rgba(16,16,15,0.5)",
               fontWeight: 500,
             }}
           >
@@ -384,11 +384,11 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="divide-y" style={{ borderColor: "rgba(18,17,20,0.1)" }}>
+          <div className="divide-y" style={{ borderColor: "rgba(16,16,15,0.1)" }}>
             {FAQ.map((item, i) => {
               const open = openIdx === i;
               return (
-                <div key={item.q} style={{ borderBottom: "1px solid rgba(18,17,20,0.1)" }}>
+                <div key={item.q} style={{ borderBottom: "1px solid rgba(16,16,15,0.1)" }}>
                   <button
                     onClick={() => setOpenIdx(open ? null : i)}
                     className="w-full flex items-start justify-between gap-6 py-7 text-left"
@@ -427,7 +427,7 @@ export default function PricingPage() {
                         fontFamily: "var(--font-inter), system-ui, sans-serif",
                         fontSize: 16,
                         lineHeight: 1.6,
-                        color: "rgba(18,17,20,0.72)",
+                        color: "rgba(16,16,15,0.72)",
                         maxWidth: 720,
                       }}
                     >

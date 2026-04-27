@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
-const ACCENT = "#FF6A00";
-const INK = "#121114";
+const ACCENT = "#E25312";
+const INK = "#10100F";
 
 export default function ClosingCTA() {
   return (
@@ -54,7 +54,7 @@ export default function ClosingCTA() {
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: 17,
                 lineHeight: 1.55,
-                color: "rgba(18,17,20,0.7)",
+                color: "rgba(16,16,15,0.7)",
               }}
             >
               Every day you wait, leads go to a competitor&apos;s voicemail instead of yours. Book a free 25-minute audit — we&apos;ll show you exactly where money is falling through the cracks.
@@ -79,7 +79,7 @@ export default function ClosingCTA() {
 
               <Link
                 href="/how-it-works"
-                className="group inline-flex items-center gap-3 px-7 py-4 font-bold uppercase transition-colors hover:bg-[#121114]/5"
+                className="group inline-flex items-center gap-3 px-7 py-4 font-bold uppercase transition-colors hover:bg-[#10100F]/5"
                 style={{
                   fontFamily: "var(--font-inter), system-ui, sans-serif",
                   fontSize: 14,
@@ -96,11 +96,11 @@ export default function ClosingCTA() {
             <div
               className="mt-10 pt-6 border-t flex items-center gap-2"
               style={{
-                borderColor: "rgba(18,17,20,0.12)",
+                borderColor: "rgba(16,16,15,0.12)",
                 fontFamily: "var(--font-mono), ui-monospace, monospace",
                 fontSize: 11,
                 letterSpacing: "0.18em",
-                color: "rgba(18,17,20,0.55)",
+                color: "rgba(16,16,15,0.55)",
                 textTransform: "uppercase",
                 fontWeight: 500,
               }}
